@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DiskTools.WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DiskTools.WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
