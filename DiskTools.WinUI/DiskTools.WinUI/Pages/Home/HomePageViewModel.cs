@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiskTools.WinUI
+namespace DiskTools.WinUI.Pages.Home
 {
     [INotifyPropertyChanged]
-    internal sealed partial class MainWindowViewModel
+    internal sealed partial class HomePageViewModel
     {
 
         [ObservableProperty]
@@ -28,12 +28,10 @@ namespace DiskTools.WinUI
 
             };
 
-        public MainWindowViewModel()
+        public HomePageViewModel()
         {
             SelectedItem = diskList[0];
         }
-
-
         
     }
 
