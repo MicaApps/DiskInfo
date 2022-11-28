@@ -11,11 +11,6 @@
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <None Remove="Pages\DiskPage.xaml" />
-    <None Remove="Pages\Home\HomePage.xaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
