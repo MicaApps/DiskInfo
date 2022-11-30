@@ -29,8 +29,6 @@ namespace DiskTools.WinUI.Windowing
                     titleBar.ButtonHoverBackgroundColor = ColorHelper.FromArgb(10, 00, 00, 00);
                     titleBar.ButtonPressedForegroundColor = ColorHelper.FromArgb(155, 00, 00, 00);
                     titleBar.ButtonPressedBackgroundColor = ColorHelper.FromArgb(6, 00, 00, 00);
-                    //titleBar.ButtonInactiveForegroundColor = ColorHelper.FromArgb(92, 00, 00, 00);
-                    //titleBar.InactiveForegroundColor = ColorHelper.FromArgb(92, 00, 00, 00);
                 }
                 else if (theme == ElementTheme.Dark)
                 {
@@ -39,8 +37,6 @@ namespace DiskTools.WinUI.Windowing
                     titleBar.ButtonHoverBackgroundColor = ColorHelper.FromArgb(15, 255, 255, 255);
                     titleBar.ButtonPressedForegroundColor = Colors.White;
                     titleBar.ButtonPressedBackgroundColor = ColorHelper.FromArgb(10, 255, 255, 255);
-                    //titleBar.ButtonInactiveForegroundColor = Colors.White;
-                    //titleBar.ButtonInactiveForegroundColor = ColorHelper.FromArgb(102, 255, 255, 255);
                 }
             }
         }
