@@ -1,0 +1,43 @@
+<Page
+    x:Class="DiskTools.WinUI.Pages.Home.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DiskTools.WinUI.Pages.Home"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigationModel="using:DiskTools.WinUI.Navigation.Model"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:DiskNameConverter x:Key="diskNameConverter" />
+    </Page.Resources>
+    <Grid>
+        <NavigationView 
+        IsPaneToggleButtonVisible="True" 
+        SelectionChanged="NavigationView_SelectionChanged"
+        PaneDisplayMode="LeftCompact"
+        SelectedItem="{x:Bind viewModel.SelectedItem,Mode=TwoWay}"
+        MenuItemsSource="{x:Bind viewModel.DiskList,Mode=OneWay}"
+            PaneTitle="选择磁盘">
+
+            <NavigationView.MenuItemTemplate>
+                <DataTemplate x:DataType="navigationModel:DiskModel" >
+                    <NavigationViewItem ToolTipService.ToolTip="{x:Bind DiskName}" Content="{x:Bind DiskName}">
+                        <NavigationViewItem.Icon>
+                            <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEDA2;" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                </DataTemplate>
+            </NavigationView.MenuItemTemplate>
+            <NavigationView.Resources>
+                <SolidColorBrush Color="Transparent"  x:Key="NavigationViewContentBackground"/>
+            </NavigationView.Resources>
+            <NavigationView.Content>
+                <Frame x:Name="NavigationFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </NavigationView.Content>
+        </NavigationView>
+        <StackPanel Orientation="Horizontal" Margin="64,0,0,0" Height="44" VerticalAlignment="Top">
+            <Image Source="/Assets/Square44x44Logo.scale-400.png" Height="18" VerticalAlignment="Center"/>
+            <TextBlock Text="DiskInfo" VerticalAlignment="Center" Margin="8,0"/>
+        </StackPanel>
+    </Grid>
+</Page>
