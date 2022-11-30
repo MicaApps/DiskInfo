@@ -22,10 +22,12 @@ namespace DiskTools.WinUI
             //Setup title bar
             var titleBar = AppWindow.TitleBar;
             titleBar.ExtendsContentIntoTitleBar = true;
-            titleBar.BackgroundColor = Colors.Transparent;
-            titleBar.ButtonBackgroundColor = Colors.Transparent;
-            titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-            Title = Windows.ApplicationModel.Package.Current.DisplayName;
+
+            UpdateCaptionBar(Container.ActualTheme);
+            Container.ActualThemeChanged += (sender, args) =>
+            {
+                UpdateCaptionBar(Container.ActualTheme);
+            };
         }
 
         

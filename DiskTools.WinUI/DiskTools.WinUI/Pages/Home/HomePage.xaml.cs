@@ -36,6 +36,7 @@ namespace DiskTools.WinUI.Pages.Home
             this.InitializeComponent();
         }
 
+
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             if (args.SelectedItem is DiskModel diskModel)

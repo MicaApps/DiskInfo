@@ -17,10 +17,10 @@
         <NavigationView 
         IsPaneToggleButtonVisible="True" 
         SelectionChanged="NavigationView_SelectionChanged"
-        PaneDisplayMode="Left"
+        PaneDisplayMode="LeftCompact"
         SelectedItem="{x:Bind viewModel.SelectedItem,Mode=TwoWay}"
         MenuItemsSource="{x:Bind viewModel.DiskList,Mode=OneWay}"
-        Header="{x:Bind viewModel.SelectedItem, Converter={StaticResource diskNameConverter}, Mode=OneWay}">
+            PaneTitle="选择磁盘">
 
             <NavigationView.MenuItemTemplate>
                 <DataTemplate x:DataType="navigationModel:DiskModel" >
@@ -31,9 +31,16 @@
                     </NavigationViewItem>
                 </DataTemplate>
             </NavigationView.MenuItemTemplate>
+            <NavigationView.Resources>
+                <SolidColorBrush Color="Transparent"  x:Key="NavigationViewContentBackground"/>
+            </NavigationView.Resources>
             <NavigationView.Content>
                 <Frame x:Name="NavigationFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </NavigationView.Content>
         </NavigationView>
+        <StackPanel Orientation="Horizontal" Margin="64,0,0,0" Height="44" VerticalAlignment="Top">
+            <Image Source="/Assets/Square44x44Logo.scale-400.png" Height="18" VerticalAlignment="Center"/>
+            <TextBlock Text="DiskInfo" VerticalAlignment="Center" Margin="8,0"/>
+        </StackPanel>
     </Grid>
 </Page>

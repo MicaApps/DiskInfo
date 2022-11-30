@@ -15,9 +15,24 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <ListView SelectionMode="Single">
-            <ListViewItem x:Name="Overview"  Content="Overview"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Thickness x:Key="ContentHorizontalMargin" >64,0</Thickness>
+        </Grid.Resources>
+        <ListView Grid.Row="1" Grid.RowSpan="2" Margin="4,0" x:Name="ItemList" SelectionMode="Single" SelectionChanged="ListView_SelectionChanged" >
+            <ListView.Resources>
+                <x:Boolean x:Key="ListViewItemSelectionIndicatorVisualEnabled">false</x:Boolean>
+            </ListView.Resources>
+            <ListViewItem x:Name="Overview"  Content="概述" IsSelected="True"/>
+            <ListViewItem  Content="重新分配扇区" />
+            <ListViewItem  Content="扇区物理位置重分配事件计数" />
         </ListView>
+        <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="{ThemeResource LayerFillColorDefaultBrush}" />
+        <TextBlock Text="{x:Bind viewModel.DiskModel.DiskName,Mode=OneWay}" TextWrapping="Wrap" FontWeight="SemiBold" FontSize="28" FontFamily="XamlAutoFontFamily" Margin="{ThemeResource ContentHorizontalMargin}"  Grid.Column="1" Grid.Row="1"/>
         <Frame x:Name="DiskInfoContent" Grid.Column="1"/>
     </Grid>
 </Page>
