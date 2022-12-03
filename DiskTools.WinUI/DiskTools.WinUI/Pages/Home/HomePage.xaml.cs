@@ -7,10 +7,14 @@ namespace DiskTools.WinUI.Pages.Home
     public sealed partial class HomePage : Page
     {
 
-        private HomePageViewModel viewModel = new();
+        private HomePageViewModel VM
+        {
+            get;
+        }
 
         public HomePage()
         {
+            this.VM = App.GetService<HomePageViewModel>();
             this.InitializeComponent();
         }
 

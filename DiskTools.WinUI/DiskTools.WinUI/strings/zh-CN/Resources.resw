@@ -123,7 +123,7 @@
   <data name="Disk_Refersh_Sector.Content" xml:space="preserve">
     <value>重新分配扇区</value>
   </data>
-  <data name="Disk_Sector_EventCount" xml:space="preserve">
+  <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
     <value>扇区物理位置重分配事件计数</value>
   </data>
   <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
