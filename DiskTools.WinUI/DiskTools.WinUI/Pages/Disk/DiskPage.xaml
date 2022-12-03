@@ -32,7 +32,7 @@
             <ListViewItem x:Uid="Disk_Sector_EventCount" />
         </ListView>
         <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="{ThemeResource LayerFillColorDefaultBrush}" />
-        <TextBlock Text="{x:Bind viewModel.DiskModel.DiskName,Mode=OneWay}" TextWrapping="Wrap" FontWeight="SemiBold" FontSize="28" FontFamily="XamlAutoFontFamily" Margin="{ThemeResource ContentHorizontalMargin}"  Grid.Column="1" Grid.Row="1"/>
+        <TextBlock Text="{x:Bind VM.DiskModel.DiskName,Mode=OneWay}" TextWrapping="Wrap" FontWeight="SemiBold" FontSize="28" FontFamily="XamlAutoFontFamily" Margin="{ThemeResource ContentHorizontalMargin}"  Grid.Column="1" Grid.Row="1"/>
         <Frame x:Name="DiskInfoContent" Grid.Column="1"/>
     </Grid>
 </Page>
