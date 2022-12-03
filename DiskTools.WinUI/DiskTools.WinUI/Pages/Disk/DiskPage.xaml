@@ -27,9 +27,9 @@
             <ListView.Resources>
                 <x:Boolean x:Key="ListViewItemSelectionIndicatorVisualEnabled">false</x:Boolean>
             </ListView.Resources>
-            <ListViewItem x:Name="Overview"  Content="概述" IsSelected="True"/>
-            <ListViewItem  Content="重新分配扇区" />
-            <ListViewItem  Content="扇区物理位置重分配事件计数" />
+            <ListViewItem x:Name="Overview"  x:Uid="Disk_Overview" IsSelected="True"/>
+            <ListViewItem  x:Uid="Disk_Refersh_Sector" />
+            <ListViewItem x:Uid="Disk_Sector_EventCount" />
         </ListView>
         <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="{ThemeResource LayerFillColorDefaultBrush}" />
         <TextBlock Text="{x:Bind viewModel.DiskModel.DiskName,Mode=OneWay}" TextWrapping="Wrap" FontWeight="SemiBold" FontSize="28" FontFamily="XamlAutoFontFamily" Margin="{ThemeResource ContentHorizontalMargin}"  Grid.Column="1" Grid.Row="1"/>
