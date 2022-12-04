@@ -1,4 +1,4 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+ï»¿<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
 <!-- Licensed under the MIT License. See LICENSE in the project root for license information. -->
 
 <Page
@@ -27,9 +27,9 @@
             <ListView.Resources>
                 <x:Boolean x:Key="ListViewItemSelectionIndicatorVisualEnabled">false</x:Boolean>
             </ListView.Resources>
-            <ListViewItem x:Name="Overview"  Content="¸ÅÊö" IsSelected="True"/>
-            <ListViewItem  Content="ÖØÐÂ·ÖÅäÉÈÇø" />
-            <ListViewItem  Content="ÉÈÇøÎïÀíÎ»ÖÃÖØ·ÖÅäÊÂ¼þ¼ÆÊý" />
+            <ListViewItem x:Name="Overview"  Content="æ¦‚è¿°" IsSelected="True"/>
+            <ListViewItem  Content="é‡æ–°åˆ†é…æ‰‡åŒº" />
+            <ListViewItem  Content="æ‰‡åŒºç‰©ç†ä½ç½®é‡åˆ†é…äº‹ä»¶è®¡æ•°" />
         </ListView>
         <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="{ThemeResource LayerFillColorDefaultBrush}" />
         <Grid Grid.Row="1" Grid.Column="1">
@@ -38,14 +38,14 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" VerticalAlignment="Bottom">
-                <TextBlock Grid.Row="0" Text="{x:Bind viewModel.DiskModel.DiskName,Mode=OneWay}" TextWrapping="Wrap" FontWeight="SemiBold" FontSize="28" FontFamily="XamlAutoFontFamily" Margin="{ThemeResource ContentHorizontalMargin}"/>
+                <TextBlock Grid.Row="0" Text="{x:Bind VM.DiskModel.DiskName,Mode=OneWay}" TextWrapping="Wrap" FontWeight="SemiBold" FontSize="28" FontFamily="XamlAutoFontFamily" Margin="{ThemeResource ContentHorizontalMargin}"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Frame x:Name="DiskInfoContent"/>
             </Grid>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="2">
-            <TextBlock Text="µ×²¿Grid"/>
+            <TextBlock Text="åº•éƒ¨Grid"/>
         </Grid>
     </Grid>
 </Page>
