@@ -10,7 +10,9 @@ namespace DiskTools.WinUI.Pages.Disk
         private DiskPageViewModel viewModel = new();
         public DiskPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+
+            DiskInfoContent.Navigate(typeof(OverviewPage), viewModel.DiskModel);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -18,7 +20,7 @@ namespace DiskTools.WinUI.Pages.Disk
             base.OnNavigatedTo(e);
             if (e.Parameter is DiskModel diskModel)
             {
-                viewModel.DiskModel= diskModel;
+                viewModel.DiskModel = diskModel;
             }
         }
 
@@ -26,7 +28,7 @@ namespace DiskTools.WinUI.Pages.Disk
         {
             if (ItemList.SelectedItem is ListViewItem item && item.Content is string content && viewModel.DiskModel != null)
             {
-                switch(content)
+                switch (content)
                 {
                     case "Overview":
                         DiskInfoContent.Navigate(typeof(OverviewPage), viewModel.DiskModel);

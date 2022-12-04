@@ -17,8 +17,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="44" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="44" />
         </Grid.RowDefinitions>
         <Grid.Resources>
             <Thickness x:Key="ContentHorizontalMargin" >64,0</Thickness>
@@ -32,7 +32,20 @@
             <ListViewItem  Content="扇区物理位置重分配事件计数" />
         </ListView>
         <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="{ThemeResource LayerFillColorDefaultBrush}" />
-        <TextBlock Text="{x:Bind viewModel.DiskModel.DiskName,Mode=OneWay}" TextWrapping="Wrap" FontWeight="SemiBold" FontSize="28" FontFamily="XamlAutoFontFamily" Margin="{ThemeResource ContentHorizontalMargin}"  Grid.Column="1" Grid.Row="1"/>
-        <Frame x:Name="DiskInfoContent" Grid.Column="1"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" VerticalAlignment="Bottom">
+                <TextBlock Grid.Row="0" Text="{x:Bind viewModel.DiskModel.DiskName,Mode=OneWay}" TextWrapping="Wrap" FontWeight="SemiBold" FontSize="28" FontFamily="XamlAutoFontFamily" Margin="{ThemeResource ContentHorizontalMargin}"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Frame x:Name="DiskInfoContent"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <TextBlock Text="底部Grid"/>
+        </Grid>
     </Grid>
 </Page>
