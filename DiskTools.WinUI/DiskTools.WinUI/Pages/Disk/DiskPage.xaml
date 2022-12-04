@@ -27,9 +27,9 @@
             <ListView.Resources>
                 <x:Boolean x:Key="ListViewItemSelectionIndicatorVisualEnabled">false</x:Boolean>
             </ListView.Resources>
-            <ListViewItem x:Name="Overview"  Content="æ¦‚è¿°" IsSelected="True"/>
-            <ListViewItem  Content="é‡æ–°åˆ†é…æ‰‡åŒº" />
-            <ListViewItem  Content="æ‰‡åŒºç‰©ç†ä½ç½®é‡åˆ†é…äº‹ä»¶è®¡æ•°" />
+            <ListViewItem x:Name="Overview"  Content="¸ÅÊö" IsSelected="True"/>
+            <ListViewItem  Content="ÖØĞÂ·ÖÅäÉÈÇø" />
+            <ListViewItem  Content="ÉÈÇøÎïÀíÎ»ÖÃÖØ·ÖÅäÊÂ¼ş¼ÆÊı" />
         </ListView>
         <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="{ThemeResource LayerFillColorDefaultBrush}" />
         <Grid Grid.Row="1" Grid.Column="1">
@@ -45,7 +45,7 @@
             </Grid>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="2">
-            <TextBlock Text="åº•éƒ¨Grid"/>
+            <TextBlock Text="µ×²¿Grid"/>
         </Grid>
     </Grid>
 </Page>

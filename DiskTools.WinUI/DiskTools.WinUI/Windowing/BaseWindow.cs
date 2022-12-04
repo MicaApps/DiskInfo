@@ -8,9 +8,7 @@ namespace DiskTools.WinUI.Windowing
     {
         public BaseWindow()
         {
-
             Backdrop = new MicaSystemBackdrop();
-
         }
 
         protected void UpdateCaptionBar(ElementTheme theme)

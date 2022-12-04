@@ -15,10 +15,9 @@
         IsPaneToggleButtonVisible="True" 
         SelectionChanged="NavigationView_SelectionChanged"
         PaneDisplayMode="LeftCompact"
-        SelectedItem="{x:Bind viewModel.SelectedItem,Mode=TwoWay}"
-        MenuItemsSource="{x:Bind viewModel.DiskList,Mode=OneWay}"
-            PaneTitle="选择磁盘">
-
+        SelectedItem="{x:Bind VM.SelectedItem,Mode=TwoWay}"
+        MenuItemsSource="{x:Bind VM.DiskList,Mode=OneWay}"
+            x:Uid="Home_NavigationPanelTitle">
             <NavigationView.MenuItemTemplate>
                 <DataTemplate x:DataType="navigationModel:DiskModel" >
                     <NavigationViewItem ToolTipService.ToolTip="{x:Bind DiskName}" Content="{x:Bind DiskName}">
