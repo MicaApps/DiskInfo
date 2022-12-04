@@ -7,7 +7,7 @@ namespace DiskTools.WinUI.Pages.Disk.Detail
     {
         public OverviewPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
     }
 }
