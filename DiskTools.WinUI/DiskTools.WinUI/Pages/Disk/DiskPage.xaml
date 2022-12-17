@@ -30,6 +30,29 @@
             <ListViewItem x:Name="Overview"  Content="概述" IsSelected="True"/>
             <ListViewItem  Content="重新分配扇区" />
             <ListViewItem  Content="扇区物理位置重分配事件计数" />
+            <ListViewItem  Content="通电次数" />
+            <ListViewItem  Content="块擦除记录（SLC）" />
+            <ListViewItem  Content="最小PE（编程/擦除）次数" />
+            <ListViewItem  Content="最大PE（编程/擦除）次数" />
+            <ListViewItem  Content="裸片中最大坏块数" />
+            <ListViewItem  Content="坏块总计" />
+            <ListViewItem  Content="新增坏块" />
+            <ListViewItem  Content="编程失败计数" />
+            <ListViewItem  Content="擦除失败计数" />
+            <ListViewItem  Content="平均PE（编程/擦除）次数" />
+            <ListViewItem  Content="意外断电次数" />
+            <ListViewItem  Content="端到端错误检测/矫正计数" />
+            <ListViewItem  Content="报告的无法矫正的错误" />
+            <ListViewItem  Content="命令超时计数" />
+            <ListViewItem  Content="温度" />
+            <ListViewItem  Content="CRC错误计数" />
+            <ListViewItem  Content="介质磨损指示器" />
+            <ListViewItem  Content="剩余备用块" />
+            <!--一共两个类别：一个无后缀 一个(SLC)-->
+            <ListViewItem  Content="NAND总计写入" />
+            <ListViewItem  Content="NAND总计写入（SLC）" />
+            <ListViewItem  Content="总计写入/读取（GB）" />
+            <ListViewItem  Content="温控状态" /> 
         </ListView>
         <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="{ThemeResource LayerFillColorDefaultBrush}" />
         <Grid Grid.Row="1" Grid.Column="1">
