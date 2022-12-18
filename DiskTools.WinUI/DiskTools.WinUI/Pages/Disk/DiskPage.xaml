@@ -27,32 +27,32 @@
             <ListView.Resources>
                 <x:Boolean x:Key="ListViewItemSelectionIndicatorVisualEnabled">false</x:Boolean>
             </ListView.Resources>
-            <ListViewItem x:Name="Overview"  Content="概述" IsSelected="True"/>
-            <ListViewItem  Content="重新分配扇区" />
-            <ListViewItem  Content="扇区物理位置重分配事件计数" />
-            <ListViewItem  Content="通电次数" />
-            <ListViewItem  Content="块擦除记录（SLC）" />
-            <ListViewItem  Content="最小PE（编程/擦除）次数" />
-            <ListViewItem  Content="最大PE（编程/擦除）次数" />
-            <ListViewItem  Content="裸片中最大坏块数" />
-            <ListViewItem  Content="坏块总计" />
-            <ListViewItem  Content="新增坏块" />
-            <ListViewItem  Content="编程失败计数" />
-            <ListViewItem  Content="擦除失败计数" />
-            <ListViewItem  Content="平均PE（编程/擦除）次数" />
-            <ListViewItem  Content="意外断电次数" />
-            <ListViewItem  Content="端到端错误检测/矫正计数" />
-            <ListViewItem  Content="报告的无法矫正的错误" />
-            <ListViewItem  Content="命令超时计数" />
-            <ListViewItem  Content="温度" />
-            <ListViewItem  Content="CRC错误计数" />
-            <ListViewItem  Content="介质磨损指示器" />
-            <ListViewItem  Content="剩余备用块" />
+            <ListViewItem x:Uid="Disk_Overview" x:Name="Overview" IsSelected="True" />
+            <ListViewItem x:Uid="Disk_Refresh_Sector" x:Name="RefreshSector" />
+            <ListViewItem x:Uid="Disk_Sector_EventCount" x:Name="SectorEventCount" />
+            <ListViewItem x:Uid="Disk_PowerUpNumber" />
+            <ListViewItem x:Uid="Disk_Block_Erasure_Record_SLC" />
+            <ListViewItem x:Uid="Disk_Minimum_Number_of_Programming_and_Erasing" />
+            <ListViewItem x:Uid="Disk_Maximum_Number_of_Programming_and_Erasing" />
+            <ListViewItem x:Uid="Disk_Maximum_Number_of_bad_blocks_in_die"  />
+            <ListViewItem x:Uid="Disk_Bad_Blocks_Count" />
+            <ListViewItem x:Uid="Disk_New_Bad_Blocks" />
+            <ListViewItem x:Uid="Disk_Programming_Failure_Count" />
+            <ListViewItem x:Uid="Disk_Erasing_Failure_Count" />
+            <ListViewItem x:Uid="Disk_Average_Number_of_Programming_and_Erasing" />
+            <ListViewItem x:Uid="Disk_Number_of_Unexpected_Power_Outages" />
+            <ListViewItem x:Uid="Disk_End_to_End_Error_Detection_Correction_Count" />
+            <ListViewItem x:Uid="Disk_Reported_Uncorrectable_Errors" />
+            <ListViewItem x:Uid="Disk_Command_Timeout_Count" />
+            <ListViewItem x:Uid="Disk_Temperature" />
+            <ListViewItem x:Uid="Disk_CRC_Errors_Count" />
+            <ListViewItem x:Uid="Disk_Media_Fray_Indicator" />
+            <ListViewItem x:Uid="Disk_Spare_Blocks_Remaining" />
             <!--一共两个类别：一个无后缀 一个(SLC)-->
-            <ListViewItem  Content="NAND总计写入" />
-            <ListViewItem  Content="NAND总计写入（SLC）" />
-            <ListViewItem  Content="总计写入/读取（GB）" />
-            <ListViewItem  Content="温控状态" /> 
+            <ListViewItem x:Uid="Disk_NAND_Total_Writes" />
+            <ListViewItem x:Uid="Disk_NAND_Total_Writes_SLC" />
+            <ListViewItem x:Uid="Disk_Total_Write_Read" />
+            <ListViewItem x:Uid="Disk_Temperature_Control_State" /> 
         </ListView>
         <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="{ThemeResource LayerFillColorDefaultBrush}" />
         <Grid Grid.Row="1" Grid.Column="1">
