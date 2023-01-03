@@ -34,26 +34,26 @@ namespace DiskInfo
 
         public string GetBufferSize()
         {
-            var intptr = Interop.GetBufferSize();
+            IntPtr intptr = Interop.GetBufferSize();
             return Marshal.PtrToStringUni(intptr);
 
         }
 
         public string GetFeature()
         {
-            var intptr = Interop.GetFeature();
+            IntPtr intptr = Interop.GetFeature();
             return Marshal.PtrToStringUni(intptr);
         }
 
         public string GetFirmwareRev()
         {
-            var intptr = Interop.GetFirmwareRev();
+            IntPtr intptr = Interop.GetFirmwareRev();
             return Marshal.PtrToStringUni(intptr);
         }
 
         public string GetDriveMap()
         {
-            var intptr = Interop.GetDriveMap();
+            IntPtr intptr = Interop.GetDriveMap();
             return Marshal.PtrToStringUni(intptr);
         }
     }

@@ -22,16 +22,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Controls\PageHeader.xaml" />
-    <None Remove="Pages\DiskInfoPage.xaml" />
-    <None Remove="Pages\MainPage.xaml" />
-    <None Remove="Pages\SettingPages\SettingPage.xaml" />
-    <None Remove="Pages\SettingPages\TestPage.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
 	<PackageReference Include="CommunityToolkit.WinUI" Version="7.1.2" />
 	<PackageReference Include="CommunityToolkit.WinUI.UI" Version="7.1.2" />
+    <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2" />
     <PackageReference Include="MetroLog.Net6" Version="2.0.1" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />

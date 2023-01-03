@@ -62,17 +62,25 @@
             <TwoPaneView.Pane2>
                 <Pivot Margin="20,-30,0,0" SelectedIndex="{Binding SelectedIndex, ElementName=ListView, Mode=TwoWay}">
                     <PivotItem>
-                        <Grid VerticalAlignment="Top">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <ProgressRing
-                                Width="200"
-                                Height="200"
-                                IsIndeterminate="False"
-                                Value="100" />
-                        </Grid>
+                        <ScrollViewer>
+                            <Grid VerticalAlignment="Top">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ProgressRing
+                                    Width="200"
+                                    Height="200"
+                                    IsIndeterminate="False"
+                                    Value="100" />
+                                <Grid Grid.Column="1" />
+                                <Grid Grid.Row="1" Grid.ColumnSpan="2" />
+                            </Grid>
+                        </ScrollViewer>
                     </PivotItem>
                     <PivotItem />
                     <PivotItem />
