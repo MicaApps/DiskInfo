@@ -2,17 +2,7 @@
 
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Platforms>x86;x64;ARM64</Platforms>
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DiskInfo\DiskInfo.vcxproj" />
-  </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Copy SourceFiles="..\DiskInfo\bin\x64\$(Configuration)\DiskInfo.dll" DestinationFolder="$(OutputPath)" Condition="'$(Platform)' == 'x64'" />
-    <Copy SourceFiles="..\DiskInfo\bin\Win32\$(Configuration)\DiskInfo.dll" DestinationFolder="$(OutputPath)" Condition="'$(Platform)' != 'x64'" />
-  </Target>
 
 </Project>
