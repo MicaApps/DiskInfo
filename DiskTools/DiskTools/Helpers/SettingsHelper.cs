@@ -2,6 +2,7 @@
 using MetroLog;
 using MetroLog.Targets;
 using Microsoft.UI.Xaml;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using Windows.Storage;
@@ -12,6 +13,7 @@ namespace DiskTools.Helpers
 {
     public static partial class SettingsHelper
     {
+        public const string UpdateDate = "UpdateDate";
         public const string SelectedAppTheme = "SelectedAppTheme";
         public const string SelectedBackdrop = "SelectedBackdrop";
 
@@ -22,6 +24,10 @@ namespace DiskTools.Helpers
 
         public static void SetDefaultSettings()
         {
+            if (!LocalObject.KeyExists(UpdateDate))
+            {
+                LocalObject.Save(UpdateDate, new DateTime());
+            }
             if (!LocalObject.KeyExists(SelectedAppTheme))
             {
                 LocalObject.Save(SelectedAppTheme, ElementTheme.Default);
