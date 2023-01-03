@@ -1,21 +1,6 @@
 ﻿using DiskTools.Helpers;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Microsoft.UI.Xaml.Shapes;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using Windows.ApplicationModel;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -57,7 +42,7 @@ namespace DiskTools
 
         private void Application_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
         {
-            SettingsHelper.LogManager.GetLogger("Unhandled Exception - Application").Error(ExceptionToMessage(e.Exception), e.Exception);
+            SettingsHelper.LogManager.GetLogger("Unhandled Exception - Application").Error(e.Exception.ExceptionToMessage(), e.Exception);
             e.Handled = true;
         }
 
@@ -65,7 +50,7 @@ namespace DiskTools
         {
             if (e.ExceptionObject is Exception Exception)
             {
-                SettingsHelper.LogManager.GetLogger("Unhandled Exception - CurrentDomain").Error(ExceptionToMessage(Exception), Exception);
+                SettingsHelper.LogManager.GetLogger("Unhandled Exception - CurrentDomain").Error(Exception.ExceptionToMessage(), Exception);
             }
         }
 
@@ -81,19 +66,8 @@ namespace DiskTools
 
         private void SynchronizationContext_UnhandledException(object sender, Helpers.UnhandledExceptionEventArgs e)
         {
-            SettingsHelper.LogManager.GetLogger("Unhandled Exception - SynchronizationContext").Error(ExceptionToMessage(e.Exception), e.Exception);
+            SettingsHelper.LogManager.GetLogger("Unhandled Exception - SynchronizationContext").Error(e.Exception.ExceptionToMessage(), e.Exception);
             e.Handled = true;
-        }
-
-        private string ExceptionToMessage(Exception ex)
-        {
-            StringBuilder builder = new StringBuilder();
-            builder.Append('\n');
-            if (!string.IsNullOrWhiteSpace(ex.Message)) { builder.AppendLine($"Message: {ex.Message}"); }
-            builder.AppendLine($"HResult: {ex.HResult} (0x{Convert.ToString(ex.HResult, 16)})");
-            if (!string.IsNullOrWhiteSpace(ex.StackTrace)) { builder.AppendLine(ex.StackTrace); }
-            if (!string.IsNullOrWhiteSpace(ex.HelpLink)) { builder.Append($"HelperLink: {ex.HelpLink}"); }
-            return builder.ToString();
         }
     }
 }

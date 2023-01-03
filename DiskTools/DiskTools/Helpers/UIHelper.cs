@@ -1,6 +1,7 @@
 ﻿using DiskTools.Pages;
 using Microsoft.UI.Windowing;
 using System;
+using System.Text;
 using WinRT.Interop;
 
 namespace DiskTools.Helpers
@@ -18,6 +19,17 @@ namespace DiskTools.Helpers
             IntPtr windowHandle = WindowNative.GetWindowHandle(MainWindow);
             int currentDpi = PInvoke.User32.GetDpiForWindow(windowHandle);
             return Convert.ToInt32(pixel * (currentDpi / 96.0));
+        }
+
+        public static string ExceptionToMessage(this Exception ex)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append('\n');
+            if (!string.IsNullOrWhiteSpace(ex.Message)) { builder.AppendLine($"Message: {ex.Message}"); }
+            builder.AppendLine($"HResult: {ex.HResult} (0x{Convert.ToString(ex.HResult, 16)})");
+            if (!string.IsNullOrWhiteSpace(ex.StackTrace)) { builder.AppendLine(ex.StackTrace); }
+            if (!string.IsNullOrWhiteSpace(ex.HelpLink)) { builder.Append($"HelperLink: {ex.HelpLink}"); }
+            return builder.ToString();
         }
     }
 }

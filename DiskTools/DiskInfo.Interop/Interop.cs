@@ -9,33 +9,33 @@ namespace DiskTools
     {
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static IntPtr GetFirmware();
+        public static extern IntPtr GetFirmware();
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static int GetDriveNum();
+        public static extern int GetDriveNum();
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void AtaSmartInit(int useWmi, int advancedDiskSearch, ref int flagChangeDisk, int workaroundHD204UI, int workaroundAdataSsd, int flagHideNoSmartDisk);
+        public static extern void AtaSmartInit(int useWmi, int advancedDiskSearch, ref int flagChangeDisk, int workaroundHD204UI, int workaroundAdataSsd, int flagHideNoSmartDisk);
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static double GetDiskStatus();
+        public static extern double GetDiskStatus();
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static double GetCapacity();
+        public static extern double GetCapacity();
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static IntPtr GetAtaAtapi();
+        public static extern IntPtr GetAtaAtapi();
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static IntPtr GetBufferSize();
+        public static extern IntPtr GetBufferSize();
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static IntPtr GetFeature();
+        public static extern IntPtr GetFeature();
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static IntPtr GetFirmwareRev();
+        public static extern IntPtr GetFirmwareRev();
 
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public extern static IntPtr GetDriveMap();
+        public static extern IntPtr GetDriveMap();
     }
 }

@@ -2,14 +2,20 @@
     x:Class="DiskTools.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:CommunityToolkit.WinUI.UI.Converters"
     xmlns:local="using:DiskTools">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                <!-- Other merged dictionaries here -->
+                <!--  Other merged dictionaries here  -->
+                <ResourceDictionary Source="ms-appx:///Themes/SettingsUI.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <!-- Other app resources here -->
+            <!--  Other app resources here  -->
+            <converters:BoolNegationConverter x:Name="BoolNegationConverter" />
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <converters:StringVisibilityConverter x:Key="StringVisibilityConverter" />
+            <converters:DoubleToVisibilityConverter x:Key="DoubleToVisibilityConverter" GreaterThan="0" />
 
             <!--  Breakpoints  -->
             <x:Double x:Key="Breakpoint640Plus">641</x:Double>
