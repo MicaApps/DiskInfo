@@ -1,0 +1,63 @@
+<Page
+    x:Class="DiskTools.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:DiskTools.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DiskTools.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="NavigationViewHeaderTemplate">
+            <controls:PageHeader
+                Title="{Binding}"
+                Background="Transparent"
+                BackgroundColorOpacity="1" />
+        </DataTemplate>
+    </Page.Resources>
+
+    <Page.Background>
+        <SolidColorBrush
+            x:Name="RootBackground"
+            Opacity="0"
+            Color="{ThemeResource SolidBackgroundFillColorBase}" />
+    </Page.Background>
+
+    <Grid>
+        <Border
+            x:Name="AppTitleBar"
+            Height="{Binding ElementName=NavigationView, Path=CompactPaneLength}"
+            VerticalAlignment="Top"
+            Canvas.ZIndex="1"
+            IsHitTestVisible="True"
+            SizeChanged="AppTitleBar_SizeChanged">
+            <TextBlock
+                x:Name="AppTitle"
+                VerticalAlignment="Center"
+                x:FieldModifier="Public"
+                Style="{StaticResource CaptionTextBlockStyle}"
+                Text="{x:Bind GetAppTitleFromSystem}"
+                TextTrimming="CharacterEllipsis" />
+        </Border>
+
+        <NavigationView
+            x:Name="NavigationView"
+            BackRequested="NavigationView_BackRequested"
+            DisplayModeChanged="NavigationViewControl_DisplayModeChanged"
+            ExpandedModeThresholdWidth="1200"
+            HeaderTemplate="{StaticResource NavigationViewHeaderTemplate}"
+            IsTabStop="False"
+            IsTitleBarAutoPaddingEnabled="False"
+            Loaded="NavigationView_Loaded"
+            PaneClosing="NavigationViewControl_PaneClosing"
+            PaneOpening="NavigationViewControl_PaneOpening"
+            SelectionChanged="NavigationView_SelectionChanged">
+            <Frame x:Name="NavigationViewFrame" x:FieldModifier="public" />
+        </NavigationView>
+        <ProgressBar
+            x:Name="ProgressBar"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            IsIndeterminate="False" />
+    </Grid>
+</Page>
