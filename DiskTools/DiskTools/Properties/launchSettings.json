@@ -1,10 +1,10 @@
 {
   "profiles": {
-    "APKInstaller (Package)": {
+    "DiskTools (Package)": {
       "commandName": "MsixPackage",
       "nativeDebugging": true
     },
-    "APKInstaller (Unpackaged)": {
+    "DiskTools (Unpackaged)": {
       "commandName": "Project"
     }
   }
