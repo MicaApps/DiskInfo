@@ -15,17 +15,17 @@
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <CsWinRTIncludes>SimpleMathComponent</CsWinRTIncludes>
-    <PackageCertificateThumbprint>0CDF4A03E9BE9DD789894BB3C7AD3DEDECD9AB25</PackageCertificateThumbprint>
-    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-  </PropertyGroup>
+    <PropertyGroup>
+        <CsWinRTIncludes>DiskInfoLibWinRT</CsWinRTIncludes>
+        <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
+    </PropertyGroup>
 
   <ItemGroup>
 	<PackageReference Include="CommunityToolkit.WinUI" Version="7.1.2" />
 	<PackageReference Include="CommunityToolkit.WinUI.UI" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2" />
     <PackageReference Include="MetroLog.Net6" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.0.1" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
     <PackageReference Include="NativeMethods" Version="0.0.3" />
@@ -43,6 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\DiskInfoLibWinRT\DiskInfoLibWinRT.vcxproj" />
     <ProjectReference Include="..\DiskInfo.Interop\DiskInfo.Interop.csproj" />
   </ItemGroup>
 
