@@ -44,6 +44,8 @@ jobs:
 
     - name: Setup NuGet.exe for use with actions
       uses: NuGet/setup-nuget@v1.1.1
+    
+    - name: Nuget restore
       run: nuget restore DiskTools.sln
 
     # Create the app package by building and packaging the Windows Application Packaging project
