@@ -6,6 +6,6 @@ using namespace Windows::Foundation;
 int main()
 {
 	winrt::DiskInfoLibWinRT::Class obj;
-	auto firmware = obj.Firmware();
-	std::wcout << firmware.data() << '\n';
+	auto firmware = obj.Info();
+	std::wcout << firmware.Size() << '\n';
 }

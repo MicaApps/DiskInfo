@@ -4,6 +4,8 @@
 #pragma once
 
 #include "Class.g.h"
+#include <winrt/Windows.Foundation.Collections.h>
+#include "AtaSmartInfo.g.h"
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
@@ -11,14 +13,9 @@ namespace winrt::DiskInfoLibWinRT::implementation
     {
         Class();
 
-        winrt::hstring Firmware();
-        int DriveNum();
-        double DiskStatus();
-        winrt::hstring AtaAtapi();
-        winrt::hstring BufferSize();
-        winrt::hstring Feature();
-        winrt::hstring FirmwareRev();
-        winrt::hstring DriveMap();
+        winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::AtaSmartInfo> Info() { return m_info; }
+    private:
+        winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::AtaSmartInfo> m_info = winrt::single_threaded_vector<winrt::DiskInfoLibWinRT::AtaSmartInfo>();
     };
 }
 

@@ -1,5 +1,4 @@
-// Copyright (c) Microsoft Corporation and Contributors.
-// Licensed under the MIT License.
+import "AtaSmartInfo.idl";
 
 namespace DiskInfoLibWinRT
 {
@@ -7,14 +6,6 @@ namespace DiskInfoLibWinRT
     runtimeclass Class
     {
         Class();
-        
-        String Firmware{ get; };
-        Int32 DriveNum{ get; };
-        Double DiskStatus{ get; };
-        String AtaAtapi{ get; };
-        String BufferSize{ get; };
-        String Feature{ get; };
-        String FirmwareRev{ get; };
-        String DriveMap{ get; };
+        Windows.Foundation.Collections.IVector<DiskInfoLibWinRT.AtaSmartInfo> Info{ get; };
     }
 }

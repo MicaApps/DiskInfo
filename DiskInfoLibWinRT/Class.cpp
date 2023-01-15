@@ -24,38 +24,27 @@ namespace winrt::DiskInfoLibWinRT::implementation
 			false, 
 			true, 
 			false);
+
+		auto& instance = CAtaSmart::get_instance();
+		auto const size = instance.vars.GetSize();
+		for (auto i = 0; i < size; ++i)
+		{
+			auto const& original = instance.vars[i];
+			winrt::DiskInfoLibWinRT::AtaSmartInfo info{};
+			info.Firmware = original.FirmwareRev;
+			info.SerialNumber = original.SerialNumber;
+			info.Interface = original.Interface;
+			info.CurrentTransferMode = original.CurrentTransferMode;
+			info.MaxTransferMode = original.MaxTransferMode;
+			info.DriveMap = original.DriveMap;
+			info.HostReads = original.HostReads;
+			info.HostWrites = original.HostWrites;
+			info.Rotation = original.NominalMediaRotationRate;
+			info.PowerOnCount = original.PowerOnCount;
+			info.PowerOnTime = original.PowerOnRawValue;
+			info.Standard = original.MajorVersion + L" | " + original.MinorVersion;
+			m_info.Append(std::move(info));
+		}
 	}
-	winrt::hstring Class::Firmware()
-	{
-		auto result = GetFirmware();
-		return result;
-	}
-	int Class::DriveNum()
-	{
-		return 0;
-	}
-	double Class::DiskStatus()
-	{
-		return 0.0;
-	}
-	winrt::hstring Class::AtaAtapi()
-	{
-		return winrt::hstring();
-	}
-	winrt::hstring Class::BufferSize()
-	{
-		return winrt::hstring();
-	}
-	winrt::hstring Class::Feature()
-	{
-		return winrt::hstring();
-	}
-	winrt::hstring Class::FirmwareRev()
-	{
-		return winrt::hstring();
-	}
-	winrt::hstring Class::DriveMap()
-	{
-		return winrt::hstring();
-	}
+
 }
