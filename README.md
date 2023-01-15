@@ -60,13 +60,13 @@ https://learn.microsoft.com/zh-tw/windows/apps/windows-app-sdk/
 
 Visual Studio 2022
 
-C++ Desktop Develop
+C++ Desktop Development
 
-Universal C++ Develop
+Universal C++ Development
+
+Universal C# Development
 
 Windows SDK 22621
-
-Windows App SDK 1.2.2
 
 ### XAML Control Libraries
 
