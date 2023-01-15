@@ -56,9 +56,7 @@ Windows App SDK
 
 https://learn.microsoft.com/zh-tw/windows/apps/windows-app-sdk/
 
-------
-
-XAML Control Libraries
+### XAML Control Libraries
 
 WinUI3
 
