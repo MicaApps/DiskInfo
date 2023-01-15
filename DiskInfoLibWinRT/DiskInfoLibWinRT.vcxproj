@@ -142,6 +142,9 @@
     <ClCompile Include="UtilityFx.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Midl Include="AtaSmartInfo.idl">
+      <SubType>Designer</SubType>
+    </Midl>
     <Midl Include="Class.idl">
       <SubType>Code</SubType>
       <DependentUpon>Class.cpp</DependentUpon>

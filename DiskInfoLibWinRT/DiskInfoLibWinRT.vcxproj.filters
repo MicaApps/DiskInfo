@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Class.idl" />
+    <Midl Include="AtaSmartInfo.idl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DiskInfoLibWinRT.def" />

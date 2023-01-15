@@ -1,4 +1,3 @@
-using DiskInfo;
 using DiskTools.ViewModels;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
@@ -19,7 +18,7 @@ namespace DiskTools.Pages
         internal DiskInfoViewModel Provider;
 
         //public DiskInfo.DiskInfo info = new DiskInfo.DiskInfo();
-        public DiskInfoLibWinRT.Class info2 = new Class();
+        public DiskInfoLibWinRT.Class instance = new Class();
 
         public DiskInfoPage() => InitializeComponent();
 
