@@ -56,6 +56,14 @@ Windows App SDK
 
 https://learn.microsoft.com/zh-tw/windows/apps/windows-app-sdk/
 
+### Develop Environment
+
+Visual Studio 2022
+
+C++ Desktop Develop
+
+Windows App SDK 22621
+
 ### XAML Control Libraries
 
 WinUI3
