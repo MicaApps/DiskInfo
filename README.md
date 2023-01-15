@@ -56,3 +56,22 @@ Windows App SDK
 
 https://learn.microsoft.com/zh-tw/windows/apps/windows-app-sdk/
 
+------
+
+XAML Control Libraries
+
+WinUI3
+
+https://apps.microsoft.com/store/detail/winui-3-gallery/9P3JFPWWDZRC
+
+Microsoft Community Toolkit Lab
+
+https://github.com/CommunityToolkit/Labs-Windows
+
+LiveCharts2
+
+https://github.com/beto-rodriguez/LiveCharts2
+
+Syncfusion WinUI Controls
+
+https://www.syncfusion.com/winui-controls
