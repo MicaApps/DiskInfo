@@ -62,7 +62,9 @@ Visual Studio 2022
 
 C++ Desktop Develop
 
-Windows App SDK 22621
+Windows SDK 22621
+
+Windows App SDK 1.2.2
 
 ### XAML Control Libraries
 
