@@ -62,6 +62,8 @@ Visual Studio 2022
 
 C++ Desktop Develop
 
+Universal C++ Develop
+
 Windows SDK 22621
 
 Windows App SDK 1.2.2
