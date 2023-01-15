@@ -1,6 +1,8 @@
+using DiskInfo;
 using DiskTools.ViewModels;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
+using DiskInfoLibWinRT;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -15,6 +17,9 @@ namespace DiskTools.Pages
         public string ID = string.Empty;
 
         internal DiskInfoViewModel Provider;
+
+        //public DiskInfo.DiskInfo info = new DiskInfo.DiskInfo();
+        public DiskInfoLibWinRT.Class info2 = new Class();
 
         public DiskInfoPage() => InitializeComponent();
 

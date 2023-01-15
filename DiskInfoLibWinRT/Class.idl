@@ -7,6 +7,14 @@ namespace DiskInfoLibWinRT
     runtimeclass Class
     {
         Class();
-        Int32 MyProperty;
+        
+        String Firmware{ get; };
+        Int32 DriveNum{ get; };
+        Double DiskStatus{ get; };
+        String AtaAtapi{ get; };
+        String BufferSize{ get; };
+        String Feature{ get; };
+        String FirmwareRev{ get; };
+        String DriveMap{ get; };
     }
 }

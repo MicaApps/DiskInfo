@@ -51,7 +51,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <GenerateManifest>false</GenerateManifest>
+    <GenerateManifest>true</GenerateManifest>
     <DesktopCompatible>true</DesktopCompatible>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
@@ -97,6 +97,8 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ReferencePath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableUAC Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableUAC>
+      <UACExecutionLevel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RequireAdministrator</UACExecutionLevel>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
@@ -128,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AtaSmart.cpp" />
+    <ClCompile Include="AtaSmartExport.cpp" />
     <ClCompile Include="NVMeInterpreter.cpp" />
     <ClCompile Include="OsInfoFx.cpp" />
     <ClCompile Include="pch.cpp">

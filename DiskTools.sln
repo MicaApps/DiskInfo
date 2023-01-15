@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiskInfo.Interop", "DiskToo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiskInfoLibWinRT", "DiskInfoLibWinRT\DiskInfoLibWinRT.vcxproj", "{4F404025-D8EE-45E5-BD66-99E5C0DF86DA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiskToolsTest", "DiskToolsTest\DiskToolsTest.vcxproj", "{4758E533-3F65-40FB-8768-8C8498E859B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -97,6 +99,22 @@ Global
 		{4F404025-D8EE-45E5-BD66-99E5C0DF86DA}.Release|x64.Build.0 = Release|x64
 		{4F404025-D8EE-45E5-BD66-99E5C0DF86DA}.Release|x86.ActiveCfg = Release|Win32
 		{4F404025-D8EE-45E5-BD66-99E5C0DF86DA}.Release|x86.Build.0 = Release|Win32
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Debug|ARM.ActiveCfg = Debug|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Debug|ARM.Build.0 = Debug|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Debug|ARM64.ActiveCfg = Debug|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Debug|ARM64.Build.0 = Debug|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Debug|x64.ActiveCfg = Debug|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Debug|x64.Build.0 = Debug|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Debug|x86.ActiveCfg = Debug|Win32
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Debug|x86.Build.0 = Debug|Win32
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Release|ARM.ActiveCfg = Release|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Release|ARM.Build.0 = Release|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Release|ARM64.ActiveCfg = Release|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Release|ARM64.Build.0 = Release|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Release|x64.ActiveCfg = Release|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Release|x64.Build.0 = Release|x64
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Release|x86.ActiveCfg = Release|Win32
+		{4758E533-3F65-40FB-8768-8C8498E859B1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
