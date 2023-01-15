@@ -1,8 +1,14 @@
 #  ![Frame 30284 (自定义)](https://user-images.githubusercontent.com/6630660/207081052-89642cf8-6a84-456d-9c96-e2db354ff3d6.png) DiskInfo
 
+CrystalDiskInfo is one of the most famous disk health monitoring tools in the world. It is free and open source, and is still actively maintained.
+
+https://github.com/hiyohiyo/CrystalDiskInfo
+
+![image](https://user-images.githubusercontent.com/6630660/212543605-d8d80feb-b7d1-4d63-b528-0e98b1cff968.png)
+
 Aim at providing a mordern appearance for DiskInfo
 
-![image](https://user-images.githubusercontent.com/6630660/203768611-6525cbee-841f-425c-a8dd-264649ed12e5.png)
+![image](https://user-images.githubusercontent.com/6630660/212543495-ffba1279-bf86-4f4e-8568-8b8941edcfed.png)
 
 The new design follow the guide of Fluent Design System，with flexible，adapting layout，and charming visual design
 
@@ -29,3 +35,43 @@ and finally add a `PropertyGroup` tag in the `csproj` file.
     <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
 </PropertyGroup>
 ```
+
+## Technology Stack
+
+### Document
+
+WinUI3
+
+https://learn.microsoft.com/en-us/windows/apps/winui/winui3/create-your-first-winui3-app
+
+https://learn.microsoft.com/en-us/windows/apps/winui/winui3/
+
+https://apps.microsoft.com/store/detail/winui-3-gallery/9P3JFPWWDZRC
+
+Windows Runtime
+
+https://learn.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt
+
+Windows App SDK
+
+https://learn.microsoft.com/zh-tw/windows/apps/windows-app-sdk/
+
+------
+
+XAML Control Libraries
+
+WinUI3
+
+https://apps.microsoft.com/store/detail/winui-3-gallery/9P3JFPWWDZRC
+
+Microsoft Community Toolkit Lab
+
+https://github.com/CommunityToolkit/Labs-Windows
+
+LiveCharts2
+
+https://github.com/beto-rodriguez/LiveCharts2
+
+Syncfusion WinUI Controls
+
+https://www.syncfusion.com/winui-controls
