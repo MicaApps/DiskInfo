@@ -33,3 +33,19 @@ and finally add a `PropertyGroup` tag in the `csproj` file.
     <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
 </PropertyGroup>
 ```
+
+## Technology Stack
+
+### Document
+
+WinUI3
+https://learn.microsoft.com/en-us/windows/apps/winui/winui3/create-your-first-winui3-app
+
+https://learn.microsoft.com/en-us/windows/apps/winui/winui3/
+
+Windows Runtime
+https://learn.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt
+
+Windows App SDK
+https://learn.microsoft.com/zh-tw/windows/apps/windows-app-sdk/
+
