@@ -5,7 +5,6 @@
 
 #include "Class.g.h"
 #include <winrt/Windows.Foundation.Collections.h>
-#include "AtaSmartInfo.g.h"
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
