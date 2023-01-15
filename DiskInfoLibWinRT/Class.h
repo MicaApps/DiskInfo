@@ -9,10 +9,16 @@ namespace winrt::DiskInfoLibWinRT::implementation
 {
     struct Class : ClassT<Class>
     {
-        Class() = default;
+        Class();
 
-        int32_t MyProperty();
-        void MyProperty(int32_t value);
+        winrt::hstring Firmware();
+        int DriveNum();
+        double DiskStatus();
+        winrt::hstring AtaAtapi();
+        winrt::hstring BufferSize();
+        winrt::hstring Feature();
+        winrt::hstring FirmwareRev();
+        winrt::hstring DriveMap();
     };
 }
 

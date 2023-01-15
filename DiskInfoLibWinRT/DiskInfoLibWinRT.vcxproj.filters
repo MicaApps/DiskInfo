@@ -18,6 +18,7 @@
     <ClCompile Include="OsInfoFx.cpp" />
     <ClCompile Include="SlotSpeedGetter.cpp" />
     <ClCompile Include="UtilityFx.cpp" />
+    <ClCompile Include="AtaSmartExport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
