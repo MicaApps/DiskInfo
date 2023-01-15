@@ -22,6 +22,11 @@ namespace DiskInfo
             return Marshal.PtrToStringUni(outPtr);
         }
 
+        public string Firmware
+        {
+            get=>GetFirmware();
+        }
+
         public double GetDiskStatus() => Interop.GetDiskStatus();
 
         public double GetCapacity() => Interop.GetCapacity();

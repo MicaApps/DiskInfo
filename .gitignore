@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /DiskTools/DiskTools/AppxPackages/DiskTools_0.0.1.0_Test
+nuget.exe
