@@ -4,13 +4,29 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:DiskTools.Pages"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     NavigationCacheMode="Required"
     mc:Ignorable="d">
     <Page.Resources>
         <Style TargetType="PivotItem">
             <Setter Property="Margin" Value="0" />
         </Style>
+
+        <DataTemplate x:Key="PhotosTemplate">
+            <Grid
+                Background="White"
+                BorderBrush="Black"
+                BorderThickness="1">
+                <!--在这里修改绑定信息-->
+                <StackPanel Orientation="Horizontal">
+                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEEA1;" />
+                    <TextBlock Text="固件"/>
+                    <TextBlock Text="2B2QEXM7"/>
+                </StackPanel>
+
+            </Grid>
+        </DataTemplate>
+
     </Page.Resources>
     <Grid x:Name="Root">
         <TwoPaneView
@@ -63,94 +79,108 @@
                 <Pivot Margin="20,-30,0,0" SelectedIndex="{Binding SelectedIndex, ElementName=ListView, Mode=TwoWay}">
                     <PivotItem>
                         <ScrollViewer>
-                            <Grid>
+                            <Grid VerticalAlignment="Top">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-
-                                <Grid VerticalAlignment="Top">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
+                                <Grid>
+                                    <!--统计图-->
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
+
                                     <ProgressRing
                                     Width="200"
                                     Height="200"
                                     IsIndeterminate="False"
                                     Value="100" />
-                                    <Grid Grid.Column="1"/>
-                                    <Grid Grid.Row="1" Grid.ColumnSpan="2"/>
-                                    <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="1*"/>
-                                            <ColumnDefinition Width="5*"/>
-                                            <ColumnDefinition Width="3*"/>
-                                        </Grid.ColumnDefinitions>
+                                </Grid>
 
-                                        <Rectangle Width="Auto" Height="Auto" Grid.ColumnSpan="3">
-                                            <Rectangle.Fill>
-                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                    <GradientStop Color="#10ffffff" Offset="1" x:Name="GradientStop1"/>
-                                                    <GradientStop Color="#50ffffff" Offset="0" x:Name="GradientStop4"/>
-                                                </LinearGradientBrush>
-                                            </Rectangle.Fill>
-                                        </Rectangle>
+                                <Grid Grid.Row="1">
+                                    <!--带图标的数据列-->
+                                    <controls:AdaptiveGridView Name="AdaptiveGridViewControl"
+                                   StretchContentForSingleRow="False"
+                                   OneRowModeEnabled="False"
+                                   ItemHeight="200"
+                                   DesiredWidth="300"
+                                   SelectionMode="Single"
+                                   IsItemClickEnabled="True"
+                                   ItemTemplate="{StaticResource PhotosTemplate}"/>
+                                </Grid>
 
-                                        <StackPanel Grid.Column="0">
-                                            <TextBlock Text="ID" FontWeight="SemiBold"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                            <TextBlock Text="01"/>
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="1">
-                                            <TextBlock Text="Attribute Name" FontWeight="SemiBold"/>
-                                            <TextBlock Text="Critical warning sign"/>
-                                            <TextBlock Text="Comprehensive temperature"/>
-                                            <TextBlock Text="Available spare space"/>
-                                            <TextBlock Text="Available Spare Space Threshold"/>
-                                            <TextBlock Text="Used Life Percentage"/>
-                                            <TextBlock Text="Read unit count"/>
-                                            <TextBlock Text="Write unit count"/>
-                                            <TextBlock Text="Host read command technology"/>
-                                            <TextBlock Text="Host read command technology"/>
-                                            <TextBlock Text="Controller busy state time"/>
-                                            <TextBlock Text="Start and close cycle times"/>
-                                            <TextBlock Text="Power-on time (hours)"/>
-                                            <TextBlock Text="Unsafe Shutdown Count"/>
-                                            <TextBlock Text="Media and Data Integrity Error Count Error Log Items"/>
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="2">
-                                            <TextBlock Text="Original Value" FontWeight="SemiBold"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                            <TextBlock Text="000000000000000"/>
-                                        </StackPanel>
+                                <Grid Grid.Row="2">
+                                    <!--数据列-->
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                    </Grid>
+                                    <Rectangle Width="Auto" Height="Auto" Grid.ColumnSpan="3">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                <GradientStop Color="#10ffffff" Offset="1" x:Name="GradientStop1"/>
+                                                <GradientStop Color="#50ffffff" Offset="0" x:Name="GradientStop4"/>
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="ID" FontWeight="SemiBold"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                        <TextBlock Text="01"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock Text="Attribute Name" FontWeight="SemiBold"/>
+                                        <TextBlock Text="Critical warning sign"/>
+                                        <TextBlock Text="Comprehensive temperature"/>
+                                        <TextBlock Text="Available spare space"/>
+                                        <TextBlock Text="Available Spare Space Threshold"/>
+                                        <TextBlock Text="Used Life Percentage"/>
+                                        <TextBlock Text="Read unit count"/>
+                                        <TextBlock Text="Write unit count"/>
+                                        <TextBlock Text="Host read command technology"/>
+                                        <TextBlock Text="Host read command technology"/>
+                                        <TextBlock Text="Controller busy state time"/>
+                                        <TextBlock Text="Start and close cycle times"/>
+                                        <TextBlock Text="Power-on time (hours)"/>
+                                        <TextBlock Text="Unsafe Shutdown Count"/>
+                                        <TextBlock Text="Media and Data Integrity Error Count Error Log Items"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock Text="Original Value" FontWeight="SemiBold"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                        <TextBlock Text="000000000000000"/>
+                                    </StackPanel>
+
                                 </Grid>
                             </Grid>
                         </ScrollViewer>
