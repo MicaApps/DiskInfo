@@ -20,6 +20,10 @@
         <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Controls\GeneralDiskInfoItem.xaml" />
+    </ItemGroup>
+
   <ItemGroup>
 	<PackageReference Include="CommunityToolkit.WinUI" Version="7.1.2" />
 	<PackageReference Include="CommunityToolkit.WinUI.UI" Version="7.1.2" />
@@ -45,6 +49,18 @@
   <ItemGroup>
     <ProjectReference Include="..\..\DiskInfoLibWinRT\DiskInfoLibWinRT.vcxproj" />
     <ProjectReference Include="..\DiskInfo.Interop\DiskInfo.Interop.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Assets\English.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\GeneralDiskInfoItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!-- 

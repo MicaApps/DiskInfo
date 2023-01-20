@@ -19,6 +19,45 @@ namespace DiskTools.Pages
 
         //public DiskInfo.DiskInfo info = new DiskInfo.DiskInfo();
         public DiskInfoLibWinRT.Class instance = new Class();
+        public DiskInfoLibWinRT.AtaSmartInfo Info
+        {
+            get
+            {
+                if (instance.Info.Count == 0)
+                {
+                    //无管理员权限时的示例数据
+                    var info = new DiskInfoLibWinRT.AtaSmartInfo();
+                    info.Firmware = "2BQEXM7";
+                    info.SerialNumber = "S4EVNF0N402289K";
+                    info.Interface = "NVM Express";
+                    info.CurrentTransferMode = "PCIe 3.0 x4 | PCIe 3.0 x4";
+                    info.DriveMap = "C:";
+                    info.Features = "S.M.A.R.T";
+                    info.HostReads = 1234;
+                    info.HostWrites = 5678;
+                    info.Rotation = 0;
+                    info.PowerOnCount = 1170;
+                    info.PowerOnTime = 10886;
+                    info.Standard = "NVM Express 1.3";
+
+                    //填充假attribute
+                    for(int i = 0; i<15; ++i)
+                    {
+                        info.Attributes.Add(
+                            new SmartAttribute()
+                            {
+                                Id = "01",
+                                Name = "Some attribute",
+                                RawValue = "000000000050",
+                                Threshold = "50"
+                            });
+                    }
+                    return info;
+                }
+                else
+                    return instance.Info[0];
+            }
+        }
 
         public DiskInfoPage() => InitializeComponent();
 
