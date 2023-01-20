@@ -3,8 +3,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="using:DiskTools.Pages"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:local="using:DiskTools.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:converters="using:DiskTools.Converters"
+    xmlns:lib="using:DiskInfoLibWinRT"
     NavigationCacheMode="Required"
     mc:Ignorable="d">
     <Page.Resources>
@@ -12,22 +15,11 @@
             <Setter Property="Margin" Value="0" />
         </Style>
 
-        <DataTemplate x:Key="PhotosTemplate">
-            <Grid
-                Background="White"
-                BorderBrush="Black"
-                BorderThickness="1">
-                <!--在这里修改绑定信息-->
-                <StackPanel Orientation="Horizontal">
-                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEEA1;" />
-                    <TextBlock Text="固件"/>
-                    <TextBlock Text="2B2QEXM7"/>
-                </StackPanel>
-
-            </Grid>
-        </DataTemplate>
-
+        <converters:ReadableBytesConverter x:Key="ReadableBytesConverter"/>
+        <converters:ReadableTimeConverter x:Key="ReadableTimeConverter"/>
+        <converters:ReadableCountConverter x:Key="ReadableCountConverter"/>
     </Page.Resources>
+    
     <Grid x:Name="Root">
         <TwoPaneView
             x:Name="TwoPaneView"
@@ -67,7 +59,6 @@
                         <ListViewItem x:Uid="/DiskInfoPage/Disk_CRC_Errors_Count" />
                         <ListViewItem x:Uid="/DiskInfoPage/Disk_Media_Fray_Indicator" />
                         <ListViewItem x:Uid="/DiskInfoPage/Disk_Spare_Blocks_Remaining" />
-                        <!--  һ���������һ���޺�׺ һ��(SLC)  -->
                         <ListViewItem x:Uid="/DiskInfoPage/Disk_NAND_Total_Writes" />
                         <ListViewItem x:Uid="/DiskInfoPage/Disk_NAND_Total_Writes_SLC" />
                         <ListViewItem x:Uid="/DiskInfoPage/Disk_Total_Write_Read" />
@@ -103,23 +94,41 @@
                                 <Grid Grid.Row="1">
                                     <!--带图标的数据列-->
                                     <controls:AdaptiveGridView Name="AdaptiveGridViewControl"
-                                   StretchContentForSingleRow="False"
-                                   OneRowModeEnabled="False"
-                                   ItemHeight="200"
-                                   DesiredWidth="300"
-                                   SelectionMode="Single"
-                                   IsItemClickEnabled="True"
-                                   ItemTemplate="{StaticResource PhotosTemplate}"/>
+                                        StretchContentForSingleRow="False"
+                                        OneRowModeEnabled="False"
+
+                                        SelectionMode="Single"
+                                        IsItemClickEnabled="True">
+                                        
+                                        <!--items-->
+                                        <local:GeneralDiskInfoItem ValueName="固件" Glyph="&#xEEA1;" Value="{x:Bind Info.Firmware}"/>
+                                        <local:GeneralDiskInfoItem ValueName="序列号" Glyph="&#xEE6F;" Value="{x:Bind Info.SerialNumber}"/>
+                                        <local:GeneralDiskInfoItem ValueName="接口" Glyph="&#xEEA1;" Value="{x:Bind Info.Interface}"/>
+                                        <local:GeneralDiskInfoItem ValueName="传输模式" Glyph="&#xEEA1;" Value="{x:Bind Info.CurrentTransferMode}"/>
+                                        <local:GeneralDiskInfoItem ValueName="驱动器号" Glyph="&#xEEA1;" Value="{x:Bind Info.DriveMap}"/>
+                                        <local:GeneralDiskInfoItem ValueName="主机总计读取" Glyph="&#xEEA1;" Value="{x:Bind Info.HostReads, Converter={StaticResource ReadableBytesConverter}}"/>
+                                        <local:GeneralDiskInfoItem ValueName="主机总计写入" Glyph="&#xE104;" Value="{x:Bind Info.HostWrites,Converter={StaticResource ReadableBytesConverter}}"/>
+                                        <local:GeneralDiskInfoItem ValueName="转速" Glyph="&#xE14A;" Value="{x:Bind Info.Rotation}"/>
+                                        <local:GeneralDiskInfoItem ValueName="通电次数" Glyph="&#xEEA1;" Value="{x:Bind Info.PowerOnCount, Converter={StaticResource ReadableCountConverter}}"/>
+                                        <local:GeneralDiskInfoItem ValueName="通电时间" Glyph="&#xE121;" Value="{x:Bind Info.PowerOnTime, Converter={StaticResource ReadableTimeConverter}}"/>
+                                        <local:GeneralDiskInfoItem ValueName="支持的功能" Glyph="&#xEEA1;" Value="{x:Bind Info.Features}"/>
+                                        <local:GeneralDiskInfoItem ValueName="标准" Glyph="&#xEEA1;" Value="{x:Bind Info.Standard}"/>
+
+
+                                    </controls:AdaptiveGridView>
+                                                               
                                 </Grid>
 
-                                <Grid Grid.Row="2">
-                                    <!--数据列-->
+
+                                
+                                <!--<Grid Grid.Row="2">
+                                    --><!--数据列--><!--
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*"/>
                                         <ColumnDefinition Width="5*"/>
                                         <ColumnDefinition Width="3*"/>
-                                    </Grid.ColumnDefinitions>
-
+                                    </Grid.ColumnDefinitions>-->
+                                <Grid Grid.Row="2">
                                     <Rectangle Width="Auto" Height="Auto" Grid.ColumnSpan="3">
                                         <Rectangle.Fill>
                                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -128,59 +137,22 @@
                                             </LinearGradientBrush>
                                         </Rectangle.Fill>
                                     </Rectangle>
-
-                                    <StackPanel Grid.Column="0">
-                                        <TextBlock Text="ID" FontWeight="SemiBold"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                        <TextBlock Text="01"/>
-                                    </StackPanel>
-                                    <StackPanel Grid.Column="1">
-                                        <TextBlock Text="Attribute Name" FontWeight="SemiBold"/>
-                                        <TextBlock Text="Critical warning sign"/>
-                                        <TextBlock Text="Comprehensive temperature"/>
-                                        <TextBlock Text="Available spare space"/>
-                                        <TextBlock Text="Available Spare Space Threshold"/>
-                                        <TextBlock Text="Used Life Percentage"/>
-                                        <TextBlock Text="Read unit count"/>
-                                        <TextBlock Text="Write unit count"/>
-                                        <TextBlock Text="Host read command technology"/>
-                                        <TextBlock Text="Host read command technology"/>
-                                        <TextBlock Text="Controller busy state time"/>
-                                        <TextBlock Text="Start and close cycle times"/>
-                                        <TextBlock Text="Power-on time (hours)"/>
-                                        <TextBlock Text="Unsafe Shutdown Count"/>
-                                        <TextBlock Text="Media and Data Integrity Error Count Error Log Items"/>
-                                    </StackPanel>
-                                    <StackPanel Grid.Column="2">
-                                        <TextBlock Text="Original Value" FontWeight="SemiBold"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                        <TextBlock Text="000000000000000"/>
-                                    </StackPanel>
-
+                                    <ItemsRepeater ItemsSource="{x:Bind Info.Attributes}" >
+                                        <ItemsRepeater.ItemTemplate>
+                                            <DataTemplate x:DataType="lib:SmartAttribute">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="5*"/>
+                                                        <ColumnDefinition Width="3*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Text="{x:Bind Id}" Grid.Column="0"/>
+                                                    <TextBlock Text="{x:Bind Name}" Grid.Column="1"/>
+                                                    <TextBlock Text="{x:Bind RawValue}" Grid.Column="2"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsRepeater.ItemTemplate>
+                                    </ItemsRepeater>
                                 </Grid>
                             </Grid>
                         </ScrollViewer>
