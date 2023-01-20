@@ -94,6 +94,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
     <ClCompile>
       <PreprocessorDefinitions>_DEBUG;_UNICODE;UNICODE;__WRL_NO_DEFAULT_LIB__</PreprocessorDefinitions>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ReferencePath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -104,6 +105,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
       <PreprocessorDefinitions>NDEBUG;_UNICODE;UNICODE;__WRL_NO_DEFAULT_LIB__</PreprocessorDefinitions>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -113,6 +115,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AtaSmart.h" />
+    <ClInclude Include="AtaSmartInfo.h">
+      <DependentUpon>AtaSmartInfo.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
     <ClInclude Include="CommonFx.h" />
     <ClInclude Include="DnpService.h" />
     <ClInclude Include="NVMeInterpreter.h" />
@@ -131,6 +137,10 @@
   <ItemGroup>
     <ClCompile Include="AtaSmart.cpp" />
     <ClCompile Include="AtaSmartExport.cpp" />
+    <ClCompile Include="AtaSmartInfo.cpp">
+      <DependentUpon>AtaSmartInfo.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
     <ClCompile Include="NVMeInterpreter.cpp" />
     <ClCompile Include="OsInfoFx.cpp" />
     <ClCompile Include="pch.cpp">

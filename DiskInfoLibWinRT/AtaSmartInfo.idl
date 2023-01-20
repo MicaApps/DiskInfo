@@ -1,22 +1,45 @@
 namespace DiskInfoLibWinRT
 {
-    //括号内为ATA_SMART_INFO的字段
-    struct AtaSmartInfo
+    enum SizeUnit
     {
+        Bytes,
+        KB,
+        MB,
+        GB
+    };
+
+    //对应SMART_ATTRIBUTE
+    struct SmartAttribute
+    {
+        String Id;
+        String Name;
+        String RawValue;
+        String Threshold;
+    };
+
+    runtimeclass AtaSmartInfo
+    {
+        AtaSmartInfo();
         String Firmware;//固件
         String SerialNumber;//序列号
         String Interface;//接口
 
         String CurrentTransferMode;//传输模式（当前）
-        String MaxTransferMode;//传输模式（最大）
+        //String MaxTransferMode;//传输模式（最大）
 
         String DriveMap;//驱动器号
-        Int32 HostReads;//主机总计读取
-        Int32 HostWrites;//主机总计写入
+        
+        Int32 HostReads;//主机总计读取，单位GB
+        Int32 HostWrites;//主机总计写入，单位GB
+
         Int32 Rotation; //转速（对应NominalMediaRotationRate）
         UInt32 PowerOnCount;//通电次数
         UInt32 PowerOnTime; //通电时间（对应PowerOnRawValue）
         String Features;//支持的功能（需要在ATA_SMART_INFO中遍历几个Is<xxx>Supported字段并组合出字符串
         String Standard;//标准（对应MajorVersion+MinorVersion）
+
+        Windows.Foundation.Collections.IVector<Object> Attributes{ get; };
     };
+
+
 }

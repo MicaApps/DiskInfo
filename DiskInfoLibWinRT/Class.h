@@ -15,6 +15,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
         winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::AtaSmartInfo> Info() { return m_info; }
     private:
         winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::AtaSmartInfo> m_info = winrt::single_threaded_vector<winrt::DiskInfoLibWinRT::AtaSmartInfo>();
+        std::vector<SmartAttribute> m_attributes;
     };
 }
 
