@@ -395,7 +395,11 @@
                                     </Grid>
                                 </Grid>
                             </ScrollViewer>
+                            
+                            <!--命令栏-->
                             <CommandBar Grid.Row="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" VerticalAlignment="Bottom">
+                                
+                                <!--保存（导出）-->
                                 <AppBarButton Icon="Save" Label="Save">
                                     <AppBarButton.Flyout>
                                         <MenuFlyout Placement="RightEdgeAlignedTop">
@@ -405,6 +409,7 @@
                                     </AppBarButton.Flyout>
                                 </AppBarButton>
 
+                                <!--复制-->
                                 <AppBarElementContainer>
                                     <SplitButton ToolTipService.ToolTip="Alignment">
                                         
@@ -415,21 +420,19 @@
                                         </SplitButton.Content>
                                         <SplitButton.Flyout>
                                             <MenuFlyout>
+                                                <MenuFlyoutItem  Text="解析ASCII内容"/>
+                                                <MenuFlyoutSeparator/>
                                                 <MenuFlyoutItem Text="IDENTIFY DEVICE"/>
                                                 <MenuFlyoutItem Text="SMART_READ_THRESHOLD"/>
                                                 <MenuFlyoutItem  Text="SMART_READ DATA"/>
-                                                <MenuFlyoutSeparator/>
-                                                <MenuFlyoutItem  Text="解析ASCII内容"/>
                                             </MenuFlyout>
                                         </SplitButton.Flyout>
                                     </SplitButton>
                                 </AppBarElementContainer>
 
+                                <!--刷新-->
                                 <AppBarButton Icon="Refresh" Label="Refresh"/>
-                                <AppBarButton Icon="Copy" Label="Copy"/>
-                                <AppBarButton Icon="Clock" Label="Alarm"/>
-                                <AppBarButton Icon="Share" Label="Share"/>
-                                
+
                             </CommandBar>
                         </Grid>
                         
