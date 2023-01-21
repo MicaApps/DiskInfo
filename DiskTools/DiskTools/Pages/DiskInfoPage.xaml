@@ -9,7 +9,8 @@
     xmlns:converters="using:DiskTools.Converters"
     xmlns:lib="using:DiskInfoLibWinRT"
     NavigationCacheMode="Required"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges">
     <Page.Resources>
         <Style TargetType="PivotItem">
             <Setter Property="Margin" Value="0" />
@@ -84,37 +85,211 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <ProgressRing
-                                    Width="200"
-                                    Height="200"
-                                    IsIndeterminate="False"
-                                    Value="100" />
+                                    <!--圆环-->
+                                    <gauge:SfRadialGauge Grid.Column="0" Width="270">
+                                        <gauge:SfRadialGauge.Axes>
+                                            <gauge:RadialAxis AxisLineWidth="0.15"
+                          AxisLineWidthUnit="Factor">
+                                                <gauge:RadialAxis.Pointers>
+                                                    <gauge:RangePointer Value="80"
+                                    PointerWidth="200"
+                                    WidthUnit="Pixel"
+                                            EnableAnimation="True"
+                                    AnimationDuration="1000">
+                                                        <gauge:RangePointer.AnimationEasingFunction>
+                                                            <ElasticEase Oscillations="1" />
+                                                        </gauge:RangePointer.AnimationEasingFunction>
+                                                        <gauge:RangePointer.Background>
+                                                            <RadialGradientBrush  GradientOrigin="0.5,0.65" Center="0.5,0.5" 
+      RadiusX="0.6" RadiusY="0.7">
+                                                                <RadialGradientBrush.GradientStops>
+                                                                    <GradientStop Color="#00FF0000" Offset="0.45" />
+                                                                    <GradientStop Color="#10FF0000" Offset="0.65" />
+                                                                    <GradientStop Color="#ffFF0000" Offset="1" />
+                                                                </RadialGradientBrush.GradientStops>
+                                                            </RadialGradientBrush>
+                                                        </gauge:RangePointer.Background>
+                                                    </gauge:RangePointer>
+
+                                                </gauge:RadialAxis.Pointers>
+                                            </gauge:RadialAxis>
+                                        </gauge:SfRadialGauge.Axes>
+                                    </gauge:SfRadialGauge>
+                                    <gauge:SfRadialGauge Width="270">
+                                        <gauge:SfRadialGauge.Axes>
+                                            <gauge:RadialAxis AxisLineWidth="0.15"
+                          AxisLineWidthUnit="Factor">
+                                                <gauge:RadialAxis.Pointers>
+                                                    <gauge:RangePointer Value="80"
+                                    PointerWidth="0.15"
+                                    WidthUnit="Factor"
+                                            EnableAnimation="True"
+                                    AnimationDuration="1000">
+                                                        <gauge:RangePointer.AnimationEasingFunction>
+                                                            <ElasticEase Oscillations="1" />
+                                                        </gauge:RangePointer.AnimationEasingFunction>
+                                                        <gauge:RangePointer.GradientStops>
+                                                            <gauge:GaugeGradientStop Value="-50"
+                                                 Color="Red" />
+                                                            <gauge:GaugeGradientStop Value="-30"
+                                                 Color="Red" />
+                                                            <gauge:GaugeGradientStop Value="120"
+                                                 Color="White" />
+                                                        </gauge:RangePointer.GradientStops>
+                                                    </gauge:RangePointer>
+                                                    <gauge:ContentPointer Value="80" EnableAnimation="True" AnimationDuration="1000">
+                                                        <gauge:ContentPointer.AnimationEasingFunction>
+                                                            <ElasticEase Oscillations="1" />
+                                                        </gauge:ContentPointer.AnimationEasingFunction>
+                                                        <gauge:ContentPointer.Content>
+                                                            <Grid Width="60">
+                                                                <Rectangle Width="30" HorizontalAlignment="Left" >
+                                                                    <Rectangle.Fill>
+                                                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                            <GradientStop Color="#ffffffff" Offset="1" x:Name="GradientStop1"/>
+                                                                            <GradientStop Color="#10ffffff" Offset="0" x:Name="GradientStop4"/>
+                                                                        </LinearGradientBrush>
+                                                                    </Rectangle.Fill>
+                                                                </Rectangle>
+                                                                <TextBlock Text="          "
+                                       Margin="2" />
+                                                            </Grid>
+                                                        </gauge:ContentPointer.Content>
+                                                    </gauge:ContentPointer>
+                                                </gauge:RadialAxis.Pointers>
+                                            </gauge:RadialAxis>
+                                        </gauge:SfRadialGauge.Axes>
+                                    </gauge:SfRadialGauge>
                                 </Grid>
 
                                 <Grid Grid.Row="1">
                                     <!--带图标的数据列-->
-                                    <controls:AdaptiveGridView Name="AdaptiveGridViewControl"
+                                    <controls:AdaptiveGridView 
+                                        Name="AdaptiveGridViewControl"
                                         StretchContentForSingleRow="False"
                                         OneRowModeEnabled="False"
-
                                         SelectionMode="Single"
-                                        IsItemClickEnabled="True">
-                                        
+                                        IsItemClickEnabled="True"
+                                        DesiredWidth="400"
+                                        >
+                                     
                                         <!--items-->
-                                        <local:GeneralDiskInfoItem ValueName="固件" Glyph="&#xEEA1;" Value="{x:Bind Info.Firmware}"/>
-                                        <local:GeneralDiskInfoItem ValueName="序列号" Glyph="&#xEE6F;" Value="{x:Bind Info.SerialNumber}"/>
-                                        <local:GeneralDiskInfoItem ValueName="接口" Glyph="&#xEEA1;" Value="{x:Bind Info.Interface}"/>
-                                        <local:GeneralDiskInfoItem ValueName="传输模式" Glyph="&#xEEA1;" Value="{x:Bind Info.CurrentTransferMode}"/>
-                                        <local:GeneralDiskInfoItem ValueName="驱动器号" Glyph="&#xEEA1;" Value="{x:Bind Info.DriveMap}"/>
-                                        <local:GeneralDiskInfoItem ValueName="主机总计读取" Glyph="&#xEEA1;" Value="{x:Bind Info.HostReads, Converter={StaticResource ReadableBytesConverter}}"/>
-                                        <local:GeneralDiskInfoItem ValueName="主机总计写入" Glyph="&#xE104;" Value="{x:Bind Info.HostWrites,Converter={StaticResource ReadableBytesConverter}}"/>
-                                        <local:GeneralDiskInfoItem ValueName="转速" Glyph="&#xE14A;" Value="{x:Bind Info.Rotation}"/>
-                                        <local:GeneralDiskInfoItem ValueName="通电次数" Glyph="&#xEEA1;" Value="{x:Bind Info.PowerOnCount, Converter={StaticResource ReadableCountConverter}}"/>
-                                        <local:GeneralDiskInfoItem ValueName="通电时间" Glyph="&#xE121;" Value="{x:Bind Info.PowerOnTime, Converter={StaticResource ReadableTimeConverter}}"/>
-                                        <local:GeneralDiskInfoItem ValueName="支持的功能" Glyph="&#xEEA1;" Value="{x:Bind Info.Features}"/>
-                                        <local:GeneralDiskInfoItem ValueName="标准" Glyph="&#xEEA1;" Value="{x:Bind Info.Standard}"/>
+                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="2.5*"/>
+                                                    <ColumnDefinition Width="4*"/>
+                                                </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0">
+                                                <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xEEA1;" Margin="4.5" FontSize="16" />
+                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xEE6F;" Margin="4.5" FontSize="16"/>
+                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xF404;" Margin="4.5" FontSize="16"/>
+                                                </StackPanel>
+                                            <StackPanel Grid.Column="1" >
+                                                    <TextBlock Text="固件" FontWeight="SemiBold" Margin="3"/>
+                                                    <TextBlock Text="序列号" FontWeight="SemiBold" Margin="3"/>
+                                                    <TextBlock Text="接口" FontWeight="SemiBold" Margin="3"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="2">
+                                                    <TextBlock Text="{x:Bind Info.Firmware}" Margin="3"/>
+                                                    <TextBlock Text="{x:Bind Info.SerialNumber}" Margin="3"/>
+                                                    <TextBlock Text="{x:Bind Info.Interface}" Margin="3"/>
+                                            </StackPanel>
+                                            </Grid>
+                                        </local:GeneralDiskInfoItem>
 
+                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="2.5*"/>
+                                                    <ColumnDefinition Width="4*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel Grid.Column="0">
+                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE8CB;" Margin="4.5" FontSize="16" />
+                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEDA2;" Margin="4.5" FontSize="16" />
+                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEEA1;" Margin="4.5" FontSize="16" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1">
+                                                    <TextBlock Text="传输模式" FontWeight="SemiBold"  Margin="3"/>
+                                                    <TextBlock Text="驱动器号" FontWeight="SemiBold"  Margin="3" />
+                                                    <TextBlock Text="主机总计读取" FontWeight="SemiBold"  Margin="3"/>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="2">
+                                                    <TextBlock Text="{x:Bind Info.CurrentTransferMode}" Margin="3"/>
+                                                    <TextBlock Text="{x:Bind Info.DriveMap}" Margin="3"/>
+                                                    <TextBlock Text="{x:Bind Info.HostReads, Converter={StaticResource ReadableBytesConverter}}" Margin="3"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </local:GeneralDiskInfoItem>
 
+                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="2.5*"/>
+                                                    <ColumnDefinition Width="4*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel Grid.Column="0">
+                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xE104;"  Margin="4.5" FontSize="16" />
+                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xE14A;"  Margin="4.5" FontSize="16" />
+                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE945;"  Margin="4.5" FontSize="16" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1">
+                                                    <TextBlock Text="主机总计写入" FontWeight="SemiBold" Margin="3"/>
+                                                    <TextBlock Text="转速" FontWeight="SemiBold" Margin="3"/>
+                                                    <TextBlock Text="通电次数" FontWeight="SemiBold" Margin="3"/>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="2">
+                                                    <TextBlock Margin="3" Text="{x:Bind Info.HostWrites,Converter={StaticResource ReadableBytesConverter}}"/>
+                                                    <TextBlock Margin="3" Text="{x:Bind Info.Rotation}"/>
+                                                    <TextBlock Margin="3" Text="{x:Bind Info.PowerOnCount, Converter={StaticResource ReadableCountConverter}}"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </local:GeneralDiskInfoItem>
+
+                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="2.5*"/>
+                                                    <ColumnDefinition Width="4*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel Grid.Column="0">
+                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xE121;" Margin="4.5" FontSize="16" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1">
+                                                    <TextBlock Text="通电时间" FontWeight="SemiBold" Margin="3"/>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="2">
+                                                    <TextBlock Text="{x:Bind Info.PowerOnTime, Converter={StaticResource ReadableTimeConverter}}" Margin="3"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </local:GeneralDiskInfoItem>
+
+                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="2.5*"/>
+                                                    <ColumnDefinition Width="4*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel Grid.Column="0">
+                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE74C;"  Margin="4.5" FontSize="16" />
+                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xEEA1;"  Margin="4.5" FontSize="16" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1">
+                                                    <TextBlock Text="支持的功能" FontWeight="SemiBold" Margin="3"/>
+                                                    <TextBlock Text="标准" FontWeight="SemiBold" Margin="3"/>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="2">
+                                                    <TextBlock Text="{x:Bind Info.Features}" Margin="3"/>
+                                                    <TextBlock Text="{x:Bind Info.Standard}" Margin="3"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </local:GeneralDiskInfoItem>
+                                       
                                     </controls:AdaptiveGridView>
                                                                
                                 </Grid>
@@ -132,8 +307,8 @@
                                     <Rectangle Width="Auto" Height="Auto" Grid.ColumnSpan="3">
                                         <Rectangle.Fill>
                                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                <GradientStop Color="#10ffffff" Offset="1" x:Name="GradientStop1"/>
-                                                <GradientStop Color="#50ffffff" Offset="0" x:Name="GradientStop4"/>
+                                                <GradientStop Color="#10ffffff" Offset="1" x:Name="GradientStop5"/>
+                                                <GradientStop Color="#50ffffff" Offset="0" x:Name="GradientStop6"/>
                                             </LinearGradientBrush>
                                         </Rectangle.Fill>
                                     </Rectangle>

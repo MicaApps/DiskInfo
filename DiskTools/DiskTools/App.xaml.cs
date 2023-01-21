@@ -21,6 +21,10 @@ namespace DiskTools
             InitializeComponent();
             UnhandledException += Application_UnhandledException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            //注册 Syncfusion 许可证
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mgo+DSMBaFt/QHRqVVhjVFpFdEBBXHxAd1p/VWJYdVt5flBPcDwsT3RfQF5jSHxSdkVgUH5ZcnBcRw==;Mgo+DSMBPh8sVXJ0S0J+XE9HflRDX3xKf0x/TGpQb19xflBPallYVBYiSV9jS31Td0diWX9deXVSRGZYUA==;ORg4AjUWIQA/Gnt2VVhkQlFadVdJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkRhWH9ec31UQWJbVkI=;OTc5NzUwQDMyMzAyZTM0MmUzME5wYW9IQUtKWEg0T1JOTWVrd2tkV2YvcG84WTJpcFhtdFIvelBBT0JhZmc9;OTc5NzUxQDMyMzAyZTM0MmUzMGFhNEpxMW5uTE5xMmFUcGxXUXVjY0MrSHBUKzMrYTVORjBvTzdsZnB0Kzg9;NRAiBiAaIQQuGjN/V0Z+WE9EaFxKVmJLYVB3WmpQdldgdVRMZVVbQX9PIiBoS35RdUViW35ecHdcR2dfVUFx;OTc5NzUzQDMyMzAyZTM0MmUzME1NbkZoN3oraHdRYzFuUzB5eFdiWlhBTUZvL0VjYkFWc0QrQTNZMTl3S289;OTc5NzU0QDMyMzAyZTM0MmUzME1yVUpHY2JKSFJic0QrKzEwVFpsZzNDYkUvNS94d2pXTjBMTE5wSW13a0U9;Mgo+DSMBMAY9C3t2VVhkQlFadVdJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkRhWH9ec31UQWRdWUY=;OTc5NzU2QDMyMzAyZTM0MmUzMGdqeUxUS2JYcnI3TFZKZjBIWFo5STNRVkhrT1V1Y3JhK2h5VUs5bitIMmc9;OTc5NzU3QDMyMzAyZTM0MmUzMFovclRCMEhRbWRyR2FLbnhnQW0wbGxLNE9MQUhWQzN6RjdnU2hFcVNGd2s9;OTc5NzU4QDMyMzAyZTM0MmUzME1NbkZoN3oraHdRYzFuUzB5eFdiWlhBTUZvL0VjYkFWc0QrQTNZMTl3S289");
+
         }
 
         /// <summary>
