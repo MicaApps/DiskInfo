@@ -34,6 +34,8 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
     <PackageReference Include="NativeMethods" Version="0.0.3" />
     <PackageReference Include="PInvoke.User32" Version="0.7.124" />
+    <PackageReference Include="Syncfusion.Chart.WinUI" Version="20.4.0.44" />
+    <PackageReference Include="Syncfusion.Gauge.WinUI" Version="20.4.0.44" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
