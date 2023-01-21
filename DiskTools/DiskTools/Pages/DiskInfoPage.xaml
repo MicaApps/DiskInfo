@@ -10,7 +10,10 @@
     xmlns:lib="using:DiskInfoLibWinRT"
     NavigationCacheMode="Required"
     mc:Ignorable="d"
-    xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges">
+    xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges" 
+    xmlns:local1="using:DiskTools"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts">
+    
     <Page.Resources>
         <Style TargetType="PivotItem">
             <Setter Property="Margin" Value="0" />
@@ -84,7 +87,58 @@
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
+                                    <Grid.DataContext>
+                                        <local1:ViewModel/>
+                                    </Grid.DataContext>
 
+                                    <!--折线图-->
+                                    <chart:SfCartesianChart Grid.Column="1">
+                                        
+                                        <!--渐变画笔-->
+                                        <chart:SfCartesianChart.Resources>
+                                            <BrushCollection x:Key="customBrushes">
+                                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                                    <GradientStop Offset="2" Color="#90FFffff" />
+                                                    <GradientStop Offset="0" Color="#00ffffff" />
+                                                </LinearGradientBrush>
+                                            </BrushCollection>
+
+                                            <BrushCollection x:Key="customBrushes2">
+                                                <SolidColorBrush Color="#ffffff"/>
+                                            </BrushCollection>
+
+                                        </chart:SfCartesianChart.Resources>
+                                        
+                                        <!--图-->
+                                        <chart:SfCartesianChart.XAxes>
+                                            <chart:CategoryAxis />
+                                        </chart:SfCartesianChart.XAxes>
+
+                                        <chart:SfCartesianChart.YAxes>
+                                            <chart:NumericalAxis />
+                                        </chart:SfCartesianChart.YAxes>
+
+                                        <chart:SfCartesianChart.Series>
+
+                                            <!--折线-->
+                                            <chart:LineSeries 
+                                                ItemsSource="{Binding Collection}"
+                                                XBindingPath="XValue" 
+                                                YBindingPath="YValue1" 
+                                                PaletteBrushes="{StaticResource customBrushes2}"/>
+
+                                            <!--面积-->
+                                            <chart:AreaSeries 
+                                                ItemsSource="{Binding Collection}"  
+                                                XBindingPath="XValue" 
+                                                YBindingPath="YValue1"
+                                                PaletteBrushes="{StaticResource customBrushes}"/>
+                                        </chart:SfCartesianChart.Series>
+
+                                    </chart:SfCartesianChart>
+
+
+                                    
                                     <!--圆环-->
                                     <gauge:SfRadialGauge Grid.Column="0" Width="270">
                                         <gauge:SfRadialGauge.Axes>
