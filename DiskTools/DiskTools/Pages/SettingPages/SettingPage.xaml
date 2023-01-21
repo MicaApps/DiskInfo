@@ -45,6 +45,62 @@
                     </controls:Setting.ActionContent>
                 </controls:Setting>
             </controls:SettingsGroup>
+
+            <!--配置设置-->
+            <controls:SettingsGroup x:Uid="/SettingPage/ConfigsSettingsHeader">
+                <controls:SettingExpander>
+
+                    <controls:SettingExpander.Header>
+                        <controls:Setting Header="Alarm" Icon="&#xE916;" />
+                    </controls:SettingExpander.Header>
+
+                    <controls:SettingExpander.Content>
+                        <Grid Style="{StaticResource ExpanderContentGridStyle}">
+                            <StackPanel HorizontalAlignment="Left">
+                                <TextBlock Text="Email" Margin="0 10"/>
+                                <TextBlock Text="Sounds "  Margin="0 10"/>
+                                <TextBlock Text="Log" Margin="0 10"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right">
+                                <ToggleSwitch />
+                                <ToggleSwitch />
+                                <ToggleSwitch />
+                            </StackPanel>
+
+
+                        </Grid>
+                    </controls:SettingExpander.Content>
+                </controls:SettingExpander>
+                <controls:SettingExpander>
+                    
+                    <controls:SettingExpander.Header>
+                        <controls:Setting Header="Auto Refresh time" Icon="&#xE149;">
+                            <ToggleSwitch/>
+                        </controls:Setting>
+                        
+                    </controls:SettingExpander.Header>
+
+                    <controls:SettingExpander.Content>
+                        <Grid Style="{StaticResource ExpanderContentGridStyle}">
+                            <StackPanel>
+                                <RadioButton Content="Once a min" />
+                                <RadioButton Content="Once 3 min"/>
+                                <RadioButton Content="Once 10 min"/>
+                                <RadioButton Content="Once 30 min" />
+                                <RadioButton Content="Once 60 min"/>
+                                <RadioButton Content="Once 120 min"/>
+                                <RadioButton Content="Once 180 min" />
+                                <RadioButton Content="Once 360 min"/>
+                                <RadioButton Content="Once 720 min"/>
+                                <RadioButton Content="Once 1440 min"/>
+                            </StackPanel>
+                            
+
+                        </Grid>
+                    </controls:SettingExpander.Content>
+                </controls:SettingExpander>
+            </controls:SettingsGroup>
+
             <controls:SettingsGroup x:Uid="/SettingPage/ConfigsSettingsHeader">
                 <controls:Setting x:Uid="/SettingPage/ResetSettings" Icon="&#xE777;">
                     <controls:Setting.ActionContent>
