@@ -21,6 +21,14 @@ namespace DiskTools
             InitializeComponent();
             UnhandledException += Application_UnhandledException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            //注册 Syncfusion 许可证
+            var personalFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var keyPath = System.IO.Path.Combine(personalFolder, "syncfusionKey.txt");
+            var key = File.ReadAllText(keyPath);
+            if (key == "")
+                throw new Exception("Key file not found in C:\\Users\\<Your Account>\\Documents\\syncfusionKey.txt");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(key);
         }
 
         /// <summary>
