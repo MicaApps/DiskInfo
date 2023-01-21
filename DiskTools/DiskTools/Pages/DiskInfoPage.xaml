@@ -25,12 +25,14 @@
     </Page.Resources>
     
     <Grid x:Name="Root">
+        
         <TwoPaneView
             x:Name="TwoPaneView"
             MinWideModeWidth="0"
             Pane1Length="250"
             PanePriority="Pane2"
             TallModeConfiguration="SinglePane">
+            
             <TwoPaneView.Pane1>
                 <Grid Padding="0,16,0,0" RowSpacing="8">
                     <Grid.RowDefinitions>
@@ -70,155 +72,161 @@
                     </ListView>
                 </Grid>
             </TwoPaneView.Pane1>
+            
             <TwoPaneView.Pane2>
                 <Pivot Margin="20,-30,0,0" SelectedIndex="{Binding SelectedIndex, ElementName=ListView, Mode=TwoWay}">
                     <PivotItem>
-                        <ScrollViewer>
-                            <Grid VerticalAlignment="Top">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <ScrollViewer>
+                                <Grid VerticalAlignment="Top">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
 
-                                <Grid>
-                                    <!--统计图-->
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.DataContext>
-                                        <local1:ViewModel/>
-                                    </Grid.DataContext>
+                                    <Grid>
+                                        <!--统计图-->
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.DataContext>
+                                            <local1:ViewModel/>
+                                        </Grid.DataContext>
 
-                                    <!--折线图-->
-                                    <chart:SfCartesianChart Grid.Column="1">
-                                        
-                                        <!--渐变画笔-->
-                                        <chart:SfCartesianChart.Resources>
-                                            <BrushCollection x:Key="customBrushes">
-                                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
-                                                    <GradientStop Offset="2" Color="#90FFffff" />
-                                                    <GradientStop Offset="0" Color="#00ffffff" />
-                                                </LinearGradientBrush>
-                                            </BrushCollection>
+                                        <!--折线图-->
+                                        <chart:SfCartesianChart Grid.Column="1">
 
-                                            <BrushCollection x:Key="customBrushes2">
-                                                <SolidColorBrush Color="#ffffff"/>
-                                            </BrushCollection>
+                                            <!--渐变画笔-->
+                                            <chart:SfCartesianChart.Resources>
+                                                <BrushCollection x:Key="customBrushes">
+                                                    <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                                        <GradientStop Offset="2" Color="#90FFffff" />
+                                                        <GradientStop Offset="0" Color="#00ffffff" />
+                                                    </LinearGradientBrush>
+                                                </BrushCollection>
 
-                                        </chart:SfCartesianChart.Resources>
-                                        
-                                        <!--图-->
-                                        <chart:SfCartesianChart.XAxes>
-                                            <chart:CategoryAxis />
-                                        </chart:SfCartesianChart.XAxes>
+                                                <BrushCollection x:Key="customBrushes2">
+                                                    <SolidColorBrush Color="#ffffff"/>
+                                                </BrushCollection>
 
-                                        <chart:SfCartesianChart.YAxes>
-                                            <chart:NumericalAxis />
-                                        </chart:SfCartesianChart.YAxes>
+                                            </chart:SfCartesianChart.Resources>
 
-                                        <chart:SfCartesianChart.Series>
+                                            <!--图-->
+                                            <chart:SfCartesianChart.XAxes>
+                                                <chart:CategoryAxis />
+                                            </chart:SfCartesianChart.XAxes>
 
-                                            <!--折线-->
-                                            <chart:LineSeries 
+                                            <chart:SfCartesianChart.YAxes>
+                                                <chart:NumericalAxis />
+                                            </chart:SfCartesianChart.YAxes>
+
+                                            <chart:SfCartesianChart.Series>
+
+                                                <!--折线-->
+                                                <chart:LineSeries 
                                                 ItemsSource="{Binding Collection}"
                                                 XBindingPath="XValue" 
                                                 YBindingPath="YValue1" 
                                                 PaletteBrushes="{StaticResource customBrushes2}"/>
 
-                                            <!--面积-->
-                                            <chart:AreaSeries 
+                                                <!--面积-->
+                                                <chart:AreaSeries 
                                                 ItemsSource="{Binding Collection}"  
                                                 XBindingPath="XValue" 
                                                 YBindingPath="YValue1"
                                                 PaletteBrushes="{StaticResource customBrushes}"/>
-                                        </chart:SfCartesianChart.Series>
+                                            </chart:SfCartesianChart.Series>
 
-                                    </chart:SfCartesianChart>
+                                        </chart:SfCartesianChart>
 
 
-                                    
-                                    <!--圆环-->
-                                    <gauge:SfRadialGauge Grid.Column="0" Width="270">
-                                        <gauge:SfRadialGauge.Axes>
-                                            <gauge:RadialAxis AxisLineWidth="0.15"
+
+                                        <!--圆环-->
+                                        <gauge:SfRadialGauge Grid.Column="0" Width="270">
+                                            <gauge:SfRadialGauge.Axes>
+                                                <gauge:RadialAxis AxisLineWidth="0.15"
                           AxisLineWidthUnit="Factor">
-                                                <gauge:RadialAxis.Pointers>
-                                                    <gauge:RangePointer Value="80"
+                                                    <gauge:RadialAxis.Pointers>
+                                                        <gauge:RangePointer Value="80"
                                     PointerWidth="200"
                                     WidthUnit="Pixel"
                                             EnableAnimation="True"
                                     AnimationDuration="1000">
-                                                        <gauge:RangePointer.AnimationEasingFunction>
-                                                            <ElasticEase Oscillations="1" />
-                                                        </gauge:RangePointer.AnimationEasingFunction>
-                                                        <gauge:RangePointer.Background>
-                                                            <RadialGradientBrush  GradientOrigin="0.5,0.65" Center="0.5,0.5" 
+                                                            <gauge:RangePointer.AnimationEasingFunction>
+                                                                <ElasticEase Oscillations="1" />
+                                                            </gauge:RangePointer.AnimationEasingFunction>
+                                                            <gauge:RangePointer.Background>
+                                                                <RadialGradientBrush  GradientOrigin="0.5,0.65" Center="0.5,0.5" 
       RadiusX="0.6" RadiusY="0.7">
-                                                                <RadialGradientBrush.GradientStops>
-                                                                    <GradientStop Color="#00FF0000" Offset="0.45" />
-                                                                    <GradientStop Color="#10FF0000" Offset="0.65" />
-                                                                    <GradientStop Color="#ffFF0000" Offset="1" />
-                                                                </RadialGradientBrush.GradientStops>
-                                                            </RadialGradientBrush>
-                                                        </gauge:RangePointer.Background>
-                                                    </gauge:RangePointer>
+                                                                    <RadialGradientBrush.GradientStops>
+                                                                        <GradientStop Color="#00FF0000" Offset="0.45" />
+                                                                        <GradientStop Color="#10FF0000" Offset="0.65" />
+                                                                        <GradientStop Color="#ffFF0000" Offset="1" />
+                                                                    </RadialGradientBrush.GradientStops>
+                                                                </RadialGradientBrush>
+                                                            </gauge:RangePointer.Background>
+                                                        </gauge:RangePointer>
 
-                                                </gauge:RadialAxis.Pointers>
-                                            </gauge:RadialAxis>
-                                        </gauge:SfRadialGauge.Axes>
-                                    </gauge:SfRadialGauge>
-                                    <gauge:SfRadialGauge Width="270">
-                                        <gauge:SfRadialGauge.Axes>
-                                            <gauge:RadialAxis AxisLineWidth="0.15"
+                                                    </gauge:RadialAxis.Pointers>
+                                                </gauge:RadialAxis>
+                                            </gauge:SfRadialGauge.Axes>
+                                        </gauge:SfRadialGauge>
+                                        <gauge:SfRadialGauge Width="270">
+                                            <gauge:SfRadialGauge.Axes>
+                                                <gauge:RadialAxis AxisLineWidth="0.15"
                           AxisLineWidthUnit="Factor">
-                                                <gauge:RadialAxis.Pointers>
-                                                    <gauge:RangePointer Value="80"
+                                                    <gauge:RadialAxis.Pointers>
+                                                        <gauge:RangePointer Value="80"
                                     PointerWidth="0.15"
                                     WidthUnit="Factor"
                                             EnableAnimation="True"
                                     AnimationDuration="1000">
-                                                        <gauge:RangePointer.AnimationEasingFunction>
-                                                            <ElasticEase Oscillations="1" />
-                                                        </gauge:RangePointer.AnimationEasingFunction>
-                                                        <gauge:RangePointer.GradientStops>
-                                                            <gauge:GaugeGradientStop Value="-50"
+                                                            <gauge:RangePointer.AnimationEasingFunction>
+                                                                <ElasticEase Oscillations="1" />
+                                                            </gauge:RangePointer.AnimationEasingFunction>
+                                                            <gauge:RangePointer.GradientStops>
+                                                                <gauge:GaugeGradientStop Value="-50"
                                                  Color="Red" />
-                                                            <gauge:GaugeGradientStop Value="-30"
+                                                                <gauge:GaugeGradientStop Value="-30"
                                                  Color="Red" />
-                                                            <gauge:GaugeGradientStop Value="120"
+                                                                <gauge:GaugeGradientStop Value="120"
                                                  Color="White" />
-                                                        </gauge:RangePointer.GradientStops>
-                                                    </gauge:RangePointer>
-                                                    <gauge:ContentPointer Value="80" EnableAnimation="True" AnimationDuration="1000">
-                                                        <gauge:ContentPointer.AnimationEasingFunction>
-                                                            <ElasticEase Oscillations="1" />
-                                                        </gauge:ContentPointer.AnimationEasingFunction>
-                                                        <gauge:ContentPointer.Content>
-                                                            <Grid Width="60">
-                                                                <Rectangle Width="30" HorizontalAlignment="Left" >
-                                                                    <Rectangle.Fill>
-                                                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                                                            <GradientStop Color="#ffffffff" Offset="1" x:Name="GradientStop1"/>
-                                                                            <GradientStop Color="#10ffffff" Offset="0" x:Name="GradientStop4"/>
-                                                                        </LinearGradientBrush>
-                                                                    </Rectangle.Fill>
-                                                                </Rectangle>
-                                                                <TextBlock Text="          "
+                                                            </gauge:RangePointer.GradientStops>
+                                                        </gauge:RangePointer>
+                                                        <gauge:ContentPointer Value="80" EnableAnimation="True" AnimationDuration="1000">
+                                                            <gauge:ContentPointer.AnimationEasingFunction>
+                                                                <ElasticEase Oscillations="1" />
+                                                            </gauge:ContentPointer.AnimationEasingFunction>
+                                                            <gauge:ContentPointer.Content>
+                                                                <Grid Width="60">
+                                                                    <Rectangle Width="30" HorizontalAlignment="Left" >
+                                                                        <Rectangle.Fill>
+                                                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                                <GradientStop Color="#ffffffff" Offset="1" x:Name="GradientStop1"/>
+                                                                                <GradientStop Color="#10ffffff" Offset="0" x:Name="GradientStop4"/>
+                                                                            </LinearGradientBrush>
+                                                                        </Rectangle.Fill>
+                                                                    </Rectangle>
+                                                                    <TextBlock Text="          "
                                        Margin="2" />
-                                                            </Grid>
-                                                        </gauge:ContentPointer.Content>
-                                                    </gauge:ContentPointer>
-                                                </gauge:RadialAxis.Pointers>
-                                            </gauge:RadialAxis>
-                                        </gauge:SfRadialGauge.Axes>
-                                    </gauge:SfRadialGauge>
-                                </Grid>
+                                                                </Grid>
+                                                            </gauge:ContentPointer.Content>
+                                                        </gauge:ContentPointer>
+                                                    </gauge:RadialAxis.Pointers>
+                                                </gauge:RadialAxis>
+                                            </gauge:SfRadialGauge.Axes>
+                                        </gauge:SfRadialGauge>
+                                    </Grid>
 
-                                <Grid Grid.Row="1">
-                                    <!--带图标的数据列-->
-                                    <controls:AdaptiveGridView 
+                                    <Grid Grid.Row="1">
+                                        <!--带图标的数据列-->
+                                        <controls:AdaptiveGridView 
                                         Name="AdaptiveGridViewControl"
                                         StretchContentForSingleRow="False"
                                         OneRowModeEnabled="False"
@@ -226,165 +234,205 @@
                                         IsItemClickEnabled="True"
                                         DesiredWidth="400"
                                         >
-                                     
-                                        <!--items-->
-                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="auto"/>
-                                                    <ColumnDefinition Width="2.5*"/>
-                                                    <ColumnDefinition Width="4*"/>
-                                                </Grid.ColumnDefinitions>
-                                            <StackPanel Grid.Column="0">
-                                                <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xEEA1;" Margin="4.5" FontSize="16" />
-                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xEE6F;" Margin="4.5" FontSize="16"/>
-                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xF404;" Margin="4.5" FontSize="16"/>
-                                                </StackPanel>
-                                            <StackPanel Grid.Column="1" >
-                                                    <TextBlock Text="固件" FontWeight="SemiBold" Margin="3"/>
-                                                    <TextBlock Text="序列号" FontWeight="SemiBold" Margin="3"/>
-                                                    <TextBlock Text="接口" FontWeight="SemiBold" Margin="3"/>
-                                            </StackPanel>
-                                            <StackPanel Grid.Column="2">
-                                                    <TextBlock Text="{x:Bind Info.Firmware}" Margin="3"/>
-                                                    <TextBlock Text="{x:Bind Info.SerialNumber}" Margin="3"/>
-                                                    <TextBlock Text="{x:Bind Info.Interface}" Margin="3"/>
-                                            </StackPanel>
-                                            </Grid>
-                                        </local:GeneralDiskInfoItem>
 
-                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="auto"/>
-                                                    <ColumnDefinition Width="2.5*"/>
-                                                    <ColumnDefinition Width="4*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <StackPanel Grid.Column="0">
-                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE8CB;" Margin="4.5" FontSize="16" />
-                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEDA2;" Margin="4.5" FontSize="16" />
-                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEEA1;" Margin="4.5" FontSize="16" />
-                                                </StackPanel>
-                                                <StackPanel Grid.Column="1">
-                                                    <TextBlock Text="传输模式" FontWeight="SemiBold"  Margin="3"/>
-                                                    <TextBlock Text="驱动器号" FontWeight="SemiBold"  Margin="3" />
-                                                    <TextBlock Text="主机总计读取" FontWeight="SemiBold"  Margin="3"/>
-                                                </StackPanel>
-                                                <StackPanel Grid.Column="2">
-                                                    <TextBlock Text="{x:Bind Info.CurrentTransferMode}" Margin="3"/>
-                                                    <TextBlock Text="{x:Bind Info.DriveMap}" Margin="3"/>
-                                                    <TextBlock Text="{x:Bind Info.HostReads, Converter={StaticResource ReadableBytesConverter}}" Margin="3"/>
-                                                </StackPanel>
-                                            </Grid>
-                                        </local:GeneralDiskInfoItem>
+                                            <!--items-->
+                                            <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto"/>
+                                                        <ColumnDefinition Width="2.5*"/>
+                                                        <ColumnDefinition Width="4*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel Grid.Column="0">
+                                                        <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xEEA1;" Margin="4.5" FontSize="16" />
+                                                        <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xEE6F;" Margin="4.5" FontSize="16"/>
+                                                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xF404;" Margin="4.5" FontSize="16"/>
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="1" >
+                                                        <TextBlock Text="固件" FontWeight="SemiBold" Margin="3"/>
+                                                        <TextBlock Text="序列号" FontWeight="SemiBold" Margin="3"/>
+                                                        <TextBlock Text="接口" FontWeight="SemiBold" Margin="3"/>
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="2">
+                                                        <TextBlock Text="{x:Bind Info.Firmware}" Margin="3"/>
+                                                        <TextBlock Text="{x:Bind Info.SerialNumber}" Margin="3"/>
+                                                        <TextBlock Text="{x:Bind Info.Interface}" Margin="3"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </local:GeneralDiskInfoItem>
 
-                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="auto"/>
-                                                    <ColumnDefinition Width="2.5*"/>
-                                                    <ColumnDefinition Width="4*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <StackPanel Grid.Column="0">
-                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xE104;"  Margin="4.5" FontSize="16" />
-                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xE14A;"  Margin="4.5" FontSize="16" />
-                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE945;"  Margin="4.5" FontSize="16" />
-                                                </StackPanel>
-                                                <StackPanel Grid.Column="1">
-                                                    <TextBlock Text="主机总计写入" FontWeight="SemiBold" Margin="3"/>
-                                                    <TextBlock Text="转速" FontWeight="SemiBold" Margin="3"/>
-                                                    <TextBlock Text="通电次数" FontWeight="SemiBold" Margin="3"/>
-                                                </StackPanel>
-                                                <StackPanel Grid.Column="2">
-                                                    <TextBlock Margin="3" Text="{x:Bind Info.HostWrites,Converter={StaticResource ReadableBytesConverter}}"/>
-                                                    <TextBlock Margin="3" Text="{x:Bind Info.Rotation}"/>
-                                                    <TextBlock Margin="3" Text="{x:Bind Info.PowerOnCount, Converter={StaticResource ReadableCountConverter}}"/>
-                                                </StackPanel>
-                                            </Grid>
-                                        </local:GeneralDiskInfoItem>
+                                            <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto"/>
+                                                        <ColumnDefinition Width="2.5*"/>
+                                                        <ColumnDefinition Width="4*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel Grid.Column="0">
+                                                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE8CB;" Margin="4.5" FontSize="16" />
+                                                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEDA2;" Margin="4.5" FontSize="16" />
+                                                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEEA1;" Margin="4.5" FontSize="16" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="传输模式" FontWeight="SemiBold"  Margin="3"/>
+                                                        <TextBlock Text="驱动器号" FontWeight="SemiBold"  Margin="3" />
+                                                        <TextBlock Text="主机总计读取" FontWeight="SemiBold"  Margin="3"/>
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="2">
+                                                        <TextBlock Text="{x:Bind Info.CurrentTransferMode}" Margin="3"/>
+                                                        <TextBlock Text="{x:Bind Info.DriveMap}" Margin="3"/>
+                                                        <TextBlock Text="{x:Bind Info.HostReads, Converter={StaticResource ReadableBytesConverter}}" Margin="3"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </local:GeneralDiskInfoItem>
 
-                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="auto"/>
-                                                    <ColumnDefinition Width="2.5*"/>
-                                                    <ColumnDefinition Width="4*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <StackPanel Grid.Column="0">
-                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xE121;" Margin="4.5" FontSize="16" />
-                                                </StackPanel>
-                                                <StackPanel Grid.Column="1">
-                                                    <TextBlock Text="通电时间" FontWeight="SemiBold" Margin="3"/>
-                                                </StackPanel>
-                                                <StackPanel Grid.Column="2">
-                                                    <TextBlock Text="{x:Bind Info.PowerOnTime, Converter={StaticResource ReadableTimeConverter}}" Margin="3"/>
-                                                </StackPanel>
-                                            </Grid>
-                                        </local:GeneralDiskInfoItem>
+                                            <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto"/>
+                                                        <ColumnDefinition Width="2.5*"/>
+                                                        <ColumnDefinition Width="4*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel Grid.Column="0">
+                                                        <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xE104;"  Margin="4.5" FontSize="16" />
+                                                        <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xE14A;"  Margin="4.5" FontSize="16" />
+                                                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE945;"  Margin="4.5" FontSize="16" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="主机总计写入" FontWeight="SemiBold" Margin="3"/>
+                                                        <TextBlock Text="转速" FontWeight="SemiBold" Margin="3"/>
+                                                        <TextBlock Text="通电次数" FontWeight="SemiBold" Margin="3"/>
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="2">
+                                                        <TextBlock Margin="3" Text="{x:Bind Info.HostWrites,Converter={StaticResource ReadableBytesConverter}}"/>
+                                                        <TextBlock Margin="3" Text="{x:Bind Info.Rotation}"/>
+                                                        <TextBlock Margin="3" Text="{x:Bind Info.PowerOnCount, Converter={StaticResource ReadableCountConverter}}"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </local:GeneralDiskInfoItem>
 
-                                        <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="auto"/>
-                                                    <ColumnDefinition Width="2.5*"/>
-                                                    <ColumnDefinition Width="4*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <StackPanel Grid.Column="0">
-                                                    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE74C;"  Margin="4.5" FontSize="16" />
-                                                    <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xEEA1;"  Margin="4.5" FontSize="16" />
-                                                </StackPanel>
-                                                <StackPanel Grid.Column="1">
-                                                    <TextBlock Text="支持的功能" FontWeight="SemiBold" Margin="3"/>
-                                                    <TextBlock Text="标准" FontWeight="SemiBold" Margin="3"/>
-                                                </StackPanel>
-                                                <StackPanel Grid.Column="2">
-                                                    <TextBlock Text="{x:Bind Info.Features}" Margin="3"/>
-                                                    <TextBlock Text="{x:Bind Info.Standard}" Margin="3"/>
-                                                </StackPanel>
-                                            </Grid>
-                                        </local:GeneralDiskInfoItem>
-                                       
-                                    </controls:AdaptiveGridView>
-                                                               
-                                </Grid>
+                                            <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto"/>
+                                                        <ColumnDefinition Width="2.5*"/>
+                                                        <ColumnDefinition Width="4*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel Grid.Column="0">
+                                                        <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xE121;" Margin="4.5" FontSize="16" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="通电时间" FontWeight="SemiBold" Margin="3"/>
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="2">
+                                                        <TextBlock Text="{x:Bind Info.PowerOnTime, Converter={StaticResource ReadableTimeConverter}}" Margin="3"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </local:GeneralDiskInfoItem>
+
+                                            <local:GeneralDiskInfoItem Margin="-2" FontSize="14">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto"/>
+                                                        <ColumnDefinition Width="2.5*"/>
+                                                        <ColumnDefinition Width="4*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel Grid.Column="0">
+                                                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE74C;"  Margin="4.5" FontSize="16" />
+                                                        <FontIcon FontFamily="Segoe Fluent Icons"  Glyph="&#xEEA1;"  Margin="4.5" FontSize="16" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="支持的功能" FontWeight="SemiBold" Margin="3"/>
+                                                        <TextBlock Text="标准" FontWeight="SemiBold" Margin="3"/>
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="2">
+                                                        <TextBlock Text="{x:Bind Info.Features}" Margin="3"/>
+                                                        <TextBlock Text="{x:Bind Info.Standard}" Margin="3"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </local:GeneralDiskInfoItem>
+
+                                        </controls:AdaptiveGridView>
+
+                                    </Grid>
 
 
-                                
-                                <!--<Grid Grid.Row="2">
-                                    --><!--数据列--><!--
+
+                                    <!--<Grid Grid.Row="2">
+                                    -->
+                                    <!--数据列-->
+                                    <!--
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*"/>
                                         <ColumnDefinition Width="5*"/>
                                         <ColumnDefinition Width="3*"/>
                                     </Grid.ColumnDefinitions>-->
-                                <Grid Grid.Row="2">
-                                    <Rectangle Width="Auto" Height="Auto" Grid.ColumnSpan="3">
-                                        <Rectangle.Fill>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                <GradientStop Color="#10ffffff" Offset="1" x:Name="GradientStop5"/>
-                                                <GradientStop Color="#50ffffff" Offset="0" x:Name="GradientStop6"/>
-                                            </LinearGradientBrush>
-                                        </Rectangle.Fill>
-                                    </Rectangle>
-                                    <ItemsRepeater ItemsSource="{x:Bind Info.Attributes}" >
-                                        <ItemsRepeater.ItemTemplate>
-                                            <DataTemplate x:DataType="lib:SmartAttribute">
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="1*"/>
-                                                        <ColumnDefinition Width="5*"/>
-                                                        <ColumnDefinition Width="3*"/>
-                                                    </Grid.ColumnDefinitions>
-                                                    <TextBlock Text="{x:Bind Id}" Grid.Column="0"/>
-                                                    <TextBlock Text="{x:Bind Name}" Grid.Column="1"/>
-                                                    <TextBlock Text="{x:Bind RawValue}" Grid.Column="2"/>
-                                                </Grid>
-                                            </DataTemplate>
-                                        </ItemsRepeater.ItemTemplate>
-                                    </ItemsRepeater>
+                                    <Grid Grid.Row="2">
+                                        <Rectangle Width="Auto" Height="Auto" Grid.ColumnSpan="3">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                    <GradientStop Color="#10ffffff" Offset="1" x:Name="GradientStop5"/>
+                                                    <GradientStop Color="#50ffffff" Offset="0" x:Name="GradientStop6"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                        <ItemsRepeater ItemsSource="{x:Bind Info.Attributes}" >
+                                            <ItemsRepeater.ItemTemplate>
+                                                <DataTemplate x:DataType="lib:SmartAttribute">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="5*"/>
+                                                            <ColumnDefinition Width="3*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Text="{x:Bind Id}" Grid.Column="0"/>
+                                                        <TextBlock Text="{x:Bind Name}" Grid.Column="1"/>
+                                                        <TextBlock Text="{x:Bind RawValue}" Grid.Column="2"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsRepeater.ItemTemplate>
+                                        </ItemsRepeater>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </ScrollViewer>
+                            </ScrollViewer>
+                            <CommandBar Grid.Row="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" VerticalAlignment="Bottom">
+                                <AppBarButton Icon="Save" Label="Save">
+                                    <AppBarButton.Flyout>
+                                        <MenuFlyout Placement="RightEdgeAlignedTop">
+                                            <MenuFlyoutItem Text="Save as image"/>
+                                            <MenuFlyoutItem Text="Save as text"/>
+                                        </MenuFlyout>
+                                    </AppBarButton.Flyout>
+                                </AppBarButton>
+
+                                <AppBarElementContainer>
+                                    <SplitButton ToolTipService.ToolTip="Alignment">
+                                        
+                                        <SplitButton.Content>
+                                            <Viewbox Width="16" Height="16" Margin="0,2,0,0">
+                                                <SymbolIcon Symbol="Copy"/>
+                                            </Viewbox>
+                                        </SplitButton.Content>
+                                        <SplitButton.Flyout>
+                                            <MenuFlyout>
+                                                <MenuFlyoutItem Text="IDENTIFY DEVICE"/>
+                                                <MenuFlyoutItem Text="SMART_READ_THRESHOLD"/>
+                                                <MenuFlyoutItem  Text="SMART_READ DATA"/>
+                                                <MenuFlyoutSeparator/>
+                                                <MenuFlyoutItem  Text="解析ASCII内容"/>
+                                            </MenuFlyout>
+                                        </SplitButton.Flyout>
+                                    </SplitButton>
+                                </AppBarElementContainer>
+
+                                <AppBarButton Icon="Refresh" Label="Refresh"/>
+                                <AppBarButton Icon="Copy" Label="Copy"/>
+                                <AppBarButton Icon="Clock" Label="Alarm"/>
+                                <AppBarButton Icon="Share" Label="Share"/>
+                                
+                            </CommandBar>
+                        </Grid>
+                        
                     </PivotItem>
                     <PivotItem />
                     <PivotItem />
@@ -412,7 +460,10 @@
                     <PivotItem />
                 </Pivot>
             </TwoPaneView.Pane2>
+            
         </TwoPaneView>
+        
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="LayoutVisualStates">
                 <VisualState x:Name="LargeLayout">
@@ -441,5 +492,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        
+        
     </Grid>
 </Page>
