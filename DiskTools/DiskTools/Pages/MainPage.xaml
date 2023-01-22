@@ -51,13 +51,17 @@
             Loaded="NavigationView_Loaded"
             PaneClosing="NavigationViewControl_PaneClosing"
             PaneOpening="NavigationViewControl_PaneOpening"
-            SelectionChanged="NavigationView_SelectionChanged">
-            <Frame x:Name="NavigationViewFrame" x:FieldModifier="public" />
+            SelectionChanged="NavigationView_SelectionChanged"
+            >
+            
+            <!--margin 是页面的内容页边界-->
+            <Frame x:Name="NavigationViewFrame" x:FieldModifier="public" Margin="-46 -88 -32 -36"/>
         </NavigationView>
         <ProgressBar
             x:Name="ProgressBar"
             VerticalAlignment="Top"
             Background="Transparent"
-            IsIndeterminate="False" />
+            IsIndeterminate="False" 
+            />
     </Grid>
 </Page>

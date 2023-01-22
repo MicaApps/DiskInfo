@@ -34,7 +34,7 @@
             TallModeConfiguration="SinglePane">
             
             <TwoPaneView.Pane1>
-                <Grid Padding="0,16,0,0" RowSpacing="8">
+                <Grid Padding="0,28,0,0" RowSpacing="8">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
@@ -74,7 +74,7 @@
             </TwoPaneView.Pane1>
             
             <TwoPaneView.Pane2>
-                <Pivot Margin="20,-30,0,0" SelectedIndex="{Binding SelectedIndex, ElementName=ListView, Mode=TwoWay}">
+                <Pivot Margin="0,-30,0,0" SelectedIndex="{Binding SelectedIndex, ElementName=ListView, Mode=TwoWay}">
                     <PivotItem>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -82,7 +82,9 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <ScrollViewer>
-                                <Grid VerticalAlignment="Top">
+                                
+                                <!--右侧面板边距-->                                
+                                <Grid VerticalAlignment="Top" Margin="62">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
                                         <RowDefinition Height="Auto" />
@@ -356,17 +358,8 @@
 
                                     </Grid>
 
-
-
-                                    <!--<Grid Grid.Row="2">
-                                    -->
                                     <!--数据列-->
-                                    <!--
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1*"/>
-                                        <ColumnDefinition Width="5*"/>
-                                        <ColumnDefinition Width="3*"/>
-                                    </Grid.ColumnDefinitions>-->
+                                   
                                     <Grid Grid.Row="2">
                                         <Rectangle Width="Auto" Height="Auto" Grid.ColumnSpan="3">
                                             <Rectangle.Fill>
@@ -394,6 +387,7 @@
                                         </ItemsRepeater>
                                     </Grid>
                                 </Grid>
+                                
                             </ScrollViewer>
                             
                             <!--命令栏-->
