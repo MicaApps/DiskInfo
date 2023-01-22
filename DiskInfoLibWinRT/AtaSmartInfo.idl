@@ -39,6 +39,8 @@ namespace DiskInfoLibWinRT
         String Standard;//标准（对应MajorVersion+MinorVersion）
 
         Windows.Foundation.Collections.IVector<Object> Attributes{ get; };
+
+        void Update(Int32 index);
     };
 
 

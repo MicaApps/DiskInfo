@@ -13,7 +13,7 @@
     xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges" 
     xmlns:local1="using:DiskTools"
     xmlns:chart="using:Syncfusion.UI.Xaml.Charts">
-    
+
     <Page.Resources>
         <Style TargetType="PivotItem">
             <Setter Property="Margin" Value="0" />
@@ -23,16 +23,16 @@
         <converters:ReadableTimeConverter x:Key="ReadableTimeConverter"/>
         <converters:ReadableCountConverter x:Key="ReadableCountConverter"/>
     </Page.Resources>
-    
+
     <Grid x:Name="Root">
-        
+
         <TwoPaneView
             x:Name="TwoPaneView"
             MinWideModeWidth="0"
             Pane1Length="250"
             PanePriority="Pane2"
             TallModeConfiguration="SinglePane">
-            
+
             <TwoPaneView.Pane1>
                 <Grid Padding="0,16,0,0" RowSpacing="8">
                     <Grid.RowDefinitions>
@@ -72,7 +72,7 @@
                     </ListView>
                 </Grid>
             </TwoPaneView.Pane1>
-            
+
             <TwoPaneView.Pane2>
                 <Pivot Margin="20,-30,0,0" SelectedIndex="{Binding SelectedIndex, ElementName=ListView, Mode=TwoWay}">
                     <PivotItem>
@@ -150,20 +150,20 @@
                                         <!--圆环-->
                                         <gauge:SfRadialGauge Grid.Column="0" Width="270">
                                             <gauge:SfRadialGauge.Axes>
-                                                <gauge:RadialAxis AxisLineWidth="0.15"
-                          AxisLineWidthUnit="Factor">
+                                                <gauge:RadialAxis AxisLineWidth="0.15" 
+                                                                  AxisLineWidthUnit="Factor">
                                                     <gauge:RadialAxis.Pointers>
                                                         <gauge:RangePointer Value="80"
-                                    PointerWidth="200"
-                                    WidthUnit="Pixel"
-                                            EnableAnimation="True"
-                                    AnimationDuration="1000">
+                                                                            PointerWidth="200"
+                                                                            WidthUnit="Pixel"
+                                                                            EnableAnimation="True"
+                                                                            AnimationDuration="1000">
                                                             <gauge:RangePointer.AnimationEasingFunction>
                                                                 <ElasticEase Oscillations="1" />
                                                             </gauge:RangePointer.AnimationEasingFunction>
                                                             <gauge:RangePointer.Background>
                                                                 <RadialGradientBrush  GradientOrigin="0.5,0.65" Center="0.5,0.5" 
-      RadiusX="0.6" RadiusY="0.7">
+                                                                                      RadiusX="0.6" RadiusY="0.7">
                                                                     <RadialGradientBrush.GradientStops>
                                                                         <GradientStop Color="#00FF0000" Offset="0.45" />
                                                                         <GradientStop Color="#10FF0000" Offset="0.65" />
@@ -179,24 +179,20 @@
                                         </gauge:SfRadialGauge>
                                         <gauge:SfRadialGauge Width="270">
                                             <gauge:SfRadialGauge.Axes>
-                                                <gauge:RadialAxis AxisLineWidth="0.15"
-                          AxisLineWidthUnit="Factor">
+                                                <gauge:RadialAxis AxisLineWidth="0.15" AxisLineWidthUnit="Factor">
                                                     <gauge:RadialAxis.Pointers>
                                                         <gauge:RangePointer Value="80"
-                                    PointerWidth="0.15"
-                                    WidthUnit="Factor"
-                                            EnableAnimation="True"
-                                    AnimationDuration="1000">
+                                                                            PointerWidth="0.15"
+                                                                            WidthUnit="Factor"
+                                                                            EnableAnimation="True"
+                                                                            AnimationDuration="1000">
                                                             <gauge:RangePointer.AnimationEasingFunction>
                                                                 <ElasticEase Oscillations="1" />
                                                             </gauge:RangePointer.AnimationEasingFunction>
                                                             <gauge:RangePointer.GradientStops>
-                                                                <gauge:GaugeGradientStop Value="-50"
-                                                 Color="Red" />
-                                                                <gauge:GaugeGradientStop Value="-30"
-                                                 Color="Red" />
-                                                                <gauge:GaugeGradientStop Value="120"
-                                                 Color="White" />
+                                                                <gauge:GaugeGradientStop Value="-50" Color="Red" />
+                                                                <gauge:GaugeGradientStop Value="-30" Color="Red" />
+                                                                <gauge:GaugeGradientStop Value="120" Color="White" />
                                                             </gauge:RangePointer.GradientStops>
                                                         </gauge:RangePointer>
                                                         <gauge:ContentPointer Value="80" EnableAnimation="True" AnimationDuration="1000">
@@ -213,8 +209,7 @@
                                                                             </LinearGradientBrush>
                                                                         </Rectangle.Fill>
                                                                     </Rectangle>
-                                                                    <TextBlock Text="          "
-                                       Margin="2" />
+                                                                    <TextBlock Text="          " Margin="2" />
                                                                 </Grid>
                                                             </gauge:ContentPointer.Content>
                                                         </gauge:ContentPointer>
@@ -395,10 +390,10 @@
                                     </Grid>
                                 </Grid>
                             </ScrollViewer>
-                            
+
                             <!--命令栏-->
                             <CommandBar Grid.Row="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" VerticalAlignment="Bottom">
-                                
+
                                 <!--保存（导出）-->
                                 <AppBarButton Icon="Save" Label="Save">
                                     <AppBarButton.Flyout>
@@ -412,7 +407,7 @@
                                 <!--复制-->
                                 <AppBarElementContainer>
                                     <SplitButton ToolTipService.ToolTip="Alignment">
-                                        
+
                                         <SplitButton.Content>
                                             <Viewbox Width="16" Height="16" Margin="0,2,0,0">
                                                 <SymbolIcon Symbol="Copy"/>
@@ -435,7 +430,7 @@
 
                             </CommandBar>
                         </Grid>
-                        
+
                     </PivotItem>
                     <PivotItem />
                     <PivotItem />
@@ -463,9 +458,9 @@
                     <PivotItem />
                 </Pivot>
             </TwoPaneView.Pane2>
-            
+
         </TwoPaneView>
-        
+
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="LayoutVisualStates">
@@ -495,7 +490,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        
-        
+
+
     </Grid>
 </Page>
