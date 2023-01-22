@@ -1,8 +1,11 @@
-﻿#include "pch.h"
+﻿
 #include "AtaSmartInfo.h"
 #if __has_include("AtaSmartInfo.g.cpp")
 #include "AtaSmartInfo.g.cpp"
 #endif
+
+#include "pch2.h"
+#include "AtaSmart.h"
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
@@ -105,5 +108,9 @@ namespace winrt::DiskInfoLibWinRT::implementation
     winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::IInspectable> AtaSmartInfo::Attributes()
     {
         return m_attributes;
+    }
+    void AtaSmartInfo::Update(int index)
+    {
+        CAtaSmart::get_instance().UpdateSmartInfo(index);
     }
 }
