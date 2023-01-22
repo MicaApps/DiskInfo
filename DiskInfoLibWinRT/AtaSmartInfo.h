@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "AtaSmartInfo.g.h"
+#include <winrt/Windows.Foundation.Collections.h>
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
@@ -45,6 +46,8 @@ namespace winrt::DiskInfoLibWinRT::implementation
         void Standard(winrt::hstring value);
 
         winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::IInspectable> Attributes();
+
+        void Update(int index);
     private:
         winrt::hstring m_firmware;
         winrt::hstring m_serialNumber;
