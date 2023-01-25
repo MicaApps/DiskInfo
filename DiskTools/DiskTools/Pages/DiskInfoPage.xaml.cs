@@ -19,12 +19,11 @@ namespace DiskTools.Pages
         internal DiskInfoViewModel Provider;
 
         //public DiskInfo.DiskInfo info = new DiskInfo.DiskInfo();
-        public DiskInfoLibWinRT.Class instance = new Class();
         public DiskInfoLibWinRT.AtaSmartInfo Info
         {
             get
             {
-                if (instance.Info.Count == 0)
+                if (ViewModel.LibInstance.Info.Count == 0)
                 {
                     //无管理员权限时的示例数据
                     var info = new DiskInfoLibWinRT.AtaSmartInfo();
@@ -56,7 +55,7 @@ namespace DiskTools.Pages
                     return info;
                 }
                 else
-                    return instance.Info[0];
+                    return ViewModel.LibInstance.Info[0];
             }
         }
 
@@ -71,6 +70,11 @@ namespace DiskTools.Pages
                 Provider = new DiskInfoViewModel(id);
             }
             DataContext = Provider;
+        }
+
+        private void AppBarButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        {
+            ViewModel.LibInstance.UpdateAll();
         }
     }
 }
