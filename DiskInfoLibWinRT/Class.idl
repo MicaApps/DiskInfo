@@ -7,5 +7,7 @@ namespace DiskInfoLibWinRT
     {
         Class();
         Windows.Foundation.Collections.IVector<DiskInfoLibWinRT.AtaSmartInfo> Info{ get; };
+
+        void UpdateAll();
     }
 }

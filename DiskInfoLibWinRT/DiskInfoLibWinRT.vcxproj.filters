@@ -8,6 +8,9 @@
     <Filter Include="Generated Files">
       <UniqueIdentifier>{926ab91d-31b4-48c3-b9a4-e681349f27f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{1c37389e-246e-4af7-8916-eddbfcc1c2b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -19,6 +22,12 @@
     <ClCompile Include="SlotSpeedGetter.cpp" />
     <ClCompile Include="UtilityFx.cpp" />
     <ClCompile Include="AtaSmartExport.cpp" />
+    <ClCompile Include="GraphData.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManager.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -33,10 +42,17 @@
     <ClInclude Include="UtilityFx.h" />
     <ClInclude Include="DnpService.h" />
     <ClInclude Include="pch2.h" />
+    <ClInclude Include="GraphData.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="PathManager.h">
+      <Filter>Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Class.idl" />
     <Midl Include="AtaSmartInfo.idl" />
+    <Midl Include="GraphDataPoint.idl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DiskInfoLibWinRT.def" />

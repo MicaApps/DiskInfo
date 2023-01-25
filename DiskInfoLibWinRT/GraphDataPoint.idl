@@ -1,0 +1,11 @@
+namespace DiskInfoLibWinRT
+{
+    [bindable]
+    [default_interface]
+    runtimeclass GraphDataPoint 
+    {
+        GraphDataPoint(UInt64 xValue, UInt32 yValue);
+    UInt64 XValue;
+    UInt32 YValue;
+    }
+}
