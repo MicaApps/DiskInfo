@@ -12,6 +12,10 @@
 #include <winrt/Windows.Storage.h>
 #include <winrt/Windows.UI.Xaml.Interop.h>
 #include <ranges>
+#include <filesystem>
+#include "PathManager.h"
+#include "GraphData.h"
+#include <iostream>
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -73,6 +77,12 @@ namespace winrt::DiskInfoLibWinRT::implementation
 		return FALSE;
 	}
 
+	static void CreateDirectoryRecursive(std::wstring_view path)
+	{
+		auto parent = path.substr(0, path.substr(0, path.rfind(L"\\")).rfind(L"\\"));
+		std::filesystem::create_directory(std::filesystem::path{ parent });
+		std::filesystem::create_directory(std::filesystem::path{ path });
+	}
 
 	void Class::SaveSmartInfo(unsigned long i)
 	{
@@ -102,12 +112,12 @@ namespace winrt::DiskInfoLibWinRT::implementation
 		BOOL flagFirst = FALSE;
 		TCHAR str[256];
 
-		dir = m_SmartDir.data();
-		CreateDirectory(dir, NULL);
+		dir = PathManager::SmartDir().data();
+		CreateDirectoryRecursive(dir.GetBuffer());
 
 		disk = CAtaSmart::get_instance().vars[i].ModelSerial;
 		dir += disk;
-		CreateDirectory(dir, NULL);
+		std::filesystem::create_directory(std::filesystem::path{ dir.GetBuffer() });
 
 
 		// Computer Name
@@ -216,15 +226,16 @@ namespace winrt::DiskInfoLibWinRT::implementation
 			}
 		}
 	}
+
 	Class::Class()
 	{
 		BOOL flagChangeDisk = false;
 		AtaSmartInit(
 			true,
-			false, 
+			false,
 			&flagChangeDisk,
-			false, 
-			true, 
+			false,
+			true,
 			false);
 
 		auto& instance = CAtaSmart::get_instance();
@@ -238,7 +249,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
 			info.Interface(original.Interface.GetString());
 			info.CurrentTransferMode(
 				(original.CurrentTransferMode + L" | " + original.MaxTransferMode)
-			.GetString());
+				.GetString());
 			//info.MaxTransferMode(original.MaxTransferMode.AllocSysString());
 			info.DriveMap(original.DriveMap.GetString());
 			info.HostReads(original.HostReads);
@@ -247,7 +258,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
 			info.PowerOnCount(original.PowerOnCount);
 			info.PowerOnTime(original.PowerOnRawValue);
 			info.Standard((original.MajorVersion + L" | " + original.MinorVersion).GetString());
-
+			info.Index(i);
 			//attributes
 			for (auto j = 0; j < std::size(original.Attribute); ++j)
 			{
@@ -256,7 +267,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
 
 				SmartAttribute attr{};
 				attr.Id = std::format(L"{:0>2x}", attribute.Id);
-				
+
 				wchar_t buf[256]{};
 				static winrt::hstring const path{ [] {
 					TCHAR currentExePath[MAX_PATH]{};
@@ -268,10 +279,10 @@ namespace winrt::DiskInfoLibWinRT::implementation
 				}() };
 
 				GetPrivateProfileStringFx(
-					original.SmartKeyName, 
+					original.SmartKeyName,
 					attr.Id.data(),
-					L"", 
-					buf, 
+					L"",
+					buf,
 					sizeof(buf) / sizeof(wchar_t),
 					path.data()
 				);
@@ -279,16 +290,31 @@ namespace winrt::DiskInfoLibWinRT::implementation
 				attr.Name = buf;
 
 				std::wstring rawValue;
-				for(auto byte : std::ranges::reverse_view(attribute.RawValue))
+				for (auto byte : std::ranges::reverse_view(attribute.RawValue))
 					rawValue += std::format(L"{:0>2x}", byte);
 
 				attr.RawValue = rawValue;
 				attr.Threshold = std::format(L"{:0>2x}", threshold.ThresholdValue);
 
-				info.Attributes().Append(winrt:: box_value(attr));
+				info.Attributes().Append(winrt::box_value(attr));
 			}
 			m_info.Append(info);
 		}
+
+		//log
+		//SaveSmartInfo(0);
+
+		//set data source
+		GraphData::GetInstance().SetDataSource(CAtaSmart::get_instance().vars);
 	}
 
+	void Class::UpdateAll()
+	{
+		for (int i = 0; i < m_info.Size(); ++i)
+		{
+			auto disk = m_info.GetAt(i);
+			disk.Update();
+			SaveSmartInfo(i);
+		}
+	}
 }

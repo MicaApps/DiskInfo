@@ -1,3 +1,5 @@
+import "GraphDataPoint.idl";
+
 namespace DiskInfoLibWinRT
 {
     enum SizeUnit
@@ -16,6 +18,7 @@ namespace DiskInfoLibWinRT
         String RawValue;
         String Threshold;
     };
+
 
     runtimeclass AtaSmartInfo
     {
@@ -40,7 +43,11 @@ namespace DiskInfoLibWinRT
 
         Windows.Foundation.Collections.IVector<Object> Attributes{ get; };
 
-        void Update(Int32 index);
+        Windows.Foundation.Collections.IVector<Object> TemperatureData{ get; };
+
+        void Update();
+
+        Int32 Index;
     };
 
 

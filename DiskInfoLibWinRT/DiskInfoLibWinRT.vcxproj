@@ -125,8 +125,14 @@
     </ClInclude>
     <ClInclude Include="CommonFx.h" />
     <ClInclude Include="DnpService.h" />
+    <ClInclude Include="GraphData.h" />
+    <ClInclude Include="GraphDataPoint.h">
+      <DependentUpon>GraphDataPoint.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
     <ClInclude Include="NVMeInterpreter.h" />
     <ClInclude Include="OsInfoFx.h" />
+    <ClInclude Include="PathManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Class.h">
       <DependentUpon>Class.cpp</DependentUpon>
@@ -145,8 +151,14 @@
       <DependentUpon>AtaSmartInfo.idl</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="GraphData.cpp" />
+    <ClCompile Include="GraphDataPoint.cpp">
+      <DependentUpon>GraphDataPoint.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
     <ClCompile Include="NVMeInterpreter.cpp" />
     <ClCompile Include="OsInfoFx.cpp" />
+    <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -162,6 +174,9 @@
     <Midl Include="Class.idl">
       <SubType>Code</SubType>
       <DependentUpon>Class.cpp</DependentUpon>
+    </Midl>
+    <Midl Include="GraphDataPoint.idl">
+      <SubType>Designer</SubType>
     </Midl>
   </ItemGroup>
   <ItemGroup>
