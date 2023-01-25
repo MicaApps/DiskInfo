@@ -46,9 +46,14 @@ namespace winrt::DiskInfoLibWinRT::implementation
         void Standard(winrt::hstring value);
 
         winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::IInspectable> Attributes();
+        winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::IInspectable> TemperatureData();
 
-        void Update(int index);
+        void Update();
+
+        int Index();
+        void Index(int index);
     private:
+        int m_index = -1;
         winrt::hstring m_firmware;
         winrt::hstring m_serialNumber;
         winrt::hstring m_interface;

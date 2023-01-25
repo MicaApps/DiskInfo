@@ -16,6 +16,8 @@ namespace DiskTools.Helpers
         public const string UpdateDate = "UpdateDate";
         public const string SelectedAppTheme = "SelectedAppTheme";
         public const string SelectedBackdrop = "SelectedBackdrop";
+        public const string UpdateInterval = "UpdateInterval";
+        public const string AutoRefresh = "AutoRefresh";
 
         public static Type Get<Type>(string key) => LocalObject.Read<Type>(key);
         public static void Set<Type>(string key, Type value) => LocalObject.Save(key, value);

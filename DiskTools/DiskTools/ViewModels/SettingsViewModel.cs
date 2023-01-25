@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Resources;
 using Windows.Storage;
+using Windows.System.Threading;
 using WinRT;
 
 namespace DiskTools.ViewModels
@@ -51,6 +52,57 @@ namespace DiskTools.ViewModels
                 if (SelectedTheme != value)
                 {
                     ThemeHelper.RootTheme = (ElementTheme)(2 - value);
+                }
+            }
+        }
+
+        public static int UpdateInterval
+        {
+            get => SettingsHelper.Get<int>(SettingsHelper.UpdateInterval);
+            set
+            {
+                //设置更新间隔
+                TimeSpan[] intervals =
+                {
+                    TimeSpan.FromMinutes(1),
+                    TimeSpan.FromMinutes(3),
+                    TimeSpan.FromMinutes(10),
+                    TimeSpan.FromMinutes(30),
+                    TimeSpan.FromMinutes(60),
+                    TimeSpan.FromMinutes(120),
+                    TimeSpan.FromMinutes(180),
+                    TimeSpan.FromMinutes(360),
+                    TimeSpan.FromMinutes(720),
+                    TimeSpan.FromMinutes(1440),
+                };
+
+                if (value < 0 || value > intervals.Length)
+                    return;
+
+                if(UpdateInterval != value) 
+                {
+                    SettingsHelper.Set(SettingsHelper.UpdateInterval, value);
+                }
+
+
+                ThreadPoolTimer.CreatePeriodicTimer(
+                    (ThreadPoolTimer timer) =>
+                    {
+                        ViewModel.LibInstance.UpdateAll();
+                    }, intervals[value]
+                );
+            }
+        }
+
+        public bool AutoRefresh
+        {
+            get => SettingsHelper.Get<bool>(SettingsHelper.AutoRefresh);
+            set
+            {
+                if (AutoRefresh != value)
+                {
+                    SettingsHelper.Set(SettingsHelper.AutoRefresh, value);
+                    RaisePropertyChangedEvent();
                 }
             }
         }
