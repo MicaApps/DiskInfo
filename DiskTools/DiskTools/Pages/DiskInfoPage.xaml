@@ -134,14 +134,14 @@
                                                 <chart:LineSeries 
                                                 ItemsSource="{Binding Collection}"
                                                 XBindingPath="XValue" 
-                                                YBindingPath="YValue1" 
+                                                YBindingPath="YValue" 
                                                 PaletteBrushes="{StaticResource customBrushes2}"/>
 
                                                 <!--面积-->
                                                 <chart:AreaSeries 
                                                 ItemsSource="{Binding Collection}"  
                                                 XBindingPath="XValue" 
-                                                YBindingPath="YValue1"
+                                                YBindingPath="YValue"
                                                 PaletteBrushes="{StaticResource customBrushes}"/>
                                             </chart:SfCartesianChart.Series>
 
@@ -420,7 +420,7 @@
                                 </AppBarElementContainer>
 
                                 <!--刷新-->
-                                <AppBarButton Icon="Refresh" Label="Refresh"/>
+                                <AppBarButton Icon="Refresh" Label="Refresh" Click="AppBarButton_Click"/>
 
                             </CommandBar>
                         </Grid>

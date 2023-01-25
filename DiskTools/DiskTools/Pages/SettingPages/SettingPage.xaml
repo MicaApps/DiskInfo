@@ -74,15 +74,15 @@
                 <controls:SettingExpander>
                     
                     <controls:SettingExpander.Header>
-                        <controls:Setting Header="Auto Refresh time" Icon="&#xE149;">
-                            <ToggleSwitch/>
+                        <controls:Setting Header="Auto Refresh time" Icon="&#xE149;" >
+                            <ToggleSwitch IsOn="{Binding AutoRefresh, Mode=TwoWay}"/>
                         </controls:Setting>
                         
                     </controls:SettingExpander.Header>
 
                     <controls:SettingExpander.Content>
                         <Grid Style="{StaticResource ExpanderContentGridStyle}">
-                            <StackPanel>
+                            <RadioButtons SelectedIndex="{Binding UpdateInterval, Mode=TwoWay}" IsEnabled="{Binding AutoRefresh, Mode=TwoWay}">
                                 <RadioButton Content="Once a min" />
                                 <RadioButton Content="Once 3 min"/>
                                 <RadioButton Content="Once 10 min"/>
@@ -93,7 +93,7 @@
                                 <RadioButton Content="Once 360 min"/>
                                 <RadioButton Content="Once 720 min"/>
                                 <RadioButton Content="Once 1440 min"/>
-                            </StackPanel>
+                            </RadioButtons>
                             
 
                         </Grid>
