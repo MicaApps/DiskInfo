@@ -6,6 +6,7 @@
 
 #include "pch2.h"
 #include "AtaSmart.h"
+#include "GraphData.h"
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
@@ -109,8 +110,52 @@ namespace winrt::DiskInfoLibWinRT::implementation
     {
         return m_attributes;
     }
-    void AtaSmartInfo::Update(int index)
+    winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::IInspectable> AtaSmartInfo::TemperatureData()
     {
-        CAtaSmart::get_instance().UpdateSmartInfo(index);
+        auto data = winrt::single_threaded_vector<winrt::Windows::Foundation::IInspectable>();
+        //for (int i = 0; i < 10; ++i)
+        //{
+        //    data.Append(winrt::DiskInfoLibWinRT::GraphDataPoint
+        //        {
+        //            static_cast<uint64_t>(i),
+        //            static_cast<uint32_t>(i*i)
+        //        }
+        //    );
+        //}
+
+        constexpr static auto timeOffset = 19;
+        constexpr static auto valueOffset = 20;
+
+        auto f = GraphData::GetInstance().GetDataFile(GraphData::SMART_TEMPERATURE, m_index);
+        assert(f.is_open());
+        std::wstring stdLine;
+        while (std::getline(f, stdLine))
+        {
+            CString line = stdLine.data();
+            auto time = GraphDataUtil::GetTimeT(line.Left(timeOffset));
+            auto value = GraphDataUtil::GetValue(line.Mid(valueOffset));
+            data.Append(
+                winrt::DiskInfoLibWinRT::GraphDataPoint
+                {
+                    static_cast<uint64_t>(time),
+                    static_cast<uint32_t>(value)
+                }
+            );
+        }
+
+
+        return data;
+    }
+    void AtaSmartInfo::Update()
+    {
+        CAtaSmart::get_instance().UpdateSmartInfo(m_index);
+    }
+    int AtaSmartInfo::Index()
+    {
+        return m_index;
+    }
+    void AtaSmartInfo::Index(int index)
+    {
+        m_index = index;
     }
 }

@@ -5,6 +5,7 @@
 
 #include "Class.g.h"
 #include <winrt/Windows.Foundation.Collections.h>
+#include <winrt/Windows.Storage.h>
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
@@ -13,12 +14,15 @@ namespace winrt::DiskInfoLibWinRT::implementation
         Class();
 
         winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::AtaSmartInfo> Info() { return m_info; }
+
+        void UpdateAll();
     private:
-        winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::AtaSmartInfo> m_info = winrt::single_threaded_vector<winrt::DiskInfoLibWinRT::AtaSmartInfo>();
+        winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::AtaSmartInfo> m_info
+        {
+            winrt::single_threaded_vector<winrt::DiskInfoLibWinRT::AtaSmartInfo>()
+        };
         std::vector<SmartAttribute> m_attributes;
-        
-        static void SaveSmartInfo(unsigned long i);
-        static inline winrt::hstring m_SmartDir;
+        void SaveSmartInfo(unsigned long i);
         static inline bool m_NowDetectingUnitPowerOnHours = false;
         static inline int SAVE_SMART_PERIOD{};
     };
