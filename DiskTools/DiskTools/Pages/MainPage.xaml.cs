@@ -1,4 +1,4 @@
-
+Ôªø
 using CommunityToolkit.WinUI.UI;
 using DiskTools.Controls;
 using DiskTools.Helpers;
@@ -45,7 +45,7 @@ namespace DiskTools.Pages
                 AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
                 ActualThemeChanged += (sender, arg) => ThemeHelper.UpdateSystemCaptionButtonColors();
             }
-            UIHelper.MainWindow.SetTitleBar(AppTitleBar);
+
             AddNavigationMenuItems();
         }
 
@@ -133,11 +133,11 @@ namespace DiskTools.Pages
             {
                 // SettingsItem is not part of NavView.MenuItems, and doesn't have a Tag.
                 NavigationView.SelectedItem = (NavigationViewItem)NavigationView.SettingsItem;
-                NavigationView.Header = "…Ë÷√";
+                NavigationView.Header = "ËÆæÁΩÆ";
             }
             else if (NavigationViewFrame.SourcePageType == typeof(TestPage))
             {
-                NavigationView.Header = "≤‚ ‘";
+                NavigationView.Header = "ÊµãËØï";
             }
             else
             {
@@ -151,64 +151,7 @@ namespace DiskTools.Pages
             }
         }
 
-        private void NavigationViewControl_PaneClosing(NavigationView sender, NavigationViewPaneClosingEventArgs args)
-        {
-            UpdateAppTitleMargin(sender);
-        }
-
-        private void NavigationViewControl_PaneOpening(NavigationView sender, object args)
-        {
-            UpdateAppTitleMargin(sender);
-        }
-
-        private void NavigationViewControl_DisplayModeChanged(NavigationView sender, NavigationViewDisplayModeChangedEventArgs args)
-        {
-            if (ApiInformation.IsPropertyPresent("Microsoft.UI.Xaml.UIElement", "TranslationTransition"))
-            {
-                AppTitleBar.TranslationTransition = new Vector3Transition();
-
-                AppTitleBar.Translation = sender.DisplayMode == NavigationViewDisplayMode.Minimal &&
-                         sender.IsBackButtonVisible != NavigationViewBackButtonVisible.Collapsed
-                    ? new System.Numerics.Vector3(((float)sender.CompactPaneLength * 2) - 8, 0, 0)
-                    : new System.Numerics.Vector3((float)sender.CompactPaneLength, 0, 0);
-            }
-            else
-            {
-                Thickness currMargin = AppTitleBar.Margin;
-
-                AppTitleBar.Margin = sender.DisplayMode == NavigationViewDisplayMode.Minimal &&
-                             sender.IsBackButtonVisible != NavigationViewBackButtonVisible.Collapsed
-                    ? new Thickness((sender.CompactPaneLength * 2) - 8, currMargin.Top, currMargin.Right, currMargin.Bottom)
-                    : new Thickness(sender.CompactPaneLength, currMargin.Top, currMargin.Right, currMargin.Bottom);
-            }
-
-            UpdateAppTitleMargin(sender);
-            UpdateHeaderMargin(sender);
-        }
-
         public string GetAppTitleFromSystem => ResourceLoader.GetForViewIndependentUse()?.GetString("AppName") ?? "Disk Tools";
-
-        private void UpdateAppTitleMargin(NavigationView sender)
-        {
-            const int smallLeftIndent = 4, largeLeftIndent = 24;
-
-            if (ApiInformation.IsPropertyPresent("Windows.UI.Xaml.UIElement", "TranslationTransition"))
-            {
-                AppTitle.TranslationTransition = new Vector3Transition();
-
-                AppTitle.Translation = sender.DisplayMode == NavigationViewDisplayMode.Minimal || sender.IsPaneOpen
-                    ? new System.Numerics.Vector3(smallLeftIndent, 0, 0)
-                    : new System.Numerics.Vector3(largeLeftIndent, 0, 0);
-            }
-            else
-            {
-                Thickness currMargin = AppTitle.Margin;
-
-                AppTitle.Margin = sender.DisplayMode == NavigationViewDisplayMode.Minimal || sender.IsPaneOpen
-                    ? new Thickness(smallLeftIndent, currMargin.Top, currMargin.Right, currMargin.Bottom)
-                    : new Thickness(largeLeftIndent, currMargin.Top, currMargin.Right, currMargin.Bottom);
-            }
-        }
 
         private void UpdateHeaderMargin(NavigationView sender)
         {
@@ -239,17 +182,7 @@ namespace DiskTools.Pages
             }
         }
 
-        private void AppTitleBar_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            if (!UIHelper.HasTitleBar)
-            {
-                int backButtonWidth = NavigationView.DisplayMode == NavigationViewDisplayMode.Minimal ? 96 : 48;
-                RectInt32 Rect = new((ActualWidth - AppTitleBar.ActualWidth + backButtonWidth).GetActualPixel(), 0, AppTitleBar.ActualWidth.GetActualPixel(), AppTitleBar.ActualHeight.GetActualPixel());
-                AppWindow.TitleBar.SetDragRectangles(new RectInt32[] { Rect });
-            }
-        }
-
-        #region ◊¥Ã¨¿∏
+        #region Áä∂ÊÄÅÊ†è
 
         public void ShowProgressBar()
         {

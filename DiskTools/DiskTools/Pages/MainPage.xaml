@@ -24,36 +24,23 @@
     </Page.Background>
 
     <Grid>
-        <Border
-            x:Name="AppTitleBar"
-            Height="{Binding ElementName=NavigationView, Path=CompactPaneLength}"
-            VerticalAlignment="Top"
-            Canvas.ZIndex="1"
-            IsHitTestVisible="True"
-            SizeChanged="AppTitleBar_SizeChanged">
-            <TextBlock
-                x:Name="AppTitle"
-                VerticalAlignment="Center"
-                x:FieldModifier="Public"
-                Style="{StaticResource CaptionTextBlockStyle}"
-                Text="{x:Bind GetAppTitleFromSystem}"
-                TextTrimming="CharacterEllipsis" />
-        </Border>
 
         <NavigationView
             x:Name="NavigationView"
-            BackRequested="NavigationView_BackRequested"
-            DisplayModeChanged="NavigationViewControl_DisplayModeChanged"
             ExpandedModeThresholdWidth="1200"
             HeaderTemplate="{StaticResource NavigationViewHeaderTemplate}"
             IsTabStop="False"
-            IsTitleBarAutoPaddingEnabled="False"
+            IsBackButtonVisible="Collapsed"
+            IsTitleBarAutoPaddingEnabled="True"
             Loaded="NavigationView_Loaded"
-            PaneClosing="NavigationViewControl_PaneClosing"
-            PaneOpening="NavigationViewControl_PaneOpening"
             SelectionChanged="NavigationView_SelectionChanged"
             >
-            
+            <NavigationView.Resources>
+                <Thickness x:Key="NavigationViewContentMargin">0,0,0,0</Thickness>
+                <Brush x:Key="NavigationViewContentGridBorderBrush">Transparent</Brush>
+                <Brush x:Key="NavigationViewContentBackground">Transparent</Brush>
+                <x:Double x:Key="NavigationViewContentGridCornerRadius">0</x:Double>
+            </NavigationView.Resources>
             <!--margin 是页面的内容页边界-->
             <Frame x:Name="NavigationViewFrame" x:FieldModifier="public" Margin="-46 -88 -32 -36"/>
         </NavigationView>
