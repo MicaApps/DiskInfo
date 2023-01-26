@@ -19,12 +19,12 @@ namespace DiskTools.Helpers
     {
         private readonly Window window;
         private readonly WindowsSystemDispatcherQueueHelper m_wsdqHelper;
-        private MicaController m_micaController;
-        private DesktopAcrylicController m_acrylicController;
-        private SystemBackdropConfiguration m_configurationSource;
+        private MicaController? m_micaController;
+        private DesktopAcrylicController? m_acrylicController;
+        private SystemBackdropConfiguration? m_configurationSource;
 
         public BackdropType? Backdrop { get; private set; } = null;
-        public event TypedEventHandler<BackdropHelper, object> BackdropTypeChanged;
+        public event TypedEventHandler<BackdropHelper, object>? BackdropTypeChanged;
 
         public BackdropHelper(Window window)
         {
@@ -141,7 +141,7 @@ namespace DiskTools.Helpers
 
         private void Window_Activated(object sender, WindowActivatedEventArgs args)
         {
-            m_configurationSource.IsInputActive = args.WindowActivationState != WindowActivationState.Deactivated;
+            m_configurationSource!.IsInputActive = args.WindowActivationState != WindowActivationState.Deactivated;
         }
 
         private void Window_Closed(object sender, WindowEventArgs args)
@@ -180,9 +180,9 @@ namespace DiskTools.Helpers
         {
             switch (((FrameworkElement)window.Content).ActualTheme)
             {
-                case ElementTheme.Dark: m_configurationSource.Theme = SystemBackdropTheme.Dark; break;
-                case ElementTheme.Light: m_configurationSource.Theme = SystemBackdropTheme.Light; break;
-                case ElementTheme.Default: m_configurationSource.Theme = SystemBackdropTheme.Default; break;
+                case ElementTheme.Dark: m_configurationSource!.Theme = SystemBackdropTheme.Dark; break;
+                case ElementTheme.Light: m_configurationSource!.Theme = SystemBackdropTheme.Light; break;
+                case ElementTheme.Default: m_configurationSource!.Theme = SystemBackdropTheme.Default; break;
             }
         }
     }
