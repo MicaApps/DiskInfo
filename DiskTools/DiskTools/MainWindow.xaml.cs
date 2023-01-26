@@ -1,5 +1,4 @@
 using DiskTools.Helpers;
-using DiskTools.Pages;
 using Microsoft.UI.Xaml;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -16,11 +15,9 @@ namespace DiskTools
 
         public MainWindow()
         {
-            InitializeComponent();
-            Backdrop = new BackdropHelper(this);
             UIHelper.MainWindow = this;
-            MainPage MainPage = new();
-            Content = MainPage;
+            Backdrop = new BackdropHelper(this);
+            InitializeComponent();
             SetBackdrop();
         }
 
