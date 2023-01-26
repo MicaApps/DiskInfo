@@ -43,7 +43,7 @@ namespace DiskTools.Helpers
         /// <returns></returns>
         public static ExceptionHandlingSynchronizationContext Register()
         {
-            SynchronizationContext syncContext = Current;
+            SynchronizationContext? syncContext = Current;
             if (syncContext == null)
             {
                 throw new InvalidOperationException("Ensure a synchronization context exists before calling this method.");
@@ -159,12 +159,12 @@ namespace DiskTools.Helpers
         /// Listen to this event to catch any unhandled exceptions and allow for handling them
         /// so they don't crash your application
         /// </summary>
-        public event EventHandler<UnhandledExceptionEventArgs> UnhandledException;
+        public event EventHandler<UnhandledExceptionEventArgs>? UnhandledException;
     }
 
     public class UnhandledExceptionEventArgs : EventArgs
     {
         public bool Handled { get; set; }
-        public Exception Exception { get; set; }
+        public required Exception Exception { get; init; }
     }
 }
