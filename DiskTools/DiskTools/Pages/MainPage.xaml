@@ -24,7 +24,15 @@
     </Page.Background>
 
     <Grid>
-
+        <Border
+            x:Name="AppTitleBar"
+            VerticalAlignment="Top"
+            Canvas.ZIndex="1"
+            IsHitTestVisible="True"
+            SizeChanged="AppTitleBar_SizeChanged"
+            BorderBrush="Transparent"
+            Background="Transparent">
+        </Border>
         <NavigationView
             x:Name="NavigationView"
             ExpandedModeThresholdWidth="1200"
