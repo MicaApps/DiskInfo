@@ -206,8 +206,8 @@
                                                                     <Rectangle Width="30" HorizontalAlignment="Left" >
                                                                         <Rectangle.Fill>
                                                                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                                                                <GradientStop Color="#ffffffff" Offset="1" x:Name="GradientStop1"/>
-                                                                                <GradientStop Color="#10ffffff" Offset="0" x:Name="GradientStop4"/>
+                                                                                <GradientStop Color="#ffffffff" Offset="1" x:Name="GradientStop7"/>
+                                                                                <GradientStop Color="#10ffffff" Offset="0" x:Name="GradientStop8"/>
                                                                             </LinearGradientBrush>
                                                                         </Rectangle.Fill>
                                                                     </Rectangle>
@@ -224,7 +224,7 @@
                                     <Grid Grid.Row="1">
                                         <!--带图标的数据列-->
                                         <controls:AdaptiveGridView 
-                                        Name="AdaptiveGridViewControl"
+                                        Name="AdaptiveGridViewContro2"
                                         StretchContentForSingleRow="False"
                                         OneRowModeEnabled="False"
                                         SelectionMode="Single"
@@ -359,8 +359,8 @@
                                         <Rectangle Width="Auto" Height="Auto" Grid.ColumnSpan="3">
                                             <Rectangle.Fill>
                                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                    <GradientStop Color="#10ffffff" Offset="1" x:Name="GradientStop5"/>
-                                                    <GradientStop Color="#50ffffff" Offset="0" x:Name="GradientStop6"/>
+                                                    <GradientStop Color="#10ffffff" Offset="1" x:Name="GradientStop9"/>
+                                                    <GradientStop Color="#50ffffff" Offset="0" x:Name="GradientStop10"/>
                                                 </LinearGradientBrush>
                                             </Rectangle.Fill>
                                         </Rectangle>
@@ -383,6 +383,112 @@
                                     </Grid>
                                 </Grid>
                                 
+                            </ScrollViewer>
+
+                            <!--命令栏-->
+                            <CommandBar Grid.Row="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" VerticalAlignment="Bottom">
+
+                                <!--保存（导出）-->
+                                <AppBarButton Icon="Save" Label="Save">
+                                    <AppBarButton.Flyout>
+                                        <MenuFlyout Placement="RightEdgeAlignedTop">
+                                            <MenuFlyoutItem Text="Save as image"/>
+                                            <MenuFlyoutItem Text="Save as text"/>
+                                        </MenuFlyout>
+                                    </AppBarButton.Flyout>
+                                </AppBarButton>
+
+                                <!--复制-->
+                                <AppBarElementContainer>
+                                    <SplitButton ToolTipService.ToolTip="Alignment">
+
+                                        <SplitButton.Content>
+                                            <Viewbox Width="16" Height="16" Margin="0,2,0,0">
+                                                <SymbolIcon Symbol="Copy"/>
+                                            </Viewbox>
+                                        </SplitButton.Content>
+                                        <SplitButton.Flyout>
+                                            <MenuFlyout>
+                                                <MenuFlyoutItem  Text="解析ASCII内容"/>
+                                                <MenuFlyoutSeparator/>
+                                                <MenuFlyoutItem Text="IDENTIFY DEVICE"/>
+                                                <MenuFlyoutItem Text="SMART_READ_THRESHOLD"/>
+                                                <MenuFlyoutItem  Text="SMART_READ DATA"/>
+                                            </MenuFlyout>
+                                        </SplitButton.Flyout>
+                                    </SplitButton>
+                                </AppBarElementContainer>
+
+                                <!--刷新-->
+                                <AppBarButton Icon="Refresh" Label="Refresh" Click="AppBarButton_Click"/>
+
+                            </CommandBar>
+                        </Grid>
+
+                    </PivotItem>
+                    <PivotItem>
+
+                        <Grid>
+                            
+                            <ScrollViewer>
+
+                                <!--右侧面板边距-->
+                                <Grid VerticalAlignment="Top" Margin="62">
+
+                                    <Grid>
+                                        <!--统计图-->
+
+                                        <Grid.DataContext>
+                                            <local1:ViewModel/>
+                                        </Grid.DataContext>
+
+                                        <!--折线图-->
+                                        <chart:SfCartesianChart VerticalAlignment="Stretch">
+
+                                            <!--渐变画笔-->
+                                            <chart:SfCartesianChart.Resources>
+                                                <BrushCollection x:Key="customBrushes5">
+                                                    <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                                        <GradientStop Offset="2" Color="#90FFffff" />
+                                                        <GradientStop Offset="0" Color="#00ffffff" />
+                                                    </LinearGradientBrush>
+                                                </BrushCollection>
+
+                                                <BrushCollection x:Key="customBrushes6">
+                                                    <SolidColorBrush Color="#ffffff"/>
+                                                </BrushCollection>
+
+                                            </chart:SfCartesianChart.Resources>
+
+                                            <!--图-->
+                                            <chart:SfCartesianChart.XAxes>
+                                                <chart:CategoryAxis />
+                                            </chart:SfCartesianChart.XAxes>
+
+                                            <chart:SfCartesianChart.YAxes>
+                                                <chart:NumericalAxis />
+                                            </chart:SfCartesianChart.YAxes>
+
+                                            <chart:SfCartesianChart.Series>
+
+                                                <!--折线-->
+                                                <chart:LineSeries 
+                                                ItemsSource="{Binding Collection}"
+                                                XBindingPath="XValue" 
+                                                YBindingPath="YValue" 
+                                                PaletteBrushes="{StaticResource customBrushes6}"/>
+
+                                                <!--面积-->
+                                                <chart:AreaSeries 
+                                                ItemsSource="{Binding Collection}"  
+                                                XBindingPath="XValue" 
+                                                YBindingPath="YValue"
+                                                PaletteBrushes="{StaticResource customBrushes5}"/>
+                                                
+                                            </chart:SfCartesianChart.Series>
+                                        </chart:SfCartesianChart>
+                                    </Grid>
+                                </Grid>
                             </ScrollViewer>
 
                             <!--命令栏-->
@@ -449,7 +555,6 @@
                     <PivotItem />
                     <PivotItem />
                     <PivotItem />
-                    <PivotItem />
                 </Pivot>
             </TwoPaneView.Pane2>
 
@@ -479,7 +584,7 @@
                         <AdaptiveTrigger MinWindowWidth="0" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="Root.Padding" Value="6,0" />
+                        <Setter Target="Root.Padding" Value="50 30 -30 -60" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
