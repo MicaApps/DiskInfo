@@ -45,7 +45,6 @@ namespace DiskTools.Pages
                 AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
                 ActualThemeChanged += (sender, arg) => ThemeHelper.UpdateSystemCaptionButtonColors();
             }
-
             AddNavigationMenuItems();
         }
 
@@ -217,5 +216,14 @@ namespace DiskTools.Pages
         }
 
         #endregion
+
+        private void AppTitleBar_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (!UIHelper.HasTitleBar)
+            {
+                RectInt32 Rect = new((ActualWidth - AppTitleBar.ActualWidth + 48).GetActualPixel(), 0, AppTitleBar.ActualWidth.GetActualPixel(), 32);
+                AppWindow.TitleBar.SetDragRectangles(new RectInt32[] { Rect });
+            }
+        }
     }
 }
