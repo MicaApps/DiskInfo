@@ -1,41 +1,51 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace DiskTools
 {
     /// <summary>
     /// 封装对dll的引用
     /// </summary>
-    internal static class Interop
+    internal static partial class Interop
     {
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial IntPtr GetFirmware();
 
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr GetFirmware();
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial int GetDriveNum();
 
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int GetDriveNum();
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial void AtaSmartInit(int useWmi, int advancedDiskSearch, ref int flagChangeDisk, int workaroundHD204UI, int workaroundAdataSsd, int flagHideNoSmartDisk);
 
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void AtaSmartInit(int useWmi, int advancedDiskSearch, ref int flagChangeDisk, int workaroundHD204UI, int workaroundAdataSsd, int flagHideNoSmartDisk);
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial double GetDiskStatus();
 
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern double GetDiskStatus();
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial double GetCapacity();
 
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern double GetCapacity();
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial IntPtr GetAtaAtapi();
 
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr GetAtaAtapi();
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial IntPtr GetBufferSize();
 
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr GetBufferSize();
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial IntPtr GetFeature();
 
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr GetFeature();
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial IntPtr GetFirmwareRev();
 
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr GetFirmwareRev();
-
-        [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr GetDriveMap();
+        [LibraryImport("DiskInfo.dll", StringMarshalling = StringMarshalling.Utf16)]
+        [UnmanagedCallConv(CallConvs = new[] { typeof(CallConvCdecl) })]
+        public static partial IntPtr GetDriveMap();
     }
 }

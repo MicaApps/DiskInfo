@@ -23,13 +23,13 @@ namespace DiskTools.ViewModels
         private readonly SettingPage _page;
         private readonly ResourceLoader _loader = ResourceLoader.GetForViewIndependentUse("SettingPage");
 
-        public static SettingsViewModel Caches;
+        public static SettingsViewModel? Caches;
 
-        public static string WASVersion => Assembly.GetAssembly(typeof(ExtendedActivationKind)).GetName().Version.ToString(3);
+        public static string WASVersion => Assembly.GetAssembly(typeof(ExtendedActivationKind))!.GetName().Version!.ToString(3);
 
-        public static string SDKVersion => Assembly.GetAssembly(typeof(PackageSignatureKind)).GetName().Version.ToString();
+        public static string SDKVersion => Assembly.GetAssembly(typeof(PackageSignatureKind))!.GetName().Version!.ToString();
 
-        public static string WinRTVersion => Assembly.GetAssembly(typeof(TrustLevel)).GetName().Version.ToString(3);
+        public static string WinRTVersion => Assembly.GetAssembly(typeof(TrustLevel))!.GetName().Version!.ToString(3);
 
         public DateTime UpdateDate
         {
@@ -233,7 +233,7 @@ namespace DiskTools.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private void RaisePropertyChangedEvent([System.Runtime.CompilerServices.CallerMemberName] string name = null)
         {
@@ -275,7 +275,7 @@ namespace DiskTools.ViewModels
         public async void CheckUpdate()
         {
             CheckingUpdate = true;
-            UpdateInfo info = null;
+            UpdateInfo? info = null;
             try
             {
                 info = await UpdateHelper.CheckUpdateAsync("DiskTools", "DiskInfo");

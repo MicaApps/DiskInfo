@@ -8,9 +8,9 @@ namespace DiskTools.Converters
 {
     class ReadableBytesConverter : Microsoft.UI.Xaml.Data.IValueConverter
     {
-        static readonly UInt64 ToKB = 1024;
-        static readonly UInt64 ToMB = 1024 * 1024;
-        static readonly UInt64 ToGB = 1024 * 1024 * 1024;
+        const UInt64 ToKB = 1024;
+        const UInt64 ToMB = 1024 * 1024;
+        const UInt64 ToGB = 1024 * 1024 * 1024;
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             //var bytes = (UInt64)value;
