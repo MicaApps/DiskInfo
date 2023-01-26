@@ -165,6 +165,6 @@ namespace DiskTools.Helpers
     public class UnhandledExceptionEventArgs : EventArgs
     {
         public bool Handled { get; set; }
-        public required Exception Exception { get; init; }
+        public Exception Exception { get; init; }
     }
 }
