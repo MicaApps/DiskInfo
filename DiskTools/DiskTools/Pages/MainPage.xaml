@@ -27,36 +27,37 @@
         <Border
             x:Name="AppTitleBar"
             VerticalAlignment="Top"
-            Canvas.ZIndex="1"
-            IsHitTestVisible="True"
-            SizeChanged="AppTitleBar_SizeChanged"
+            Background="Transparent"
             BorderBrush="Transparent"
-            Background="Transparent">
-        </Border>
+            Canvas.ZIndex="1"
+            IsHitTestVisible="False"
+            SizeChanged="AppTitleBar_SizeChanged" />
         <NavigationView
             x:Name="NavigationView"
+            AlwaysShowHeader="{Binding IsShowHeader}"
             ExpandedModeThresholdWidth="1200"
-            HeaderTemplate="{StaticResource NavigationViewHeaderTemplate}"
-            IsTabStop="False"
             IsBackButtonVisible="Collapsed"
+            IsTabStop="False"
             IsTitleBarAutoPaddingEnabled="True"
             Loaded="NavigationView_Loaded"
-            SelectionChanged="NavigationView_SelectionChanged"
-            >
+            PaneDisplayMode="Left"
+            SelectionChanged="NavigationView_SelectionChanged">
             <NavigationView.Resources>
                 <Thickness x:Key="NavigationViewContentMargin">0,0,0,0</Thickness>
                 <Brush x:Key="NavigationViewContentGridBorderBrush">Transparent</Brush>
                 <Brush x:Key="NavigationViewContentBackground">Transparent</Brush>
                 <x:Double x:Key="NavigationViewContentGridCornerRadius">0</x:Double>
             </NavigationView.Resources>
-            <!--margin 是页面的内容页边界-->
-            <Frame x:Name="NavigationViewFrame" x:FieldModifier="public" Margin="-46 -88 -32 -36"/>
+            <!--  margin 是页面的内容页边界  -->
+            <Frame
+                x:Name="NavigationViewFrame"
+                Margin="{Binding FrameMargin}"
+                x:FieldModifier="public" />
         </NavigationView>
         <ProgressBar
             x:Name="ProgressBar"
             VerticalAlignment="Top"
             Background="Transparent"
-            IsIndeterminate="False" 
-            />
+            IsIndeterminate="False" />
     </Grid>
 </Page>
