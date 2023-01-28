@@ -41,7 +41,7 @@ namespace DiskTools.Pages
                     info.Standard = "NVM Express 1.3";
 
                     //填充假attribute
-                    for(int i = 0; i<15; ++i)
+                    for (int i = 0; i<15; ++i)
                     {
                         info.Attributes.Add(
                             new SmartAttribute()
