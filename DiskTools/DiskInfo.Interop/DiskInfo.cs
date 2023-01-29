@@ -5,7 +5,7 @@ namespace DiskInfo
 {
     public class DiskInfo
     {
-        public event Action<bool> Initialized;
+        public event Action<bool>? Initialized;
 
         public DiskInfo()
         {
