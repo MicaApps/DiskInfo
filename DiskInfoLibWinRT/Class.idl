@@ -9,5 +9,11 @@ namespace DiskInfoLibWinRT
         Windows.Foundation.Collections.IVector<DiskInfoLibWinRT.AtaSmartInfo> Info{ get; };
 
         void UpdateAll();
+        void SaveText(String fileName); //CDiskInfoDlg::SaveText()
+
+        Boolean AsciiView;
+        Boolean DumpSmartReadData;
+        Boolean DumpSmartReadThreshold;
+        Boolean DumpIdentifyDevice;
     }
 }

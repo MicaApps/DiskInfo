@@ -2100,31 +2100,6 @@ protected:
 #endif
 };
 
-/*
-* ��װDLL
-*/
-//extern DWORD selectedDrive = 0;
-/// <summary>
-/// ����DLL
-/// </summary>
-/// <param name="a"></param>
-/// <param name="b"></param>
-/// <returns></returns>
-extern "C" IMPORT_DLL int Add(int a, int b);
-
-/// <summary>
-/// ѡ��Ӳ��
-/// </summary>
-/// <param name="i"></param>
-/// <returns></returns>
-extern "C" IMPORT_DLL BOOL SelectDrive(DWORD i);
-
-/// <summary>
-/// ѡ��Ӳ��
-/// </summary>
-/// <param name="i"></param>
-/// <returns></returns>
-extern "C" IMPORT_DLL DWORD GetSelectedDrive();
 
 /// <summary>
 /// AtaSmartInit���ڻ�ȡ����ʱ��Ҫ�ȵ���һ��
@@ -2137,65 +2112,3 @@ extern "C" IMPORT_DLL DWORD GetSelectedDrive();
 /// <param name="flagHideNoSmartDisk"></param>
 /// <returns></returns>
 extern "C" IMPORT_DLL void AtaSmartInit(BOOL useWmi, BOOL advancedDiskSearch, PBOOL flagChangeDisk, BOOL workaroundHD204UI, BOOL workaroundAdataSsd, BOOL flagHideNoSmartDisk);
-
-/// <summary>
-/// ����Ӳ����������������
-/// </summary>
-/// <returns>int</returns>
-extern "C" IMPORT_DLL int GetDriveNum();
-
-
-/// <summary>
-/// ����ֵΪ�ַ���ʱ��д��
-/// CString
-/// </summary>
-/// <returns>�ַ���</returns>
-extern "C" IMPORT_DLL wchar_t* GetFirmware();
-
-extern "C" IMPORT_DLL wchar_t* GetModel();
-
-extern "C" IMPORT_DLL wchar_t* GetSerialNumber();
-
-extern "C" IMPORT_DLL wchar_t* GetFirmwareRev();
-
-extern "C" IMPORT_DLL wchar_t* GetBufferSize();
-
-extern "C" IMPORT_DLL wchar_t* GetNvCacheSize();
-
-extern "C" IMPORT_DLL wchar_t* GetRotationRate();
-
-extern "C" IMPORT_DLL wchar_t* GetLbaSize();
-
-extern "C" IMPORT_DLL wchar_t* GetTransferMode();
-
-extern "C" IMPORT_DLL wchar_t* GetInterface();
-
-extern "C" IMPORT_DLL wchar_t* GetAtaAtapi();
-
-extern "C" IMPORT_DLL wchar_t* GetFeature();
-
-extern "C" IMPORT_DLL wchar_t* GetDriveMap();
-
-enum
-{
-	ICON_GOOD = 0,
-	ICON_GOOD_GREEN,
-	ICON_CAUTION,
-	ICON_BAD,
-	ICON_UNKNOWN
-};
-
-extern "C" IMPORT_DLL wchar_t* GetListInfo();
-
-extern "C" IMPORT_DLL double GetCapacity();
-
-extern "C" IMPORT_DLL int GetTemperature();
-
-extern "C" IMPORT_DLL int GetMeasuredPowerOnHours();
-
-extern "C" IMPORT_DLL int GetPowerOnCount();
-
-extern "C" IMPORT_DLL DWORD GetDiskStatus();
-
-
-extern "C" IMPORT_DLL DWORD UpdateInfo();
