@@ -133,11 +133,11 @@ namespace DiskTools.Pages
             {
                 // SettingsItem is not part of NavView.MenuItems, and doesn't have a Tag.
                 NavigationView.SelectedItem = (NavigationViewItem)NavigationView.SettingsItem;
-                NavigationView.Header = "ÉèÖÃ";
+                NavigationView.Header = "ï¿½ï¿½ï¿½ï¿½";
             }
             else if (NavigationViewFrame.SourcePageType == typeof(TestPage))
             {
-                NavigationView.Header = "²âÊÔ";
+                NavigationView.Header = "ï¿½ï¿½ï¿½ï¿½";
             }
             else
             {
@@ -249,7 +249,6 @@ namespace DiskTools.Pages
             }
         }
 
-        #region ×´Ì¬À¸
 
         public void ShowProgressBar()
         {
@@ -282,7 +281,5 @@ namespace DiskTools.Pages
             ProgressBar.ShowError = false;
             ProgressBar.ShowPaused = false;
         }
-
-        #endregion
     }
 }

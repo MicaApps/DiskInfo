@@ -10,6 +10,14 @@
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
+    winrt::hstring AtaSmartInfo::Model()
+    {
+        return m_model;
+    }
+    void AtaSmartInfo::Model(winrt::hstring value)
+    {
+        m_model = value;
+    }
     winrt::hstring AtaSmartInfo::Firmware()
     {
         return m_firmware;
@@ -110,23 +118,26 @@ namespace winrt::DiskInfoLibWinRT::implementation
     {
         return m_attributes;
     }
-    winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::IInspectable> AtaSmartInfo::TemperatureData()
+    void AtaSmartInfo::Update()
     {
-        auto data = winrt::single_threaded_vector<winrt::Windows::Foundation::IInspectable>();
-        //for (int i = 0; i < 10; ++i)
-        //{
-        //    data.Append(winrt::DiskInfoLibWinRT::GraphDataPoint
-        //        {
-        //            static_cast<uint64_t>(i),
-        //            static_cast<uint32_t>(i*i)
-        //        }
-        //    );
-        //}
+        CAtaSmart::get_instance().UpdateSmartInfo(m_index);
+    }
+    int AtaSmartInfo::Index()
+    {
+        return m_index;
+    }
+    void AtaSmartInfo::Index(int index)
+    {
+        m_index = index;
+    }
+    winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::GraphDataPoint> AtaSmartInfo::readCsv(int dataType)
+    {
+        auto data = winrt::single_threaded_vector<winrt::DiskInfoLibWinRT::GraphDataPoint>();
 
         constexpr static auto timeOffset = 19;
         constexpr static auto valueOffset = 20;
 
-        auto f = GraphData::GetInstance().GetDataFile(GraphData::SMART_TEMPERATURE, m_index);
+        auto f = GraphData::GetInstance().GetDataFile(dataType, m_index);
         assert(f.is_open());
         std::wstring stdLine;
         while (std::getline(f, stdLine))
@@ -143,19 +154,6 @@ namespace winrt::DiskInfoLibWinRT::implementation
             );
         }
 
-
         return data;
-    }
-    void AtaSmartInfo::Update()
-    {
-        CAtaSmart::get_instance().UpdateSmartInfo(m_index);
-    }
-    int AtaSmartInfo::Index()
-    {
-        return m_index;
-    }
-    void AtaSmartInfo::Index(int index)
-    {
-        m_index = index;
     }
 }

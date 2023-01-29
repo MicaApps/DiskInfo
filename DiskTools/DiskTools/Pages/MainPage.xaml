@@ -10,7 +10,6 @@
     <Page.Resources>
         <DataTemplate x:Key="NavigationViewHeaderTemplate">
             <controls:PageHeader
-                Title="{Binding}"
                 Background="Transparent"
                 BackgroundColorOpacity="1" />
         </DataTemplate>

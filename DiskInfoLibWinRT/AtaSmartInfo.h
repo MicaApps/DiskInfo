@@ -2,12 +2,16 @@
 
 #include "AtaSmartInfo.g.h"
 #include <winrt/Windows.Foundation.Collections.h>
+#include "GraphData.h"
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
     struct AtaSmartInfo : AtaSmartInfoT<AtaSmartInfo>
     {
         AtaSmartInfo() = default;
+
+        winrt::hstring Model();
+        void Model(winrt::hstring value);
 
         winrt::hstring Firmware();
         void Firmware(winrt::hstring value);
@@ -46,7 +50,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
         void Standard(winrt::hstring value);
 
         winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::IInspectable> Attributes();
-        winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::IInspectable> TemperatureData();
+        winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::GraphDataPoint> TemperatureData() { return readCsv(GraphData::SMART_TEMPERATURE); }
 
         void Update();
 
@@ -54,6 +58,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
         void Index(int index);
     private:
         int m_index = -1;
+        winrt::hstring m_model;
         winrt::hstring m_firmware;
         winrt::hstring m_serialNumber;
         winrt::hstring m_interface;
@@ -71,6 +76,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
         {
             winrt::single_threaded_vector<winrt::Windows::Foundation::IInspectable>()
         };
+        winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::GraphDataPoint> readCsv(int dataType);
     };
 }
 
