@@ -22,6 +22,7 @@
         <converters:ReadableBytesConverter x:Key="ReadableBytesConverter"/>
         <converters:ReadableTimeConverter x:Key="ReadableTimeConverter"/>
         <converters:ReadableCountConverter x:Key="ReadableCountConverter"/>
+        <converters:ReadableRotationConverter x:Key="ReadableRotationConverter"/>
     </Page.Resources>
 
     <Grid x:Name="Root">
@@ -45,36 +46,26 @@
                         Grid.Row="1"
                         SelectedIndex="0">
                         <ListViewItem x:Uid="/DiskInfoPage/Disk_Overview" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Refresh_Sector" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Sector_EventCount" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_PowerUpNumber" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Block_Erasure_Record_SLC" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Minimum_Number_of_Programming_and_Erasing" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Maximum_Number_of_Programming_and_Erasing" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Maximum_Number_of_bad_blocks_in_die" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Bad_Blocks_Count" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_New_Bad_Blocks" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Programming_Failure_Count" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Erasing_Failure_Count" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Average_Number_of_Programming_and_Erasing" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Number_of_Unexpected_Power_Outages" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_End_to_End_Error_Detection_Correction_Count" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Reported_Uncorrectable_Errors" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Command_Timeout_Count" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Reallocated_Sectors_Count" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Power_On_Hours" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Power_Cycle_Count" />
                         <ListViewItem x:Uid="/DiskInfoPage/Disk_Temperature" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_CRC_Errors_Count" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Media_Fray_Indicator" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Spare_Blocks_Remaining" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_NAND_Total_Writes" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_NAND_Total_Writes_SLC" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Total_Write_Read" />
-                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Temperature_Control_State" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Reallocation_Event_Count" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Current_Pending_Sector_Count" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Uncorrectable_Sector_Count" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Remaining_Life" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Total_Host_Writes" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Total_Host_Reads" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Total_NAND_Writes" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Gigabytes_Erased" />
+                        <ListViewItem x:Uid="/DiskInfoPage/Disk_Wear_Leveling_Count" />
                     </ListView>
                 </Grid>
             </TwoPaneView.Pane1>
 
             <TwoPaneView.Pane2>
                 <Pivot Margin="0,-30,0,0" SelectedIndex="{Binding SelectedIndex, ElementName=ListView, Mode=TwoWay}">
+                    <!--Overview-->
                     <PivotItem>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -121,7 +112,7 @@
 
                                             <!--图-->
                                             <chart:SfCartesianChart.XAxes>
-                                                <chart:CategoryAxis />
+                                                <chart:DateTimeAxis IntervalType="Auto"/>
                                             </chart:SfCartesianChart.XAxes>
 
                                             <chart:SfCartesianChart.YAxes>
@@ -302,7 +293,7 @@
                                                     </StackPanel>
                                                     <StackPanel Grid.Column="2">
                                                         <TextBlock Margin="3" Text="{x:Bind Info.HostWrites,Converter={StaticResource ReadableBytesConverter}}"/>
-                                                        <TextBlock Margin="3" Text="{x:Bind Info.Rotation}"/>
+                                                        <TextBlock Margin="3" Text="{x:Bind Info.Rotation, Converter={StaticResource ReadableRotationConverter}}"/>
                                                         <TextBlock Margin="3" Text="{x:Bind Info.PowerOnCount, Converter={StaticResource ReadableCountConverter}}"/>
                                                     </StackPanel>
                                                 </Grid>
@@ -400,7 +391,7 @@
 
                                 <!--复制-->
                                 <AppBarElementContainer>
-                                    <SplitButton ToolTipService.ToolTip="Alignment">
+                                    <SplitButton ToolTipService.ToolTip="Alignment" Click="SplitButton_Click">
 
                                         <SplitButton.Content>
                                             <Viewbox Width="16" Height="16" Margin="0,2,0,0">
@@ -409,11 +400,11 @@
                                         </SplitButton.Content>
                                         <SplitButton.Flyout>
                                             <MenuFlyout>
-                                                <MenuFlyoutItem  Text="解析ASCII内容"/>
+                                                <ToggleMenuFlyoutItem  Text="解析ASCII内容" IsChecked="{x:Bind ViewModel.AsciiView, Mode=TwoWay}"/>
                                                 <MenuFlyoutSeparator/>
-                                                <MenuFlyoutItem Text="IDENTIFY DEVICE"/>
-                                                <MenuFlyoutItem Text="SMART_READ_THRESHOLD"/>
-                                                <MenuFlyoutItem  Text="SMART_READ DATA"/>
+                                                <ToggleMenuFlyoutItem Text="IDENTIFY DEVICE" IsChecked="{x:Bind ViewModel.DumpIdentifyDevice, Mode=TwoWay}"/>
+                                                <ToggleMenuFlyoutItem Text="SMART_READ_THRESHOLD" IsChecked="{x:Bind ViewModel.DumpSmartReadThreshold, Mode=TwoWay}"/>
+                                                <ToggleMenuFlyoutItem  Text="SMART_READ DATA" IsChecked="{x:Bind ViewModel.DumpSmartReadData, Mode=TwoWay}"/>
                                             </MenuFlyout>
                                         </SplitButton.Flyout>
                                     </SplitButton>
@@ -426,135 +417,71 @@
                         </Grid>
 
                     </PivotItem>
+                    
+                    <!--Reallocated sectors count -->
                     <PivotItem>
-
-                        <Grid>
-                            
-                            <ScrollViewer>
-
-                                <!--右侧面板边距-->
-                                <Grid VerticalAlignment="Top" Margin="62">
-
-                                    <Grid>
-                                        <!--统计图-->
-
-                                        <Grid.DataContext>
-                                            <local1:ViewModel/>
-                                        </Grid.DataContext>
-
-                                        <!--折线图-->
-                                        <chart:SfCartesianChart VerticalAlignment="Stretch">
-
-                                            <!--渐变画笔-->
-                                            <chart:SfCartesianChart.Resources>
-                                                <BrushCollection x:Key="customBrushes5">
-                                                    <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
-                                                        <GradientStop Offset="2" Color="#90FFffff" />
-                                                        <GradientStop Offset="0" Color="#00ffffff" />
-                                                    </LinearGradientBrush>
-                                                </BrushCollection>
-
-                                                <BrushCollection x:Key="customBrushes6">
-                                                    <SolidColorBrush Color="#ffffff"/>
-                                                </BrushCollection>
-
-                                            </chart:SfCartesianChart.Resources>
-
-                                            <!--图-->
-                                            <chart:SfCartesianChart.XAxes>
-                                                <chart:CategoryAxis />
-                                            </chart:SfCartesianChart.XAxes>
-
-                                            <chart:SfCartesianChart.YAxes>
-                                                <chart:NumericalAxis />
-                                            </chart:SfCartesianChart.YAxes>
-
-                                            <chart:SfCartesianChart.Series>
-
-                                                <!--折线-->
-                                                <chart:LineSeries 
-                                                ItemsSource="{Binding Collection}"
-                                                XBindingPath="XValue" 
-                                                YBindingPath="YValue" 
-                                                PaletteBrushes="{StaticResource customBrushes6}"/>
-
-                                                <!--面积-->
-                                                <chart:AreaSeries 
-                                                ItemsSource="{Binding Collection}"  
-                                                XBindingPath="XValue" 
-                                                YBindingPath="YValue"
-                                                PaletteBrushes="{StaticResource customBrushes5}"/>
-                                                
-                                            </chart:SfCartesianChart.Series>
-                                        </chart:SfCartesianChart>
-                                    </Grid>
-                                </Grid>
-                            </ScrollViewer>
-
-                            <!--命令栏-->
-                            <CommandBar Grid.Row="1" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" VerticalAlignment="Bottom">
-
-                                <!--保存（导出）-->
-                                <AppBarButton Icon="Save" Label="Save">
-                                    <AppBarButton.Flyout>
-                                        <MenuFlyout Placement="RightEdgeAlignedTop">
-                                            <MenuFlyoutItem Text="Save as image"/>
-                                            <MenuFlyoutItem Text="Save as text"/>
-                                        </MenuFlyout>
-                                    </AppBarButton.Flyout>
-                                </AppBarButton>
-
-                                <!--复制-->
-                                <AppBarElementContainer>
-                                    <SplitButton ToolTipService.ToolTip="Alignment">
-
-                                        <SplitButton.Content>
-                                            <Viewbox Width="16" Height="16" Margin="0,2,0,0">
-                                                <SymbolIcon Symbol="Copy"/>
-                                            </Viewbox>
-                                        </SplitButton.Content>
-                                        <SplitButton.Flyout>
-                                            <MenuFlyout>
-                                                <MenuFlyoutItem  Text="解析ASCII内容"/>
-                                                <MenuFlyoutSeparator/>
-                                                <MenuFlyoutItem Text="IDENTIFY DEVICE"/>
-                                                <MenuFlyoutItem Text="SMART_READ_THRESHOLD"/>
-                                                <MenuFlyoutItem  Text="SMART_READ DATA"/>
-                                            </MenuFlyout>
-                                        </SplitButton.Flyout>
-                                    </SplitButton>
-                                </AppBarElementContainer>
-
-                                <!--刷新-->
-                                <AppBarButton Icon="Refresh" Label="Refresh" Click="AppBarButton_Click"/>
-
-                            </CommandBar>
-                        </Grid>
-
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
                     </PivotItem>
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
-                    <PivotItem />
+                    
+                    <!--power on hours-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--power cycle count-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--Temperature-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--reallocation event count-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--current pending sector count-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--uncorrectable sector count-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--remaining life-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--total host writes-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--Total host reads-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--Total NAnd writes-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--Gigabytes erased-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
+                    
+                    <!--Wear leveling count-->
+                    <PivotItem>
+                        <local:GraphPage Collection="{x:Bind ViewModel.Collection}"/>
+                    </PivotItem>
                 </Pivot>
             </TwoPaneView.Pane2>
 

@@ -26,6 +26,8 @@ namespace DiskTools.Converters
             //    return $"{toMB:f0} MB";
             //else return $"{toGB:f0} GB";
 
+            if ((int)value == -1)
+                return "----";
             return $"{(int)value} GB";
         }
 
