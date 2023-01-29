@@ -1,13 +1,13 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace DiskTools
 {
     /// <summary>
     /// 封装对dll的引用
     /// </summary>
-    internal static class Interop
+    internal static partial class Interop
     {
-
         [DllImport("DiskInfo.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr GetFirmware();
 
