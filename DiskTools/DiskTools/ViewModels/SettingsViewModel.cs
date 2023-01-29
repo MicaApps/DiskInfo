@@ -266,6 +266,8 @@ namespace DiskTools.ViewModels
             });
         }
 
+
+
         public SettingsViewModel(SettingPage Page)
         {
             _page = Page;

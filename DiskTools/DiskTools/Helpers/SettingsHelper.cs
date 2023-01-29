@@ -18,6 +18,10 @@ namespace DiskTools.Helpers
         public const string SelectedBackdrop = "SelectedBackdrop";
         public const string UpdateInterval = "UpdateInterval";
         public const string AutoRefresh = "AutoRefresh";
+        public const string AsciiView = "AsciiView";
+        public const string DumpSmartReadData = "DumpSmartReadData";
+        public const string DumpSmartReadThreshold = "DumpSmartReadThreshold";
+        public const string DumpIdentifyDevice = "DumpIdentifyDevice";
 
         public static Type Get<Type>(string key) => LocalObject.Read<Type>(key);
         public static void Set<Type>(string key, Type value) => LocalObject.Save(key, value);
