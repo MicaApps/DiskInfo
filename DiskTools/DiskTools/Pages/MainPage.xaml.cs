@@ -71,14 +71,15 @@ namespace DiskTools.Pages
         #region Initialize
         private void AddNavigationMenuItems()
         {
-            DriveInfo[] allDirves = DriveInfo.GetDrives();
-            foreach (DriveInfo drive in allDirves)
+            int i = 0;
+            foreach (var drive in ViewModel.LibInstance.Info)
             {
-                NavigationViewItem itemGroup = new NavigationViewItem() { Content = drive.Name, Tag = drive.Name, DataContext = drive, Icon = new FontIcon() { Glyph = "\uEDA2" } };
+                NavigationViewItem itemGroup = new NavigationViewItem() { Content = drive.Model, Tag = i, DataContext = drive, Icon = new FontIcon() { Glyph = "\uEDA2" } };
 
-                AutomationProperties.SetName(itemGroup, drive.Name);
+                AutomationProperties.SetName(itemGroup, drive.Model);
 
                 NavigationView.MenuItems.Add(itemGroup);
+                ++i;
             }
         }
 
@@ -152,7 +153,7 @@ namespace DiskTools.Pages
                 if (NavigationViewFrame.SourcePageType == typeof(DiskInfoPage))
                 {
                     DiskInfoPage page = NavigationViewFrame.Content as DiskInfoPage;
-                    NavigationViewItem item = NavigationView.MenuItems.OfType<NavigationViewItem>().FirstOrDefault((x) => x.Content.ToString() == page.ID);
+                    NavigationViewItem item = (NavigationViewItem)NavigationView.MenuItems[page.ID];
                     if (item != null) { NavigationView.SelectedItem = item; }
                 }
                 //NavigationView.Header = (((NavigationViewItem)NavigationView.SelectedItem)?.Content?.ToString());
