@@ -7,13 +7,6 @@
     xmlns:local="using:DiskTools.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Page.Resources>
-        <DataTemplate x:Key="NavigationViewHeaderTemplate">
-            <controls:PageHeader
-                Background="Transparent"
-                BackgroundColorOpacity="1" />
-        </DataTemplate>
-    </Page.Resources>
 
     <Page.Background>
         <SolidColorBrush
@@ -36,6 +29,7 @@
             AlwaysShowHeader="{x:Bind IsShowHeader, Mode=OneWay}"
             ExpandedModeThresholdWidth="1200"
             IsBackButtonVisible="Collapsed"
+            OpenPaneLength="260"
             IsTabStop="False"
             IsTitleBarAutoPaddingEnabled="True"
             Loaded="NavigationView_Loaded"

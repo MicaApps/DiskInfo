@@ -251,18 +251,20 @@ namespace DiskTools.ViewModels
             }
         }
 
-        private async void GetAboutTextBlockText()
+        private void GetAboutTextBlockText()
         {
-            await Task.Run(async () =>
+            // This throws a C++ exception, reproducable with a new Winui3 CSharp / C++ project
+            string langcode = LanguageHelper.GetPrimaryLanguage();
+            Uri dataUri = new($"ms-appx:///Assets/About/About.{langcode}.md");
+            _ = _page?.DispatcherQueue.EnqueueAsync(async () =>
             {
-                string langcode = LanguageHelper.GetPrimaryLanguage();
-                Uri dataUri = new($"ms-appx:///Assets/About/About.{langcode}.md");
                 StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
-                if (file != null)
+                try
                 {
                     string markdown = await FileIO.ReadTextAsync(file);
-                    _ = _page?.DispatcherQueue.EnqueueAsync(() => AboutTextBlockText = markdown);
+                    AboutTextBlockText = markdown;
                 }
+                catch { }
             });
         }
 
