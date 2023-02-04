@@ -33,7 +33,7 @@
             SizeChanged="AppTitleBar_SizeChanged" />
         <NavigationView
             x:Name="NavigationView"
-            AlwaysShowHeader="{Binding IsShowHeader}"
+            AlwaysShowHeader="{x:Bind IsShowHeader, Mode=OneWay}"
             ExpandedModeThresholdWidth="1200"
             IsBackButtonVisible="Collapsed"
             IsTabStop="False"
@@ -50,7 +50,7 @@
             <!--  margin 是页面的内容页边界  -->
             <Frame
                 x:Name="NavigationViewFrame"
-                Margin="{Binding FrameMargin}"
+                Margin="{x:Bind FrameMargin,Mode=OneWay}"
                 x:FieldModifier="public" />
         </NavigationView>
         <ProgressBar
