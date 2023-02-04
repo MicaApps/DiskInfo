@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
-using ABI.DiskInfoLibWinRT;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -22,26 +21,20 @@ using Windows.Foundation.Collections;
 
 namespace DiskTools.Controls
 {
-    public sealed partial class GraphPage : UserControl
+    public sealed partial class Gauge : UserControl
     {
-        public GraphPage()
+        public Gauge()
         {
             this.InitializeComponent();
         }
 
-        private static DependencyProperty collectionProperty = DependencyProperty.Register(
-            "Collection", typeof(object), typeof(GraphPage), new PropertyMetadata(null));
+        private static DependencyProperty valueProperty = DependencyProperty.Register(
+            "Value", typeof(object), typeof(Gauge), new PropertyMetadata(0.0) );
 
-        public class Test
+        public double Value
         {
-            public DateTime XValue { get; set; }
-            public uint YValue { get; set; }
-        }
-
-        public IList<DiskInfoLibWinRT.GraphDataPoint> Collection
-        {
-            get => GetValue(collectionProperty) as IList<DiskInfoLibWinRT.GraphDataPoint>;
-            set => SetValue(collectionProperty, value);
+            get => (double)GetValue(valueProperty);
+            set => SetValue(valueProperty, value);
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.UI.Xaml.Navigation;
 using DiskInfoLibWinRT;
 using Syncfusion.UI.Xaml.Gauges;
 using DiskTools.Helpers;
+using System;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -15,18 +16,10 @@ namespace DiskTools.Pages
     /// </summary>
     public sealed partial class DiskInfoPage : Page
     {
-        public string ID = string.Empty;
+        
+        public int ID;
 
-        internal DiskInfoViewModel Provider;
-
-        //public DiskInfo.DiskInfo info = new DiskInfo.DiskInfo();
-        public DiskInfoLibWinRT.AtaSmartInfo Info
-        {
-            get => ViewModel.LibInstance.Info[0];
-        }
-
-        public ViewModel ViewModel { get => viewModel; }
-        private ViewModel viewModel = new ViewModel();
+        public DiskInfoLibWinRT.AtaSmartInfo Info;
 
         public DiskInfoPage() => InitializeComponent();
 
@@ -35,20 +28,11 @@ namespace DiskTools.Pages
             base.OnNavigatedTo(e);
             if (e.Parameter is string id)
             {
-                ID = id;
-                Provider = new DiskInfoViewModel(id);
+                ID = Int32.Parse(id);
             }
-            DataContext = Provider;
+            Info = ViewModel.LibInstance.Info[0];
+            OverviewPage.Id = ID;
         }
 
-        private void AppBarButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
-        {
-            ViewModel.LibInstance.UpdateAll();
-        }
-
-        private void SplitButton_Click(SplitButton sender, SplitButtonClickEventArgs args)
-        {
-            ViewModel.LibInstance.SaveText("");
-        }
     }
 }
