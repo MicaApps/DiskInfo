@@ -47,19 +47,19 @@
                                    Margin="8,2"
                                    Grid.Row="1" Grid.Column="1"
                                    Text="{Binding Id}"
-                                   FontSize="16" />
+                                   FontSize="14" />
                         <TextBlock Margin="8,2"
                                    Grid.Row="1" Grid.Column="2"
                                    Text="{Binding Name}"
-                                   FontSize="16" />
+                                   FontSize="14" />
                         <TextBlock Margin="8,2"
                                    Grid.Row="1" Grid.Column="3"
                                    Text="{Binding Threshold}"
-                                   FontSize="16" />
+                                   FontSize="14" />
                         <TextBlock Margin="8,2"
                                    Grid.Row="1" Grid.Column="4"
                                    Text="{Binding RawValue}"
-                                   FontSize="16" />
+                                   FontSize="14" />
                     </Grid>
                 </DataTemplate>
             </ItemsRepeater.ItemTemplate>

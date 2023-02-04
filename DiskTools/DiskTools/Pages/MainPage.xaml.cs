@@ -1,8 +1,9 @@
-﻿
+
 using CommunityToolkit.WinUI.UI;
 using DiskTools.Controls;
 using DiskTools.Helpers;
 using DiskTools.Pages.SettingPages;
+using DiskTools.Services;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation;
@@ -56,6 +57,7 @@ namespace DiskTools.Pages
             this.DataContext = this;
             UIHelper.MainPage = this;
             UIHelper.MainWindow.Backdrop.BackdropTypeChanged += OnBackdropTypeChanged;
+            DiskInfoService.GetInfo();
             if (UIHelper.HasTitleBar)
             {
                 UIHelper.MainWindow.ExtendsContentIntoTitleBar = true;
@@ -72,14 +74,15 @@ namespace DiskTools.Pages
         #region Initialize
         private void AddNavigationMenuItems()
         {
-            DriveInfo[] allDirves = DriveInfo.GetDrives();
-            foreach (DriveInfo drive in allDirves)
+            int i = 0;
+            foreach (var drive in DiskInfoService.Instance.Info)
             {
-                NavigationViewItem itemGroup = new NavigationViewItem() { Content = drive.Name, Tag = drive.Name, DataContext = drive, Icon = new FontIcon() { Glyph = "\uEDA2" } };
+                NavigationViewItem itemGroup = new NavigationViewItem() { Content = drive.Model, Tag = i, DataContext = drive, Icon = new FontIcon() { Glyph = "\uEDA2" } };
 
-                AutomationProperties.SetName(itemGroup, drive.Name);
+                AutomationProperties.SetName(itemGroup, drive.Model);
 
                 NavigationView.MenuItems.Add(itemGroup);
+                ++i;
             }
         }
 
@@ -121,12 +124,8 @@ namespace DiskTools.Pages
                 _page = typeof(DiskInfoPage);
                 parameter = NavItemTag;
             }
-            // Get the page type before navigation so you can prevent duplicate
-            // entries in the backstack.
-            Type PreNavPageType = NavigationViewFrame.CurrentSourcePageType;
 
-            // Only navigate if the selected page isn't currently loaded.
-            if (!(_page is null) && !Equals(PreNavPageType, _page))
+            if (!(_page is null))
             {
                 _ = NavigationViewFrame.Navigate(_page, parameter, TransitionInfo);
             }
@@ -152,9 +151,9 @@ namespace DiskTools.Pages
                 IsShowHeader = false;
                 if (NavigationViewFrame.SourcePageType == typeof(DiskInfoPage))
                 {
-                    DiskInfoPage page = NavigationViewFrame.Content as DiskInfoPage;
-                    NavigationViewItem item = NavigationView.MenuItems.OfType<NavigationViewItem>().FirstOrDefault((x) => x.Content.ToString() == page.ID);
-                    if (item != null) { NavigationView.SelectedItem = item; }
+                    //DiskInfoPage page = NavigationViewFrame.Content as DiskInfoPage;
+                    //NavigationViewItem item = (NavigationViewItem)NavigationView.MenuItems[page.ID];
+                    //if (item != null) { NavigationView.SelectedItem = item; }
                 }
                 //NavigationView.Header = (((NavigationViewItem)NavigationView.SelectedItem)?.Content?.ToString());
             }
