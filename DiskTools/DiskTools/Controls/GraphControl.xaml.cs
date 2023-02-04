@@ -4,21 +4,15 @@ using System.Collections.Generic;
 
 namespace DiskTools.Controls
 {
-    public sealed partial class GraphPage : UserControl
+    public sealed partial class GraphControl : UserControl
     {
-        public GraphPage()
+        public GraphControl()
         {
             this.InitializeComponent();
         }
 
         private static DependencyProperty collectionProperty = DependencyProperty.Register(
-            "Collection", typeof(object), typeof(GraphPage), new PropertyMetadata(null));
-
-        public class Test
-        {
-            public DateTime XValue { get; set; }
-            public uint YValue { get; set; }
-        }
+            "Collection", typeof(object), typeof(GraphControl), new PropertyMetadata(null));
 
         public IList<DiskInfoLibWinRT.GraphDataPoint> Collection
         {

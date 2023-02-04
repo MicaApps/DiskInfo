@@ -14,6 +14,7 @@ namespace DiskTools.Pages
 {
     public partial class OverviewPage : Page, INotifyPropertyChanged
     {
+        public Class ViewModel => DiskInfoService.Instance;
         public AtaSmartInfo Info { get; set; }
         public List<DiskBasicInfoListItem> List1 { get; set; }
         public List<DiskBasicInfoListItem> List2 { get; set; }
