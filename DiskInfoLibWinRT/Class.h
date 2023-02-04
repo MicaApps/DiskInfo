@@ -31,6 +31,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
         bool DumpIdentifyDevice() { return m_bDumpIdentifyDevice; }
         void DumpIdentifyDevice(bool value) { m_bDumpIdentifyDevice = value; }
     private:
+        void addFakeData();
         winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::AtaSmartInfo> m_info
         {
             winrt::single_threaded_vector<winrt::DiskInfoLibWinRT::AtaSmartInfo>()

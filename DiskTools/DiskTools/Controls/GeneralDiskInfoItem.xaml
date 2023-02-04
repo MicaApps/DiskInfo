@@ -8,17 +8,22 @@
     xmlns:local="using:DiskTools.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Width="400">
 
     <Grid
         Background="Transparent"
-        BorderBrush="Black"
+        BorderBrush="Transparent"
         BorderThickness="1">
 
-        <StackPanel Orientation="Horizontal">
-            <FontIcon VerticalAlignment="Top" FontFamily="Segoe Fluent Icons" Glyph="{x:Bind Glyph}" />
-            <TextBlock Margin="12,0,0,0" Text="{x:Bind ValueName}" Width="83"/>
-            <TextBlock Text="{x:Bind Value}"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+
+        <FontIcon VerticalAlignment="Top" FontFamily="Segoe Fluent Icons" Glyph="{x:Bind Glyph}" FontSize="16" Margin="4.5"/>
+        <TextBlock Margin="3" Text="{x:Bind ValueName}" FontSize="14" Grid.Column="1" FontWeight="SemiBold"/>
+        <TextBlock Margin="3" Text="{x:Bind Value}" Grid.Column="2"/>
+
     </Grid>
 </UserControl>

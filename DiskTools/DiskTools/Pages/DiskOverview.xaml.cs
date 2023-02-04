@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
-using ABI.DiskInfoLibWinRT;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -16,32 +15,40 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using WinRT;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace DiskTools.Controls
+namespace DiskTools.Pages
 {
-    public sealed partial class GraphPage : UserControl
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class DiskOverview : Page
     {
-        public GraphPage()
+        public DiskOverview()
         {
             this.InitializeComponent();
         }
-
-        private static DependencyProperty collectionProperty = DependencyProperty.Register(
-            "Collection", typeof(object), typeof(GraphPage), new PropertyMetadata(null));
-
-        public class Test
+        public DiskInfoLibWinRT.AtaSmartInfo Info;
+        public ViewModel ViewModel = ViewModel.Instance;
+        public int Id
         {
-            public DateTime XValue { get; set; }
-            public uint YValue { get; set; }
+            set
+            {
+                Info = ViewModel.LibInstance.Info[value];
+            }
         }
 
-        public IList<DiskInfoLibWinRT.GraphDataPoint> Collection
+        private void AppBarButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
-            get => GetValue(collectionProperty) as IList<DiskInfoLibWinRT.GraphDataPoint>;
-            set => SetValue(collectionProperty, value);
+            ViewModel.LibInstance.UpdateAll();
+        }
+
+        private void SplitButton_Click(SplitButton sender, SplitButtonClickEventArgs args)
+        {
+            ViewModel.LibInstance.SaveText("");
         }
     }
 }

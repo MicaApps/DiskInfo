@@ -7,13 +7,6 @@
     xmlns:local="using:DiskTools.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Page.Resources>
-        <DataTemplate x:Key="NavigationViewHeaderTemplate">
-            <controls:PageHeader
-                Background="Transparent"
-                BackgroundColorOpacity="1" />
-        </DataTemplate>
-    </Page.Resources>
 
     <Page.Background>
         <SolidColorBrush
@@ -33,9 +26,10 @@
             SizeChanged="AppTitleBar_SizeChanged" />
         <NavigationView
             x:Name="NavigationView"
-            AlwaysShowHeader="{Binding IsShowHeader}"
+            AlwaysShowHeader="{x:Bind IsShowHeader, Mode=OneWay}"
             ExpandedModeThresholdWidth="1200"
             IsBackButtonVisible="Collapsed"
+            OpenPaneLength="260"
             IsTabStop="False"
             IsTitleBarAutoPaddingEnabled="True"
             Loaded="NavigationView_Loaded"
@@ -50,7 +44,7 @@
             <!--  margin 是页面的内容页边界  -->
             <Frame
                 x:Name="NavigationViewFrame"
-                Margin="{Binding FrameMargin}"
+                Margin="{x:Bind FrameMargin}"
                 x:FieldModifier="public" />
         </NavigationView>
         <ProgressBar
