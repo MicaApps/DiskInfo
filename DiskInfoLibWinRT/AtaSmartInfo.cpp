@@ -130,30 +130,49 @@ namespace winrt::DiskInfoLibWinRT::implementation
     {
         m_index = index;
     }
+
+    static auto MakeFakeData(int numData = 5)
+    {
+        auto data = winrt::single_threaded_vector<winrt::DiskInfoLibWinRT::GraphDataPoint>();
+        for (int i = 0; i < numData; ++i)
+        {
+            data.Append(winrt::DiskInfoLibWinRT::GraphDataPoint{
+                static_cast<uint64_t>(winrt::clock::to_time_t(winrt::clock::now() - std::chrono::days{numData - i})),
+                static_cast<uint32_t>(i * i)
+            });
+        }
+        return data;
+    }
+
     winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::GraphDataPoint> AtaSmartInfo::readCsv(int dataType)
     {
+#if _DEBUG
+        return MakeFakeData();
+#else
         auto data = winrt::single_threaded_vector<winrt::DiskInfoLibWinRT::GraphDataPoint>();
 
         constexpr static auto timeOffset = 19;
         constexpr static auto valueOffset = 20;
 
         auto f = GraphData::GetInstance().GetDataFile(dataType, m_index);
-        assert(f.is_open());
-        std::wstring stdLine;
-        while (std::getline(f, stdLine))
+        if (f.is_open())
         {
-            CString line = stdLine.data();
-            auto time = GraphDataUtil::GetTimeT(line.Left(timeOffset));
-            auto value = GraphDataUtil::GetValue(line.Mid(valueOffset));
-            data.Append(
-                winrt::DiskInfoLibWinRT::GraphDataPoint
-                {
-                    static_cast<uint64_t>(time),
-                    static_cast<uint32_t>(value)
-                }
-            );
+            std::wstring stdLine;
+            while (std::getline(f, stdLine))
+            {
+                CString line = stdLine.data();
+                auto time = GraphDataUtil::GetTimeT(line.Left(timeOffset));
+                auto value = GraphDataUtil::GetValue(line.Mid(valueOffset));
+                data.Append(
+                    winrt::DiskInfoLibWinRT::GraphDataPoint
+                    {
+                        static_cast<uint64_t>(time),
+                        static_cast<uint32_t>(value)
+                    }
+                );
+            }
         }
-
         return data;
+#endif
     }
 }
