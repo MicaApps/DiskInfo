@@ -71,7 +71,7 @@ void GraphData::SetDataSource(DataSourceType const& source)
 
 void GraphData::SaveSmartInfo(unsigned long i)
 {
-	if (!CAtaSmart::get_instance().vars[i].IsSmartCorrect)
+	if (CAtaSmart::get_instance().vars.GetSize() <= i || !CAtaSmart::get_instance().vars[i].IsSmartCorrect)
 	{
 		return;
 	}
