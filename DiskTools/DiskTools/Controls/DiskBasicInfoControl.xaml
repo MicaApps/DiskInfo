@@ -8,47 +8,36 @@
              xmlns:toolkit="using:CommunityToolkit.WinUI.UI.Controls"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <converters:ReadableBytesConverter x:Key="ReadableBytesConverter" />
-        <converters:ReadableTimeConverter x:Key="ReadableTimeConverter" />
-        <converters:ReadableCountConverter x:Key="ReadableCountConverter" />
-        <converters:ReadableRotationConverter x:Key="ReadableRotationConverter" />
-        <Style TargetType="ListView">
-            <!--<Setter Property="HeaderTemplate">
-                <Setter.Value>
-                    <DataTemplate >
-                        <Grid VerticalAlignment="Stretch">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="20" />
-                                <ColumnDefinition Width="2.5*" />
-                                <ColumnDefinition Width="4*" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="#"/>
-                            <TextBlock Grid.Column="1" Text="Artist"/>
-                            <TextBlock Grid.Column="2" Text="Release Date"/>
-                        </Grid>
-                    </DataTemplate>
-                </Setter.Value>
-            </Setter>-->
+        <Style TargetType="toolkit:AdaptiveGridView">
             <Setter Property="SelectionMode" Value="None" />
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="GridViewItem">
+                        <Setter Property="Height" Value="12" />
+                        <Setter Property="MinHeight" Value="12" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
             <Setter Property="ItemTemplate">
                 <Setter.Value>
                     <DataTemplate>
-                        <Grid VerticalAlignment="Stretch">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="28" />
                                 <ColumnDefinition Width="2.5*" />
                                 <ColumnDefinition Width="4*" />
                             </Grid.ColumnDefinitions>
-                            <FontIcon VerticalAlignment="Center"
-                                      Margin="4.5"
+                            <FontIcon HorizontalAlignment="Center" VerticalAlignment="Center"
                                       Grid.Column="0"
                                       Glyph="{Binding Icon}"
                                       FontSize="16" FontFamily="Segoe Fluent Icons" />
-                            <TextBlock Margin="3"
+                            <TextBlock VerticalAlignment="Center"
+                                       Margin="2"
                                        Grid.Column="1"
                                        Text="{Binding Name}"
                                        FontWeight="SemiBold" />
-                            <TextBlock Margin="3"
+                            <TextBlock VerticalAlignment="Center"
+                                       Margin="2"
                                        Grid.Column="2"
                                        Text="{Binding Value}" />
                         </Grid>
@@ -59,57 +48,8 @@
     </UserControl.Resources>
 
     <toolkit:AdaptiveGridView x:Name="AdaptiveGridViewContro2"
-                              DesiredWidth="400" IsItemClickEnabled="false"
+                              DesiredWidth="400" IsItemClickEnabled="true"
                               OneRowModeEnabled="False" SelectionMode="None"
-                              StretchContentForSingleRow="False">
-        <ListView ItemsSource="{Binding List1}" />
-        <ListView ItemsSource="{Binding List2}" />
-        <!--<toolkit:DataGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                          Background="Transparent"
-                          AllowFocusOnInteraction="False" IsFocusEngaged="False"
-                          IsFocusEngagementEnabled="False"
-                          ItemsSource="{Binding List1}"
-                          HorizontalScrollBarVisibility="Hidden"
-                          VerticalScrollBarVisibility="Hidden"
-                          AutoGenerateColumns="False" IsReadOnly="True"
-                          AlternatingRowBackground="Transparent" BorderThickness="0"
-                          GridLinesVisibility="None" HeadersVisibility="None"
-                          RowDetailsVisibilityMode="Collapsed" SelectionMode="Single">
-            <toolkit:DataGrid.Columns>
-                <toolkit:DataGridTextColumn Header="Rank"
-                                            Binding="{Binding Icon}"
-                                            Tag="Rank" />
-                <toolkit:DataGridTextColumn Header="Height (m)"
-                                            Binding="{Binding Name}"
-                                            Tag="Height_m" />
-                <toolkit:DataGridTextColumn Header="Range"
-                                            Binding="{Binding Value}"
-                                            Tag="Range" />
-
-            </toolkit:DataGrid.Columns>
-        </toolkit:DataGrid>
-        <toolkit:DataGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                          Background="Transparent"
-                          AllowFocusOnInteraction="False"
-                          ItemsSource="{Binding List2}"
-                          HorizontalScrollBarVisibility="Hidden"
-                          VerticalScrollBarVisibility="Hidden"
-                          AutoGenerateColumns="False" IsReadOnly="True"
-                          AlternatingRowBackground="Transparent" BorderThickness="0"
-                          GridLinesVisibility="None" HeadersVisibility="None"
-                          RowDetailsVisibilityMode="Collapsed" SelectionMode="Single">
-            <toolkit:DataGrid.Columns>
-                <toolkit:DataGridTextColumn Header="Rank"
-                                            Binding="{Binding Icon}"
-                                            Tag="Rank" />
-                <toolkit:DataGridTextColumn Header="Height (m)"
-                                            Binding="{Binding Name}"
-                                            Tag="Height_m" />
-                <toolkit:DataGridTextColumn Header="Range"
-                                            Binding="{Binding Value}"
-                                            Tag="Range" />
-
-            </toolkit:DataGrid.Columns>
-        </toolkit:DataGrid>-->
-    </toolkit:AdaptiveGridView>
+                              StretchContentForSingleRow="False"
+                              ItemsSource="{Binding List1}" />
 </UserControl>
