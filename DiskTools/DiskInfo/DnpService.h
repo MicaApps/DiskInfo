@@ -1,4 +1,4 @@
-// http://www.dinop.com/vc/service_ctrl.html (ja)
+﻿// http://www.dinop.com/vc/service_ctrl.html (ja)
 
 #pragma once
 
@@ -8,7 +8,7 @@
 class	CDnpService
 {
 	//
-	//	���`�ӥ�����ӣ�ֹͣ�å���åɥ��饹
+	//	锟斤拷锟絗锟接ワ拷锟斤拷锟斤拷樱锟酵Ｖ癸拷氓锟斤拷锟矫ドワ拷锟介ス
 	//
 	class CServiceThread
 	{
@@ -20,15 +20,15 @@ class	CDnpService
 
 	private:
 
-		bool					_bCancel;			//���`�ӥ�����ӣ�ֹͣ�I���ж��É�����true�ʤ��ж��_ʼ
-		CComAutoCriticalSection	_secbCancel;		//���`�ӥ�����ӣ�ֹͣ�I���ж��å���ƥ����륻�������
+		bool					_bCancel;			//锟斤拷锟絗锟接ワ拷锟斤拷锟斤拷樱锟酵Ｖ癸拷I锟斤拷锟叫讹拷锟矫夛拷锟斤拷锟斤拷true锟绞わ拷锟叫讹拷锟絖始
+		CComAutoCriticalSection	_secbCancel;		//锟斤拷锟絗锟接ワ拷锟斤拷锟斤拷樱锟酵Ｖ癸拷I锟斤拷锟叫讹拷锟矫ワ拷锟斤拷匹锟斤拷锟斤拷毳伙拷锟斤拷锟斤拷锟斤拷
 
 	public:
 
 		//
-		//	���`�ӥ�����ӣ�ֹͣ�I���ж����v��
+		//	锟斤拷锟絗锟接ワ拷锟斤拷锟斤拷樱锟酵Ｖ癸拷I锟斤拷锟叫讹拷锟斤拷锟絭锟斤拷
 		//
-		//	�жϤ��������Ϥ�IsCancel(true,true)���ӳ���
+		//	锟叫断わ拷锟斤拷锟斤拷锟斤拷锟较わ拷IsCancel(true,true)锟斤拷锟接筹拷锟斤拷
 		//
 		bool	IsCancel(bool bSave = false, bool bNewValue = false)
 		{
@@ -50,11 +50,11 @@ class	CDnpService
 
 
 		//
-		//	���`�ӥ��κ��ץ���ȥ�`��
+		//	锟斤拷锟絗锟接ワ拷锟轿猴拷锟阶ワ拷锟斤拷去锟絗锟斤拷
 		//
-		//	���Τޤ޺�ӳ����ȥ��`�ӥ�����ӣ�ֹͣ����ޤǟo�ޥ�`�פǴ��C���롣
-		//	����å��ФǺ�ӳ�����IsCancel()�����ä��뤳�Ȥǟo�ޥ�`�פ�ꈤ�ʤ�
-		//	����ȥ�`�뤬���ܡ�
+		//	锟斤拷锟轿まま猴拷映锟斤拷锟斤拷去锟斤拷`锟接ワ拷锟斤拷锟斤拷樱锟酵Ｖ癸拷锟斤拷锟睫で無锟睫ワ拷`锟阶で达拷锟紺锟斤拷锟诫。
+		//	锟斤拷锟斤拷氓锟斤拷肖呛锟接筹拷锟斤拷锟斤拷IsCancel()锟斤拷锟斤拷锟矫わ拷锟诫こ锟饺で無锟睫ワ拷`锟阶わ拷陥わ拷胜锟�
+		//	锟斤拷锟斤拷去锟絗锟诫が锟斤拷锟杰★拷
 		//
 		bool EasyStartStop(LPCTSTR pszName, bool b)
 		{
@@ -97,16 +97,16 @@ class	CDnpService
 			cstr.Format(_T("sStatus.dwCurrentState:%08X"), sStatus.dwCurrentState);
 			DebugPrint(cstr);
 
-			//���`�ӥ��_ʼҪ��
+			//锟斤拷锟絗锟接ワ拷锟絖始要锟斤拷
 			DebugPrint(_T("StartService - 1"));
 			bRet = ::StartService(hService, NULL, NULL);
 
-			//�_ʼ�ޤǟo�ޥ�`�פǴ��C
+			//锟絖始锟睫で無锟睫ワ拷`锟阶で达拷锟紺
 			DebugPrint(_T("QueryServiceStatus - 1"));
 			int count = 0;
 			while (::QueryServiceStatus(hService, &sStatus))
 			{
-				// �o�ޥ�`�פ�ر� (��� 1 ���g WMI �γ��ڻ������)
+				// 锟給锟睫ワ拷`锟阶わ拷乇锟� (锟斤拷锟� 1 锟斤拷锟絞 WMI 锟轿筹拷锟节伙拷锟斤拷锟斤拷锟�)
 				if (count >= 4)
 				{
 					break;
@@ -125,17 +125,17 @@ class	CDnpService
 				count++;
 			}
 
-			// ���`�ӥ�����ӥ�`�ɤ� auto �ˏ��Ɖ��
+			// 锟斤拷锟絗锟接ワ拷锟斤拷锟斤拷鹰锟絗锟缴わ拷 auto 锟剿忥拷锟狡夛拷锟�
 			ShellExecute(NULL, NULL, _T("sc"), _T("config Winmgmt start= auto"), NULL, SW_HIDE);
 			count = 0;
 			DebugPrint(_T("QueryServiceStatus - 2"));
 			while (::QueryServiceStatus(hService, &sStatus))
 			{
-				//���`�ӥ��_ʼҪ��
+				//锟斤拷锟絗锟接ワ拷锟絖始要锟斤拷
 				DebugPrint(_T("StartService - 2"));
 				::StartService(hService, NULL, NULL);
 
-				// �o�ޥ�`�פ�ر� (��� 5 ���g WMI �γ��ڻ������)
+				// 锟給锟睫ワ拷`锟阶わ拷乇锟� (锟斤拷锟� 5 锟斤拷锟絞 WMI 锟轿筹拷锟节伙拷锟斤拷锟斤拷锟�)
 				if (count >= 10)
 				{
 					break;
@@ -165,9 +165,9 @@ public:
 
 
 	//
-	//	���`�ӥ��κ��ץ���ȥ�`��
+	//	锟斤拷锟絗锟接ワ拷锟轿猴拷锟阶ワ拷锟斤拷去锟絗锟斤拷
 	//
-	//	���`�ӥ������/ֹͣ����ޤǟo�ޥ�`�פǴ��C���롣
+	//	锟斤拷锟絗锟接ワ拷锟斤拷锟斤拷锟�/停止锟斤拷锟斤拷蓼菬o锟睫ワ拷`锟阶で达拷锟紺锟斤拷锟诫。
 	//
 	bool	EasyStartStop(LPCTSTR pszName, bool bStart)
 	{
@@ -178,9 +178,9 @@ public:
 
 
 	//
-	//	���`�ӥ��κ������
+	//	锟斤拷锟絗锟接ワ拷锟轿猴拷锟斤拷锟斤拷锟�
 	//
-	//	���`�ӥ�����Ӥ���ޤǟo�ޥ�`�פǴ��C���롣
+	//	锟斤拷锟絗锟接ワ拷锟斤拷锟斤拷婴锟斤拷锟睫で無锟睫ワ拷`锟阶で达拷锟紺锟斤拷锟诫。
 	//
 	bool	EasyStart(LPCTSTR pszName)
 	{
@@ -188,9 +188,9 @@ public:
 	}
 
 	//
-	//	���`�ӥ��κ���ֹͣ
+	//	锟斤拷锟絗锟接ワ拷锟轿猴拷锟斤拷停止
 	//
-	//	���`�ӥ���ֹͣ����ޤǟo�ޥ�`�פǴ��C���롣
+	//	锟斤拷锟絗锟接ワ拷锟斤拷停止锟斤拷锟斤拷蓼菬o锟睫ワ拷`锟阶で达拷锟紺锟斤拷锟诫。
 	//
 	bool	EasyStop(LPCTSTR pszName)
 	{
@@ -199,9 +199,9 @@ public:
 
 
 	//
-	//	���`�ӥ��κ��������
+	//	锟斤拷锟絗锟接ワ拷锟轿猴拷锟斤拷锟斤拷锟斤拷锟�
 	//
-	//	���`�ӥ�������Ӥ���ޤǟo�ޥ�`�פǴ��C���롣
+	//	锟斤拷锟絗锟接ワ拷锟斤拷锟斤拷锟斤拷婴锟斤拷锟睫で無锟睫ワ拷`锟阶で达拷锟紺锟斤拷锟诫。
 	//
 	bool	EasyRestart(LPCTSTR pszName)
 	{
@@ -218,9 +218,9 @@ public:
 
 
 	//
-	//	ָ�����륵�`�ӥ����Ӥ��Ƥ��뤫�Υ����å�
+	//	指锟斤拷锟斤拷锟诫サ锟絗锟接ワ拷锟斤拷锟接わ拷锟狡わ拷锟诫か锟轿ワ拷锟斤拷锟矫ワ拷
 	//
-	//	false�Έ��Ϥ�"ֹͣ"�Ȥ��ޤ�ʤ������`�ӥ������ڤ��ʤ����Ϥʤɤ�false�Ȥʤ롣
+	//	false锟轿堬拷锟较わ拷"停止"锟饺わ拷锟睫わ拷胜锟斤拷锟斤拷锟斤拷`锟接ワ拷锟斤拷锟斤拷锟节わ拷锟绞わ拷锟斤拷锟较などわ拷false锟饺なる。
 	//
 	bool	IsServiceRunning(LPCTSTR pszName)
 	{
@@ -233,7 +233,7 @@ public:
 		ret = false;
 		hManager = NULL;
 		hService = NULL;
-		while (1)			//�o�ޥ�`�פǤϤʤ���
+		while (1)			//锟給锟睫ワ拷`锟阶ではなわ拷锟斤拷
 		{
 			hManager = ::OpenSCManager(NULL, NULL, GENERIC_EXECUTE);
 			ATLASSERT(hManager);
@@ -254,7 +254,7 @@ public:
 			if (sStatus.dwCurrentState == SERVICE_RUNNING)
 				ret = true;
 
-			break;		//���
+			break;		//锟斤拷锟�
 		}
 
 		if (hService)
