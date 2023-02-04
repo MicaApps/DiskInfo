@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +21,8 @@ namespace DiskTools.Converters
         }
         public object Convert(object value, Type targetType, object parameter, string language)
         {
+            if (value is null)
+                return null;
             return (value as IList<DiskInfoLibWinRT.GraphDataPoint>).Select(p => new DateTimeGraphPoint(p)).ToList();
         }
 

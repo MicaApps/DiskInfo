@@ -1,4 +1,4 @@
-﻿
+
 using CommunityToolkit.WinUI.UI;
 using DiskTools.Controls;
 using DiskTools.Helpers;
@@ -154,8 +154,8 @@ namespace DiskTools.Pages
                 if (NavigationViewFrame.SourcePageType == typeof(DiskInfoPage))
                 {
                     DiskInfoPage page = NavigationViewFrame.Content as DiskInfoPage;
-                    NavigationViewItem item = (NavigationViewItem)NavigationView.MenuItems[page.ID];
-                    if (item != null) { NavigationView.SelectedItem = item; }
+                    //NavigationViewItem item = (NavigationViewItem)NavigationView.MenuItems[page.ID];
+                    //if (item != null) { NavigationView.SelectedItem = item; }
                 }
                 //NavigationView.Header = (((NavigationViewItem)NavigationView.SelectedItem)?.Content?.ToString());
             }
@@ -210,7 +210,7 @@ namespace DiskTools.Pages
         }
         #endregion
 
-        #region Unsed : 返回按钮
+        #region Unused : 返回按钮
         //private void NavigationView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args) => _ = TryGoBack();
         //private bool TryGoBack()
         //{
@@ -228,7 +228,7 @@ namespace DiskTools.Pages
         //}
         #endregion
 
-        #region Used : UpdateHeaderMargin
+        #region Unused : UpdateHeaderMargin
         //private void UpdateHeaderMargin(NavigationView sender)
         //{
         //    if (PageHeader != null)
