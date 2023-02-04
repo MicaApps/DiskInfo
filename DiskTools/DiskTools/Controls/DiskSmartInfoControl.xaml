@@ -1,0 +1,91 @@
+<UserControl x:Class="DiskTools.Controls.DiskSmartInfoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="using:CommunityToolkit.WinUI.UI.Controls"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="MyBrush0" Color="White" />
+        <LinearGradientBrush x:Key="MyBrush" StartPoint="0,0" EndPoint="1.6,1">
+            <GradientStop x:Name="GradientStop9" Offset="1" Color="Transparent" />
+            <GradientStop x:Name="GradientStop10" Offset="0" Color="White" />
+        </LinearGradientBrush>
+    </UserControl.Resources>
+
+    <Grid>
+        <ItemsRepeater ItemsSource="{Binding List3}">
+            <ItemsRepeater.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="3" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6" />
+                            <ColumnDefinition Width="36" />
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Rectangle Grid.Row="1" Grid.Column="2"
+                                   Grid.ColumnSpan="3"
+                                   Fill="{StaticResource MyBrush}"
+                                   Opacity="0.2" />
+                        <toolkit:UniformGrid Grid.RowSpan="3"
+                                             Rows="3" Columns="1">
+                            <Rectangle Grid.Row="0"
+                                       Fill="{StaticResource MyBrush0}"
+                                       Opacity="0.2" />
+                            <Rectangle Grid.Row="2"
+                                       Fill="{StaticResource MyBrush0}"
+                                       Opacity="0.2" />
+                        </toolkit:UniformGrid>
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   Margin="8,2"
+                                   Grid.Row="1" Grid.Column="1"
+                                   Text="{Binding Id}"
+                                   FontSize="16" />
+                        <TextBlock Margin="8,2"
+                                   Grid.Row="1" Grid.Column="2"
+                                   Text="{Binding Name}"
+                                   FontSize="16" />
+                        <TextBlock Margin="8,2"
+                                   Grid.Row="1" Grid.Column="3"
+                                   Text="{Binding Threshold}"
+                                   FontSize="16" />
+                        <TextBlock Margin="8,2"
+                                   Grid.Row="1" Grid.Column="4"
+                                   Text="{Binding RawValue}"
+                                   FontSize="16" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsRepeater.ItemTemplate>
+        </ItemsRepeater>
+        <!--<toolkit:DataGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                          Background="Transparent"
+                          AllowFocusOnInteraction="False"
+                          ItemsSource="{Binding List3}"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"
+                          CanUserResizeColumns="True"
+                          AutoGenerateColumns="False" IsReadOnly="True"
+                          AlternatingRowBackground="Transparent" BorderThickness="0"
+                          GridLinesVisibility="None" HeadersVisibility="Column"
+                          RowDetailsVisibilityMode="Collapsed" SelectionMode="Single">
+            <toolkit:DataGrid.Columns>
+                <toolkit:DataGridTextColumn Header="ID"
+                                            Binding="{Binding Id}"/>
+                <toolkit:DataGridTextColumn Header="属性名称"
+                                            Binding="{Binding Name}"/>
+                <toolkit:DataGridTextColumn Header="临界值"
+                                            Binding="{Binding Threshold}"/>
+                <toolkit:DataGridTextColumn Header="原始值"
+                                            Binding="{Binding RawValue}"/>
+
+            </toolkit:DataGrid.Columns>
+        </toolkit:DataGrid>-->
+    </Grid>
+</UserControl>
