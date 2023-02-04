@@ -95,16 +95,12 @@ namespace winrt::DiskInfoLibWinRT::implementation
 				info.Attributes().Append(winrt::box_value(attr));
 			}
 			m_info.Append(info);
-
-			try
-			{
-
-			}
-			catch (...)
-			{
-
-			}
 		}
+
+#if _DEBUG
+		if (m_info.Size() == 0)
+			addFakeData();
+#endif
 
 		//log
 		//SaveSmartInfo(0);
@@ -1070,6 +1066,38 @@ namespace winrt::DiskInfoLibWinRT::implementation
 			}
 		}
 	}
+	void Class::addFakeData()
+	{
+		winrt::DiskInfoLibWinRT::AtaSmartInfo info;
+		info.Model(L"ST2000DM008-2FR1 SCSI Disk");
+		info.Firmware(L"2BQEXM7");
+		info.SerialNumber(L"S4EVNF0N402289K");
+		info.Interface(L"NVM Express");
+		info.CurrentTransferMode(L"PCIe 3.0 x4 | PCIe 3.0 x4");
+		//info.MaxTransferMode(original.MaxTransferMode.AllocSysString());
+		info.DriveMap(L"C:");
+		info.Features(L"S.M.A.R.T");
+		info.HostReads(1234);
+		info.HostWrites(5678);
+		info.Rotation(1);
+		info.PowerOnCount(1170);
+		info.PowerOnTime(10886);
+		info.Standard(L"NVM Express 1.3");
+		info.Index(0);
+		//attributes
+		for (auto j = 0; j < 15; ++j)
+		{
+			SmartAttribute attr;
+			attr.Id = L"01";
+			attr.Name = L"Some attribute";
+			attr.RawValue = L"000000000050";
+			attr.Threshold = L"50";
+
+			info.Attributes().Append(winrt::box_value(attr));
+		}
+		m_info.Append(info);
+	}
+
 	CString Class::i18n(CString section, CString key, BOOL inEnglish)
 	{
 		TCHAR str[256];

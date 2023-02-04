@@ -5,7 +5,7 @@ namespace DiskInfoLibWinRT
     runtimeclass GraphDataPoint 
     {
         GraphDataPoint(UInt64 xValue, UInt32 yValue);
-        UInt64 XValue;
+        Windows.Foundation.DateTime XValue;
         UInt32 YValue;
     }
 }
