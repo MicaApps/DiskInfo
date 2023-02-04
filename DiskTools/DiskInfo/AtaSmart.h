@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 /*---------------------------------------------------------------------------*/
 //       Author : hiyohiyo
 //         Mail : hiyohiyo@crystalmark.info
@@ -165,7 +165,7 @@ typedef struct _VOLUME_DISK_EXTENTS_LX {
 class CAtaSmart
 {
 public:
-	static CAtaSmart& get_instance() {	//µ¥ÀıÄ£Ê½
+	static CAtaSmart& get_instance() {	//å•ä¾‹æ¨¡å¼
 		static CAtaSmart instance;
 		return instance;
 	}
@@ -2101,11 +2101,11 @@ protected:
 };
 
 /*
-* ·â×°DLL
+* å°è£…DLL
 */
 extern DWORD selectedDrive = 0;
 /// <summary>
-/// ²âÊÔDLL
+/// æµ‹è¯•DLL
 /// </summary>
 /// <param name="a"></param>
 /// <param name="b"></param>
@@ -2116,7 +2116,7 @@ extern "C" IMPORT_DLL int Add(int a, int b) {
 }
 
 /// <summary>
-/// Ñ¡ÔñÓ²ÅÌ
+/// é€‰æ‹©ç¡¬ç›˜
 /// </summary>
 /// <param name="i"></param>
 /// <returns></returns>
@@ -2158,7 +2158,7 @@ extern "C" IMPORT_DLL BOOL SelectDrive(DWORD i)
 
 
 /// <summary>
-/// Ñ¡ÔñÓ²ÅÌ
+/// é€‰æ‹©ç¡¬ç›˜
 /// </summary>
 /// <param name="i"></param>
 /// <returns></returns>
@@ -2169,7 +2169,7 @@ extern "C" IMPORT_DLL DWORD GetSelectedDrive()
 }
 
 /// <summary>
-/// AtaSmartInit£¬ÔÚ»ñÈ¡Êı¾İÊ±ĞèÒªÏÈµ÷ÓÃÒ»´Î
+/// AtaSmartInitï¼Œåœ¨è·å–æ•°æ®æ—¶éœ€è¦å…ˆè°ƒç”¨ä¸€æ¬¡
 /// </summary>
 /// <param name="useWmi"></param>
 /// <param name="advancedDiskSearch"></param>
@@ -2219,24 +2219,24 @@ extern "C" IMPORT_DLL void AtaSmartInit(BOOL useWmi, BOOL advancedDiskSearch, PB
 }
 
 /// <summary>
-/// ·µ»ØÓ²ÅÌÊı£¬º¯ÊıÃû´ı¶¨
+/// è¿”å›ç¡¬ç›˜æ•°ï¼Œå‡½æ•°åå¾…å®š
 /// </summary>
 /// <returns>int</returns>
 extern "C" IMPORT_DLL int GetDriveNum() { return (int)CAtaSmart::get_instance().vars.GetCount(); }
 
 
 /// <summary>
-/// ·µ»ØÖµÎª×Ö·û´®Ê±µÄĞ´·¨
+/// è¿”å›å€¼ä¸ºå­—ç¬¦ä¸²æ—¶çš„å†™æ³•
 /// CString
 /// </summary>
-/// <returns>×Ö·û´®</returns>
+/// <returns>å­—ç¬¦ä¸²</returns>
 extern "C" IMPORT_DLL wchar_t* GetFirmware() {
 	CString cstrStr = CAtaSmart::get_instance().vars[selectedDrive].FirmwareRev;
 	return cstrStr.AllocSysString();
 }
 
 extern "C" IMPORT_DLL wchar_t* GetModel() {
-	CString cstrStr = CAtaSmart::get_instance().vars[selectedDrive].Model;	//Ó²ÅÌÀàĞÍ
+	CString cstrStr = CAtaSmart::get_instance().vars[selectedDrive].Model;	//ç¡¬ç›˜ç±»å‹
 	return cstrStr.AllocSysString();
 }
 
@@ -2905,7 +2905,7 @@ extern "C" IMPORT_DLL wchar_t* GetListInfo() {
 		AllListInfo += cstr + _T(" ");
 		//BYTE id = CAtaSmart::get_instance().vars[selectedDrive].Attribute[j].Id;
 
-		/*if (m_bSmartEnglish)	//¶à¹úÓï
+		/*if (m_bSmartEnglish)	//å¤šå›½è¯­
 		{
 			GetPrivateProfileStringFx(CAtaSmart::get_instance().vars[selectedDrive].SmartKeyName, cstr, vendorSpecific, str, 256, m_DefaultLangPath);
 		}
