@@ -22,10 +22,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Controls\Gauge.xaml" />
-      <None Remove="Controls\GeneralDiskInfoItem.xaml" />
-      <None Remove="Controls\GraphPage.xaml" />
-      <None Remove="Pages\DiskOverview.xaml" />
+      <None Remove="Controls\GaugeControl.xaml" />
     </ItemGroup>
 
   <ItemGroup>
@@ -62,25 +59,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Controls\Gauge.xaml">
+    <Page Update="Controls\GaugeControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Pages\DiskOverview.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Controls\GraphPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Controls\GeneralDiskInfoItem.xaml">
+    <Page Update="Controls\GraphControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

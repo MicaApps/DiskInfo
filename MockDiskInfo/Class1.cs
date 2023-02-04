@@ -90,12 +90,12 @@ namespace DiskInfoLibWinRT
     {
         public GraphDataPoint(ulong xValue, uint yValue)
         {
-            XValue = xValue;
+            XValue = DateTimeOffset.FromUnixTimeSeconds((long)xValue);
             YValue = yValue;
         }
 
 
-        public ulong XValue { get; set; }
+        public DateTimeOffset XValue { get; set; }
         public uint YValue { get; set; }
     }
 
