@@ -4,6 +4,10 @@ using Microsoft.UI.Xaml.Navigation;
 using DiskInfoLibWinRT;
 using Syncfusion.UI.Xaml.Gauges;
 using DiskTools.Helpers;
+using System;
+using DiskTools.Services;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -13,42 +17,50 @@ namespace DiskTools.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class DiskInfoPage : Page
+    public sealed partial class DiskInfoPage : Page, INotifyPropertyChanged
     {
-        public string ID = string.Empty;
+        public int ID;
 
-        internal DiskInfoViewModel Provider;
+        public DiskInfoLibWinRT.AtaSmartInfo Info { get; set; }
 
-        //public DiskInfo.DiskInfo info = new DiskInfo.DiskInfo();
-        public DiskInfoLibWinRT.AtaSmartInfo Info
+        public DiskInfoPage()
         {
-            get => ViewModel.LibInstance.Info[0];
+            InitializeComponent();
+            this.DataContext = this;
         }
-
-        public ViewModel ViewModel { get => viewModel; }
-        private ViewModel viewModel = new ViewModel();
-
-        public DiskInfoPage() => InitializeComponent();
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             if (e.Parameter is string id)
             {
-                ID = id;
-                Provider = new DiskInfoViewModel(id);
+                ID = Int32.Parse(id);
+                Info = DiskInfoService.Instance.Info[ID];
+                OnPropertyChanged("Info");
+                if (DetailFrame.Content is OverviewPage page && page != null)
+                    page.RefreshData(Info);
             }
-            DataContext = Provider;
         }
 
-        private void AppBarButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        private void Page_Loaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
-            ViewModel.LibInstance.UpdateAll();
+            DetailFrame.Navigate(typeof(OverviewPage), ID);
         }
 
-        private void SplitButton_Click(SplitButton sender, SplitButtonClickEventArgs args)
+        #region INotifyPropertyChanged members
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            ViewModel.LibInstance.SaveText("");
+            PropertyChangedEventHandler handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                var e = new PropertyChangedEventArgs(propertyName);
+                handler(this, e);
+            }
         }
+
+        #endregion
     }
 }
