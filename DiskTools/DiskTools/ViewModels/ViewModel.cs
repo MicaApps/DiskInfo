@@ -26,7 +26,7 @@ namespace DiskTools
             get
             {
                 var list = new List<GraphDataTimePoint>();
-                    list.Add(new GraphDataTimePoint(new GraphDataPoint(1674738230, 21)));
+                list.Add(new DiskInfoLibWinRT.GraphDataPoint(0, 10));
                     list.Add(new GraphDataTimePoint(new GraphDataPoint(1674746492, 22)));
                     return list;
             }
