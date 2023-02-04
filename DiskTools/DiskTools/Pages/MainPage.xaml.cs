@@ -1,4 +1,4 @@
-﻿
+
 using CommunityToolkit.WinUI.UI;
 using DiskTools.Controls;
 using DiskTools.Helpers;
@@ -53,7 +53,6 @@ namespace DiskTools.Pages
         public MainPage()
         {
             InitializeComponent();
-            this.DataContext = this;
             UIHelper.MainPage = this;
             UIHelper.MainWindow.Backdrop.BackdropTypeChanged += OnBackdropTypeChanged;
             if (UIHelper.HasTitleBar)
