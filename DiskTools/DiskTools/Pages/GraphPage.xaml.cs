@@ -2,7 +2,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System.Collections.Generic;
 
-namespace DiskTools.Controls
+namespace DiskTools.Pages
 {
     public sealed partial class GraphPage : UserControl
     {
@@ -14,15 +14,9 @@ namespace DiskTools.Controls
         private static DependencyProperty collectionProperty = DependencyProperty.Register(
             "Collection", typeof(object), typeof(GraphPage), new PropertyMetadata(null));
 
-        public class Test
+        public IList<GraphDataTimePoint> Collection
         {
-            public DateTime XValue { get; set; }
-            public uint YValue { get; set; }
-        }
-
-        public IList<DiskInfoLibWinRT.GraphDataPoint> Collection
-        {
-            get => GetValue(collectionProperty) as IList<DiskInfoLibWinRT.GraphDataPoint>;
+            get => GetValue(collectionProperty) as IList<GraphDataTimePoint>; 
             set => SetValue(collectionProperty, value);
         }
     }
