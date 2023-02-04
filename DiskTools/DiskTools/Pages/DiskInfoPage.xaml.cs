@@ -19,7 +19,7 @@ namespace DiskTools.Pages
         
         public int ID;
 
-        public DiskInfoLibWinRT.AtaSmartInfo Info;
+        public DiskInfoLibWinRT.AtaSmartInfo Info { get; set; }
 
         public DiskInfoPage() => InitializeComponent();
 
@@ -32,6 +32,7 @@ namespace DiskTools.Pages
             }
             Info = ViewModel.LibInstance.Info[0];
             OverviewPage.Id = ID;
+            DataContext = this;
         }
 
     }
