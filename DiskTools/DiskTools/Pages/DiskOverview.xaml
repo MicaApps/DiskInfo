@@ -53,13 +53,13 @@
                     <local1:Gauge Value="80" Grid.Column="0"/>
                     
                     <!--统计图-->
-                    <local1:GraphPage Collection="{x:Bind Info.TemperatureData}" Grid.Column="1"/>
+                    <local1:GraphPage Collection="{Binding Info.TemperatureData}" Grid.Column="1"/>
                 </Grid>
 
                 <Grid Grid.Row="1">
                     <!--带图标的数据列-->
                     <controls:AdaptiveGridView
-                        Name="AdaptiveGridViewContro2"
+                        x:Name="AdaptiveGridViewContro2"
                         DesiredWidth="400"
                         IsItemClickEnabled="False"
                         OneRowModeEnabled="False"
