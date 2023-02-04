@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ABI.DiskInfoLibWinRT;
 using DiskInfoLibWinRT;
 using DiskTools.Helpers;
 
@@ -31,25 +30,25 @@ namespace DiskTools
             }
         }
 
-        public bool DumpSmartReadThreshold
-        {
-            get => ViewModel.LibInstance.DumpSmartReadThreshold;
-            set
-            {
-                SettingsHelper.Set(SettingsHelper.DumpSmartReadThreshold, value);
-                ViewModel.LibInstance.DumpSmartReadThreshold = value;
-            }
-        }
+    //    public bool DumpSmartReadThreshold
+    //    {
+    //        get => ViewModel.LibInstance.DumpSmartReadThreshold;
+    //        set
+    //        {
+    //            SettingsHelper.Set(SettingsHelper.DumpSmartReadThreshold, value);
+    //            ViewModel.LibInstance.DumpSmartReadThreshold = value;
+    //        }
+    //    }
 
-        public bool DumpIdentifyDevice
-        {
-            get => ViewModel.LibInstance.DumpIdentifyDevice;
-            set
-            {
-                SettingsHelper.Set(SettingsHelper.DumpIdentifyDevice, value);
-                ViewModel.LibInstance.DumpIdentifyDevice = value;
-            }
-        }
+    //    public bool DumpIdentifyDevice
+    //    {
+    //        get => ViewModel.LibInstance.DumpIdentifyDevice;
+    //        set
+    //        {
+    //            SettingsHelper.Set(SettingsHelper.DumpIdentifyDevice, value);
+    //            ViewModel.LibInstance.DumpIdentifyDevice = value;
+    //        }
+    //    }
 
         static ViewModel()
         {

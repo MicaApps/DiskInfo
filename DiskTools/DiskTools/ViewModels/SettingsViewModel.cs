@@ -1,4 +1,4 @@
-﻿using APKInstaller.Helpers;
+using APKInstaller.Helpers;
 using CommunityToolkit.WinUI;
 using DiskTools.Helpers;
 using DiskTools.Models;
@@ -88,7 +88,7 @@ namespace DiskTools.ViewModels
                 ThreadPoolTimer.CreatePeriodicTimer(
                     (ThreadPoolTimer timer) =>
                     {
-                        ViewModel.LibInstance.UpdateAll();
+                        //ViewModel.LibInstance.UpdateAll();
                     }, intervals[value]
                 );
             }

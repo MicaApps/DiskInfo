@@ -51,10 +51,8 @@
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\..\DiskInfoLibWinRT\DiskInfoLibWinRT.vcxproj" />
-    <ProjectReference Include="..\DiskInfo.Interop\DiskInfo.Interop.csproj" />
+    <ProjectReference Include="..\..\MockDiskInfo\MockDiskInfo.csproj" />
   </ItemGroup>
 
   <ItemGroup>
