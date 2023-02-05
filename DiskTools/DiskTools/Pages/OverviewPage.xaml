@@ -21,7 +21,9 @@
                     <!--  圆环  -->
                     <controls:GaugeControl Grid.Column="0" Value="80" />
                     <!--  统计图  -->
-                    <controls:GraphControl Grid.Column="1" Collection="{Binding Info.TemperatureData}" />
+                    <controls:GraphControl Margin="10,30,0,30"
+                                           Grid.Column="1"
+                                           Collection="{Binding Info.TemperatureData}" />
                 </Grid>
                 <controls:DiskBasicInfoControl Margin="0,10,0,0" />
                 <controls:DiskSmartInfoControl Margin="10,10,10,0" />

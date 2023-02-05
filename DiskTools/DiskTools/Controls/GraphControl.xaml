@@ -12,45 +12,46 @@
     <UserControl.Resources>
         <converter:UnixTimeStampToTimeDateConverter x:Key="UnixTimeStampToTimeDateConverter" />
     </UserControl.Resources>
+    <Grid>
+        <chart:SfCartesianChart VerticalAlignment="Stretch">
 
-    <chart:SfCartesianChart VerticalAlignment="Stretch" Height="270">
+            <!--  渐变画笔  -->
+            <chart:SfCartesianChart.Resources>
+                <BrushCollection x:Key="customBrushes5">
+                    <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                        <GradientStop Offset="2" Color="#90FFffff" />
+                        <GradientStop Offset="0" Color="#00ffffff" />
+                    </LinearGradientBrush>
+                </BrushCollection>
 
-        <!--  渐变画笔  -->
-        <chart:SfCartesianChart.Resources>
-            <BrushCollection x:Key="customBrushes5">
-                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
-                    <GradientStop Offset="2" Color="#90FFffff" />
-                    <GradientStop Offset="0" Color="#00ffffff" />
-                </LinearGradientBrush>
-            </BrushCollection>
+                <BrushCollection x:Key="customBrushes6">
+                    <SolidColorBrush Color="#ffffff" />
+                </BrushCollection>
 
-            <BrushCollection x:Key="customBrushes6">
-                <SolidColorBrush Color="#ffffff" />
-            </BrushCollection>
+            </chart:SfCartesianChart.Resources>
 
-        </chart:SfCartesianChart.Resources>
+            <!--  图  -->
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis />
+            </chart:SfCartesianChart.XAxes>
 
-        <!--  图  -->
-        <chart:SfCartesianChart.XAxes>
-            <chart:DateTimeAxis />
-        </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis />
+            </chart:SfCartesianChart.YAxes>
 
-        <chart:SfCartesianChart.YAxes>
-            <chart:NumericalAxis />
-        </chart:SfCartesianChart.YAxes>
+            <chart:SfCartesianChart.Series>
 
-        <chart:SfCartesianChart.Series>
+                <!--  折线  -->
+                <chart:LineSeries ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
+                                  XBindingPath="XValue" YBindingPath="YValue"
+                                  PaletteBrushes="{StaticResource customBrushes6}" />
 
-            <!--  折线  -->
-            <chart:LineSeries ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
-                              XBindingPath="XValue" YBindingPath="YValue"
-                              PaletteBrushes="{StaticResource customBrushes6}" />
+                <!--  面积  -->
+                <chart:AreaSeries ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
+                                  XBindingPath="XValue" YBindingPath="YValue"
+                                  PaletteBrushes="{StaticResource customBrushes5}" />
 
-            <!--  面积  -->
-            <chart:AreaSeries ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
-                              XBindingPath="XValue" YBindingPath="YValue"
-                              PaletteBrushes="{StaticResource customBrushes5}" />
-
-        </chart:SfCartesianChart.Series>
-    </chart:SfCartesianChart>
+            </chart:SfCartesianChart.Series>
+        </chart:SfCartesianChart>
+    </Grid>
 </UserControl>

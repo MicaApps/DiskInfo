@@ -55,6 +55,18 @@ namespace DiskInfoLibWinRT
         public string Standard { get; set; }
 
         public System.Collections.Generic.IList<GraphDataPoint> TemperatureData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> ReallocatedSectorsData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> PowerOnHoursData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> PowerCycleData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> ReallocationEventData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> PendingSectorData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> UncorrectableSectorData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> RemainingLifeData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> TotalHostWritesData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> TotalHostReadsData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> TotalNandWritesData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> GigabytesErasedData { get; set; }
+        public System.Collections.Generic.IList<GraphDataPoint> WearLevelingCountData { get; set; }
 
     }
 
