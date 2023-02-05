@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DiskInfoLibWinRT;
 using DiskTools.Helpers;
+using DiskTools.Services;
 
 namespace DiskTools
 {
@@ -30,25 +31,25 @@ namespace DiskTools
             }
         }
 
-    //    public bool DumpSmartReadThreshold
-    //    {
-    //        get => ViewModel.LibInstance.DumpSmartReadThreshold;
-    //        set
-    //        {
-    //            SettingsHelper.Set(SettingsHelper.DumpSmartReadThreshold, value);
-    //            ViewModel.LibInstance.DumpSmartReadThreshold = value;
-    //        }
-    //    }
+        public bool DumpSmartReadThreshold
+        {
+            get => ViewModel.LibInstance.DumpSmartReadThreshold;
+            set
+            {
+                SettingsHelper.Set(SettingsHelper.DumpSmartReadThreshold, value);
+                ViewModel.LibInstance.DumpSmartReadThreshold = value;
+            }
+        }
 
-    //    public bool DumpIdentifyDevice
-    //    {
-    //        get => ViewModel.LibInstance.DumpIdentifyDevice;
-    //        set
-    //        {
-    //            SettingsHelper.Set(SettingsHelper.DumpIdentifyDevice, value);
-    //            ViewModel.LibInstance.DumpIdentifyDevice = value;
-    //        }
-    //    }
+        public bool DumpIdentifyDevice
+        {
+            get => ViewModel.LibInstance.DumpIdentifyDevice;
+            set
+            {
+                SettingsHelper.Set(SettingsHelper.DumpIdentifyDevice, value);
+                ViewModel.LibInstance.DumpIdentifyDevice = value;
+            }
+        }
 
         static ViewModel()
         {
@@ -58,7 +59,11 @@ namespace DiskTools
             ViewModel.LibInstance.DumpIdentifyDevice = SettingsHelper.Get<bool>(SettingsHelper.DumpIdentifyDevice);
         }
 
-        public static DiskInfoLibWinRT.Class LibInstance = new DiskInfoLibWinRT.Class();
-        public static ViewModel Instance = new ViewModel();
+        public static DiskInfoLibWinRT.Class LibInstance => DiskInfoService.Instance;
+
+        private static readonly Lazy<ViewModel> lazy =
+           new Lazy<ViewModel>(() => new ViewModel());
+
+        public static ViewModel Instance { get { return lazy.Value; } }
     }
 }
