@@ -21,15 +21,15 @@ using Windows.Foundation.Collections;
 
 namespace DiskTools.Controls
 {
-    public sealed partial class Gauge : UserControl
+    public sealed partial class GaugeControl : UserControl
     {
-        public Gauge()
+        public GaugeControl()
         {
             this.InitializeComponent();
         }
 
         private static DependencyProperty valueProperty = DependencyProperty.Register(
-            "Value", typeof(object), typeof(Gauge), new PropertyMetadata(0.0) );
+            "Value", typeof(object), typeof(GaugeControl), new PropertyMetadata(0.0) );
 
         public double Value
         {
