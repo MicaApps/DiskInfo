@@ -1,0 +1,57 @@
+<UserControl x:Class="DiskTools.Controls.GraphControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:DiskTools.Controls"
+             xmlns:converter="using:DiskTools.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+             xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <converter:UnixTimeStampToTimeDateConverter x:Key="UnixTimeStampToTimeDateConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <chart:SfCartesianChart VerticalAlignment="Stretch">
+
+            <!--  渐变画笔  -->
+            <chart:SfCartesianChart.Resources>
+                <BrushCollection x:Key="customBrushes5">
+                    <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                        <GradientStop Offset="2" Color="#90FFffff" />
+                        <GradientStop Offset="0" Color="#00ffffff" />
+                    </LinearGradientBrush>
+                </BrushCollection>
+
+                <BrushCollection x:Key="customBrushes6">
+                    <SolidColorBrush Color="#ffffff" />
+                </BrushCollection>
+
+            </chart:SfCartesianChart.Resources>
+
+            <!--  图  -->
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis />
+            </chart:SfCartesianChart.XAxes>
+
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis />
+            </chart:SfCartesianChart.YAxes>
+
+            <chart:SfCartesianChart.Series>
+
+                <!--  折线  -->
+                <chart:LineSeries ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
+                                  XBindingPath="XValue" YBindingPath="YValue"
+                                  PaletteBrushes="{StaticResource customBrushes6}" />
+
+                <!--  面积  -->
+                <chart:AreaSeries ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
+                                  XBindingPath="XValue" YBindingPath="YValue"
+                                  PaletteBrushes="{StaticResource customBrushes5}" />
+
+            </chart:SfCartesianChart.Series>
+        </chart:SfCartesianChart>
+    </Grid>
+</UserControl>

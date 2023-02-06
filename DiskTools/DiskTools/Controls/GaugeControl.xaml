@@ -1,26 +1,23 @@
-<!-- Copyright (c) Microsoft Corporation and Contributors. -->
-<!-- Licensed under the MIT License. -->
+<!--  Copyright (c) Microsoft Corporation and Contributors.  -->
+<!--  Licensed under the MIT License.  -->
 
-<UserControl
-    x:Class="DiskTools.Controls.Gauge"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:DiskTools.Controls"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
-    mc:Ignorable="d">
+<UserControl x:Class="DiskTools.Controls.GaugeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:DiskTools.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+             mc:Ignorable="d">
 
     <Grid>
         <gauge:SfRadialGauge Width="270">
             <gauge:SfRadialGauge.Axes>
                 <gauge:RadialAxis AxisLineWidth="0.15" AxisLineWidthUnit="Factor">
                     <gauge:RadialAxis.Pointers>
-                        <gauge:RangePointer
-                            AnimationDuration="1000"
-                            EnableAnimation="True"
-                            PointerWidth="200"
-                            WidthUnit="Pixel"
-                            Value="{x:Bind Value}">
+                        <gauge:RangePointer AnimationDuration="1000" EnableAnimation="True"
+                                            PointerWidth="200" WidthUnit="Pixel"
+                                            Value="{x:Bind Value}">
                             <gauge:RangePointer.AnimationEasingFunction>
                                 <ElasticEase Oscillations="1" />
                             </gauge:RangePointer.AnimationEasingFunction>
@@ -43,11 +40,8 @@
             <gauge:SfRadialGauge.Axes>
                 <gauge:RadialAxis AxisLineWidth="0.15" AxisLineWidthUnit="Factor">
                     <gauge:RadialAxis.Pointers>
-                        <gauge:RangePointer
-                                            AnimationDuration="1000"
-                                            EnableAnimation="True"
-                                            PointerWidth="0.15"
-                                            WidthUnit="Factor"
+                        <gauge:RangePointer AnimationDuration="1000" EnableAnimation="True"
+                                            PointerWidth="0.15" WidthUnit="Factor"
                                             Value="{x:Bind Value}">
                             <gauge:RangePointer.AnimationEasingFunction>
                                 <ElasticEase Oscillations="1" />
@@ -58,10 +52,8 @@
                                 <gauge:GaugeGradientStop Color="White" Value="120" />
                             </gauge:RangePointer.GradientStops>
                         </gauge:RangePointer>
-                        <gauge:ContentPointer
-                                            AnimationDuration="1000"
-                                            EnableAnimation="True"
-                                            Value="80">
+                        <gauge:ContentPointer AnimationDuration="1000" EnableAnimation="True"
+                                              Value="80">
                             <gauge:ContentPointer.AnimationEasingFunction>
                                 <ElasticEase Oscillations="1" />
                             </gauge:ContentPointer.AnimationEasingFunction>

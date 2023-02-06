@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ABI.DiskInfoLibWinRT;
 using DiskInfoLibWinRT;
 using DiskTools.Helpers;
+using DiskTools.Services;
 
 namespace DiskTools
 {
@@ -59,7 +59,11 @@ namespace DiskTools
             ViewModel.LibInstance.DumpIdentifyDevice = SettingsHelper.Get<bool>(SettingsHelper.DumpIdentifyDevice);
         }
 
-        public static DiskInfoLibWinRT.Class LibInstance = new DiskInfoLibWinRT.Class();
-        public static ViewModel Instance = new ViewModel();
+        public static DiskInfoLibWinRT.Class LibInstance => DiskInfoService.Instance;
+
+        private static readonly Lazy<ViewModel> lazy =
+           new Lazy<ViewModel>(() => new ViewModel());
+
+        public static ViewModel Instance { get { return lazy.Value; } }
     }
 }
