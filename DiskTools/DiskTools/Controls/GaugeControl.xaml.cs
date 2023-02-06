@@ -8,6 +8,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Syncfusion.UI.Xaml.Gauges;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -35,6 +36,14 @@ namespace DiskTools.Controls
         {
             get => (double)GetValue(valueProperty);
             set => SetValue(valueProperty, value);
+        }
+
+        private void rangePointer_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            if (e.Value > 10)
+            {
+                lastgradient.Value = e.Value - 10;
+            }
         }
     }
 }
