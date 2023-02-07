@@ -149,6 +149,8 @@
                             <gauge:RangePointer.GradientStops>
                                 <gauge:GaugeGradientStop Value="0"
                                                          Color="Brown" />
+                                <gauge:GaugeGradientStop Value="1"
+                                                         Color="Transparent" />
                             </gauge:RangePointer.GradientStops>
                         </gauge:RangePointer>
                     </gauge:RadialAxis.Pointers>
