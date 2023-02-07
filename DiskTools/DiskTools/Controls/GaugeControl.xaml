@@ -18,7 +18,7 @@
         <gauge:SfRadialGauge Height="400"
                              Width="400">
             <gauge:SfRadialGauge.Axes>
-                <gauge:RadialAxis AxisLineFill="Black"
+                <gauge:RadialAxis AxisLineFill="Transparent"
                                   AxisLineWidth="20"
                                   ShowLabels="False"
                                   ShowTicks="False">
@@ -27,57 +27,57 @@
                                           EndValue="3"
                                           StartWidth="20"
                                           EndWidth="20"
-                                          Background="LightGreen"></gauge:GaugeRange>
+                                          Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange StartValue="10"
                                           EndValue="13"
                                           StartWidth="20"
                                           EndWidth="20"
-                                          Background="LightGreen"></gauge:GaugeRange>
+                                          Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange StartValue="20"
                                           EndValue="23"
                                           StartWidth="20"
                                           EndWidth="20"
-                                          Background="LightGreen"></gauge:GaugeRange>
+                                          Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange StartValue="30"
                                           EndValue="33"
                                           StartWidth="20"
                                           EndWidth="20"
-                                          Background="LightGreen"></gauge:GaugeRange>
+                                          Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange StartValue="40"
                                           EndValue="43"
                                           StartWidth="20"
                                           EndWidth="20"
-                                          Background="LightGreen"></gauge:GaugeRange>
+                                          Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange StartValue="50"
                                           EndValue="53"
                                           StartWidth="20"
                                           EndWidth="20"
-                                          Background="LightGreen"></gauge:GaugeRange>
+                                          Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange StartValue="60"
                                           EndValue="63"
                                           StartWidth="20"
                                           EndWidth="20"
-                                          Background="LightGreen"></gauge:GaugeRange>
+                                          Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange StartValue="70"
                                           EndValue="73"
                                           StartWidth="20"
                                           EndWidth="20"
-                                          Background="LightGreen"></gauge:GaugeRange>
+                                          Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange  StartValue="80"
                                            EndValue="83"
                                            StartWidth="20"
                                            EndWidth="20"
-                                           Background="LightGreen"></gauge:GaugeRange>
+                                           Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange StartValue="90"
                                           EndValue="93"
                                           StartWidth="20"
                                           EndWidth="20"
-                                          Background="LightGreen"></gauge:GaugeRange>
+                                          Background="#20ffffff"></gauge:GaugeRange>
                         <gauge:GaugeRange  StartValue="97"
                                            EndValue="100"
                                            StartWidth="20"
                                            EndWidth="20"
-                                           Background="LightGreen"></gauge:GaugeRange>
+                                           Background="#20ffffff"></gauge:GaugeRange>
                     </gauge:RadialAxis.Ranges>
                 </gauge:RadialAxis>
                 <gauge:RadialAxis RadiusFactor="0.75"
@@ -149,6 +149,8 @@
                             <gauge:RangePointer.GradientStops>
                                 <gauge:GaugeGradientStop Value="0"
                                                          Color="Brown" />
+                                <gauge:GaugeGradientStop Value="1"
+                                                         Color="Transparent" />
                             </gauge:RangePointer.GradientStops>
                         </gauge:RangePointer>
                     </gauge:RadialAxis.Pointers>
