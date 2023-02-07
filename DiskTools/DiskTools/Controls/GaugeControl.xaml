@@ -18,7 +18,7 @@
         <gauge:SfRadialGauge Height="400"
                              Width="400">
             <gauge:SfRadialGauge.Axes>
-                <gauge:RadialAxis AxisLineFill="Black"
+                <gauge:RadialAxis AxisLineFill="Transparent"
                                   AxisLineWidth="20"
                                   ShowLabels="False"
                                   ShowTicks="False">
