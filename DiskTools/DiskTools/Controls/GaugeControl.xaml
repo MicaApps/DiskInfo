@@ -1,6 +1,3 @@
-<!--  Copyright (c) Microsoft Corporation and Contributors.  -->
-<!--  Licensed under the MIT License.  -->
-
 <UserControl x:Class="DiskTools.Controls.GaugeControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,177 +5,143 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+             xmlns:converters="using:DiskTools.Converters"
              mc:Ignorable="d">
-
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <!--  主题的使用请参考 https://learn.microsoft.com/zh-cn/windows/apps/design/style/xaml-resource-dictionary  -->
+                <ResourceDictionary x:Key="Light" Source="ms-appx:///Styles/Gauge/Gauge.Light.xaml" />
+                <ResourceDictionary x:Key="Dark" Source="ms-appx:///Styles/Gauge/Gauge.Dark.xaml" />
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <gauge:SfRadialGauge Height="400"
-                             Width="400">
+        <!--300大小不能改！！阴影会崩掉！！-->
+        <!--这个文件里涉及大小的都别动（-->
+        <gauge:SfRadialGauge Width="300" Height="300"
+                             Background="Transparent">
             <gauge:SfRadialGauge.Axes>
-                <gauge:RadialAxis AxisLineFill="Transparent"
-                                  AxisLineWidth="20"
-                                  ShowLabels="False"
+                <gauge:RadialAxis Background="Transparent"
+                                  AxisLineFill="Transparent" AxisLineWidth="20"
+                                  RadiusFactor="0.92" ShowLabels="False"
                                   ShowTicks="False">
                     <gauge:RadialAxis.Ranges>
-                        <gauge:GaugeRange StartValue="0"
-                                          EndValue="2.5"
-                                          StartWidth="20"
-                                          EndWidth="20"
-                                          Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="25"
-                                          EndValue="27.5"
-                                          StartWidth="20"
-                                          EndWidth="20"
-                                          Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="20"
-                                          EndValue="22.5"
-                                          StartWidth="20"
-                                          EndWidth="20"
-                                          Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="30"
-                                          EndValue="32.5"
-                                          StartWidth="20"
-                                          EndWidth="20"
-                                          Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="40"
-                                          EndValue="42.5"
-                                          StartWidth="20"
-                                          EndWidth="20"
-                                          Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="50"
-                                          EndValue="52.5"
-                                          StartWidth="20"
-                                          EndWidth="20"
-                                          Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="60"
-                                          EndValue="62.5"
-                                          StartWidth="20"
-                                          EndWidth="20"
-                                          Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="70"
-                                          EndValue="72.5"
-                                          StartWidth="20"
-                                          EndWidth="20"
-                                          Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange  StartValue="80"
-                                           EndValue="82.5"
-                                           StartWidth="20"
-                                           EndWidth="20"
-                                           Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="90"
-                                          EndValue="92.5"
-                                          StartWidth="20"
-                                          EndWidth="20"
-                                          Background="#20ffffff"></gauge:GaugeRange>
-                        <gauge:GaugeRange  StartValue="98"
-                                           EndValue="100"
-                                           StartWidth="20"
-                                           EndWidth="20"
-                                           Background="#20ffffff"></gauge:GaugeRange>
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="1" EndWidth="14"
+                                          StartValue="0" StartWidth="14" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="11.5" EndWidth="14"
+                                          StartValue="13.5" StartWidth="14" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="24" EndWidth="14"
+                                          StartValue="26" StartWidth="14" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="36.5" EndWidth="14"
+                                          StartValue="38.5" StartWidth="14" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="49" EndWidth="14"
+                                          StartValue="51" StartWidth="14" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="61.5" EndWidth="14"
+                                          StartValue="63.5" StartWidth="14" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="74" EndWidth="14"
+                                          StartValue="76" StartWidth="14" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="86.5" EndWidth="14"
+                                          StartValue="88.5" StartWidth="14" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="99" EndWidth="14"
+                                          StartValue="100" StartWidth="14" />
                     </gauge:RadialAxis.Ranges>
                 </gauge:RadialAxis>
-                <gauge:RadialAxis RadiusFactor="0.75"
-                                  AxisLineWidth="0.15"
-                                  ShowLabels="False"
-                                  ShowTicks="False"
-                                  AxisLineWidthUnit="Factor">
+                <gauge:RadialAxis Background="Transparent"
+                                  AxisLineWidth="0.15" AxisLineWidthUnit="Factor"
+                                  RadiusFactor="0.75" ShowLabels="False"
+                                  AxisLineFill="Transparent" ShowTicks="False">
                     <gauge:RadialAxis.Ranges>
-                        <gauge:GaugeRange StartValue="0" CornerRadius="0.5"
-                                          EndValue="40"
-                                          StartWidth="30"
-                                          EndWidth="30"
-                                          Background="#CA09BC"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="40"
-                                          EndValue="45"
-                                          StartWidth="30"
-                                          EndWidth="30"
-                                          Background="Black"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="45"
-                                          EndValue="60"
-                                          StartWidth="30"
-                                          EndWidth="30"
-                                          Background="#CA09BC"></gauge:GaugeRange>
-                        <gauge:GaugeRange StartValue="60"
-                                          EndValue="65"
-                                          StartWidth="30"
-                                          EndWidth="30"
-                                          Background="Black"></gauge:GaugeRange>
-                        <gauge:GaugeRange  StartValue="65"
-                                           EndValue="100"
-                                           StartWidth="30"
-                                           EndWidth="30"
-                                           Background="#CA09BC"></gauge:GaugeRange>
+                        <gauge:GaugeRange Background="{ThemeResource InnerRangeBrush1}"
+                                          CornerRadius="2" EndValue="24"
+                                          EndWidth="300" StartValue="0"
+                                          StartWidth="300" />
+                        <gauge:GaugeRange Background="{ThemeResource InnerRangeBrush2}"
+                                          CornerRadius="2" EndValue="49"
+                                          EndWidth="300" StartValue="26"
+                                          StartWidth="300" />
+                        <gauge:GaugeRange Background="{ThemeResource InnerRangeBrush3}"
+                                          CornerRadius="2" EndValue="74"
+                                          EndWidth="400" StartValue="51"
+                                          StartWidth="400" />
+                        <gauge:GaugeRange Background="{ThemeResource InnerRangeBrush4}"
+                                          CornerRadius="2" EndValue="100"
+                                          EndWidth="300" StartValue="76"
+                                          StartWidth="300" />
                     </gauge:RadialAxis.Ranges>
                     <gauge:RadialAxis.Pointers>
-                        <gauge:RangePointer x:Name="rangePointer"
-                                            EnableAnimation="True" 
-                                            ValueChanged="rangePointer_ValueChanged"
-                                            Value="{x:Bind Value, Mode=TwoWay}"
-                                            PointerWidth="0.15"
-                                            CornerStyle="EndCurve"
-                                            WidthUnit="Factor"
-                                             AnimationDuration="1000">
-
-                            <gauge:RangePointer.AnimationEasingFunction>
-
-                                <ElasticEase Oscillations="1" />
-                            </gauge:RangePointer.AnimationEasingFunction>
-                            <gauge:RangePointer.GradientStops>
-                                <gauge:GaugeGradientStop Value="0"
-                                                         Color="SkyBlue" />
-                                <gauge:GaugeGradientStop Value="20"
-                                                         x:Name="lastgradient"
-                                                         Color="White" />
-                            </gauge:RangePointer.GradientStops>
-                        </gauge:RangePointer>
                         <gauge:RangePointer x:Name="redPointer"
-                                            EnableAnimation="True"
-                                            Value="{x:Bind Value, Mode=TwoWay}"
-                                            PointerWidth="0.15"
-                                            PointerOffset=".18"
-                                            OffsetUnit="Factor"
-                                            WidthUnit="Factor"
-                                            CornerStyle="BothFlat"
-                                             AnimationDuration="3000">
+                                            Background="{ThemeResource RedPointerBrush}"
+                                            CornerStyle="BothFlat" EnableAnimation="True"
+                                            OffsetUnit="Factor" PointerOffset=".24"
+                                            PointerWidth="1" WidthUnit="Factor"
+                                            Value="{x:Bind Value, Mode=TwoWay}">
                             <gauge:RangePointer.AnimationEasingFunction>
-                                <ElasticEase Oscillations="1" />
+                                <CircleEase EasingMode="EaseInOut" />
+                            </gauge:RangePointer.AnimationEasingFunction>
+                        </gauge:RangePointer>
+                        <gauge:RangePointer x:Name="rangePointer"
+                                            Visibility="Visible" EnableAnimation="True"
+                                            CornerStyle="BothFlat" CornerRadius="0.1"
+                                            PointerWidth="0.18" ValueChanged="rangePointer_ValueChanged"
+                                            WidthUnit="Factor"
+                                            Value="{x:Bind Value, Mode=TwoWay}">
+                            <gauge:RangePointer.AnimationEasingFunction>
+                                <CircleEase EasingMode="EaseInOut" />
                             </gauge:RangePointer.AnimationEasingFunction>
                             <gauge:RangePointer.GradientStops>
-                                <gauge:GaugeGradientStop Value="0"
-                                                         Color="Brown" />
-                                <gauge:GaugeGradientStop Value="1"
-                                                         Color="Transparent" />
+                                <gauge:GaugeGradientStop Color="#cf3130" Value="0" />
+                                <gauge:GaugeGradientStop x:Name="gradient1"
+                                                         Color="#ce818b" Value="0" />
+                                <gauge:GaugeGradientStop x:Name="gradient2"
+                                                         Color="#FFEEEE" Value="0" />
                             </gauge:RangePointer.GradientStops>
                         </gauge:RangePointer>
+
                     </gauge:RadialAxis.Pointers>
                     <gauge:RadialAxis.Annotations>
-                        <gauge:GaugeAnnotation DirectionUnit="AxisValue"
-                                               DirectionValue="{x:Bind Value, Mode=TwoWay}">
-                            <gauge:GaugeAnnotation.Content>
-                                <TextBlock Text="{x:Bind Value, Mode=TwoWay}"
-                                           FontWeight="SemiBold" Foreground="White"
-                                           FontSize="40" />
-                            </gauge:GaugeAnnotation.Content>
+                        <gauge:GaugeAnnotation DirectionUnit="AxisValue" DirectionValue="{x:Bind Value, Mode=TwoWay}">
+                            <TextBlock Margin="0,-10,0,0">
+                                <Span FontWeight="SemiBold" FontSize="60">
+                                    <Run Text="{x:Bind Value, Mode=OneWay}" />
+                                </Span>
+                                <Span FontWeight="SemiBold" FontSize="40">
+                                    <Run Text="%" FontSize="40" />
+                                </Span>
+                            </TextBlock>
                         </gauge:GaugeAnnotation>
-                        <gauge:GaugeAnnotation DirectionUnit="AxisValue" PositionFactor="0.15" VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                                               DirectionValue="100">
-                            <gauge:GaugeAnnotation.Content>
-                                <TextBlock Text="健康状态 报废"
-                                           FontWeight="SemiBold"
-                                           Foreground="White"
-                                           FontSize="20" />
-                            </gauge:GaugeAnnotation.Content>
+                        <gauge:GaugeAnnotation HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                                               DirectionUnit="AxisValue" DirectionValue="100"
+                                               PositionFactor="0">
+                            <TextBlock Margin="0,64,0,0" HorizontalTextAlignment="Center">
+                                <Span FontWeight="Normal" FontSize="26">
+                                    <Run Text="健康状态" />
+                                </Span>
+                                <LineBreak />
+                                <Span FontWeight="SemiBold">
+                                    <Run Text="报废" FontSize="32" />
+                                </Span>
+                            </TextBlock>
                         </gauge:GaugeAnnotation>
                     </gauge:RadialAxis.Annotations>
                 </gauge:RadialAxis>
             </gauge:SfRadialGauge.Axes>
         </gauge:SfRadialGauge>
-        <Slider Minimum="0"
-                Maximum="100"
-                Value="{x:Bind Value, Mode=TwoWay}"
-                Grid.Row="1" />
+        <Slider Grid.Row="1"
+                Maximum="100" Minimum="0"
+                Value="{x:Bind Value, Mode=TwoWay}" />
     </Grid>
 </UserControl>

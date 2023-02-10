@@ -11,8 +11,10 @@ using Microsoft.UI.Xaml.Navigation;
 using Syncfusion.UI.Xaml.Gauges;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -22,11 +24,12 @@ using Windows.Foundation.Collections;
 
 namespace DiskTools.Controls
 {
-    public sealed partial class GaugeControl : UserControl
+    public sealed partial class GaugeControl : UserControl, INotifyPropertyChanged
     {
         public GaugeControl()
         {
             this.InitializeComponent();
+            this.DataContext = this;
         }
 
         private static DependencyProperty valueProperty = DependencyProperty.Register(
@@ -35,15 +38,42 @@ namespace DiskTools.Controls
         public double Value
         {
             get => (double)GetValue(valueProperty);
-            set => SetValue(valueProperty, value);
+            set
+            {
+                SetValue(valueProperty, value);
+                OnPropertyChanged();
+            }
         }
 
         private void rangePointer_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            if (e.Value > 10)
+            if (e.Value < 16)
             {
-                lastgradient.Value = e.Value - 10;
+                gradient1.Value = e.Value / 2;
+                gradient2.Value = e.Value;
+                return;
+            }
+            else
+            {
+                gradient1.Value = e.Value - 16;
+                gradient2.Value = e.Value;
             }
         }
+
+        #region INotifyPropertyChanged members
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChangedEventHandler handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                var e = new PropertyChangedEventArgs(propertyName);
+                handler(this, e);
+            }
+        }
+
+        #endregion
     }
 }
