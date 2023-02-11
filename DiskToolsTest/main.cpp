@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include <iostream>
 #include <span>
 #include <fstream>
@@ -32,8 +32,9 @@ int main()
 	for (auto const& point : tData)
 	{
 		auto tPoint = winrt::unbox_value<winrt::DiskInfoLibWinRT::GraphDataPoint>(point);
-		std::cout << tPoint.XValue() << '\t' << tPoint.YValue() << '\n';
+		std::cout << tPoint.XValue().time_since_epoch().count() << '\t' << tPoint.YValue() << '\n';
 	}
 
+	std::wcout << info1.Features().data() << '\n';
 
 }
