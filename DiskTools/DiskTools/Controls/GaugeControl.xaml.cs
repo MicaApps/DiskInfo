@@ -18,6 +18,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -41,9 +42,37 @@ namespace DiskTools.Controls
             set
             {
                 SetValue(valueProperty, value);
+                if (value < 60)
+                    MyBrushIndex = 0;
+                else if (value > 90)
+                    MyBrushIndex = 2;
+                else
+                    MyBrushIndex = 1;
                 OnPropertyChanged();
+                OnPropertyChanged("Desc");
             }
         }
+
+        private int myBrushIndex;
+
+        public int MyBrushIndex
+        {
+            get { return myBrushIndex; }
+            set { myBrushIndex = value; OnPropertyChanged(); }
+        }
+
+        public string Desc
+        {
+            get {
+                if (Value < 60)
+                    return "报废";
+                else if (Value > 90)
+                    return "正常";
+                else
+                    return "良好";
+            }
+        }
+
 
         private void rangePointer_ValueChanged(object sender, ValueChangedEventArgs e)
         {
