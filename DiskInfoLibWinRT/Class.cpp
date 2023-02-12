@@ -23,6 +23,53 @@
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
+	static CString GetFeatures(CAtaSmart::ATA_SMART_INFO const& info)
+	{
+		CString feature;
+		if (info.IsSmartSupported)
+		{
+			feature += _T("S.M.A.R.T., ");
+		}
+		if (info.IsApmSupported)
+		{
+			feature += _T("APM, ");
+		}
+		if (info.IsAamSupported)
+		{
+			feature += _T("AAM, ");
+		}
+		if (info.IsNcqSupported)
+		{
+			feature += _T("NCQ, ");
+		}
+		if (info.IsTrimSupported)
+		{
+			feature += _T("TRIM, ");
+		}
+		if (info.IsDeviceSleepSupported)
+		{
+			feature += _T("DevSleep, ");
+		}
+		if (info.IsStreamingSupported)
+		{
+			feature += _T("Streaming, ");
+		}
+		if (info.IsGplSupported)
+		{
+			feature += _T("GPL, ");
+		}
+		if (info.IsVolatileWriteCachePresent)
+		{
+			feature += _T("VolatileWriteCache, ");
+		}
+
+		if (!feature.IsEmpty())
+		{
+			feature.Delete(feature.GetLength() - 2, 2);
+		}
+		return feature;
+	}
+
 	Class::Class()
 	{
 		BOOL flagChangeDisk = false;
@@ -54,6 +101,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
 			info.Rotation(original.NominalMediaRotationRate);
 			info.PowerOnCount(original.PowerOnCount);
 			info.PowerOnTime(original.PowerOnRawValue);
+			info.Features(GetFeatures(original).GetString());
 			info.Standard((original.MajorVersion + L" | " + original.MinorVersion).GetString());
 			info.Index(i);
 			//attributes
@@ -608,60 +656,8 @@ namespace winrt::DiskInfoLibWinRT::implementation
 			}
 			drive.Replace(_T("%ROTATION_RATE%"), cstr);
 
-			feature = _T("");
-			if (m_Ata.vars[i].IsSmartSupported)
-			{
-				feature += _T("S.M.A.R.T., ");
-			}
-			if (m_Ata.vars[i].IsApmSupported)
-			{
-				feature += _T("APM, ");
-			}
-			if (m_Ata.vars[i].IsAamSupported)
-			{
-				feature += _T("AAM, ");
-			}
-			if (m_Ata.vars[i].IsNcqSupported)
-			{
-				feature += _T("NCQ, ");
-			}
-			if (m_Ata.vars[i].IsTrimSupported)
-			{
-				feature += _T("TRIM, ");
-			}
-			if (m_Ata.vars[i].IsDeviceSleepSupported)
-			{
-				feature += _T("DevSleep, ");
-			}
-			if (m_Ata.vars[i].IsStreamingSupported)
-			{
-				feature += _T("Streaming, ");
-			}
-			if (m_Ata.vars[i].IsGplSupported)
-			{
-				feature += _T("GPL, ");
-			}
-			if (m_Ata.vars[i].IsVolatileWriteCachePresent)
-			{
-				feature += _T("VolatileWriteCache, ");
-			}
+			feature = GetFeatures(m_Ata.vars[i]);
 
-			/*
-			if(m_Ata.vars[i].IsNvCacheSupported)
-			{
-				feature += _T("NV Cache, ");
-			}
-
-			if(m_Ata.vars[i].IsSsd)
-			{
-				feature += _T("SSD, ");
-			}
-			*/
-
-			if (!feature.IsEmpty())
-			{
-				feature.Delete(feature.GetLength() - 2, 2);
-			}
 
 			if (m_Ata.vars[i].CommandType == m_Ata.CMD_TYPE_AMD_RC2)
 			{
@@ -1148,6 +1144,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
 			break;
 		}
 	}
+
 	CString Class::__Number(DWORD value)
 	{
 		CString cstr;
