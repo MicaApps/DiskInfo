@@ -12,8 +12,12 @@
     <UserControl.Resources>
         <converter:UnixTimeStampToTimeDateConverter x:Key="UnixTimeStampToTimeDateConverter" />
     </UserControl.Resources>
-    <Grid>
+    <Grid Margin="10,20">
         <chart:SfCartesianChart VerticalAlignment="Stretch">
+            <chart:SfCartesianChart.PlotAreaBackground>
+                <ImageBrush ImageSource="\Assets\dots.png" AlignmentX="Left"
+                            AlignmentY="Top" Stretch="None" />
+            </chart:SfCartesianChart.PlotAreaBackground>
 
             <!--  渐变画笔  -->
             <chart:SfCartesianChart.Resources>
@@ -28,15 +32,26 @@
                     <SolidColorBrush Color="#ffffff" />
                 </BrushCollection>
 
+                <Style x:Key="LineStyle1" TargetType="Line">
+                    <Setter Property="StrokeThickness" Value="0" />
+                    <Setter Property="Stroke" Value="Transparent" />
+                </Style>
+
             </chart:SfCartesianChart.Resources>
 
             <!--  图  -->
             <chart:SfCartesianChart.XAxes>
-                <chart:DateTimeAxis />
+                <chart:DateTimeAxis ShowMajorGridLines="False" ShowMinorGridLines="False"
+                                    MajorTickStyle="{StaticResource LineStyle1}"
+                                    MinorTickStyle="{StaticResource LineStyle1}"
+                                    AxisLineStyle="{StaticResource LineStyle1}" />
             </chart:SfCartesianChart.XAxes>
 
             <chart:SfCartesianChart.YAxes>
-                <chart:NumericalAxis />
+                <chart:NumericalAxis ShowMajorGridLines="False" ShowMinorGridLines="False"
+                                     MajorTickStyle="{StaticResource LineStyle1}"
+                                     MinorTickStyle="{StaticResource LineStyle1}"
+                                     AxisLineStyle="{StaticResource LineStyle1}" />
             </chart:SfCartesianChart.YAxes>
 
             <chart:SfCartesianChart.Series>

@@ -7,28 +7,28 @@
     <!--  定位参数勿动！！颜色可以改  -->
     <converters:PointerBrushCenterConverter x:Key="PointerBrushCenterConverter" />
     <SolidColorBrush x:Key="OuterTickBrush" Color="#40FFFFFF" />
-    <RadialGradientBrush x:Key="InnerRangeBrush1" Center="112,34" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+    <RadialGradientBrush x:Key="InnerRangeBrush1" Center="82,25.4" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.75" Color="#00FFFFFF" />
         <GradientStop Offset="0.75" Color="#20FFFFFF" />
         <GradientStop Offset="1" Color="#40FFFFFF" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="InnerRangeBrush2" Center="104,112" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+    <RadialGradientBrush x:Key="InnerRangeBrush2" Center="76,82" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.75" Color="#00FFFFFF" />
         <GradientStop Offset="0.75" Color="#20FFFFFF" />
         <GradientStop Offset="1" Color="#40FFFFFF" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="InnerRangeBrush3" Center="0,112" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+    <RadialGradientBrush x:Key="InnerRangeBrush3" Center="0,82" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.75" Color="#00FFFFFF" />
         <GradientStop Offset="0.75" Color="#20FFFFFF" />
         <GradientStop Offset="1" Color="#40FFFFFF" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="InnerRangeBrush4" Center="0,34" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+    <RadialGradientBrush x:Key="InnerRangeBrush4" Center="0,25" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.75" Color="#00FFFFFF" />
         <GradientStop Offset="0.75" Color="#20FFFFFF" />
