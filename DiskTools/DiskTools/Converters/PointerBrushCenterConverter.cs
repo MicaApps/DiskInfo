@@ -13,12 +13,12 @@ namespace DiskTools.Converters
     /// </summary>
     public class PointerBrushCenterConverter : IValueConverter
     {
-        const double R = 86;
+        const double R = 86d * 220 / 300;
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             double v = (double)value;
             if (v > 50)
-                return new Point(86, 86);
+                return new Point(R, R);
             if (v <= 5d / 28d * 100d)
             {
                 var theta = v / 100d * 14d / 9d * Math.PI;

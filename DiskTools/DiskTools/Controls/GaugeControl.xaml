@@ -41,15 +41,15 @@
             </DTR:ColorSelector>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid>
+    <Grid Margin="10,0,10,30">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <!--  300大小不能改！！阴影会崩掉！！  -->
         <!--  这个文件里涉及大小的都别动（  -->
-        <gauge:SfRadialGauge Width="300" Height="300"
-                             Background="Transparent">
+        <gauge:SfRadialGauge Width="220" Height="220"
+                             >
             <gauge:SfRadialGauge.Axes>
                 <gauge:RadialAxis Background="Transparent"
                                   AxisLineFill="Transparent" AxisLineWidth="20"
@@ -57,32 +57,32 @@
                                   ShowTicks="False">
                     <gauge:RadialAxis.Ranges>
                         <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
-                                          EndValue="1" EndWidth="14"
-                                          StartValue="0" StartWidth="14" />
+                                          EndValue="1" EndWidth="8"
+                                          StartValue="0" StartWidth="8" />
                         <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
-                                          EndValue="11.5" EndWidth="14"
-                                          StartValue="13.5" StartWidth="14" />
+                                          EndValue="11.5" EndWidth="8"
+                                          StartValue="13.5" StartWidth="8" />
                         <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
-                                          EndValue="24" EndWidth="14"
-                                          StartValue="26" StartWidth="14" />
+                                          EndValue="24" EndWidth="8"
+                                          StartValue="26" StartWidth="8" />
                         <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
-                                          EndValue="36.5" EndWidth="14"
-                                          StartValue="38.5" StartWidth="14" />
+                                          EndValue="36.5" EndWidth="8"
+                                          StartValue="38.5" StartWidth="8" />
                         <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
-                                          EndValue="49" EndWidth="14"
-                                          StartValue="51" StartWidth="14" />
+                                          EndValue="49" EndWidth="8"
+                                          StartValue="51" StartWidth="8" />
                         <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
-                                          EndValue="61.5" EndWidth="14"
-                                          StartValue="63.5" StartWidth="14" />
+                                          EndValue="61.5" EndWidth="8"
+                                          StartValue="63.5" StartWidth="8" />
                         <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
-                                          EndValue="74" EndWidth="14"
-                                          StartValue="76" StartWidth="14" />
+                                          EndValue="74" EndWidth="8"
+                                          StartValue="76" StartWidth="8" />
                         <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
-                                          EndValue="86.5" EndWidth="14"
-                                          StartValue="88.5" StartWidth="14" />
+                                          EndValue="86.5" EndWidth="8"
+                                          StartValue="88.5" StartWidth="8" />
                         <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
-                                          EndValue="99" EndWidth="14"
-                                          StartValue="100" StartWidth="14" />
+                                          EndValue="99" EndWidth="8"
+                                          StartValue="100" StartWidth="8" />
                     </gauge:RadialAxis.Ranges>
                 </gauge:RadialAxis>
                 <gauge:RadialAxis Background="Transparent"
@@ -142,24 +142,24 @@
                     <gauge:RadialAxis.Annotations>
                         <gauge:GaugeAnnotation DirectionUnit="AxisValue" DirectionValue="{x:Bind Value, Mode=TwoWay}">
                             <TextBlock Margin="0,-10,0,0">
-                                <Span FontWeight="SemiBold" FontSize="60">
+                                <Span FontWeight="SemiBold" FontSize="40">
                                     <Run Text="{x:Bind Value, Mode=OneWay}" />
                                 </Span>
                                 <Span FontWeight="SemiBold" FontSize="40">
-                                    <Run Text="%" FontSize="40" />
+                                    <Run Text="%" FontSize="24" />
                                 </Span>
                             </TextBlock>
                         </gauge:GaugeAnnotation>
                         <gauge:GaugeAnnotation HorizontalAlignment="Center" VerticalAlignment="Bottom"
                                                DirectionUnit="AxisValue" DirectionValue="100"
                                                PositionFactor="0">
-                            <TextBlock Margin="0,64,0,0" HorizontalTextAlignment="Center">
-                                <Span FontWeight="Normal" FontSize="26">
+                            <TextBlock Margin="0,48,0,0" HorizontalTextAlignment="Center">
+                                <Span FontWeight="Normal" FontSize="20">
                                     <Run Text="健康状态" />
                                 </Span>
                                 <LineBreak />
                                 <Span FontWeight="SemiBold">
-                                    <Run Text="{x:Bind Desc, Mode=OneWay}" FontSize="32" />
+                                    <Run Text="{x:Bind Desc, Mode=OneWay}" FontSize="24" />
                                 </Span>
                             </TextBlock>
                         </gauge:GaugeAnnotation>
@@ -167,8 +167,8 @@
                 </gauge:RadialAxis>
             </gauge:SfRadialGauge.Axes>
         </gauge:SfRadialGauge>
-        <Slider Grid.Row="1"
+        <!--<Slider Grid.Row="1"
                 Maximum="100" Minimum="0"
-                Value="{x:Bind Value, Mode=TwoWay}" />
+                Value="{x:Bind Value, Mode=TwoWay}" />-->
     </Grid>
 </UserControl>

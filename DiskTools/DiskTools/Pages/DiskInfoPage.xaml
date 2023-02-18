@@ -8,7 +8,7 @@
 
     <Grid x:Name="Root">
         <TwoPaneView x:Name="TwoPaneView"
-                     MinWideModeWidth="0" Pane1Length="250"
+                     MinWideModeWidth="0" Pane1Length="232"
                      PanePriority="Pane2" TallModeConfiguration="SinglePane">
 
             <TwoPaneView.Pane1>
