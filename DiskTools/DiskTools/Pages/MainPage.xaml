@@ -7,13 +7,6 @@
     xmlns:local="using:DiskTools.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Page.Resources>
-        <DataTemplate x:Key="NavigationViewHeaderTemplate">
-            <controls:PageHeader
-                Background="Transparent"
-                BackgroundColorOpacity="1" />
-        </DataTemplate>
-    </Page.Resources>
 
     <Page.Background>
         <SolidColorBrush
@@ -23,31 +16,41 @@
     </Page.Background>
 
     <Grid>
-
+        <Border
+            x:Name="AppTitleBar"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            Canvas.ZIndex="1"
+            IsHitTestVisible="False"
+            SizeChanged="AppTitleBar_SizeChanged" />
         <NavigationView
             x:Name="NavigationView"
+            AlwaysShowHeader="{x:Bind IsShowHeader, Mode=OneWay}"
             ExpandedModeThresholdWidth="1200"
-            HeaderTemplate="{StaticResource NavigationViewHeaderTemplate}"
-            IsTabStop="False"
             IsBackButtonVisible="Collapsed"
+            OpenPaneLength="260"
+            IsTabStop="False"
             IsTitleBarAutoPaddingEnabled="True"
             Loaded="NavigationView_Loaded"
-            SelectionChanged="NavigationView_SelectionChanged"
-            >
+            PaneDisplayMode="Left"
+            SelectionChanged="NavigationView_SelectionChanged">
             <NavigationView.Resources>
                 <Thickness x:Key="NavigationViewContentMargin">0,0,0,0</Thickness>
                 <Brush x:Key="NavigationViewContentGridBorderBrush">Transparent</Brush>
                 <Brush x:Key="NavigationViewContentBackground">Transparent</Brush>
                 <x:Double x:Key="NavigationViewContentGridCornerRadius">0</x:Double>
             </NavigationView.Resources>
-            <!--margin 是页面的内容页边界-->
-            <Frame x:Name="NavigationViewFrame" x:FieldModifier="public" Margin="-46 -88 -32 -36"/>
+            <!--  margin 是页面的内容页边界  -->
+            <Frame
+                x:Name="NavigationViewFrame"
+                Margin="{x:Bind FrameMargin,Mode=OneWay}"
+                x:FieldModifier="public" />
         </NavigationView>
         <ProgressBar
             x:Name="ProgressBar"
             VerticalAlignment="Top"
             Background="Transparent"
-            IsIndeterminate="False" 
-            />
+            IsIndeterminate="False" />
     </Grid>
 </Page>

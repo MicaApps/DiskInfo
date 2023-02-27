@@ -22,8 +22,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Controls\GeneralDiskInfoItem.xaml" />
-      <None Remove="Controls\GraphPage.xaml" />
+      <None Remove="Controls\GaugeControl.xaml" />
+      <None Remove="Pages\GraphPage.xaml" />
     </ItemGroup>
 
   <ItemGroup>
@@ -49,7 +49,6 @@
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\DiskInfoLibWinRT\DiskInfoLibWinRT.vcxproj" />
     <ProjectReference Include="..\DiskInfo.Interop\DiskInfo.Interop.csproj" />
@@ -62,14 +61,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Controls\GraphPage.xaml">
+    <Page Update="Controls\GaugeControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Controls\GeneralDiskInfoItem.xaml">
+    <Page Update="Controls\GraphControl.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Pages\GraphPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
   </ItemGroup>
 

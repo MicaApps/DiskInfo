@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 /*---------------------------------------------------------------------------*/
 //       Author : hiyohiyo
 //         Mail : hiyohiyo@crystalmark.info
@@ -165,7 +165,7 @@ typedef struct _VOLUME_DISK_EXTENTS_LX {
 class CAtaSmart
 {
 public:
-	static CAtaSmart& get_instance() {	//����ģʽ
+	static CAtaSmart& get_instance() {	//锟斤拷锟斤拷模式
 		static CAtaSmart instance;
 		return instance;
 	}
@@ -2102,7 +2102,7 @@ protected:
 
 
 /// <summary>
-/// AtaSmartInit���ڻ�ȡ����ʱ��Ҫ�ȵ���һ��
+/// AtaSmartInit锟斤拷锟节伙拷取锟斤拷锟斤拷时锟斤拷要锟饺碉拷锟斤拷一锟斤拷
 /// </summary>
 /// <param name="useWmi"></param>
 /// <param name="advancedDiskSearch"></param>
