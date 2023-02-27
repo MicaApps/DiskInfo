@@ -8,7 +8,7 @@
 class	CDnpService
 {
 	//
-	//	���`�ӥ������ӣ�ֹͣ�å���åɥ��饹
+	//	サービスの起動／停止用スレッドクラス
 	//
 	class CServiceThread
 	{
@@ -20,15 +20,15 @@ class	CDnpService
 
 	private:
 
-		bool					_bCancel;			//���`�ӥ������ӣ�ֹͣ�I���ж��É�����true�ʤ��ж��_ʼ
-		CComAutoCriticalSection	_secbCancel;		//���`�ӥ������ӣ�ֹͣ�I���ж��å���ƥ����륻�������
+		bool					_bCancel;			//サービスの起動／停止処理中断用変数、trueなら中断開始
+		CComAutoCriticalSection	_secbCancel;		//サービスの起動／停止処理中断用クリティカルセクション
 
 	public:
 
 		//
-		//	���`�ӥ������ӣ�ֹͣ�I���ж����v��
+		//	サービスの起動／停止処理中断用関数
 		//
-		//	�жϤ��������Ϥ�IsCancel(true,true)����ӳ���
+		//	中断したい場合はIsCancel(true,true)を呼び出す
 		//
 		bool	IsCancel(bool bSave = false, bool bNewValue = false)
 		{
@@ -50,11 +50,11 @@ class	CDnpService
 
 
 		//
-		//	���`�ӥ��κ��ץ���ȥ��`��
+		//	サービスの簡易コントロール
 		//
-		//	���Τޤ޺��ӳ����ȥ��`�ӥ������ӣ�ֹͣ����ޤǟo�ޥ�`�פǴ��C���롣
-		//	����å��ФǺ��ӳ�����IsCancel()�����ä��뤳�Ȥǟo�ޥ�`�פ�ꈤ�ʤ�
-		//	����ȥ��`�뤬���ܡ�
+		//	そのまま呼び出すとサービスが起動／停止するまで無限ループで待機する。
+		//	スレッド中で呼び出し、IsCancel()を利用することで無限ループに陥らない
+		//	コントロールが可能。
 		//
 		bool EasyStartStop(LPCTSTR pszName, bool b)
 		{
@@ -97,16 +97,16 @@ class	CDnpService
 			cstr.Format(_T("sStatus.dwCurrentState:%08X"), sStatus.dwCurrentState);
 			DebugPrint(cstr);
 
-			//���`�ӥ��_ʼҪ��
+			//サービス開始要求
 			DebugPrint(_T("StartService - 1"));
 			bRet = ::StartService(hService, NULL, NULL);
 
-			//�_ʼ�ޤǟo�ޥ�`�פǴ��C
+			//開始まで無限ループで待機
 			DebugPrint(_T("QueryServiceStatus - 1"));
 			int count = 0;
 			while (::QueryServiceStatus(hService, &sStatus))
 			{
-				// �o�ޥ�`�פ�ر� (��� 1 ���g WMI �γ��ڻ������)
+				// 無限ループを回避 (最大 1 秒間 WMI の初期化を待つ)
 				if (count >= 4)
 				{
 					break;
@@ -125,17 +125,17 @@ class	CDnpService
 				count++;
 			}
 
-			// ���`�ӥ������ӥ�`�ɤ� auto �ˏ��Ɖ��
+			// サービスの起動モードを auto に強制変更
 			ShellExecute(NULL, NULL, _T("sc"), _T("config Winmgmt start= auto"), NULL, SW_HIDE);
 			count = 0;
 			DebugPrint(_T("QueryServiceStatus - 2"));
 			while (::QueryServiceStatus(hService, &sStatus))
 			{
-				//���`�ӥ��_ʼҪ��
+				//サービス開始要求
 				DebugPrint(_T("StartService - 2"));
 				::StartService(hService, NULL, NULL);
 
-				// �o�ޥ�`�פ�ر� (��� 5 ���g WMI �γ��ڻ������)
+				// 無限ループを回避 (最大 5 秒間 WMI の初期化を待つ)
 				if (count >= 10)
 				{
 					break;
@@ -165,9 +165,9 @@ public:
 
 
 	//
-	//	���`�ӥ��κ��ץ���ȥ��`��
+	//	サービスの簡易コントロール
 	//
-	//	���`�ӥ�������/ֹͣ����ޤǟo�ޥ�`�פǴ��C���롣
+	//	サービスが起動/停止するまで無限ループで待機する。
 	//
 	bool	EasyStartStop(LPCTSTR pszName, bool bStart)
 	{
@@ -178,9 +178,9 @@ public:
 
 
 	//
-	//	���`�ӥ��κ�������
+	//	サービスの簡易起動
 	//
-	//	���`�ӥ������Ӥ���ޤǟo�ޥ�`�פǴ��C���롣
+	//	サービスが起動するまで無限ループで待機する。
 	//
 	bool	EasyStart(LPCTSTR pszName)
 	{
@@ -188,9 +188,9 @@ public:
 	}
 
 	//
-	//	���`�ӥ��κ���ֹͣ
+	//	サービスの簡易停止
 	//
-	//	���`�ӥ���ֹͣ����ޤǟo�ޥ�`�פǴ��C���롣
+	//	サービスが停止するまで無限ループで待機する。
 	//
 	bool	EasyStop(LPCTSTR pszName)
 	{
@@ -199,9 +199,9 @@ public:
 
 
 	//
-	//	���`�ӥ��κ���������
+	//	サービスの簡易再起動
 	//
-	//	���`�ӥ��������Ӥ���ޤǟo�ޥ�`�פǴ��C���롣
+	//	サービスが再起動するまで無限ループで待機する。
 	//
 	bool	EasyRestart(LPCTSTR pszName)
 	{
@@ -218,9 +218,9 @@ public:
 
 
 	//
-	//	ָ�����륵�`�ӥ����Ӥ��Ƥ��뤫�Υ����å�
+	//	指定するサービスが動いているかのチェック
 	//
-	//	false�Έ��Ϥ�"ֹͣ"�Ȥ��ޤ�ʤ������`�ӥ������ڤ��ʤ����Ϥʤɤ�false�Ȥʤ롣
+	//	falseの場合は"停止"とは限らない。サービスが存在しない場合などもfalseとなる。
 	//
 	bool	IsServiceRunning(LPCTSTR pszName)
 	{
@@ -233,7 +233,7 @@ public:
 		ret = false;
 		hManager = NULL;
 		hService = NULL;
-		while (1)			//�o�ޥ�`�פǤϤʤ���
+		while (1)			//無限ループではない！
 		{
 			hManager = ::OpenSCManager(NULL, NULL, GENERIC_EXECUTE);
 			ATLASSERT(hManager);
@@ -254,7 +254,7 @@ public:
 			if (sStatus.dwCurrentState == SERVICE_RUNNING)
 				ret = true;
 
-			break;		//���
+			break;		//必須
 		}
 
 		if (hService)
