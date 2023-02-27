@@ -1,0 +1,75 @@
+<ResourceDictionary x:Name="GaugeLightDictionary"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:DiskTools.Controls"
+                    xmlns:converters="using:DiskTools.Converters"
+                    xmlns:DTR="using:DiskTools.Helpers.DynamicThemeResource">
+    <!--  定位参数勿动！！颜色可以改  -->
+    <converters:PointerBrushCenterConverter x:Key="PointerBrushCenterConverter" />
+    <SolidColorBrush x:Key="OuterTickBrush" Color="#10000000" />
+    <RadialGradientBrush x:Key="InnerRangeBrush1" Center="82,25.4" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+        <GradientStop Offset="0" Color="Transparent" />
+        <GradientStop Offset="0.75" Color="#00000000" />
+        <GradientStop Offset="0.75" Color="#05000000" />
+        <GradientStop Offset="1" Color="#10000000" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="InnerRangeBrush2" Center="76,82" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+        <GradientStop Offset="0" Color="Transparent" />
+        <GradientStop Offset="0.75" Color="#00000000" />
+        <GradientStop Offset="0.75" Color="#05000000" />
+        <GradientStop Offset="1" Color="#10000000" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="InnerRangeBrush3" Center="0,82" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+        <GradientStop Offset="0" Color="Transparent" />
+        <GradientStop Offset="0.75" Color="#00000000" />
+        <GradientStop Offset="0.75" Color="#05000000" />
+        <GradientStop Offset="1" Color="#10000000" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="InnerRangeBrush4" Center="0,25" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+        <GradientStop Offset="0" Color="Transparent" />
+        <GradientStop Offset="0.75" Color="#00000000" />
+        <GradientStop Offset="0.75" Color="#05000000" />
+        <GradientStop Offset="1" Color="#10000000" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="RedPointerBrush" Center="{Binding Value, Mode=OneWay, Converter={StaticResource PointerBrushCenterConverter}}" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="86" RadiusY="86">
+        <GradientStop Offset="0" Color="Transparent" />
+        <GradientStop Offset="0.3" Color="Transparent" />
+        <GradientStop Offset="0.6" Color="#02f40000" />
+        <GradientStop Offset="0.85" Color="#20f40000" />
+        <GradientStop Offset="0.98" Color="#40f40000" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="YellowPointerBrush" Center="{Binding Value, Mode=OneWay, Converter={StaticResource PointerBrushCenterConverter}}" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="86" RadiusY="86">
+        <GradientStop Offset="0" Color="Transparent" />
+        <GradientStop Offset="0.3" Color="Transparent" />
+        <GradientStop Offset="0.6" Color="#02f48f2c" />
+        <GradientStop Offset="0.85" Color="#20f48f2c" />
+        <!--<GradientStop Offset="0.90" Color="#40f48f2c" />-->
+        <GradientStop Offset="0.98" Color="#40f48f2c" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="BluePointerBrush" Center="{Binding Value, Mode=OneWay, Converter={StaticResource PointerBrushCenterConverter}}" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="86" RadiusY="86">
+        <GradientStop Offset="0" Color="Transparent" />
+        <GradientStop Offset="0.3" Color="Transparent" />
+        <GradientStop Offset="0.6" Color="#023a7bff" />
+        <GradientStop Offset="0.85" Color="#203a7bff" />
+        <!--<GradientStop Offset="0.90" Color="#403a7bff" />-->
+        <GradientStop Offset="0.98" Color="#403a7bff" />
+    </RadialGradientBrush>
+
+    <DTR:ColorWrapper x:Key="RedRangePointer1" Color="#f40000" />
+    <DTR:ColorWrapper x:Key="YellowRangePointer1" Color="#f48f2c" />
+    <DTR:ColorWrapper x:Key="BlueRangePointer1" Color="#3a7bff" />
+
+    <DTR:ColorWrapper x:Key="RedRangePointer2" Color="#f54d4c" />
+    <DTR:ColorWrapper x:Key="YellowRangePointer2" Color="#f8b777" />
+    <DTR:ColorWrapper x:Key="BlueRangePointer2" Color="#6aa4ff" />
+
+    <DTR:ColorWrapper x:Key="RedRangePointer3" Color="#f8a4a4" />
+    <DTR:ColorWrapper x:Key="YellowRangePointer3" Color="#f7afa7" />
+    <DTR:ColorWrapper x:Key="BlueRangePointer3" Color="#aedcff" />
+</ResourceDictionary>

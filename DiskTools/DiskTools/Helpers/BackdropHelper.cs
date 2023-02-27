@@ -1,4 +1,4 @@
-﻿using Microsoft.UI.Composition;
+using Microsoft.UI.Composition;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Xaml;
 using Windows.Foundation;
@@ -127,7 +127,7 @@ namespace DiskTools.Helpers
                 SetConfigurationSourceTheme();
 
                 Color BackgroundColor = ThemeHelper.IsDarkTheme() ? Color.FromArgb(255, 32, 32, 32) : Color.FromArgb(255, 243, 243, 243);
-                m_acrylicController = new DesktopAcrylicController { TintColor = BackgroundColor, FallbackColor = BackgroundColor };
+                m_acrylicController = new DesktopAcrylicController { TintColor = BackgroundColor, FallbackColor = BackgroundColor , LuminosityOpacity = 0.8f, TintOpacity = 0.8f};
 
                 // Enable the system backdrop.
                 // Note: Be sure to have "using WinRT;" to support the Window.As<...>() call.

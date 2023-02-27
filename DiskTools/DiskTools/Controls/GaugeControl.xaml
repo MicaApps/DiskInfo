@@ -1,0 +1,174 @@
+<UserControl x:Class="DiskTools.Controls.GaugeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:DiskTools.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+             xmlns:converters="using:DiskTools.Converters"
+             xmlns:DTR="using:DiskTools.Helpers.DynamicThemeResource"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <!--  主题的使用请参考 https://learn.microsoft.com/zh-cn/windows/apps/design/style/xaml-resource-dictionary  -->
+                <ResourceDictionary x:Key="Light" Source="ms-appx:///Styles/Gauge/Gauge.Light.xaml" />
+                <ResourceDictionary x:Key="Dark" Source="ms-appx:///Styles/Gauge/Gauge.Dark.xaml" />
+            </ResourceDictionary.ThemeDictionaries>
+
+            <DTR:BrushSelector x:Key="MyBrushSelector" SelectedIndex="{x:Bind MyBrushIndex, Mode=OneWay}">
+                <DTR:BrushReference Value="{ThemeResource RedPointerBrush}" />
+                <DTR:BrushReference Value="{ThemeResource YellowPointerBrush}" />
+                <DTR:BrushReference Value="{ThemeResource BluePointerBrush}" />
+            </DTR:BrushSelector>
+
+            <DTR:ColorSelector x:Key="RangePointerColor1Selector" SelectedIndex="{x:Bind MyBrushIndex, Mode=OneWay}">
+                <DTR:ColorReference Value="{ThemeResource RedRangePointer1}" />
+                <DTR:ColorReference Value="{ThemeResource YellowRangePointer1}" />
+                <DTR:ColorReference Value="{ThemeResource BlueRangePointer1}" />
+            </DTR:ColorSelector>
+
+            <DTR:ColorSelector x:Key="RangePointerColor2Selector" SelectedIndex="{x:Bind MyBrushIndex, Mode=OneWay}">
+                <DTR:ColorReference Value="{ThemeResource RedRangePointer2}" />
+                <DTR:ColorReference Value="{ThemeResource YellowRangePointer2}" />
+                <DTR:ColorReference Value="{ThemeResource BlueRangePointer2}" />
+            </DTR:ColorSelector>
+
+            <DTR:ColorSelector x:Key="RangePointerColor3Selector" SelectedIndex="{x:Bind MyBrushIndex, Mode=OneWay}">
+                <DTR:ColorReference Value="{ThemeResource RedRangePointer3}" />
+                <DTR:ColorReference Value="{ThemeResource YellowRangePointer3}" />
+                <DTR:ColorReference Value="{ThemeResource BlueRangePointer3}" />
+            </DTR:ColorSelector>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="10,0,10,30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--  300大小不能改！！阴影会崩掉！！  -->
+        <!--  这个文件里涉及大小的都别动（  -->
+        <gauge:SfRadialGauge Width="220" Height="220"
+                             >
+            <gauge:SfRadialGauge.Axes>
+                <gauge:RadialAxis Background="Transparent"
+                                  AxisLineFill="Transparent" AxisLineWidth="20"
+                                  RadiusFactor="0.92" ShowLabels="False"
+                                  ShowTicks="False">
+                    <gauge:RadialAxis.Ranges>
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="1" EndWidth="8"
+                                          StartValue="0" StartWidth="8" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="11.5" EndWidth="8"
+                                          StartValue="13.5" StartWidth="8" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="24" EndWidth="8"
+                                          StartValue="26" StartWidth="8" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="36.5" EndWidth="8"
+                                          StartValue="38.5" StartWidth="8" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="49" EndWidth="8"
+                                          StartValue="51" StartWidth="8" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="61.5" EndWidth="8"
+                                          StartValue="63.5" StartWidth="8" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="74" EndWidth="8"
+                                          StartValue="76" StartWidth="8" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="86.5" EndWidth="8"
+                                          StartValue="88.5" StartWidth="8" />
+                        <gauge:GaugeRange Background="{ThemeResource OuterTickBrush}"
+                                          EndValue="99" EndWidth="8"
+                                          StartValue="100" StartWidth="8" />
+                    </gauge:RadialAxis.Ranges>
+                </gauge:RadialAxis>
+                <gauge:RadialAxis Background="Transparent"
+                                  AxisLineWidth="0.15" AxisLineWidthUnit="Factor"
+                                  RadiusFactor="0.75" ShowLabels="False"
+                                  AxisLineFill="Transparent" ShowTicks="False">
+                    <gauge:RadialAxis.Ranges>
+                        <gauge:GaugeRange Background="{ThemeResource InnerRangeBrush1}"
+                                          CornerRadius="2" EndValue="24"
+                                          EndWidth="300" StartValue="0"
+                                          StartWidth="300" />
+                        <gauge:GaugeRange Background="{ThemeResource InnerRangeBrush2}"
+                                          CornerRadius="2" EndValue="49"
+                                          EndWidth="300" StartValue="26"
+                                          StartWidth="300" />
+                        <gauge:GaugeRange Background="{ThemeResource InnerRangeBrush3}"
+                                          CornerRadius="2" EndValue="74"
+                                          EndWidth="400" StartValue="51"
+                                          StartWidth="400" />
+                        <gauge:GaugeRange Background="{ThemeResource InnerRangeBrush4}"
+                                          CornerRadius="2" EndValue="100"
+                                          EndWidth="300" StartValue="76"
+                                          StartWidth="300" />
+                    </gauge:RadialAxis.Ranges>
+                    <gauge:RadialAxis.Pointers>
+                        <gauge:RangePointer x:Name="redPointer"
+                                            Background="{Binding Source={StaticResource MyBrushSelector}, Path=SelectedObject}"
+                                            CornerStyle="BothFlat" EnableAnimation="True"
+                                            OffsetUnit="Factor" PointerOffset=".24"
+                                            PointerWidth="1" WidthUnit="Factor"
+                                            Value="{x:Bind Value, Mode=TwoWay}">
+                            <gauge:RangePointer.AnimationEasingFunction>
+                                <CircleEase EasingMode="EaseInOut" />
+                            </gauge:RangePointer.AnimationEasingFunction>
+                        </gauge:RangePointer>
+                        <gauge:RangePointer x:Name="rangePointer"
+                                            Visibility="Visible" EnableAnimation="True"
+                                            CornerStyle="BothFlat" CornerRadius="0.1"
+                                            PointerWidth="0.18" ValueChanged="rangePointer_ValueChanged"
+                                            WidthUnit="Factor"
+                                            Value="{x:Bind Value, Mode=TwoWay}">
+                            <gauge:RangePointer.AnimationEasingFunction>
+                                <CircleEase EasingMode="EaseInOut" />
+                            </gauge:RangePointer.AnimationEasingFunction>
+                            <gauge:RangePointer.GradientStops>
+                                <gauge:GaugeGradientStop Color="{Binding Path=SelectedObject.Color, Source={StaticResource RangePointerColor1Selector}}" Value="0" />
+                                <gauge:GaugeGradientStop x:Name="gradient1"
+                                                         Color="{Binding Path=SelectedObject.Color, Source={StaticResource RangePointerColor2Selector}}"
+                                                         Value="0" />
+                                <gauge:GaugeGradientStop x:Name="gradient2"
+                                                         Color="{Binding Path=SelectedObject.Color, Source={StaticResource RangePointerColor3Selector}}"
+                                                         Value="0" />
+                            </gauge:RangePointer.GradientStops>
+                        </gauge:RangePointer>
+
+                    </gauge:RadialAxis.Pointers>
+                    <gauge:RadialAxis.Annotations>
+                        <gauge:GaugeAnnotation DirectionUnit="AxisValue" DirectionValue="{x:Bind Value, Mode=TwoWay}">
+                            <TextBlock Margin="0,-10,0,0">
+                                <Span FontWeight="SemiBold" FontSize="40">
+                                    <Run Text="{x:Bind Value, Mode=OneWay}" />
+                                </Span>
+                                <Span FontWeight="SemiBold" FontSize="40">
+                                    <Run Text="%" FontSize="24" />
+                                </Span>
+                            </TextBlock>
+                        </gauge:GaugeAnnotation>
+                        <gauge:GaugeAnnotation HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                                               DirectionUnit="AxisValue" DirectionValue="100"
+                                               PositionFactor="0">
+                            <TextBlock Margin="0,48,0,0" HorizontalTextAlignment="Center">
+                                <Span FontWeight="Normal" FontSize="20">
+                                    <Run Text="健康状态" />
+                                </Span>
+                                <LineBreak />
+                                <Span FontWeight="SemiBold">
+                                    <Run Text="{x:Bind Desc, Mode=OneWay}" FontSize="24" />
+                                </Span>
+                            </TextBlock>
+                        </gauge:GaugeAnnotation>
+                    </gauge:RadialAxis.Annotations>
+                </gauge:RadialAxis>
+            </gauge:SfRadialGauge.Axes>
+        </gauge:SfRadialGauge>
+        <!--<Slider Grid.Row="1"
+                Maximum="100" Minimum="0"
+                Value="{x:Bind Value, Mode=TwoWay}" />-->
+    </Grid>
+</UserControl>
