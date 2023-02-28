@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DiskInfoLibWinRT\DiskInfoLibWinRT.vcxproj" />
-    <ProjectReference Include="..\DiskInfo.Interop\DiskInfo.Interop.csproj" />
   </ItemGroup>
 
   <ItemGroup>
