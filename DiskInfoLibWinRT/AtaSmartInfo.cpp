@@ -254,9 +254,6 @@ namespace winrt::DiskInfoLibWinRT::implementation
 
     winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::GraphDataPoint> AtaSmartInfo::readCsv(int dataType)
     {
-#if _DEBUG
-        return MakeFakeData();
-#else
         auto data = winrt::single_threaded_vector<winrt::DiskInfoLibWinRT::GraphDataPoint>();
 
         constexpr static auto timeOffset = 19;
@@ -280,8 +277,11 @@ namespace winrt::DiskInfoLibWinRT::implementation
                 );
             }
         }
-        return data;
+#ifdef _DEBUG
+        if (data.Size() == 0)
+            return MakeFakeData();
 #endif
+        return data;
     }
 
     AtaSmartInfo::TestFileGuard::TestFileGuard(std::wstring_view testFile) : m_testFilePath{ testFile }

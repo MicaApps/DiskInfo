@@ -25,7 +25,7 @@
                                            Height="192"
                                            VerticalAlignment="Center"
                                            Grid.Column="1"
-                                           Collection="{Binding Info.TemperatureData}" />
+                                           Collection="{x:Bind Info.TemperatureData}" />
                 </Grid>
                 <controls:DiskBasicInfoControl Margin="0,10,0,0" />
                 <controls:DiskSmartInfoControl Margin="10,10,10,0" />
@@ -50,7 +50,7 @@
             </AppBarButton>
             <!--  复制  -->
             <AppBarElementContainer>
-                <SplitButton ToolTipService.ToolTip="Alignment" Click="SplitButton_Click">
+                <SplitButton x:Name="SplitCopyContentButton" ToolTipService.ToolTip="Alignment" Click="SplitCopyContentButton_Click">
 
                     <SplitButton.Content>
                         <Viewbox Width="16" Height="16"
@@ -69,7 +69,7 @@
                     </SplitButton.Flyout>
                 </SplitButton>
             </AppBarElementContainer>
-            <AppBarButton Click="AppBarButton_Click" Icon="Refresh"
+            <AppBarButton x:Name="Refresh" Click="RefreshButton_Click" Icon="Refresh"
                           Label="Refresh" />
         </CommandBar>
     </Grid>
