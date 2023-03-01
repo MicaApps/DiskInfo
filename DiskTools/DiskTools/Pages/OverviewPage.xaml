@@ -25,6 +25,7 @@
                                            Height="192"
                                            VerticalAlignment="Center"
                                            Grid.Column="1"
+                                           
                                            Collection="{x:Bind Info.TemperatureData}" />
                 </Grid>
                 <controls:DiskBasicInfoControl Margin="0,10,0,0" />

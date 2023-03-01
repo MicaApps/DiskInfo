@@ -42,6 +42,7 @@
             <!--  图  -->
             <chart:SfCartesianChart.XAxes>
                 <chart:DateTimeAxis ShowMajorGridLines="False" ShowMinorGridLines="False"
+                                    Visibility="Collapsed"
                                     MajorTickStyle="{StaticResource LineStyle1}"
                                     MinorTickStyle="{StaticResource LineStyle1}"
                                     AxisLineStyle="{StaticResource LineStyle1}" />
