@@ -25,33 +25,33 @@ static BOOL AppendLog(CString dir, CString disk, CString file, CTime time, int v
 
 	if (pre != value)
 	{
-		// Update
-		wsprintf(str, _T("%d"), value);
-		WritePrivateProfileStringFx(disk, file, str, dir + _T("\\") + SMART_INI);
+	// Update
+	wsprintf(str, _T("%d"), value);
+	WritePrivateProfileStringFx(disk, file, str, dir + _T("\\") + SMART_INI);
 
-		CString line;
-		line.Format(_T("%s,%d\n"), time.Format(_T("%Y/%m/%d %H:%M:%S")).GetString(), value);
+	CString line;
+	line.Format(_T("%s,%d\n"), time.Format(_T("%Y/%m/%d %H:%M:%S")).GetString(), value);
 
-		CStdioFile outFile;
-		if (outFile.Open(dir + _T("\\") + file + _T(".csv"),
-			CFile::modeCreate | CFile::modeNoTruncate | CFile::modeReadWrite | CFile::typeText))
+	CStdioFile outFile;
+	if (outFile.Open(dir + _T("\\") + file + _T(".csv"),
+		CFile::modeCreate | CFile::modeNoTruncate | CFile::modeReadWrite | CFile::typeText))
+	{
+		ULONGLONG fileLength = outFile.GetLength();
+		try
 		{
-			ULONGLONG fileLength = outFile.GetLength();
-			try
+			if (outFile.SeekToEnd() == fileLength)
 			{
-				if (outFile.SeekToEnd() == fileLength)
-				{
-					outFile.WriteString(line);
-				}
+				outFile.WriteString(line);
 			}
-			catch (CFileException* e)
-			{
-				DebugPrint(L"CFileException");
-				e->Delete();
-			}
-			outFile.Close();
-			return TRUE;
 		}
+		catch (CFileException* e)
+		{
+			DebugPrint(L"CFileException");
+			e->Delete();
+		}
+		outFile.Close();
+		return TRUE;
+	}
 	}
 	return FALSE;
 }

@@ -100,15 +100,24 @@ namespace winrt::DiskInfoLibWinRT::implementation
 			info.HostWrites(original.HostWrites);
 			info.Rotation(original.NominalMediaRotationRate);
 			info.PowerOnCount(original.PowerOnCount);
-			info.PowerOnTime(original.PowerOnRawValue);
+			info.PowerOnTime(original.PowerOnRawValue == -1 ? original.DetectedPowerOnHours : original.PowerOnRawValue);
 			info.Features(GetFeatures(original).GetString());
-			info.Standard((original.MajorVersion + L" | " + original.MinorVersion).GetString());
+			info.Standard(
+				(original.MajorVersion + L" | " + (original.MinorVersion.IsEmpty() ? original.MajorVersion : original.MinorVersion))
+				.GetString()
+			);
 			info.Index(i);
+			info.Life(original.Life);
 			//attributes
 			for (auto j = 0; j < std::size(original.Attribute); ++j)
 			{
 				auto const& attribute = original.Attribute[j];
 				auto const& threshold = original.Threshold[j];
+
+				if (attribute.Id == 0 &&
+					std::all_of(std::cbegin(attribute.RawValue), std::cend(attribute.RawValue), [](auto v) {return v == 0; }) &&
+					threshold.ThresholdValue == 0)
+					continue;
 
 				SmartAttribute attr{};
 				attr.Id = std::format(L"{:0>2x}", attribute.Id);
@@ -1080,6 +1089,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
 		info.PowerOnTime(10886);
 		info.Standard(L"NVM Express 1.3");
 		info.Index(0);
+		info.Life(50);
 		//attributes
 		for (auto j = 0; j < 15; ++j)
 		{
@@ -1091,6 +1101,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
 
 			info.Attributes().Append(winrt::box_value(attr));
 		}
+		m_info.Append(info);
 		m_info.Append(info);
 	}
 

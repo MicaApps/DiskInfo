@@ -6,7 +6,7 @@ https://github.com/hiyohiyo/CrystalDiskInfo
 
 ![image](https://user-images.githubusercontent.com/6630660/212543605-d8d80feb-b7d1-4d63-b528-0e98b1cff968.png)
 
-Aim at providing a mordern appearance for DiskInfo
+This project aims at providing a mordern appearance for DiskInfo
 
 ![image](https://user-images.githubusercontent.com/6630660/212543495-ffba1279-bf86-4f4e-8568-8b8941edcfed.png)
 
@@ -35,6 +35,14 @@ and finally add a `PropertyGroup` tag in the `csproj` file.
     <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
 </PropertyGroup>
 ```
+
+### Unknown issues
+- Updating data **is** working, but the updates are not reflected on the UI. **Will fix very soon!** (You can see the updates if you restart the app!)
+- Debugging for winui3 is not working. For developments' convenience, it normally runs without admin previledges. (This will change when it's publish to store)
+- More features coming!
+
+<details>
+    <summary>Technology stack and pre-requsite to build</summary>
 
 ## Technology Stack
 
@@ -85,3 +93,4 @@ https://github.com/beto-rodriguez/LiveCharts2
 Syncfusion WinUI Controls
 
 https://www.syncfusion.com/winui-controls
+</details>
