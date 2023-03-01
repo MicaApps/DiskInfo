@@ -43,6 +43,8 @@ namespace DiskInfoLibWinRT
         String Features;//支持的功能（需要在ATA_SMART_INFO中遍历几个Is<xxx>Supported字段并组合出字符串
         String Standard;//标准（对应MajorVersion+MinorVersion）
 
+        Int32 Life;
+
         Windows.Foundation.Collections.IVector<Object> Attributes{ get; };
 
         Windows.Foundation.Collections.IVector<DiskInfoLibWinRT.GraphDataPoint> TemperatureData{ get; };
@@ -62,6 +64,11 @@ namespace DiskInfoLibWinRT
         void Update();
 
         Int32 Index;
+
+        Windows.Foundation.IAsyncOperation<Int32> SeqReadSpd();
+        Windows.Foundation.IAsyncOperation<Int32> SeqWriteSpd();
+        Windows.Foundation.IAsyncOperation<Int32> RandomReadSpd();
+        Windows.Foundation.IAsyncOperation<Int32> RandomWriteSpd();
     };
 
 

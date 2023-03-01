@@ -39,14 +39,14 @@ namespace DiskTools.Pages
             }
         }
 
-        private void AppBarButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        private void RefreshButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
-
+            DiskInfoService.Instance.UpdateAll();
         }
 
-        private void SplitButton_Click(SplitButton sender, SplitButtonClickEventArgs args)
+        private void SplitCopyContentButton_Click(SplitButton sender, SplitButtonClickEventArgs args)
         {
-
+            DiskInfoService.Instance.SaveText("");
         }
 
         public void RefreshData(AtaSmartInfo info)
