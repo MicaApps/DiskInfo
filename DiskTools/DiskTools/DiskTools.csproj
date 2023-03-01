@@ -19,6 +19,16 @@
     <PropertyGroup>
         <CsWinRTIncludes>DiskInfoLibWinRT</CsWinRTIncludes>
         <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
+        <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
+        <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+        <PackageCertificateThumbprint>0E886E609DD7C496A3DE178F7DD1DF16B72DD2EF</PackageCertificateThumbprint>
+        <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+        <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+        <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+        <GenerateTestArtifacts>True</GenerateTestArtifacts>
+        <AppxBundle>Never</AppxBundle>
+        <AppInstallerUri>E:\</AppInstallerUri>
+        <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     </PropertyGroup>
 
     <ItemGroup>
@@ -51,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DiskInfoLibWinRT\DiskInfoLibWinRT.vcxproj" />
-    <ProjectReference Include="..\DiskInfo.Interop\DiskInfo.Interop.csproj" />
   </ItemGroup>
 
   <ItemGroup>
