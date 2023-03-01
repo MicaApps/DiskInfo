@@ -23,8 +23,6 @@ static BOOL AppendLog(CString dir, CString disk, CString file, CTime time, int v
 	GetPrivateProfileStringFx(disk, file, _T("-1"), str, 256, dir + _T("\\") + SMART_INI);
 	int pre = _tstoi(str);
 
-	if (pre != value)
-	{
 	// Update
 	wsprintf(str, _T("%d"), value);
 	WritePrivateProfileStringFx(disk, file, str, dir + _T("\\") + SMART_INI);
@@ -51,7 +49,6 @@ static BOOL AppendLog(CString dir, CString disk, CString file, CTime time, int v
 		}
 		outFile.Close();
 		return TRUE;
-	}
 	}
 	return FALSE;
 }
