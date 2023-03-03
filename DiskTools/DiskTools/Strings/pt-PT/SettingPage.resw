@@ -118,102 +118,102 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ThemeSettings.Header" xml:space="preserve">
-    <value>应用主题</value>
-  </data>
-  <data name="ThemesSettingsHeader.Header" xml:space="preserve">
-    <value>主题</value>
-  </data>
-  <data name="UpdateSettingsHeader.Header" xml:space="preserve">
-    <value>版本</value>
-  </data>
-  <data name="UpToDate" xml:space="preserve">
-    <value>最新</value>
-  </data>
-  <data name="WindowsColorButton.Content" xml:space="preserve">
-    <value>Windows 颜色设置</value>
-  </data>
-  <data name="RadioThemeDark.Content" xml:space="preserve">
-    <value>深色</value>
-  </data>
-  <data name="RadioThemeDefault.Content" xml:space="preserve">
-    <value>Windows 默认</value>
-  </data>
-  <data name="RadioThemeLight.Content" xml:space="preserve">
-    <value>浅色</value>
-  </data>
-  <data name="BackdropSettings.Description" xml:space="preserve">
-    <value>选择适用于 Windows 11 的背景色类型</value>
-  </data>
-  <data name="BackdropSettings.Header" xml:space="preserve">
-    <value>背景色</value>
-  </data>
-  <data name="ConfigsSettingsHeader.Header" xml:space="preserve">
-    <value>配置</value>
-  </data>
-  <data name="ReleaseNotes.Content" xml:space="preserve">
-    <value>发行说明</value>
-  </data>
-  <data name="ResetSettings.Description" xml:space="preserve">
-    <value>重置此应用程序的设置。</value>
-  </data>
-  <data name="ResetSettings.Header" xml:space="preserve">
-    <value>重置应用</value>
-  </data>
-  <data name="ResetSettingsButton.Content" xml:space="preserve">
-    <value>重置</value>
-  </data>
-  <data name="ResetSettingsConfirm.Content" xml:space="preserve">
-    <value>是</value>
-  </data>
-  <data name="ResetSettingsTitle.Text" xml:space="preserve">
-    <value>您确定要重置应用吗？</value>
-  </data>
-  <data name="FeedbackLink.Content" xml:space="preserve">
-    <value>反馈</value>
-  </data>
-  <data name="FindUpdate" xml:space="preserve">
-    <value>找到新的更新</value>
-  </data>
-  <data name="FrameworkSettings.Description" xml:space="preserve">
-    <value>关于此应用程序框架的信息。</value>
-  </data>
-  <data name="FrameworkSettings.Header" xml:space="preserve">
-    <value>框架信息</value>
-  </data>
-  <data name="FrameworkTextBlock.Text" xml:space="preserve">
-    <value>框架</value>
-  </data>
-  <data name="GoToTestPage.Description" xml:space="preserve">
-    <value>前往用于测试的页面。</value>
-  </data>
-  <data name="GoToTestPage.Header" xml:space="preserve">
-    <value>前往测试页面</value>
-  </data>
-  <data name="GoToUpdate.Content" xml:space="preserve">
-    <value>前往更新</value>
-  </data>
-  <data name="OSArchitectureTextBlock.Text" xml:space="preserve">
-    <value>操作系统架构</value>
-  </data>
-  <data name="OSPlatformTextBlock.Text" xml:space="preserve">
-    <value>操作系统平台</value>
-  </data>
-  <data name="AboutSettingsHeader.Header" xml:space="preserve">
-    <value>关于</value>
-  </data>
-  <data name="LastChecked.Text" xml:space="preserve">
-    <value>上次检查时间: </value>
-  </data>
-  <data name="LogFolderLink.Content" xml:space="preserve">
-    <value>日志</value>
-  </data>
-  <data name="CheckFailed" xml:space="preserve">
-    <value>检查失败</value>
-  </data>
-  <data name="CheckingUpdates.Text" xml:space="preserve">
-    <value>正在检查更新……</value>
-  </data>
-  <data name="CheckUpdates.Content" xml:space="preserve">
-    <value>检查更新</value>
-  </data>
+     <value>Aplicar tema</value>
+   </data>
+   <data name="ThemesSettingsHeader.Header" xml:space="preserve">
+     <value>Tema</value>
+   </data>
+   <data name="UpdateSettingsHeader.Header" xml:space="preserve">
+     <value>Versão</value>
+   </data>
+   <data name="UpToDate" xml:space="preserve">
+     <value>Mais recente</value>
+   </data>
+   <data name="WindowsColorButton.Content" xml:space="preserve">
+     <value>Configurações de cores do Windows</value>
+   </data>
+   <data name="RadioThemeDark.Content" xml:space="preserve">
+     <value>Escuro</value>
+   </data>
+   <data name="RadioThemeDefault.Content" xml:space="preserve">
+     <value>Padrão do Windows</value>
+   </data>
+   <data name="RadioThemeLight.Content" xml:space="preserve">
+     <value>Luz</value>
+   </data>
+   <data name="BackdropSettings. Description" xml:space="preserve">
+     <value>Escolha o tipo de cor de fundo para Windows 11</value>
+   </data>
+   <data name="BackdropSettings.Header" xml:space="preserve">
+     <value>cor de fundo</value>
+   </data>
+   <data name="ConfigsSettingsHeader.Header" xml:space="preserve">
+     <value>Configuração</value>
+   </data>
+   <data name="ReleaseNotes.Content" xml:space="preserve">
+     <value>Notas de lançamento</value>
+   </data>
+   <data name="ResetSettings. Description" xml:space="preserve">
+     <value>Redefine as configurações para este aplicativo. </value>
+   </data>
+   <data name="ResetSettings.Header" xml:space="preserve">
+     <value>Redefinir aplicativo</value>
+   </data>
+   <data name="ResetSettingsButton.Content" xml:space="preserve">
+     <value>Redefinir</value>
+   </data>
+   <data name="ResetSettingsConfirm.Content" xml:space="preserve">
+     <value>é</value>
+   </data>
+   <data name="ResetSettingsTitle.Text" xml:space="preserve">
+     <value>Tem certeza de que deseja redefinir o aplicativo? </value>
+   </data>
+   <data name="FeedbackLink.Content" xml:space="preserve">
+     <value>Feedback</value>
+   </data>
+   <data name="FindUpdate" xml:space="preserve">
+     <value>Nova atualização encontrada</value>
+   </data>
+   <data name="FrameworkSettings. Description" xml:space="preserve">
+     <value>Informações sobre este quadro de aplicativo. </value>
+   </data>
+   <data name="FrameworkSettings.Header" xml:space="preserve">
+     <value>Informações do quadro</value>
+   </data>
+   <data name="FrameworkTextBlock. Text" xml:space="preserve">
+     <value>quadro</value>
+   </data>
+   <data name="GoToTestPage. Description" xml:space="preserve">
+     <value>Vá para a página de teste. </value>
+   </data>
+   <data name="GoToTestPage.Header" xml:space="preserve">
+     <value>Ir para a página de teste</value>
+   </data>
+   <data name="GoToUpdate.Content" xml:space="preserve">
+     <value>Ir para atualizar</value>
+   </data>
+   <data name="OSArchitectureTextBlock.Text" xml:space="preserve">
+     <value>Arquitetura do sistema operacional</value>
+   </data>
+   <data name="OSPlatformTextBlock.Text" xml:space="preserve">
+     <value>Plataforma do sistema operacional</value>
+   </data>
+   <data name="AboutSettingsHeader.Header" xml:space="preserve">
+     <value>Sobre</value>
+   </data>
+   <data name="LastChecked.Text" xml:space="preserve">
+     <value>Horário da última verificação: </value>
+   </data>
+   <data name="LogFolderLink.Content" xml:space="preserve">
+     <value>registro</value>
+   </data>
+   <data name="CheckFailed" xml:space="preserve">
+     <value>Falha na verificação</value>
+   </data>
+   <data name="CheckingUpdates. Text" xml:space="preserve">
+     <value>Verificando atualizações...</value>
+   </data>
+   <data name="CheckUpdates.Content" xml:space="preserve">
+     <value>Verificar atualizações</value>
+   </data>
 </root>
