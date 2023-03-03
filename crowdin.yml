@@ -1,0 +1,5 @@
+files:
+  - source: /DiskTools/DiskTools/Strings/zh-CN
+    translation: /DiskTools/DiskTools/Strings/%locale%/%original_file_name%
+  - source: /DiskTools/DiskTools/Assets/About/About.zh-CN.md
+    translation: /DiskTools/DiskTools/Assets/About/About.%locale%.md
