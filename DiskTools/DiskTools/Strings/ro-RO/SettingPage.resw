@@ -117,103 +117,103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ThemeSettings.Header" xml:space="preserve">
-    <value>应用主题</value>
-  </data>
-  <data name="ThemesSettingsHeader.Header" xml:space="preserve">
-    <value>主题</value>
-  </data>
-  <data name="UpdateSettingsHeader.Header" xml:space="preserve">
-    <value>版本</value>
-  </data>
-  <data name="UpToDate" xml:space="preserve">
-    <value>最新</value>
-  </data>
-  <data name="WindowsColorButton.Content" xml:space="preserve">
-    <value>Windows 颜色设置</value>
-  </data>
-  <data name="RadioThemeDark.Content" xml:space="preserve">
-    <value>深色</value>
-  </data>
-  <data name="RadioThemeDefault.Content" xml:space="preserve">
-    <value>Windows 默认</value>
-  </data>
-  <data name="RadioThemeLight.Content" xml:space="preserve">
-    <value>浅色</value>
-  </data>
-  <data name="BackdropSettings.Description" xml:space="preserve">
-    <value>选择适用于 Windows 11 的背景色类型</value>
-  </data>
-  <data name="BackdropSettings.Header" xml:space="preserve">
-    <value>背景色</value>
-  </data>
-  <data name="ConfigsSettingsHeader.Header" xml:space="preserve">
-    <value>配置</value>
-  </data>
-  <data name="ReleaseNotes.Content" xml:space="preserve">
-    <value>发行说明</value>
-  </data>
-  <data name="ResetSettings.Description" xml:space="preserve">
-    <value>重置此应用程序的设置。</value>
-  </data>
-  <data name="ResetSettings.Header" xml:space="preserve">
-    <value>重置应用</value>
-  </data>
-  <data name="ResetSettingsButton.Content" xml:space="preserve">
-    <value>重置</value>
-  </data>
-  <data name="ResetSettingsConfirm.Content" xml:space="preserve">
-    <value>是</value>
-  </data>
-  <data name="ResetSettingsTitle.Text" xml:space="preserve">
-    <value>您确定要重置应用吗？</value>
-  </data>
-  <data name="FeedbackLink.Content" xml:space="preserve">
-    <value>反馈</value>
-  </data>
-  <data name="FindUpdate" xml:space="preserve">
-    <value>找到新的更新</value>
-  </data>
-  <data name="FrameworkSettings.Description" xml:space="preserve">
-    <value>关于此应用程序框架的信息。</value>
-  </data>
-  <data name="FrameworkSettings.Header" xml:space="preserve">
-    <value>框架信息</value>
-  </data>
-  <data name="FrameworkTextBlock.Text" xml:space="preserve">
-    <value>框架</value>
-  </data>
-  <data name="GoToTestPage.Description" xml:space="preserve">
-    <value>前往用于测试的页面。</value>
-  </data>
-  <data name="GoToTestPage.Header" xml:space="preserve">
-    <value>前往测试页面</value>
-  </data>
-  <data name="GoToUpdate.Content" xml:space="preserve">
-    <value>前往更新</value>
-  </data>
-  <data name="OSArchitectureTextBlock.Text" xml:space="preserve">
-    <value>操作系统架构</value>
-  </data>
-  <data name="OSPlatformTextBlock.Text" xml:space="preserve">
-    <value>操作系统平台</value>
-  </data>
-  <data name="AboutSettingsHeader.Header" xml:space="preserve">
-    <value>关于</value>
-  </data>
-  <data name="LastChecked.Text" xml:space="preserve">
-    <value>上次检查时间: </value>
-  </data>
-  <data name="LogFolderLink.Content" xml:space="preserve">
-    <value>日志</value>
-  </data>
-  <data name="CheckFailed" xml:space="preserve">
-    <value>检查失败</value>
-  </data>
-  <data name="CheckingUpdates.Text" xml:space="preserve">
-    <value>正在检查更新……</value>
-  </data>
-  <data name="CheckUpdates.Content" xml:space="preserve">
-    <value>检查更新</value>
-  </data>
+<data name="ThemeSettings.Header" xml:space="preserve">
+     <value>Aplicați tema</value>
+   </data>
+   <data name="ThemesSettingsHeader.Header" xml:space="preserve">
+     <value>Temă</value>
+   </data>
+   <data name="UpdataSettingsHeader.Header" xml:space="preserve">
+     <value>Versiune</value>
+   </data>
+   <data name="UpTodata" xml:space="preserve">
+     <value>Cele mai recente</value>
+   </data>
+   <data name="WindowsColorButton.Content" xml:space="preserve">
+     <value>Setări de culoare Windows</value>
+   </data>
+   <data name="RadioThemeDark.Content" xml:space="preserve">
+     <value>Întunecat</value>
+   </data>
+   <data name="RadioThemeDefault.Content" xml:space="preserve">
+     <value>Prestabilit Windows</value>
+   </data>
+   <data name="RadioThemeLight.Content" xml:space="preserve">
+     <value>Lumina</value>
+   </data>
+   <data name="BackdropSettings. Descriere" xml:space="preserve">
+     <value>Alegeți tipul de culoare de fundal pentru Windows 11</value>
+   </data>
+   <data name="BackdropSettings.Header" xml:space="preserve">
+     <value>culoarea de fundal</value>
+   </data>
+   <data name="ConfigsSettingsHeader.Header" xml:space="preserve">
+     <value>Configurare</value>
+   </data>
+   <data name="ReleaseNotes.Content" xml:space="preserve">
+     <value>Note de lansare</value>
+   </data>
+   <data name="ResetSettings. Description" xml:space="preserve">
+     <value>Resetează setările pentru această aplicație. </value>
+   </data>
+   <data name="ResetSettings.Header" xml:space="preserve">
+     <value>Resetați aplicația</value>
+   </data>
+   <data name="ResetSettingsButton.Content" xml:space="preserve">
+     <value>Resetați</value>
+   </data>
+   <data name="ResetSettingsConfirm.Content" xml:space="preserve">
+     <value>este</value>
+   </data>
+   <data name="ResetSettingsTitle.Text" xml:space="preserve">
+     <value>Sunteți sigur că doriți să resetați aplicația? </value>
+   </data>
+   <data name="FeedbackLink.Content" xml:space="preserve">
+     <value>Feedback</value>
+   </data>
+   <data name="FindUpdata" xml:space="preserve">
+     <value>Actualizare nouă găsită</value>
+   </data>
+   <data name="FrameworkSettings. Description" xml:space="preserve">
+     <value>Informații despre acest cadru de aplicație. </value>
+   </data>
+   <data name="FrameworkSettings.Header" xml:space="preserve">
+     <value>Informații despre cadru</value>
+   </data>
+   <data name="FrameworkTextBlock. Text" xml:space="preserve">
+     <value>cadru</value>
+   </data>
+   <data name="GoToTestPage. Description" xml:space="preserve">
+     <value>Accesați pagina pentru testare. </value>
+   </data>
+   <data name="GoToTestPage.Header" xml:space="preserve">
+     <value>Accesați pagina de testare</value>
+   </data>
+   <data name="GoToUpdata.Content" xml:space="preserve">
+     <value>Accesați la actualizare</value>
+   </data>
+   <data name="OSArchitectureTextBlock.Text" xml:space="preserve">
+     <value>Arhitectura sistemului de operare</value>
+   </data>
+   <data name="OSPlatformTextBlock.Text" xml:space="preserve">
+     <value>Plataforma sistemului de operare</value>
+   </data>
+   <data name="AboutSettingsHeader.Header" xml:space="preserve">
+     <value>Despre</value>
+   </data>
+   <data name="LastChecked.Text" xml:space="preserve">
+     <value>Ora ultimei verificări: </value>
+   </data>
+   <data name="LogFolderLink.Content" xml:space="preserve">
+     <value>jurnal</value>
+   </data>
+   <data name="CheckFailed" xml:space="preserve">
+     <value>Verificarea eșuată</value>
+   </data>
+   <data name="CheckingUpdatas. Text" xml:space="preserve">
+     <value>Se verifică actualizările...</value>
+   </data>
+   <data name="CheckUpdatas.Content" xml:space="preserve">
+     <value>Verificați actualizările</value>
+   </data>
 </root>
