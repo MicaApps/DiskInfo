@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,118 +117,118 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Disk_Average_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-    <value>平均PE（编程/擦除）次数</value>
+<data name="Disk_Average_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>平均PE（編程/擦除）次數</value>
   </data>
   <data name="Disk_Bad_Blocks_Count.Content" xml:space="preserve">
-    <value>坏块总计</value>
+    <value>壞塊總計</value>
   </data>
   <data name="Disk_Block_Erasure_Record_SLC.Content" xml:space="preserve">
-    <value>块擦除记录（SLC）</value>
+    <value>塊擦除記錄（SLC）</value>
   </data>
   <data name="Disk_Command_Timeout_Count.Content" xml:space="preserve">
-    <value>命令超时计数</value>
+    <value>命令超時計數</value>
   </data>
   <data name="Disk_CRC_Errors_Count.Content" xml:space="preserve">
-    <value>CRC错误计数</value>
+    <value>CRC錯誤計數</value>
   </data>
   <data name="Disk_Current_Pending_Sector_Count.Content" xml:space="preserve">
-    <value>[C5]有待处置扇区数（状态存疑-需保持关注）</value>
+    <value>[C5]有待處置扇區數（狀態存疑-需保持關注）</value>
   </data>
   <data name="Disk_End_to_End_Error_Detection_Correction_Count.Content" xml:space="preserve">
-    <value>端到端错误检测/矫正计数</value>
+    <value>端到端錯誤檢測/矯正計數</value>
   </data>
   <data name="Disk_Erasing_Failure_Count.Content" xml:space="preserve">
-    <value>擦除失败计数</value>
+    <value>擦除失敗計數</value>
   </data>
   <data name="Disk_Gigabytes_Erased.Content" xml:space="preserve">
     <value>[XX]已擦除GiB（GB）</value>
   </data>
   <data name="Disk_Maximum_Number_of_bad_blocks_in_die.Content" xml:space="preserve">
-    <value>裸片中最大坏块数</value>
+    <value>裸片中最大壞塊數</value>
   </data>
   <data name="Disk_Maximum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-    <value>最大PE（编程/擦除）次数</value>
+    <value>最大PE（編程/擦除）次數</value>
   </data>
   <data name="Disk_Media_Fray_Indicator.Content" xml:space="preserve">
-    <value>介质磨损指示器</value>
+    <value>介質磨損指示器</value>
   </data>
   <data name="Disk_Minimum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-    <value>最小PE（编程/擦除）次数</value>
+    <value>最小PE（編程/擦除）次數</value>
   </data>
   <data name="Disk_NAND_Total_Writes.Content" xml:space="preserve">
-    <value>NAND总计写入</value>
+    <value>NAND總計寫入</value>
   </data>
   <data name="Disk_NAND_Total_Writes_SLC.Content" xml:space="preserve">
-    <value>NAND总计写入（SLC）</value>
+    <value>NAND總計寫入（SLC）</value>
   </data>
   <data name="Disk_New_Bad_Blocks.Content" xml:space="preserve">
-    <value>新增坏块</value>
+    <value>新增壞塊</value>
   </data>
   <data name="Disk_Number_of_Unexpected_Power_Outages.Content" xml:space="preserve">
-    <value>意外断电次数</value>
+    <value>意外斷電次數</value>
   </data>
   <data name="Disk_Overview.Content" xml:space="preserve">
     <value>概述</value>
   </data>
   <data name="Disk_PowerUpNumber.Content" xml:space="preserve">
-    <value>通电次数</value>
+    <value>通電次數</value>
   </data>
   <data name="Disk_Power_Cycle_Count.Content" xml:space="preserve">
-    <value>[0C]通电次数</value>
+    <value>[0C]通電次數</value>
   </data>
   <data name="Disk_Power_On_Hours.Content" xml:space="preserve">
-    <value>[09]通电时间</value>
+    <value>[09]通電時間</value>
   </data>
   <data name="Disk_Programming_Failure_Count.Content" xml:space="preserve">
-    <value>编程失败计数</value>
+    <value>編程失敗計數</value>
   </data>
   <data name="Disk_Reallocated_Sectors_Count.Content" xml:space="preserve">
-    <value>[05]重新分配扇区数</value>
+    <value>[05]重新分配扇區數</value>
   </data>
   <data name="Disk_Reallocation_Event_Count.Content" xml:space="preserve">
-    <value>[C4]扇区物理位置重分配时间计数（与坏道相关）</value>
+    <value>[C4]扇區物理位置重分配時間計數（與壞道相關）</value>
   </data>
   <data name="Disk_Refresh_Sector.Content" xml:space="preserve">
-    <value>重新分配扇区</value>
+    <value>重新分配扇區</value>
   </data>
   <data name="Disk_Remaining_Life.Content" xml:space="preserve">
-    <value>[XX]剩余寿命</value>
+    <value>[XX]剩餘壽命</value>
   </data>
   <data name="Disk_Reported_Uncorrectable_Errors.Content" xml:space="preserve">
-    <value>报告的无法矫正的错误</value>
+    <value>報告的無法矯正的錯誤</value>
   </data>
   <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
-    <value>扇区物理位置重分配事件计数</value>
+    <value>扇區物理位置重分配事件計數</value>
   </data>
   <data name="Disk_Spare_Blocks_Remaining.Content" xml:space="preserve">
-    <value>剩余备用块</value>
+    <value>剩餘備用塊</value>
   </data>
   <data name="Disk_Temperature.Content" xml:space="preserve">
-    <value>[C2]温度</value>
+    <value>[C2]溫度</value>
   </data>
   <data name="Disk_Temperature_Control_State.Content" xml:space="preserve">
-    <value>温控状态</value>
+    <value>溫控狀態</value>
   </data>
   <data name="Disk_Total_Host_Reads.Content" xml:space="preserve">
-    <value>[XX]主机总计读取（GB）</value>
+    <value>[XX]主機總計讀取（GB）</value>
   </data>
   <data name="Disk_Total_Host_Writes.Content" xml:space="preserve">
-    <value>[XX]主机总计写入（GB）</value>
+    <value>[XX]主機總計寫入（GB）</value>
   </data>
   <data name="Disk_Total_NAND_Writes.Content" xml:space="preserve">
-    <value>[XX]NAND总计写入（GB）</value>
+    <value>[XX]NAND總計寫入（GB）</value>
   </data>
   <data name="Disk_Total_Write_Read.Content" xml:space="preserve">
-    <value>总计写入/读取（GB）</value>
+    <value>總計寫入/讀取（GB）</value>
   </data>
   <data name="Disk_Uncorrectable_Sector_Count.Content" xml:space="preserve">
-    <value>[C6]不可校正的扇区数</value>
+    <value>[C6]不可校正的扇區數</value>
   </data>
   <data name="Disk_Wear_Leveling_Count.Content" xml:space="preserve">
-    <value>[XX]平均磨损计数</value>
+    <value>[XX]平均磨損計數</value>
   </data>
   <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
-    <value>选择磁盘</value>
+    <value>選擇磁盤</value>
   </data>
 </root>
