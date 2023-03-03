@@ -1,17 +1,17 @@
 <p align="center">
-    <img alt="Icon" src="https://user-images.githubusercontent.com/6630660/207081052-89642cf8-6a84-456d-9c96-e2db354ff3d6.png" align="center"/>
+    <img alt="图标" src="https://user-images.githubusercontent.com/6630660/207081052-89642cf8-6a84-456d-9c96-e2db354ff3d6.png" align="center"/>
     <h1 align="center"> DiskInfo </h1>
     <p align="center">
         一款拥有现代化 UI 的硬盘信息工具。
     </p>
 </p>
 
-## Download
+## 下载
 <a style="margin-left:24px" href="https://www.microsoft.com/store/productId/9PLQ8DP73ZDF">
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://get.microsoft.com/images/en-us%20light.svg" />
-        <source media="(prefers-color-scheme: light)" srcset="https://get.microsoft.com/images/en-us%20dark.svg" />
-        <img style="vertical-align:middle" src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Download DiskInfo" />
+        <source media="(prefers-color-scheme: dark)" srcset="https://get.microsoft.com/images/zh-cn%20light.svg" />
+        <source media="(prefers-color-scheme: light)" srcset="https://get.microsoft.com/images/zh-cn%20dark.svg" />
+        <img style="vertical-align:middle" src="https://get.microsoft.com/images/zh-cn%20dark.svg" alt="下载 DiskInfo" />
     </picture>
 </a>
  
