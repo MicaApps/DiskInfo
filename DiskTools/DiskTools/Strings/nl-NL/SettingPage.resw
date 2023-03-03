@@ -118,67 +118,67 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ThemeSettings.Header" xml:space="preserve">
-    <value>应用主题</value>
+    <value>Thema toepassen</value>
   </data>
   <data name="ThemesSettingsHeader.Header" xml:space="preserve">
-    <value>主题</value>
+    <value>Thema</value>
   </data>
   <data name="UpdateSettingsHeader.Header" xml:space="preserve">
-    <value>版本</value>
+    <value>Versie</value>
   </data>
   <data name="UpToDate" xml:space="preserve">
-    <value>最新</value>
+    <value>Nieuwste</value>
   </data>
   <data name="WindowsColorButton.Content" xml:space="preserve">
-    <value>Windows 颜色设置</value>
+    <value>Windows-kleurinstellingen</value>
   </data>
   <data name="RadioThemeDark.Content" xml:space="preserve">
-    <value>深色</value>
+    <value>Donker</value>
   </data>
   <data name="RadioThemeDefault.Content" xml:space="preserve">
-    <value>Windows 默认</value>
+    <value>Windows-standaard</value>
   </data>
   <data name="RadioThemeLight.Content" xml:space="preserve">
-    <value>浅色</value>
+    <value>Licht</value>
   </data>
   <data name="BackdropSettings.Description" xml:space="preserve">
     <value>选择适用于 Windows 11 的背景色类型</value>
   </data>
   <data name="BackdropSettings.Header" xml:space="preserve">
-    <value>背景色</value>
+    <value>achtergrondkleur</value>
   </data>
   <data name="ConfigsSettingsHeader.Header" xml:space="preserve">
-    <value>配置</value>
+    <value>Configuratie</value>
   </data>
   <data name="ReleaseNotes.Content" xml:space="preserve">
-    <value>发行说明</value>
+    <value>Release-opmerkingen</value>
   </data>
   <data name="ResetSettings.Description" xml:space="preserve">
     <value>重置此应用程序的设置。</value>
   </data>
   <data name="ResetSettings.Header" xml:space="preserve">
-    <value>重置应用</value>
+    <value>App resetten</value>
   </data>
   <data name="ResetSettingsButton.Content" xml:space="preserve">
-    <value>重置</value>
+    <value>Opnieuw instellen</value>
   </data>
   <data name="ResetSettingsConfirm.Content" xml:space="preserve">
-    <value>是</value>
+    <value>is</value>
   </data>
   <data name="ResetSettingsTitle.Text" xml:space="preserve">
-    <value>您确定要重置应用吗？</value>
+    <value>Weet je zeker dat je de app wilt resetten? </value>
   </data>
   <data name="FeedbackLink.Content" xml:space="preserve">
-    <value>反馈</value>
+    <value>Feedback</value>
   </data>
   <data name="FindUpdate" xml:space="preserve">
-    <value>找到新的更新</value>
+    <value>Nieuwe update gevonden</value>
   </data>
   <data name="FrameworkSettings.Description" xml:space="preserve">
     <value>关于此应用程序框架的信息。</value>
   </data>
   <data name="FrameworkSettings.Header" xml:space="preserve">
-    <value>框架信息</value>
+    <value>Frame-informatie</value>
   </data>
   <data name="FrameworkTextBlock.Text" xml:space="preserve">
     <value>框架</value>
@@ -187,33 +187,33 @@
     <value>前往用于测试的页面。</value>
   </data>
   <data name="GoToTestPage.Header" xml:space="preserve">
-    <value>前往测试页面</value>
+    <value>Ga naar testpagina</value>
   </data>
   <data name="GoToUpdate.Content" xml:space="preserve">
-    <value>前往更新</value>
+    <value>Ga naar bijwerken</value>
   </data>
   <data name="OSArchitectureTextBlock.Text" xml:space="preserve">
-    <value>操作系统架构</value>
+    <value>OS-architectuur</value>
   </data>
   <data name="OSPlatformTextBlock.Text" xml:space="preserve">
-    <value>操作系统平台</value>
+    <value>OS-platform</value>
   </data>
   <data name="AboutSettingsHeader.Header" xml:space="preserve">
-    <value>关于</value>
+    <value>Over</value>
   </data>
   <data name="LastChecked.Text" xml:space="preserve">
-    <value>上次检查时间: </value>
+    <value>Laatste controletijd: </value>
   </data>
   <data name="LogFolderLink.Content" xml:space="preserve">
-    <value>日志</value>
+    <value>logboek</value>
   </data>
   <data name="CheckFailed" xml:space="preserve">
-    <value>检查失败</value>
+    <value>Controle mislukt</value>
   </data>
   <data name="CheckingUpdates.Text" xml:space="preserve">
     <value>正在检查更新……</value>
   </data>
   <data name="CheckUpdates.Content" xml:space="preserve">
-    <value>检查更新</value>
+    <value>Controleren op updates</value>
   </data>
 </root>
