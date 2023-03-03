@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ThemeSettings.Header" xml:space="preserve">
-    <value>应用主题</value>
+    <value>應用主題</value>
   </data>
   <data name="ThemesSettingsHeader.Header" xml:space="preserve">
-    <value>主题</value>
+    <value>主題</value>
   </data>
   <data name="UpdateSettingsHeader.Header" xml:space="preserve">
     <value>版本</value>
@@ -130,19 +130,19 @@
     <value>最新</value>
   </data>
   <data name="WindowsColorButton.Content" xml:space="preserve">
-    <value>Windows 颜色设置</value>
+    <value>Windows 顏色設置</value>
   </data>
   <data name="RadioThemeDark.Content" xml:space="preserve">
     <value>深色</value>
   </data>
   <data name="RadioThemeDefault.Content" xml:space="preserve">
-    <value>Windows 默认</value>
+    <value>Windows 默認</value>
   </data>
   <data name="RadioThemeLight.Content" xml:space="preserve">
-    <value>浅色</value>
+    <value>淺色</value>
   </data>
   <data name="BackdropSettings.Description" xml:space="preserve">
-    <value>选择适用于 Windows 11 的背景色类型</value>
+    <value>選擇適用於 Windows 11 的背景色類型</value>
   </data>
   <data name="BackdropSettings.Header" xml:space="preserve">
     <value>背景色</value>
@@ -151,13 +151,13 @@
     <value>配置</value>
   </data>
   <data name="ReleaseNotes.Content" xml:space="preserve">
-    <value>发行说明</value>
+    <value>發行說明</value>
   </data>
   <data name="ResetSettings.Description" xml:space="preserve">
-    <value>重置此应用程序的设置。</value>
+    <value>重置此應用程序的設置。 </value>
   </data>
   <data name="ResetSettings.Header" xml:space="preserve">
-    <value>重置应用</value>
+    <value>重置應用</value>
   </data>
   <data name="ResetSettingsButton.Content" xml:space="preserve">
     <value>重置</value>
@@ -166,16 +166,16 @@
     <value>是</value>
   </data>
   <data name="ResetSettingsTitle.Text" xml:space="preserve">
-    <value>您确定要重置应用吗？</value>
+    <value>您確定要重置應用嗎？ </value>
   </data>
   <data name="FeedbackLink.Content" xml:space="preserve">
-    <value>反馈</value>
+    <value>反饋</value>
   </data>
   <data name="FindUpdate" xml:space="preserve">
     <value>找到新的更新</value>
   </data>
   <data name="FrameworkSettings.Description" xml:space="preserve">
-    <value>关于此应用程序框架的信息。</value>
+    <value>關於此應用程序框架的信息。 </value>
   </data>
   <data name="FrameworkSettings.Header" xml:space="preserve">
     <value>框架信息</value>
@@ -184,36 +184,36 @@
     <value>框架</value>
   </data>
   <data name="GoToTestPage.Description" xml:space="preserve">
-    <value>前往用于测试的页面。</value>
+    <value>前往用於測試的頁面。 </value>
   </data>
   <data name="GoToTestPage.Header" xml:space="preserve">
-    <value>前往测试页面</value>
+    <value>前往測試頁面</value>
   </data>
   <data name="GoToUpdate.Content" xml:space="preserve">
     <value>前往更新</value>
   </data>
   <data name="OSArchitectureTextBlock.Text" xml:space="preserve">
-    <value>操作系统架构</value>
+    <value>操作系統架構</value>
   </data>
   <data name="OSPlatformTextBlock.Text" xml:space="preserve">
-    <value>操作系统平台</value>
+    <value>操作系統平台</value>
   </data>
   <data name="AboutSettingsHeader.Header" xml:space="preserve">
-    <value>关于</value>
+    <value>關於</value>
   </data>
   <data name="LastChecked.Text" xml:space="preserve">
-    <value>上次检查时间: </value>
+    <value>上次檢查時間: </value>
   </data>
   <data name="LogFolderLink.Content" xml:space="preserve">
-    <value>日志</value>
+    <value>日誌</value>
   </data>
   <data name="CheckFailed" xml:space="preserve">
-    <value>检查失败</value>
+    <value>檢查失敗</value>
   </data>
   <data name="CheckingUpdates.Text" xml:space="preserve">
-    <value>正在检查更新……</value>
+    <value>正在檢查更新……</value>
   </data>
   <data name="CheckUpdates.Content" xml:space="preserve">
-    <value>检查更新</value>
+    <value>檢查更新</value>
   </data>
 </root>
