@@ -1,19 +1,27 @@
-<div> 
-    <img alt="Icon" src="https://user-images.githubusercontent.com/6630660/207081052-89642cf8-6a84-456d-9c96-e2db354ff3d6.png" style="vertical-align:middle" /> 
-    <h1 style="vertical-align:middle;display:inline;margin-left:12px" >DiskInfo</h1> 
-    <a style="margin-left:24px" href="ms-windows-store://pdp/?ProductId=9PLQ8DP73ZDF&mode=mini">
+<p align="center">
+    <img alt="Icon" src="https://user-images.githubusercontent.com/6630660/207081052-89642cf8-6a84-456d-9c96-e2db354ff3d6.png" align="center"/>
+    <h1 align="center"> DiskInfo </h1>
+    <p align="center">
+        A tool for viewing hard drive information with a modern UI design. 
+    </p>
+</p>
+
+## Download
+<a style="margin-left:24px" href="https://www.microsoft.com/store/productId/9PLQ8DP73ZDF">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://get.microsoft.com/images/en-us%20light.svg" />
+        <source media="(prefers-color-scheme: light)" srcset="https://get.microsoft.com/images/en-us%20dark.svg" />
         <img style="vertical-align:middle" src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Download DiskInfo" />
-    </a>
-</div> <br />
- A tool for viewing hard drive information with a modern UI design.
+    </picture>
+</a>
 
- ## Language
- - [中文](README.zh-CN.md)
+## Language
+- [中文](README.zh-CN.md)
 
- ## Concept
- ![image](https://user-images.githubusercontent.com/6630660/212543495-ffba1279-bf86-4f4e-8568-8b8941edcfed.png)
+## Concept
+![image](https://user-images.githubusercontent.com/6630660/212543495-ffba1279-bf86-4f4e-8568-8b8941edcfed.png)
 
- ## Background
+## Background
 [CrystalDiskInfo](https://github.com/hiyohiyo/CrystalDiskInfo) is one of the most famous disk health monitoring tools in the world. It is free and open source, and is still actively maintained.
 
 ![image](https://user-images.githubusercontent.com/6630660/212543605-d8d80feb-b7d1-4d63-b528-0e98b1cff968.png)

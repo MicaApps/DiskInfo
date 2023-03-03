@@ -1,16 +1,25 @@
-<div> 
-    <img alt="Icon" src="https://user-images.githubusercontent.com/6630660/207081052-89642cf8-6a84-456d-9c96-e2db354ff3d6.png" style="vertical-align:middle" /> 
-    <h1 style="vertical-align:middle;display:inline;margin-left:12px" >DiskInfo</h1> 
-    <a style="margin-left:24px" href="ms-windows-store://pdp/?ProductId=9PLQ8DP73ZDF&mode=mini">
-        <img style="vertical-align:middle" src="https://get.microsoft.com/images/zh-cn%20dark.svg" alt="下载 DiskInfo" />
-    </a>
-</div> <br />
- 一款拥有现代化 UI 的硬盘信息工具。
+<p align="center">
+    <img alt="Icon" src="https://user-images.githubusercontent.com/6630660/207081052-89642cf8-6a84-456d-9c96-e2db354ff3d6.png" align="center"/>
+    <h1 align="center"> DiskInfo </h1>
+    <p align="center">
+        一款拥有现代化 UI 的硬盘信息工具。
+    </p>
+</p>
 
- ## 概念图
- ![image](https://user-images.githubusercontent.com/6630660/212543495-ffba1279-bf86-4f4e-8568-8b8941edcfed.png)
+## Download
+<a style="margin-left:24px" href="https://www.microsoft.com/store/productId/9PLQ8DP73ZDF">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://get.microsoft.com/images/en-us%20light.svg" />
+        <source media="(prefers-color-scheme: light)" srcset="https://get.microsoft.com/images/en-us%20dark.svg" />
+        <img style="vertical-align:middle" src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Download DiskInfo" />
+    </picture>
+</a>
+ 
 
- ## 背景
+## 概念图
+![image](https://user-images.githubusercontent.com/6630660/212543495-ffba1279-bf86-4f4e-8568-8b8941edcfed.png)
+
+## 背景
 [CrystalDiskInfo](https://github.com/hiyohiyo/CrystalDiskInfo) 是世界上最著名的磁盘健康监视工具之一。它是一款免费且开源的工具，至今仍在积极维护。
 
 ![image](https://user-images.githubusercontent.com/6630660/212543605-d8d80feb-b7d1-4d63-b528-0e98b1cff968.png)
