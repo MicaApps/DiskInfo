@@ -24,7 +24,7 @@
 ## Background
 [CrystalDiskInfo](https://github.com/hiyohiyo/CrystalDiskInfo) is one of the most famous disk health monitoring tools in the world. It is free and open source, and is still actively maintained.
 
-![image](https://user-images.githubusercontent.com/6630660/212543605-d8d80feb-b7d1-4d63-b528-0e98b1cff968.png)
+<img alt="CrystalDiskInfo" src="https://user-images.githubusercontent.com/6630660/212543605-d8d80feb-b7d1-4d63-b528-0e98b1cff968.png" style="width:30%" />
 
 This project aims at providing a mordern appearance for DiskInfo. The new design follow the guide of [Fluent Design System](https://www.microsoft.com/design/fluent/)，with flexible，adapting layout，and charming visual design.
 

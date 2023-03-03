@@ -22,7 +22,7 @@
 ## 背景
 [CrystalDiskInfo](https://github.com/hiyohiyo/CrystalDiskInfo) 是世界上最著名的磁盘健康监视工具之一。它是一款免费且开源的工具，至今仍在积极维护。
 
-![image](https://user-images.githubusercontent.com/6630660/212543605-d8d80feb-b7d1-4d63-b528-0e98b1cff968.png)
+<img alt="CrystalDiskInfo" src="https://user-images.githubusercontent.com/6630660/212543605-d8d80feb-b7d1-4d63-b528-0e98b1cff968.png" style="width:30%" />
 
 本项目旨在提供一个具有现代化视觉体验的磁盘信息工具。新的视觉设计以[Fluent Design System](https://www.microsoft.com/design/fluent/)的设计指导作为参考，提供顺畅的体验和自适应性布局，以及具有魅力的界面设计。
 
