@@ -36,6 +36,9 @@ and finally add a `PropertyGroup` tag in the `csproj` file.
 </PropertyGroup>
 ```
 
+## Get From Microsoft Store
+https://www.microsoft.com/store/apps/9PLQ8DP73ZDF
+
 ## Unknown issues
 - Updating data **is** working, but the updates are not reflected on the UI. **Will fix very soon!** (You can see the updates if you restart the app!)
 - Debugging for winui3 is not working. For developments' convenience, it normally runs without admin previledges. (This will change when it's publish to store)
