@@ -118,117 +118,117 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Disk_Average_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>Average PE (program/erase) times</value>
-   </data>
-   <data name="Disk_Bad_Blocks_Count.Content" xml:space="preserve">
-     <value>Total bad blocks</value>
-   </data>
-   <data name="Disk_Block_Erasure_Record_SLC.Content" xml:space="preserve">
-     <value>Block Erase Logging (SLC)</value>
-   </data>
-   <data name="Disk_Command_Timeout_Count.Content" xml:space="preserve">
-     <value>Command timeout count</value>
-   </data>
-   <data name="Disk_CRC_Errors_Count.Content" xml:space="preserve">
-     <value>CRC error count</value>
-   </data>
-   <data name="Disk_Current_Pending_Sector_Count.Content" xml:space="preserve">
-     <value>[C5] Number of sectors to be processed (status doubtful - need to keep an eye on it)</value>
-   </data>
-   <data name="Disk_End_to_End_Error_Detection_Correction_Count.Content" xml:space="preserve">
-     <value>End-to-end error detection/correction count</value>
-   </data>
-   <data name="Disk_Erasing_Failure_Count.Content" xml:space="preserve">
-     <value>Erase failure count</value>
-   </data>
-   <data name="Disk_Gigabytes_Erased.Content" xml:space="preserve">
-     <value>[XX] GiB (GB) erased</value>
-   </data>
-   <data name="Disk_Maximum_Number_of_bad_blocks_in_die.Content" xml:space="preserve">
-     <value>The maximum number of bad blocks in the die</value>
-   </data>
-   <data name="Disk_Maximum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>Maximum PE (program/erase) times</value>
-   </data>
-   <data name="Disk_Media_Fray_Indicator.Content" xml:space="preserve">
-     <value>Media Wear Indicator</value>
-   </data>
-   <data name="Disk_Minimum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>Minimum PE (program/erase) times</value>
-   </data>
-   <data name="Disk_NAND_Total_Writes.Content" xml:space="preserve">
-     <value>NAND total write</value>
-   </data>
-   <data name="Disk_NAND_Total_Writes_SLC.Content" xml:space="preserve">
-     <value>NAND Total Write (SLC)</value>
-   </data>
-   <data name="Disk_New_Bad_Blocks.Content" xml:space="preserve">
-     <value>New bad block</value>
-   </data>
-   <data name="Disk_Number_of_Unexpected_Power_Outages.Content" xml:space="preserve">
-     <value>Number of unexpected power outages</value>
-   </data>
-   <data name="Disk_Overview.Content" xml:space="preserve">
-     <value>Overview</value>
-   </data>
-   <data name="Disk_PowerUpNumber.Content" xml:space="preserve">
-     <value>Number of power-ups</value>
-   </data>
-   <data name="Disk_Power_Cycle_Count.Content" xml:space="preserve">
-     <value>[0C] power-up times</value>
-   </data>
-   <data name="Disk_Power_On_Hours.Content" xml:space="preserve">
-     <value>[09]Power on time</value>
-   </data>
-   <data name="Disk_Programming_Failure_Count.Content" xml:space="preserve">
-     <value>Count of programming failures</value>
-   </data>
-   <data name="Disk_Reallocated_Sectors_Count.Content" xml:space="preserve">
-     <value>[05] Reallocate the number of sectors</value>
-   </data>
-   <data name="Disk_Reallocation_Event_Count.Content" xml:space="preserve">
-     <value>[C4] Sector physical location reallocation time count (related to bad sectors)</value>
-   </data>
-   <data name="Disk_Refresh_Sector.Content" xml:space="preserve">
-     <value>Reallocate sectors</value>
-   </data>
-   <data name="Disk_Remaining_Life.Content" xml:space="preserve">
-     <value>[XX] life remaining</value>
-   </data>
-   <data name="Disk_Reported_Uncorrectable_Errors.Content" xml:space="preserve">
-     <value>Reported uncorrectable errors</value>
-   </data>
-   <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
-     <value>Sector physical location reallocation event count</value>
-   </data>
-   <data name="Disk_Spare_Blocks_Remaining.Content" xml:space="preserve">
-     <value>remaining spare blocks</value>
-   </data>
-   <data name="Disk_Temperature.Content" xml:space="preserve">
-     <value>[C2] temperature</value>
-   </data>
-   <data name="Disk_Temperature_Control_State.Content" xml:space="preserve">
-     <value>Temperature control status</value>
-   </data>
-   <data name="Disk_Total_Host_Reads.Content" xml:space="preserve">
-     <value>[XX] host total read (GB)</value>
-   </data>
-   <data name="Disk_Total_Host_Writes.Content" xml:space="preserve">
-     <value>[XX] host total write (GB)</value>
-   </data>
-   <data name="Disk_Total_NAND_Writes.Content" xml:space="preserve">
-     <value>[XX]NAND total written (GB)</value>
-   </data>
-   <data name="Disk_Total_Write_Read.Content" xml:space="preserve">
-     <value>Total Write/Read (GB)</value>
-   </data>
-   <data name="Disk_Uncorrectable_Sector_Count.Content" xml:space="preserve">
-     <value>[C6] Number of uncorrectable sectors</value>
-   </data>
-   <data name="Disk_Wear_Leveling_Count.Content" xml:space="preserve">
-     <value>[XX] average wear count</value>
-   </data>
-   <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
-     <value>Select Disk</value>
-   </data>
+    <value>Average PE (program/erase) times</value>
+  </data>
+  <data name="Disk_Bad_Blocks_Count.Content" xml:space="preserve">
+    <value>Total bad blocks</value>
+  </data>
+  <data name="Disk_Block_Erasure_Record_SLC.Content" xml:space="preserve">
+    <value>Block Erase Logging (SLC)</value>
+  </data>
+  <data name="Disk_Command_Timeout_Count.Content" xml:space="preserve">
+    <value>Command timeout count</value>
+  </data>
+  <data name="Disk_CRC_Errors_Count.Content" xml:space="preserve">
+    <value>CRC error count</value>
+  </data>
+  <data name="Disk_Current_Pending_Sector_Count.Content" xml:space="preserve">
+    <value>[C5] Number of sectors to be processed (status doubtful - need to keep an eye on it)</value>
+  </data>
+  <data name="Disk_End_to_End_Error_Detection_Correction_Count.Content" xml:space="preserve">
+    <value>End-to-end error detection/correction count</value>
+  </data>
+  <data name="Disk_Erasing_Failure_Count.Content" xml:space="preserve">
+    <value>Erase failure count</value>
+  </data>
+  <data name="Disk_Gigabytes_Erased.Content" xml:space="preserve">
+    <value>[XX] GiB (GB) erased</value>
+  </data>
+  <data name="Disk_Maximum_Number_of_bad_blocks_in_die.Content" xml:space="preserve">
+    <value>The maximum number of bad blocks in the die</value>
+  </data>
+  <data name="Disk_Maximum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>Maximum PE (program/erase) times</value>
+  </data>
+  <data name="Disk_Media_Fray_Indicator.Content" xml:space="preserve">
+    <value>Media Wear Indicator</value>
+  </data>
+  <data name="Disk_Minimum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>Minimum PE (program/erase) times</value>
+  </data>
+  <data name="Disk_NAND_Total_Writes.Content" xml:space="preserve">
+    <value>NAND total write</value>
+  </data>
+  <data name="Disk_NAND_Total_Writes_SLC.Content" xml:space="preserve">
+    <value>NAND Total Write (SLC)</value>
+  </data>
+  <data name="Disk_New_Bad_Blocks.Content" xml:space="preserve">
+    <value>New bad block</value>
+  </data>
+  <data name="Disk_Number_of_Unexpected_Power_Outages.Content" xml:space="preserve">
+    <value>Number of unexpected power outages</value>
+  </data>
+  <data name="Disk_Overview.Content" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="Disk_PowerUpNumber.Content" xml:space="preserve">
+    <value>Number of power-ups</value>
+  </data>
+  <data name="Disk_Power_Cycle_Count.Content" xml:space="preserve">
+    <value>[0C] power-up times</value>
+  </data>
+  <data name="Disk_Power_On_Hours.Content" xml:space="preserve">
+    <value>[09]Power on time</value>
+  </data>
+  <data name="Disk_Programming_Failure_Count.Content" xml:space="preserve">
+    <value>Count of programming failures</value>
+  </data>
+  <data name="Disk_Reallocated_Sectors_Count.Content" xml:space="preserve">
+    <value>[05] Reallocate the number of sectors</value>
+  </data>
+  <data name="Disk_Reallocation_Event_Count.Content" xml:space="preserve">
+    <value>[C4] Sector physical location reallocation time count (related to bad sectors)</value>
+  </data>
+  <data name="Disk_Refresh_Sector.Content" xml:space="preserve">
+    <value>Reallocate sectors</value>
+  </data>
+  <data name="Disk_Remaining_Life.Content" xml:space="preserve">
+    <value>[XX] life remaining</value>
+  </data>
+  <data name="Disk_Reported_Uncorrectable_Errors.Content" xml:space="preserve">
+    <value>Reported uncorrectable errors</value>
+  </data>
+  <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
+    <value>Sector physical location reallocation event count</value>
+  </data>
+  <data name="Disk_Spare_Blocks_Remaining.Content" xml:space="preserve">
+    <value>remaining spare blocks</value>
+  </data>
+  <data name="Disk_Temperature.Content" xml:space="preserve">
+    <value>[C2] temperature</value>
+  </data>
+  <data name="Disk_Temperature_Control_State.Content" xml:space="preserve">
+    <value>Temperature control status</value>
+  </data>
+  <data name="Disk_Total_Host_Reads.Content" xml:space="preserve">
+    <value>[XX] host total read (GB)</value>
+  </data>
+  <data name="Disk_Total_Host_Writes.Content" xml:space="preserve">
+    <value>[XX] host total write (GB)</value>
+  </data>
+  <data name="Disk_Total_NAND_Writes.Content" xml:space="preserve">
+    <value>[XX]NAND total written (GB)</value>
+  </data>
+  <data name="Disk_Total_Write_Read.Content" xml:space="preserve">
+    <value>Total Write/Read (GB)</value>
+  </data>
+  <data name="Disk_Uncorrectable_Sector_Count.Content" xml:space="preserve">
+    <value>[C6] Number of uncorrectable sectors</value>
+  </data>
+  <data name="Disk_Wear_Leveling_Count.Content" xml:space="preserve">
+    <value>[XX] average wear count</value>
+  </data>
+  <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
+    <value>Select Disk</value>
+  </data>
 </root>
