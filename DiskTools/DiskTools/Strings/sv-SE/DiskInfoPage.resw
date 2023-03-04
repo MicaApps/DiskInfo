@@ -117,118 +117,118 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
- <data name="Disk_Average_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>Genomsnittliga PE (program/radera) gånger</value>
-   </data>
-   <data name="Disk_Bad_Blocks_Count.Content" xml:space="preserve">
-     <value>Totalt dåliga blockeringar</value>
-   </data>
-   <data name="Disk_Block_Erasure_Record_SLC.Content" xml:space="preserve">
-     <value>Blockera raderingsloggning (SLC)</value>
-   </data>
-   <data name="Disk_Command_Timeout_Count.Content" xml:space="preserve">
-     <value>Antal kommandot timeout</value>
-   </data>
-   <data name="Disk_CRC_Errors_Count.Content" xml:space="preserve">
-     <value>Antal CRC-fel</value>
-   </data>
-   <data name="Disk_Current_Pending_Sector_Count.Content" xml:space="preserve">
-     <value>[C5] Antal sektorer som ska bearbetas (status tveksam - måste hålla ett öga på det)</value>
-   </data>
-   <data name="Disk_End_to_End_Error_Detection_Correction_Count.Content" xml:space="preserve">
-     <value>Antal feldetektering/korrigering från slut till ände</value>
-   </data>
-   <data name="Disk_Erasing_Failure_Count.Content" xml:space="preserve">
-     <value>Radera antalet fel</value>
-   </data>
-   <data name="Disk_Gigabytes_Erased.Content" xml:space="preserve">
-     <value>[XX] GiB (GB) raderad</value>
-   </data>
-   <data name="Disk_Maximum_Number_of_bad_blocks_in_die.Content" xml:space="preserve">
-     <value>Det maximala antalet dåliga block i tärningen</value>
-   </data>
-   <data name="Disk_Maximum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>Maximala PE (program/radera) gånger</value>
-   </data>
-   <data name="Disk_Media_Fray_Indicator.Content" xml:space="preserve">
-     <value>Media Wear Indicator</value>
-   </data>
-   <data name="Disk_Minimum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>Minsta PE (program/radera) gånger</value>
-   </data>
-   <data name="Disk_NAND_Total_Writes.Content" xml:space="preserve">
-     <value>NAND total skrivning</value>
-   </data>
-   <data name="Disk_NAND_Total_Writes_SLC.Content" xml:space="preserve">
-     <value>NAND Total Write (SLC)</value>
-   </data>
-   <data name="Disk_New_Bad_Blocks.Content" xml:space="preserve">
-     <value>Nytt dåligt block</value>
-   </data>
-   <data name="Disk_Number_of_Unexpected_Power_Outages.Content" xml:space="preserve">
-     <value>Antal oväntade strömavbrott</value>
-   </data>
-   <data name="Disk_Overview.Content" xml:space="preserve">
-     <value>Översikt</value>
-   </data>
-   <data name="Disk_PowerUpNumber.Content" xml:space="preserve">
-     <value>Antal power-ups</value>
-   </data>
-   <data name="Disk_Power_Cycle_Count.Content" xml:space="preserve">
-     <value>[0C] starttider</value>
-   </data>
-   <data name="Disk_Power_On_Hours.Content" xml:space="preserve">
-     <value>[09]Ström på tid</value>
-   </data>
-   <data name="Disk_Programming_Failure_Count.Content" xml:space="preserve">
-     <value>Antal programmeringsfel</value>
-   </data>
-   <data name="Disk_Reallocated_Sectors_Count.Content" xml:space="preserve">
-     <value>[05] Omfördela antalet sektorer</value>
-   </data>
-   <data name="Disk_Reallocation_Event_Count.Content" xml:space="preserve">
-     <value>[C4] Tidsräkning för omfördelning av fysisk plats för sektorn (relaterat till dåliga sektorer)</value>
-   </data>
-   <data name="Disk_Refresh_Sector.Content" xml:space="preserve">
-     <value>Omfördela sektorer</value>
-   </data>
-   <data name="Disk_Remaining_Life.Content" xml:space="preserve">
-     <value>[XX] återstående liv</value>
-   </data>
-   <data name="Disk_Reported_Uncorrectable_Errors.Content" xml:space="preserve">
-     <value>Rapporterat okorrigerbart fel</value>
-   </data>
-   <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
-     <value>Antal händelser för omfördelning av fysisk plats för sektor</value>
-   </data>
-   <data name="Disk_Spare_Blocks_Remaining.Content" xml:space="preserve">
-     <value>återstående reservblock</value>
-   </data>
-   <data name="Disk_Temperature.Content" xml:space="preserve">
-     <value>[C2] temperatur</value>
-   </data>
-   <data name="Disk_Temperature_Control_State.Content" xml:space="preserve">
-     <value>Temperaturkontrollstatus</value>
-   </data>
-   <data name="Disk_Total_Host_Reads.Content" xml:space="preserve">
-     <value>[XX] värd totalt läst (GB)</value>
-   </data>
-   <data name="Disk_Total_Host_Writes.Content" xml:space="preserve">
-     <value>[XX] värd totalt skriv (GB)</value>
-   </data>
-   <data name="Disk_Total_NAND_Writes.Content" xml:space="preserve">
-     <value>[XX]NAND totalt skrivna (GB)</value>
-   </data>
-   <data name="Disk_Total_Write_Read.Content" xml:space="preserve">
-     <value>Totalt skriv/läst (GB)</value>
-   </data>
-   <data name="Disk_Uncorrectable_Sector_Count.Content" xml:space="preserve">
-     <value>[C6] Antal okorrigerbara sektorer</value>
-   </data>
-   <data name="Disk_Wear_Leveling_Count.Content" xml:space="preserve">
-     <value>[XX] genomsnittligt slitage</value>
-   </data>
-   <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
-     <value>Välj Disk</value>
-   </data>
+  <data name="Disk_Average_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>平均PE（编程/擦除）次数</value>
+  </data>
+  <data name="Disk_Bad_Blocks_Count.Content" xml:space="preserve">
+    <value>坏块总计</value>
+  </data>
+  <data name="Disk_Block_Erasure_Record_SLC.Content" xml:space="preserve">
+    <value>块擦除记录（SLC）</value>
+  </data>
+  <data name="Disk_Command_Timeout_Count.Content" xml:space="preserve">
+    <value>命令超时计数</value>
+  </data>
+  <data name="Disk_CRC_Errors_Count.Content" xml:space="preserve">
+    <value>CRC错误计数</value>
+  </data>
+  <data name="Disk_Current_Pending_Sector_Count.Content" xml:space="preserve">
+    <value>[C5]有待处置扇区数（状态存疑-需保持关注）</value>
+  </data>
+  <data name="Disk_End_to_End_Error_Detection_Correction_Count.Content" xml:space="preserve">
+    <value>端到端错误检测/矫正计数</value>
+  </data>
+  <data name="Disk_Erasing_Failure_Count.Content" xml:space="preserve">
+    <value>擦除失败计数</value>
+  </data>
+  <data name="Disk_Gigabytes_Erased.Content" xml:space="preserve">
+    <value>[XX]已擦除GiB（GB）</value>
+  </data>
+  <data name="Disk_Maximum_Number_of_bad_blocks_in_die.Content" xml:space="preserve">
+    <value>裸片中最大坏块数</value>
+  </data>
+  <data name="Disk_Maximum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>最大PE（编程/擦除）次数</value>
+  </data>
+  <data name="Disk_Media_Fray_Indicator.Content" xml:space="preserve">
+    <value>介质磨损指示器</value>
+  </data>
+  <data name="Disk_Minimum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>最小PE（编程/擦除）次数</value>
+  </data>
+  <data name="Disk_NAND_Total_Writes.Content" xml:space="preserve">
+    <value>NAND总计写入</value>
+  </data>
+  <data name="Disk_NAND_Total_Writes_SLC.Content" xml:space="preserve">
+    <value>NAND总计写入（SLC）</value>
+  </data>
+  <data name="Disk_New_Bad_Blocks.Content" xml:space="preserve">
+    <value>新增坏块</value>
+  </data>
+  <data name="Disk_Number_of_Unexpected_Power_Outages.Content" xml:space="preserve">
+    <value>意外断电次数</value>
+  </data>
+  <data name="Disk_Overview.Content" xml:space="preserve">
+    <value>概述</value>
+  </data>
+  <data name="Disk_PowerUpNumber.Content" xml:space="preserve">
+    <value>通电次数</value>
+  </data>
+  <data name="Disk_Power_Cycle_Count.Content" xml:space="preserve">
+    <value>[0C]通电次数</value>
+  </data>
+  <data name="Disk_Power_On_Hours.Content" xml:space="preserve">
+    <value>[09]通电时间</value>
+  </data>
+  <data name="Disk_Programming_Failure_Count.Content" xml:space="preserve">
+    <value>编程失败计数</value>
+  </data>
+  <data name="Disk_Reallocated_Sectors_Count.Content" xml:space="preserve">
+    <value>[05]重新分配扇区数</value>
+  </data>
+  <data name="Disk_Reallocation_Event_Count.Content" xml:space="preserve">
+    <value>[C4]扇区物理位置重分配时间计数（与坏道相关）</value>
+  </data>
+  <data name="Disk_Refresh_Sector.Content" xml:space="preserve">
+    <value>重新分配扇区</value>
+  </data>
+  <data name="Disk_Remaining_Life.Content" xml:space="preserve">
+    <value>[XX]剩余寿命</value>
+  </data>
+  <data name="Disk_Reported_Uncorrectable_Errors.Content" xml:space="preserve">
+    <value>报告的无法矫正的错误</value>
+  </data>
+  <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
+    <value>扇区物理位置重分配事件计数</value>
+  </data>
+  <data name="Disk_Spare_Blocks_Remaining.Content" xml:space="preserve">
+    <value>剩余备用块</value>
+  </data>
+  <data name="Disk_Temperature.Content" xml:space="preserve">
+    <value>[C2]温度</value>
+  </data>
+  <data name="Disk_Temperature_Control_State.Content" xml:space="preserve">
+    <value>温控状态</value>
+  </data>
+  <data name="Disk_Total_Host_Reads.Content" xml:space="preserve">
+    <value>[XX]主机总计读取（GB）</value>
+  </data>
+  <data name="Disk_Total_Host_Writes.Content" xml:space="preserve">
+    <value>[XX]主机总计写入（GB）</value>
+  </data>
+  <data name="Disk_Total_NAND_Writes.Content" xml:space="preserve">
+    <value>[XX]NAND总计写入（GB）</value>
+  </data>
+  <data name="Disk_Total_Write_Read.Content" xml:space="preserve">
+    <value>总计写入/读取（GB）</value>
+  </data>
+  <data name="Disk_Uncorrectable_Sector_Count.Content" xml:space="preserve">
+    <value>[C6]不可校正的扇区数</value>
+  </data>
+  <data name="Disk_Wear_Leveling_Count.Content" xml:space="preserve">
+    <value>[XX]平均磨损计数</value>
+  </data>
+  <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
+    <value>选择磁盘</value>
+  </data>
 </root>

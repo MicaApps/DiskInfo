@@ -118,117 +118,117 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Disk_Average_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>Середня кількість PE (програмування/стирання)</value>
-   </data>
-   <data name="Disk_Bad_Blocks_Count.Content" xml:space="preserve">
-     <value>Загальна кількість пошкоджених блоків</value>
-   </data>
-   <data name="Disk_Block_Erasure_Record_SLC.Content" xml:space="preserve">
-     <value>Введення журналу стирання блоку (SLC)</value>
-   </data>
-   <data name="Disk_Command_Timeout_Count.Content" xml:space="preserve">
-     <value>Кількість часу очікування команди</value>
-   </data>
-   <data name="Disk_CRC_Errors_Count.Content" xml:space="preserve">
-     <value>Кількість помилок CRC</value>
-   </data>
-   <data name="Disk_Current_Pending_Sector_Count.Content" xml:space="preserve">
-     <value>[C5] Кількість секторів для обробки (статус сумнівний - потрібно стежити за ним)</value>
-   </data>
-   <data name="Disk_End_to_End_Error_Detection_Correction_Count.Content" xml:space="preserve">
-     <value>Кількість виявлення/виправлення наскрізних помилок</value>
-   </data>
-   <data name="Disk_Erasing_Failure_Count.Content" xml:space="preserve">
-     <value>Кількість помилок видалення</value>
-   </data>
-   <data name="Disk_Gigabytes_Erased.Content" xml:space="preserve">
-     <value>Стерто [XX] ГіБ (ГБ)</value>
-   </data>
-   <data name="Disk_Maximum_Number_of_bad_blocks_in_die.Content" xml:space="preserve">
-     <value>Максимальна кількість пошкоджених блоків у кубику</value>
-   </data>
-   <data name="Disk_Maximum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>Максимальний час PE (програмування/стирування)</value>
-   </data>
-   <data name="Disk_Media_Fray_Indicator.Content" xml:space="preserve">
-     <value>Індикатор зносу носія</value>
-   </data>
-   <data name="Disk_Minimum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>Мінімальна кількість PE (програмування/стирування)</value>
-   </data>
-   <data name="Disk_NAND_Total_Writes.Content" xml:space="preserve">
-     <value>Загальний запис NAND</value>
-   </data>
-   <data name="Disk_NAND_Total_Writes_SLC.Content" xml:space="preserve">
-     <value>Загальний запис NAND (SLC)</value>
-   </data>
-   <data name="Disk_New_Bad_Blocks.Content" xml:space="preserve">
-     <value>Новий поганий блок</value>
-   </data>
-   <data name="Disk_Number_of_Unexpected_Power_Outages.Content" xml:space="preserve">
-     <value>Кількість неочікуваних відключень електроенергії</value>
-   </data>
-   <data name="Disk_Overview.Content" xml:space="preserve">
-     <value>Огляд</value>
-   </data>
-   <data name="Disk_PowerUpNumber.Content" xml:space="preserve">
-     <value>Кількість посилень</value>
-   </data>
-   <data name="Disk_Power_Cycle_Count.Content" xml:space="preserve">
-     <value>[0C] час увімкнення</value>
-   </data>
-   <data name="Disk_Power_On_Hours.Content" xml:space="preserve">
-     <value>[09]Час увімкнення</value>
-   </data>
-   <data name="Disk_Programming_Failure_Count.Content" xml:space="preserve">
-     <value>Кількість помилок програмування</value>
-   </data>
-   <data name="Disk_Reallocated_Sectors_Count.Content" xml:space="preserve">
-     <value>[05] Перерозподілити кількість секторів</value>
-   </data>
-   <data name="Disk_Reallocation_Event_Count.Content" xml:space="preserve">
-     <value>[C4] Підрахунок часу перерозподілу фізичного розташування сектора (пов’язаний із пошкодженими секторами)</value>
-   </data>
-   <data name="Disk_Refresh_Sector.Content" xml:space="preserve">
-     <value>Перерозподілити сектори</value>
-   </data>
-   <data name="Disk_Remaining_Life.Content" xml:space="preserve">
-     <value>Залишилося [XX] життя</value>
-   </data>
-   <data name="Disk_Reported_Uncorrectable_Errors.Content" xml:space="preserve">
-     <value>Повідомлено про невиправну помилку</value>
-   </data>
-   <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
-     <value>Кількість подій перерозподілу фізичного розташування сектора</value>
-   </data>
-   <data name="Disk_Spare_Blocks_Remaining.Content" xml:space="preserve">
-     <value>залишок запасних блоків</value>
-   </data>
-   <data name="Disk_Temperature.Content" xml:space="preserve">
-     <value>Температура [C2]</value>
-   </data>
-   <data name="Disk_Temperature_Control_State.Content" xml:space="preserve">
-     <value>Стан контролю температури</value>
-   </data>
-   <data name="Disk_Total_Host_Reads.Content" xml:space="preserve">
-     <value>Загальна кількість прочитаних хостів [XX] (ГБ)</value>
-   </data>
-   <data name="Disk_Total_Host_Writes.Content" xml:space="preserve">
-     <value>Загальний запис хосту [XX] (ГБ)</value>
-   </data>
-   <data name="Disk_Total_NAND_Writes.Content" xml:space="preserve">
-     <value>Загальна кількість записів [XX]NAND (ГБ)</value>
-   </data>
-   <data name="Disk_Total_Write_Read.Content" xml:space="preserve">
-     <value>Загальна кількість записів/читань (ГБ)</value>
-   </data>
-   <data name="Disk_Uncorrectable_Sector_Count.Content" xml:space="preserve">
-     <value>[C6] Кількість секторів, які не можна виправити</value>
-   </data>
-   <data name="Disk_Wear_Leveling_Count.Content" xml:space="preserve">
-     <value>[XX] середній показник зносу</value>
-   </data>
-   <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
-     <value>Виберіть диск</value>
-   </data>
+    <value>平均PE（编程/擦除）次数</value>
+  </data>
+  <data name="Disk_Bad_Blocks_Count.Content" xml:space="preserve">
+    <value>坏块总计</value>
+  </data>
+  <data name="Disk_Block_Erasure_Record_SLC.Content" xml:space="preserve">
+    <value>块擦除记录（SLC）</value>
+  </data>
+  <data name="Disk_Command_Timeout_Count.Content" xml:space="preserve">
+    <value>命令超时计数</value>
+  </data>
+  <data name="Disk_CRC_Errors_Count.Content" xml:space="preserve">
+    <value>CRC错误计数</value>
+  </data>
+  <data name="Disk_Current_Pending_Sector_Count.Content" xml:space="preserve">
+    <value>[C5]有待处置扇区数（状态存疑-需保持关注）</value>
+  </data>
+  <data name="Disk_End_to_End_Error_Detection_Correction_Count.Content" xml:space="preserve">
+    <value>端到端错误检测/矫正计数</value>
+  </data>
+  <data name="Disk_Erasing_Failure_Count.Content" xml:space="preserve">
+    <value>擦除失败计数</value>
+  </data>
+  <data name="Disk_Gigabytes_Erased.Content" xml:space="preserve">
+    <value>[XX]已擦除GiB（GB）</value>
+  </data>
+  <data name="Disk_Maximum_Number_of_bad_blocks_in_die.Content" xml:space="preserve">
+    <value>裸片中最大坏块数</value>
+  </data>
+  <data name="Disk_Maximum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>最大PE（编程/擦除）次数</value>
+  </data>
+  <data name="Disk_Media_Fray_Indicator.Content" xml:space="preserve">
+    <value>介质磨损指示器</value>
+  </data>
+  <data name="Disk_Minimum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>最小PE（编程/擦除）次数</value>
+  </data>
+  <data name="Disk_NAND_Total_Writes.Content" xml:space="preserve">
+    <value>NAND总计写入</value>
+  </data>
+  <data name="Disk_NAND_Total_Writes_SLC.Content" xml:space="preserve">
+    <value>NAND总计写入（SLC）</value>
+  </data>
+  <data name="Disk_New_Bad_Blocks.Content" xml:space="preserve">
+    <value>新增坏块</value>
+  </data>
+  <data name="Disk_Number_of_Unexpected_Power_Outages.Content" xml:space="preserve">
+    <value>意外断电次数</value>
+  </data>
+  <data name="Disk_Overview.Content" xml:space="preserve">
+    <value>概述</value>
+  </data>
+  <data name="Disk_PowerUpNumber.Content" xml:space="preserve">
+    <value>通电次数</value>
+  </data>
+  <data name="Disk_Power_Cycle_Count.Content" xml:space="preserve">
+    <value>[0C]通电次数</value>
+  </data>
+  <data name="Disk_Power_On_Hours.Content" xml:space="preserve">
+    <value>[09]通电时间</value>
+  </data>
+  <data name="Disk_Programming_Failure_Count.Content" xml:space="preserve">
+    <value>编程失败计数</value>
+  </data>
+  <data name="Disk_Reallocated_Sectors_Count.Content" xml:space="preserve">
+    <value>[05]重新分配扇区数</value>
+  </data>
+  <data name="Disk_Reallocation_Event_Count.Content" xml:space="preserve">
+    <value>[C4]扇区物理位置重分配时间计数（与坏道相关）</value>
+  </data>
+  <data name="Disk_Refresh_Sector.Content" xml:space="preserve">
+    <value>重新分配扇区</value>
+  </data>
+  <data name="Disk_Remaining_Life.Content" xml:space="preserve">
+    <value>[XX]剩余寿命</value>
+  </data>
+  <data name="Disk_Reported_Uncorrectable_Errors.Content" xml:space="preserve">
+    <value>报告的无法矫正的错误</value>
+  </data>
+  <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
+    <value>扇区物理位置重分配事件计数</value>
+  </data>
+  <data name="Disk_Spare_Blocks_Remaining.Content" xml:space="preserve">
+    <value>剩余备用块</value>
+  </data>
+  <data name="Disk_Temperature.Content" xml:space="preserve">
+    <value>[C2]温度</value>
+  </data>
+  <data name="Disk_Temperature_Control_State.Content" xml:space="preserve">
+    <value>温控状态</value>
+  </data>
+  <data name="Disk_Total_Host_Reads.Content" xml:space="preserve">
+    <value>[XX]主机总计读取（GB）</value>
+  </data>
+  <data name="Disk_Total_Host_Writes.Content" xml:space="preserve">
+    <value>[XX]主机总计写入（GB）</value>
+  </data>
+  <data name="Disk_Total_NAND_Writes.Content" xml:space="preserve">
+    <value>[XX]NAND总计写入（GB）</value>
+  </data>
+  <data name="Disk_Total_Write_Read.Content" xml:space="preserve">
+    <value>总计写入/读取（GB）</value>
+  </data>
+  <data name="Disk_Uncorrectable_Sector_Count.Content" xml:space="preserve">
+    <value>[C6]不可校正的扇区数</value>
+  </data>
+  <data name="Disk_Wear_Leveling_Count.Content" xml:space="preserve">
+    <value>[XX]平均磨损计数</value>
+  </data>
+  <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
+    <value>选择磁盘</value>
+  </data>
 </root>
