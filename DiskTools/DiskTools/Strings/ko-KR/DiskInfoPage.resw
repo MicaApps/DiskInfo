@@ -117,118 +117,118 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
- <data name="Disk_Average_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>평균 PE(프로그램/지우기) 시간</value>
-   </data>
-   <data name="Disk_Bad_Blocks_Count.Content" xml:space="preserve">
-     <value>총 불량 블록</value>
-   </data>
-   <data name="Disk_Block_Erasure_Record_SLC.Content" xml:space="preserve">
-     <value>SLC(블록 지우기 로깅)</value>
-   </data>
-   <data name="Disk_Command_Timeout_Count.Content" xml:space="preserve">
-     <value>명령 시간 초과 횟수</value>
-   </data>
-   <data name="Disk_CRC_Errors_Count.Content" xml:space="preserve">
-     <value>CRC 오류 수</value>
-   </data>
-   <data name="Disk_Current_Pending_Sector_Count.Content" xml:space="preserve">
-     <value>[C5] 처리할 섹터 수(의심스러운 상태 - 계속 주시해야 함)</value>
-   </data>
-   <data name="Disk_End_to_End_Error_Detection_Correction_Count.Content" xml:space="preserve">
-     <value>종단 간 오류 감지/수정 횟수</value>
-   </data>
-   <data name="Disk_Erasing_Failure_Count.Content" xml:space="preserve">
-     <value>실패 횟수 지우기</value>
-   </data>
-   <data name="Disk_Gigabytes_Erased.Content" xml:space="preserve">
-     <value>[XX] GiB(GB) 삭제됨</value>
-   </data>
-   <data name="Disk_Maximum_Number_of_bad_blocks_in_die.Content" xml:space="preserve">
-     <value>주사위의 최대 불량 블록 수</value>
-   </data>
-   <data name="Disk_Maximum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>최대 PE(프로그램/지우기) 횟수</value>
-   </data>
-   <data name="Disk_Media_Fray_Indicator.Content" xml:space="preserve">
-     <value>미디어 마모 표시기</value>
-   </data>
-   <data name="Disk_Minimum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
-     <value>최소 PE(프로그램/지우기) 시간</value>
-   </data>
-   <data name="Disk_NAND_Total_Writes.Content" xml:space="preserve">
-     <value>NAND 총 쓰기</value>
-   </data>
-   <data name="Disk_NAND_Total_Writes_SLC.Content" xml:space="preserve">
-     <value>NAND 총 쓰기(SLC)</value>
-   </data>
-   <data name="Disk_New_Bad_Blocks.Content" xml:space="preserve">
-     <value>새 불량 블록</value>
-   </data>
-   <data name="Disk_Number_of_Unexpected_Power_Outages.Content" xml:space="preserve">
-     <value>예기치 않은 정전 횟수</value>
-   </data>
-   <data name="Disk_Overview.Content" xml:space="preserve">
-     <value>개요</value>
-   </data>
-   <data name="Disk_PowerUpNumber.Content" xml:space="preserve">
-     <value>파워업 횟수</value>
-   </data>
-   <data name="Disk_Power_Cycle_Count.Content" xml:space="preserve">
-     <value>[0C] 전원 켜기 시간</value>
-   </data>
-   <data name="Disk_Power_On_Hours.Content" xml:space="preserve">
-     <value>[09]전원 켜기 시간</value>
-   </data>
-   <data name="Disk_Programming_Failure_Count.Content" xml:space="preserve">
-     <value>프로그래밍 실패 횟수</value>
-   </data>
-   <data name="Disk_Reallocated_Sectors_Count.Content" xml:space="preserve">
-     <value>[05] 섹터 수 재할당</value>
-   </data>
-   <data name="Disk_Reallocation_Event_Count.Content" xml:space="preserve">
-     <value>[C4] 섹터 물리적 위치 재할당 시간 수(불량 섹터 관련)</value>
-   </data>
-   <data name="Disk_Refresh_Sector.Content" xml:space="preserve">
-     <value>섹터 재할당</value>
-   </data>
-   <data name="Disk_Remaining_Life.Content" xml:space="preserve">
-     <value>[XX] 남은 수명</value>
-   </data>
-   <data name="Disk_Reported_Uncorrectable_Errors.Content" xml:space="preserve">
-     <value>보고된 수정할 수 없는 오류</value>
-   </data>
-   <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
-     <value>섹터 물리적 위치 재할당 이벤트 수</value>
-   </data>
-   <data name="Disk_Spare_Blocks_Remaining.Content" xml:space="preserve">
-     <value>나머지 예비 블록</value>
-   </data>
-   <data name="Disk_Temperature.Content" xml:space="preserve">
-     <value>[C2] 온도</value>
-   </data>
-   <data name="Disk_Temperature_Control_State.Content" xml:space="preserve">
-     <value>온도 제어 상태</value>
-   </data>
-   <data name="Disk_Total_Host_Reads.Content" xml:space="preserve">
-     <value>[XX] 호스트 총 읽기(GB)</value>
-   </data>
-   <data name="Disk_Total_Host_Writes.Content" xml:space="preserve">
-     <value>[XX] 호스트 총 쓰기(GB)</value>
-   </data>
-   <data name="Disk_Total_NAND_Writes.Content" xml:space="preserve">
-     <value>[XX]NAND 총 기록(GB)</value>
-   </data>
-   <data name="Disk_Total_Write_Read.Content" xml:space="preserve">
-     <value>총 쓰기/읽기(GB)</value>
-   </data>
-   <data name="Disk_Uncorrectable_Sector_Count.Content" xml:space="preserve">
-     <value>[C6] 수정할 수 없는 섹터 수</value>
-   </data>
-   <data name="Disk_Wear_Leveling_Count.Content" xml:space="preserve">
-     <value>[XX] 평균 마모 횟수</value>
-   </data>
-   <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
-     <value>디스크 선택</value>
-   </data>
+  <data name="Disk_Average_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>平均PE（编程/擦除）次数</value>
+  </data>
+  <data name="Disk_Bad_Blocks_Count.Content" xml:space="preserve">
+    <value>坏块总计</value>
+  </data>
+  <data name="Disk_Block_Erasure_Record_SLC.Content" xml:space="preserve">
+    <value>块擦除记录（SLC）</value>
+  </data>
+  <data name="Disk_Command_Timeout_Count.Content" xml:space="preserve">
+    <value>命令超时计数</value>
+  </data>
+  <data name="Disk_CRC_Errors_Count.Content" xml:space="preserve">
+    <value>CRC错误计数</value>
+  </data>
+  <data name="Disk_Current_Pending_Sector_Count.Content" xml:space="preserve">
+    <value>[C5]有待处置扇区数（状态存疑-需保持关注）</value>
+  </data>
+  <data name="Disk_End_to_End_Error_Detection_Correction_Count.Content" xml:space="preserve">
+    <value>端到端错误检测/矫正计数</value>
+  </data>
+  <data name="Disk_Erasing_Failure_Count.Content" xml:space="preserve">
+    <value>擦除失败计数</value>
+  </data>
+  <data name="Disk_Gigabytes_Erased.Content" xml:space="preserve">
+    <value>[XX]已擦除GiB（GB）</value>
+  </data>
+  <data name="Disk_Maximum_Number_of_bad_blocks_in_die.Content" xml:space="preserve">
+    <value>裸片中最大坏块数</value>
+  </data>
+  <data name="Disk_Maximum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>最大PE（编程/擦除）次数</value>
+  </data>
+  <data name="Disk_Media_Fray_Indicator.Content" xml:space="preserve">
+    <value>介质磨损指示器</value>
+  </data>
+  <data name="Disk_Minimum_Number_of_Programming_and_Erasing.Content" xml:space="preserve">
+    <value>最小PE（编程/擦除）次数</value>
+  </data>
+  <data name="Disk_NAND_Total_Writes.Content" xml:space="preserve">
+    <value>NAND总计写入</value>
+  </data>
+  <data name="Disk_NAND_Total_Writes_SLC.Content" xml:space="preserve">
+    <value>NAND总计写入（SLC）</value>
+  </data>
+  <data name="Disk_New_Bad_Blocks.Content" xml:space="preserve">
+    <value>新增坏块</value>
+  </data>
+  <data name="Disk_Number_of_Unexpected_Power_Outages.Content" xml:space="preserve">
+    <value>意外断电次数</value>
+  </data>
+  <data name="Disk_Overview.Content" xml:space="preserve">
+    <value>概述</value>
+  </data>
+  <data name="Disk_PowerUpNumber.Content" xml:space="preserve">
+    <value>通电次数</value>
+  </data>
+  <data name="Disk_Power_Cycle_Count.Content" xml:space="preserve">
+    <value>[0C]通电次数</value>
+  </data>
+  <data name="Disk_Power_On_Hours.Content" xml:space="preserve">
+    <value>[09]通电时间</value>
+  </data>
+  <data name="Disk_Programming_Failure_Count.Content" xml:space="preserve">
+    <value>编程失败计数</value>
+  </data>
+  <data name="Disk_Reallocated_Sectors_Count.Content" xml:space="preserve">
+    <value>[05]重新分配扇区数</value>
+  </data>
+  <data name="Disk_Reallocation_Event_Count.Content" xml:space="preserve">
+    <value>[C4]扇区物理位置重分配时间计数（与坏道相关）</value>
+  </data>
+  <data name="Disk_Refresh_Sector.Content" xml:space="preserve">
+    <value>重新分配扇区</value>
+  </data>
+  <data name="Disk_Remaining_Life.Content" xml:space="preserve">
+    <value>[XX]剩余寿命</value>
+  </data>
+  <data name="Disk_Reported_Uncorrectable_Errors.Content" xml:space="preserve">
+    <value>报告的无法矫正的错误</value>
+  </data>
+  <data name="Disk_Sector_EventCount.Content" xml:space="preserve">
+    <value>扇区物理位置重分配事件计数</value>
+  </data>
+  <data name="Disk_Spare_Blocks_Remaining.Content" xml:space="preserve">
+    <value>剩余备用块</value>
+  </data>
+  <data name="Disk_Temperature.Content" xml:space="preserve">
+    <value>[C2]温度</value>
+  </data>
+  <data name="Disk_Temperature_Control_State.Content" xml:space="preserve">
+    <value>温控状态</value>
+  </data>
+  <data name="Disk_Total_Host_Reads.Content" xml:space="preserve">
+    <value>[XX]主机总计读取（GB）</value>
+  </data>
+  <data name="Disk_Total_Host_Writes.Content" xml:space="preserve">
+    <value>[XX]主机总计写入（GB）</value>
+  </data>
+  <data name="Disk_Total_NAND_Writes.Content" xml:space="preserve">
+    <value>[XX]NAND总计写入（GB）</value>
+  </data>
+  <data name="Disk_Total_Write_Read.Content" xml:space="preserve">
+    <value>总计写入/读取（GB）</value>
+  </data>
+  <data name="Disk_Uncorrectable_Sector_Count.Content" xml:space="preserve">
+    <value>[C6]不可校正的扇区数</value>
+  </data>
+  <data name="Disk_Wear_Leveling_Count.Content" xml:space="preserve">
+    <value>[XX]平均磨损计数</value>
+  </data>
+  <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
+    <value>选择磁盘</value>
+  </data>
 </root>
