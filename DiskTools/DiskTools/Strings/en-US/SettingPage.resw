@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,102 +118,102 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ThemeSettings.Header" xml:space="preserve">
-     <value>Apply Theme</value>
-   </data>
-   <data name="ThemesSettingsHeader.Header" xml:space="preserve">
-     <value>Theme</value>
-   </data>
-   <data name="UpdateSettingsHeader.Header" xml:space="preserve">
-     <value>Version</value>
-   </data>
-   <data name="UpToDate" xml:space="preserve">
-     <value>Latest</value>
-   </data>
-   <data name="WindowsColorButton.Content" xml:space="preserve">
-     <value>Windows color settings</value>
-   </data>
-   <data name="RadioThemeDark.Content" xml:space="preserve">
-     <value>Dark</value>
-   </data>
-   <data name="RadioThemeDefault.Content" xml:space="preserve">
-     <value>Windows default</value>
-   </data>
-   <data name="RadioThemeLight.Content" xml:space="preserve">
-     <value>Light</value>
-   </data>
-   <data name="BackdropSettings.Description" xml:space="preserve">
-     <value>Choose the type of background color for Windows 11</value>
-   </data>
-   <data name="BackdropSettings.Header" xml:space="preserve">
-     <value>background color</value>
-   </data>
-   <data name="ConfigsSettingsHeader.Header" xml:space="preserve">
-     <value>Configuration</value>
-   </data>
-   <data name="ReleaseNotes.Content" xml:space="preserve">
-     <value>Release Notes</value>
-   </data>
-   <data name="ResetSettings.Description" xml:space="preserve">
-     <value>Resets the settings for this application. </value>
-   </data>
-   <data name="ResetSettings.Header" xml:space="preserve">
-     <value>Reset app</value>
-   </data>
-   <data name="ResetSettingsButton.Content" xml:space="preserve">
-     <value>Reset</value>
-   </data>
-   <data name="ResetSettingsConfirm.Content" xml:space="preserve">
-     <value>is</value>
-   </data>
-   <data name="ResetSettingsTitle.Text" xml:space="preserve">
-     <value>Are you sure you want to reset the app? </value>
-   </data>
-   <data name="FeedbackLink.Content" xml:space="preserve">
-     <value>Feedback</value>
-   </data>
-   <data name="FindUpdate" xml:space="preserve">
-     <value>New update found</value>
-   </data>
-   <data name="FrameworkSettings.Description" xml:space="preserve">
-     <value>Information about this application frame. </value>
-   </data>
-   <data name="FrameworkSettings.Header" xml:space="preserve">
-     <value>Frame information</value>
-   </data>
-   <data name="FrameworkTextBlock.Text" xml:space="preserve">
-     <value>frame</value>
-   </data>
-   <data name="GoToTestPage.Description" xml:space="preserve">
-     <value>Go to the page for testing. </value>
-   </data>
-   <data name="GoToTestPage.Header" xml:space="preserve">
-     <value>Go to test page</value>
-   </data>
-   <data name="GoToUpdate.Content" xml:space="preserve">
-     <value>Go to update</value>
-   </data>
-   <data name="OSArchitectureTextBlock.Text" xml:space="preserve">
-     <value>OS architecture</value>
-   </data>
-   <data name="OSPlatformTextBlock.Text" xml:space="preserve">
-     <value>OS platform</value>
-   </data>
-   <data name="AboutSettingsHeader.Header" xml:space="preserve">
-     <value>About</value>
-   </data>
-   <data name="LastChecked.Text" xml:space="preserve">
-     <value>Last check time: </value>
-   </data>
-   <data name="LogFolderLink.Content" xml:space="preserve">
-     <value>log</value>
-   </data>
-   <data name="CheckFailed" xml:space="preserve">
-     <value>Check failed</value>
-   </data>
-   <data name="CheckingUpdates.Text" xml:space="preserve">
-     <value>Checking for updates...</value>
-   </data>
-   <data name="CheckUpdates.Content" xml:space="preserve">
-     <value>Check for updates</value>
-   </data>
+    <value>Apply Theme</value>
+  </data>
+  <data name="ThemesSettingsHeader.Header" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="UpdateSettingsHeader.Header" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>Latest</value>
+  </data>
+  <data name="WindowsColorButton.Content" xml:space="preserve">
+    <value>Windows color settings</value>
+  </data>
+  <data name="RadioThemeDark.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="RadioThemeDefault.Content" xml:space="preserve">
+    <value>Windows default</value>
+  </data>
+  <data name="RadioThemeLight.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="BackdropSettings.Description" xml:space="preserve">
+    <value>Choose the type of background color for Windows 11</value>
+  </data>
+  <data name="BackdropSettings.Header" xml:space="preserve">
+    <value>background color</value>
+  </data>
+  <data name="ConfigsSettingsHeader.Header" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="ReleaseNotes.Content" xml:space="preserve">
+    <value>Release Notes</value>
+  </data>
+  <data name="ResetSettings.Description" xml:space="preserve">
+    <value>Resets the settings for this application. </value>
+  </data>
+  <data name="ResetSettings.Header" xml:space="preserve">
+    <value>Reset app</value>
+  </data>
+  <data name="ResetSettingsButton.Content" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="ResetSettingsConfirm.Content" xml:space="preserve">
+    <value>is</value>
+  </data>
+  <data name="ResetSettingsTitle.Text" xml:space="preserve">
+    <value>Are you sure you want to reset the app? </value>
+  </data>
+  <data name="FeedbackLink.Content" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="FindUpdate" xml:space="preserve">
+    <value>New update found</value>
+  </data>
+  <data name="FrameworkSettings.Description" xml:space="preserve">
+    <value>Information about this application frame. </value>
+  </data>
+  <data name="FrameworkSettings.Header" xml:space="preserve">
+    <value>Frame information</value>
+  </data>
+  <data name="FrameworkTextBlock.Text" xml:space="preserve">
+    <value>frame</value>
+  </data>
+  <data name="GoToTestPage.Description" xml:space="preserve">
+    <value>Go to the page for testing. </value>
+  </data>
+  <data name="GoToTestPage.Header" xml:space="preserve">
+    <value>Go to test page</value>
+  </data>
+  <data name="GoToUpdate.Content" xml:space="preserve">
+    <value>Go to update</value>
+  </data>
+  <data name="OSArchitectureTextBlock.Text" xml:space="preserve">
+    <value>OS architecture</value>
+  </data>
+  <data name="OSPlatformTextBlock.Text" xml:space="preserve">
+    <value>OS platform</value>
+  </data>
+  <data name="AboutSettingsHeader.Header" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="LastChecked.Text" xml:space="preserve">
+    <value>Last check time: </value>
+  </data>
+  <data name="LogFolderLink.Content" xml:space="preserve">
+    <value>log</value>
+  </data>
+  <data name="CheckFailed" xml:space="preserve">
+    <value>Check failed</value>
+  </data>
+  <data name="CheckingUpdates.Text" xml:space="preserve">
+    <value>Checking for updates...</value>
+  </data>
+  <data name="CheckUpdates.Content" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
 </root>
