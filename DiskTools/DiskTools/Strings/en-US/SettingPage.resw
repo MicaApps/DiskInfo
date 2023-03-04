@@ -142,7 +142,7 @@
     <value>Light</value>
   </data>
   <data name="BackdropSettings.Description" xml:space="preserve">
-    <value>选择适用于 Windows 11 的背景色类型</value>
+    <value>Choose the type of background color for Windows 11</value>
   </data>
   <data name="BackdropSettings.Header" xml:space="preserve">
     <value>background color</value>
@@ -154,7 +154,7 @@
     <value>Release Notes</value>
   </data>
   <data name="ResetSettings.Description" xml:space="preserve">
-    <value>重置此应用程序的设置。</value>
+    <value>Resets the settings for this application. </value>
   </data>
   <data name="ResetSettings.Header" xml:space="preserve">
     <value>Reset app</value>
@@ -175,16 +175,16 @@
     <value>New update found</value>
   </data>
   <data name="FrameworkSettings.Description" xml:space="preserve">
-    <value>关于此应用程序框架的信息。</value>
+    <value>Information about this application frame. </value>
   </data>
   <data name="FrameworkSettings.Header" xml:space="preserve">
     <value>Frame information</value>
   </data>
   <data name="FrameworkTextBlock.Text" xml:space="preserve">
-    <value>框架</value>
+    <value>frame</value>
   </data>
   <data name="GoToTestPage.Description" xml:space="preserve">
-    <value>前往用于测试的页面。</value>
+    <value>Go to the page for testing. </value>
   </data>
   <data name="GoToTestPage.Header" xml:space="preserve">
     <value>Go to test page</value>
@@ -211,7 +211,7 @@
     <value>Check failed</value>
   </data>
   <data name="CheckingUpdates.Text" xml:space="preserve">
-    <value>正在检查更新……</value>
+    <value>Checking for updates...</value>
   </data>
   <data name="CheckUpdates.Content" xml:space="preserve">
     <value>Check for updates</value>
