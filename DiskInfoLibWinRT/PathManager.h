@@ -6,10 +6,12 @@ class PathManager
 	winrt::Windows::Storage::ApplicationData m_appData{ nullptr };
 
 	PathManager();
+
+	static std::wstring const& CurrentExeDir();
 public:
 	winrt::hstring SmartDir();
-	winrt::hstring DefaultLangPath();
-	winrt::hstring CurrentLangPath();
+	static winrt::hstring const& DefaultLangPath();
+	static winrt::hstring const& CurrentLangPath();
 
 	static PathManager& GetInstance();
 };

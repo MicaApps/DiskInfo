@@ -120,16 +120,9 @@ namespace winrt::DiskInfoLibWinRT::implementation
 					continue;
 
 				SmartAttribute attr{};
-				attr.Id = std::format(L"{:0>2x}", attribute.Id);
+				attr.Id = std::format(L"{:0>2X}", attribute.Id);
 
 				wchar_t buf[256]{};
-				static winrt::hstring const path{ [] {
-					TCHAR currentExePath[MAX_PATH]{};
-					GetModuleFileName(NULL, currentExePath, MAX_PATH);
-					std::wstring_view view{ currentExePath };
-					view = view.substr(0, view.rfind(L"\\"));
-					return std::wstring{ view } + LR"(\Assets\English.lang)";
-				}() };
 
 				GetPrivateProfileStringFx(
 					original.SmartKeyName,
@@ -137,17 +130,17 @@ namespace winrt::DiskInfoLibWinRT::implementation
 					L"",
 					buf,
 					sizeof(buf) / sizeof(wchar_t),
-					path.data()
+					PathManager::CurrentLangPath().data()
 				);
 
 				attr.Name = buf;
 
 				std::wstring rawValue;
 				for (auto byte : std::ranges::reverse_view(attribute.RawValue))
-					rawValue += std::format(L"{:0>2x}", byte);
+					rawValue += std::format(L"{:0>2X}", byte);
 
 				attr.RawValue = rawValue;
-				attr.Threshold = std::format(L"{:0>2x}", threshold.ThresholdValue);
+				attr.Threshold = std::format(L"{:0>2X}", threshold.ThresholdValue);
 
 				info.Attributes().Append(winrt::box_value(attr));
 			}
@@ -166,6 +159,8 @@ namespace winrt::DiskInfoLibWinRT::implementation
 		GraphData::GetInstance().SetDataSource(CAtaSmart::get_instance().vars);
 		m_DefaultLangPath = PathManager::GetInstance().DefaultLangPath().data();
 		m_CurrentLangPath = PathManager::GetInstance().CurrentLangPath().data();
+		MessageBox(NULL, m_DefaultLangPath, L"", 0);
+		MessageBox(NULL, m_CurrentLangPath, L"", 0);
 	}
 
 	void Class::UpdateAll()
