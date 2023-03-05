@@ -30,7 +30,7 @@
                             <FontIcon HorizontalAlignment="Center" VerticalAlignment="Center"
                                       Grid.Column="0"
                                       Glyph="{Binding Icon}"
-                                      FontSize="16" FontFamily="Segoe Fluent Icons" />
+                                      FontSize="16" FontFamily="/Assets/icon.ttf#Segoe Fluent Icons" />
                             <TextBlock VerticalAlignment="Center"
                                        Margin="2"
                                        Grid.Column="1"
