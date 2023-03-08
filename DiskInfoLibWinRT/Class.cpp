@@ -159,8 +159,6 @@ namespace winrt::DiskInfoLibWinRT::implementation
 		GraphData::GetInstance().SetDataSource(CAtaSmart::get_instance().vars);
 		m_DefaultLangPath = PathManager::GetInstance().DefaultLangPath().data();
 		m_CurrentLangPath = PathManager::GetInstance().CurrentLangPath().data();
-		MessageBox(NULL, m_DefaultLangPath, L"", 0);
-		MessageBox(NULL, m_CurrentLangPath, L"", 0);
 	}
 
 	void Class::UpdateAll()
