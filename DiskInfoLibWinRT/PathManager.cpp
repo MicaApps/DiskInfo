@@ -44,7 +44,7 @@ winrt::hstring PathManager::SmartDir()
 
 winrt::hstring const& PathManager::DefaultLangPath()
 {
-	static winrt::hstring result{ CurrentExeDir() + LR"(\Assets\CrystalDiskInfoLangFiles\Simplified Chinese.lang)" };
+	static winrt::hstring result{ CurrentExeDir() + LR"(\Assets\CrystalDiskInfoLangFiles\English.lang)" };
 	return result;
 }
 
@@ -55,29 +55,40 @@ static auto ToLower(std::string_view original)
 	return ret;
 }
 
+static auto ToLower(std::wstring_view original)
+{
+	std::wstring ret;
+	std::ranges::transform(original, std::back_inserter(ret), [](int c) {return std::tolower(c); });
+	return ret;
+}
+
 winrt::hstring const& PathManager::CurrentLangPath()
 {
 	static winrt::hstring result{
 		[]
 		{
 			/*
-				Match the current Display Language for "best" effort, eg:
-					currentLanaguageName					File
-					English (United State)					English
-					Chinese (Simpified, China)				Simplified
-					Chinese (Traditional, Hong Kong SAR)	Traditional
+				BCP 47 <===============> Language file in Assets/CrystalDiskInfoLangFiles (without extension), eg:
+				en-us						English
+				zh-cn						Simplified
 			*/
-			auto const currentLanguageCode = winrt::Windows::System::UserProfile::GlobalizationPreferences::Languages().GetAt(0);
-			auto const currentLanguageName = winrt::to_string(winrt::Windows::Globalization::Language{ currentLanguageCode }.DisplayName());
-			
-			std::string const currentLanguageNameLower = ToLower(currentLanguageName);
-			for (auto iter : std::filesystem::directory_iterator{ CurrentExeDir() + LR"(\Assets\CrystalDiskInfoLangFiles)" })
+			static std::unordered_map<std::wstring_view, std::wstring_view> languageMap
 			{
-				auto path = iter.path();
-				auto fileName = path.stem().string();
-				if (currentLanguageNameLower.find(ToLower(fileName)) != std::string::npos)
-					return winrt::to_hstring(path.string());
-			}
+				{L"en-us", L"English"},
+				{L"en-uk", L"English"},
+				{L"zh-cn", L"Simplified"},
+				{L"zh-hk", L"Traditional"},
+			};
+			auto const currentLanguageCode = winrt::Windows::System::UserProfile::GlobalizationPreferences::Languages().GetAt(0);
+			
+			wchar_t buf[LOCALE_NAME_MAX_LENGTH]{};
+			ResolveLocaleName(currentLanguageCode.data(), buf, std::size(buf));
+
+			std::wstring const currentLanguageCodeLower = ToLower(std::wstring_view{ buf });
+			auto const iter = languageMap.find(currentLanguageCodeLower);
+			if (iter != languageMap.end())
+				return winrt::hstring{ std::format(LR"({}\Assets\CrystalDiskInfoLangFiles\{}.lang)", CurrentExeDir(), iter->second) };
+			
 			return DefaultLangPath();
 		}()
 	};
