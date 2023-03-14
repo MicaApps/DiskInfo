@@ -128,9 +128,9 @@ namespace DiskTools.Helpers
                 SetConfigurationSourceTheme();
 
                 bool isdark = ThemeHelper.IsDarkTheme();
-                Color BackgroundColor = isdark ? Color.FromArgb(255, 44, 44, 44) : Color.FromArgb(255, 252, 252, 252);
-                float LuminosityOpacity = isdark ? 0.96f : 0.85f;
-                float TintOpacity = isdark ? 0.85f : 1f;
+                Color BackgroundColor = isdark ? Color.FromArgb(255, 33, 33, 33) : Color.FromArgb(255, 252, 252, 252);
+                float LuminosityOpacity = isdark ? 0.90f : 0.85f;
+                float TintOpacity = isdark ? 0.65f : 1f;
                 m_acrylicController = new DesktopAcrylicController { TintColor = BackgroundColor, FallbackColor = BackgroundColor , LuminosityOpacity = LuminosityOpacity, TintOpacity = TintOpacity };
 
                 // Enable the system backdrop.
