@@ -21,19 +21,7 @@ namespace DiskTools.Pages
         public List<DiskSmartInfoListItem> List3 { get; set; }
 
 
-        public bool IsCelsius = true;
-        public string CurrentTemp {
-            get { 
-                if (Info?.TemperatureData?.Count > 0) {
-                    var data = Info.TemperatureData[Info.TemperatureData.Count - 1];
-                    if (IsCelsius)
-                        return $"{data.YValue}℃";
-                    else
-                        return $"{Math.Round(32+data.YValue*1.8f)}℉";
-                }
-                return "";
-            }
-        }
+        public static bool IsCelsius { get; set; } = true;
 
         private static IValueConverter ReadableBytesConverter = new ReadableBytesConverter();
         private static IValueConverter ReadableCountConverter = new ReadableCountConverter();
@@ -44,7 +32,7 @@ namespace DiskTools.Pages
             InitializeComponent();
             this.DataContext = this;
         }
-
+        //Text="{x:Bind Info.TemperatureData, Con={StaticResource GetIListLastConverter}, ConverterParameter={Binding IsCelsius}}"
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -110,7 +98,7 @@ namespace DiskTools.Pages
 
         private void TextBlock_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e) {
             IsCelsius = !IsCelsius;
-            OnPropertyChanged("CurrentTemp");
+            OnPropertyChanged("Info");
         }
     }
 }
