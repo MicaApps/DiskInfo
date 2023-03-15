@@ -20,6 +20,21 @@ namespace DiskTools.Pages
         public List<DiskBasicInfoListItem> List2 { get; set; }
         public List<DiskSmartInfoListItem> List3 { get; set; }
 
+
+        public bool IsCelsius = true;
+        public string CurrentTemp {
+            get { 
+                if (Info?.TemperatureData?.Count > 0) {
+                    var data = Info.TemperatureData[Info.TemperatureData.Count - 1];
+                    if (IsCelsius)
+                        return $"{data.YValue}℃";
+                    else
+                        return $"{Math.Round(32+data.YValue*1.8f)}℉";
+                }
+                return "";
+            }
+        }
+
         private static IValueConverter ReadableBytesConverter = new ReadableBytesConverter();
         private static IValueConverter ReadableCountConverter = new ReadableCountConverter();
         private static IValueConverter ReadableRotationConverter = new ReadableRotationConverter();
@@ -92,5 +107,10 @@ namespace DiskTools.Pages
         }
 
         #endregion
+
+        private void TextBlock_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e) {
+            IsCelsius = !IsCelsius;
+            OnPropertyChanged("CurrentTemp");
+        }
     }
 }

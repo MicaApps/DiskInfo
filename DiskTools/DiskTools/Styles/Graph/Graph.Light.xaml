@@ -1,0 +1,17 @@
+<ResourceDictionary x:Name="GaugeDarkDictionary"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:DiskTools.Controls"
+                    xmlns:converters="using:DiskTools.Converters"
+                    xmlns:DTR="using:DiskTools.Helpers.DynamicThemeResource">
+    <BrushCollection x:Key="GraphShadowBrushes">
+        <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+            <GradientStop Offset="2" Color="#90000000" />
+            <GradientStop Offset="0" Color="#00000000" />
+        </LinearGradientBrush>
+    </BrushCollection>
+
+    <BrushCollection x:Key="GraphLineBrushes">
+        <SolidColorBrush Color="#000000" />
+    </BrushCollection>
+</ResourceDictionary>
