@@ -6,11 +6,13 @@
              xmlns:toolkit="using:CommunityToolkit.WinUI.UI.Controls"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <SolidColorBrush x:Key="MyBrush0" Color="White" />
-        <LinearGradientBrush x:Key="MyBrush" StartPoint="0,0" EndPoint="1.6,1">
-            <GradientStop x:Name="GradientStop9" Offset="1" Color="Transparent" />
-            <GradientStop x:Name="GradientStop10" Offset="0" Color="White" />
-        </LinearGradientBrush>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <!--  主题的使用请参考 https://learn.microsoft.com/zh-cn/windows/apps/design/style/xaml-resource-dictionary  -->
+                <ResourceDictionary x:Key="Light" Source="ms-appx:///Styles/SMART/SMART.Light.xaml" />
+                <ResourceDictionary x:Key="Dark" Source="ms-appx:///Styles/SMART/SMART.Dark.xaml" />
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid>
@@ -32,15 +34,15 @@
                         </Grid.ColumnDefinitions>
                         <Rectangle Grid.Row="1" Grid.Column="2"
                                    Grid.ColumnSpan="3"
-                                   Fill="{StaticResource MyBrush}"
+                                   Fill="{ThemeResource MyBrush}"
                                    Opacity="0.2" />
                         <toolkit:UniformGrid Grid.RowSpan="3"
                                              Rows="3" Columns="1">
                             <Rectangle Grid.Row="0"
-                                       Fill="{StaticResource MyBrush0}"
+                                       Fill="{ThemeResource MyBrush0}"
                                        Opacity="0.2" />
                             <Rectangle Grid.Row="2"
-                                       Fill="{StaticResource MyBrush0}"
+                                       Fill="{ThemeResource MyBrush0}"
                                        Opacity="0.2" />
                         </toolkit:UniformGrid>
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"

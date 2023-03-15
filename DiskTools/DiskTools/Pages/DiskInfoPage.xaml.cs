@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using DiskTools.Controls;
+using Windows.Media.Playback;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -22,14 +23,47 @@ namespace DiskTools.Pages
     public sealed partial class DiskInfoPage : Page, INotifyPropertyChanged
     {
         public int ID;
-
         public DiskInfoLibWinRT.AtaSmartInfo Info { get; set; }
         public List<DiskInfoPageListItem> NaviList { get; set; }
+        private int backdropIndex;
+
+        public int BackdropIndex {
+            get { return backdropIndex; }
+            set { 
+                backdropIndex = value;
+                OnPropertyChanged();
+            }
+        }
 
         public DiskInfoPage()
         {
             InitializeComponent();
             this.DataContext = this;
+            
+        }
+
+        private void Backdrop_BackdropTypeChanged(BackdropHelper sender, object args) {
+            UpdateBackdropIndex();
+        }
+
+        private void UpdateBackdropIndex() {
+            switch(UIHelper.MainWindow.Backdrop.Backdrop) {
+                case BackdropType.Mica:
+                    BackdropIndex = 0;
+                    break;
+                case BackdropType.MicaAlt:
+                    BackdropIndex = 0;
+                    break;
+                case BackdropType.DesktopAcrylic:
+                    BackdropIndex = 1;
+                    break;
+                case BackdropType.DefaultColor:
+                    BackdropIndex = 2;
+                    break;
+                default:
+                    BackdropIndex = 2;
+                    break;
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -66,6 +100,9 @@ namespace DiskTools.Pages
 
         private void Page_Loaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
+            UIHelper.MainWindow.Backdrop.BackdropTypeChanged -= Backdrop_BackdropTypeChanged;
+            UIHelper.MainWindow.Backdrop.BackdropTypeChanged += Backdrop_BackdropTypeChanged;
+            UpdateBackdropIndex();
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -93,8 +130,11 @@ namespace DiskTools.Pages
             }
         }
 
+
         #endregion
 
-       
+        private void Page_Unloaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e) {
+            UIHelper.MainWindow.Backdrop.BackdropTypeChanged -= Backdrop_BackdropTypeChanged;
+        }
     }
 }

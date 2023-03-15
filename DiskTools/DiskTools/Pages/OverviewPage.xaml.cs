@@ -20,6 +20,9 @@ namespace DiskTools.Pages
         public List<DiskBasicInfoListItem> List2 { get; set; }
         public List<DiskSmartInfoListItem> List3 { get; set; }
 
+
+        public static bool IsCelsius { get; set; } = true;
+
         private static IValueConverter ReadableBytesConverter = new ReadableBytesConverter();
         private static IValueConverter ReadableCountConverter = new ReadableCountConverter();
         private static IValueConverter ReadableRotationConverter = new ReadableRotationConverter();
@@ -29,7 +32,7 @@ namespace DiskTools.Pages
             InitializeComponent();
             this.DataContext = this;
         }
-
+        //Text="{x:Bind Info.TemperatureData, Con={StaticResource GetIListLastConverter}, ConverterParameter={Binding IsCelsius}}"
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -92,5 +95,10 @@ namespace DiskTools.Pages
         }
 
         #endregion
+
+        private void TextBlock_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e) {
+            IsCelsius = !IsCelsius;
+            OnPropertyChanged("Info");
+        }
     }
 }

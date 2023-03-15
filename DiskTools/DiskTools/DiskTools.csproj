@@ -34,6 +34,12 @@
     <ItemGroup>
       <None Remove="Controls\GaugeControl.xaml" />
       <None Remove="Pages\GraphPage.xaml" />
+      <None Remove="Styles\Graph\Graph.Dark.xaml" />
+      <None Remove="Styles\Graph\Graph.Light.xaml" />
+      <None Remove="Styles\Page\Page.Dark.xaml" />
+      <None Remove="Styles\Page\Page.Light.xaml" />
+      <None Remove="Styles\SMART\SMART.Dark.xaml" />
+      <None Remove="Styles\SMART\SMART.Light.xaml" />
     </ItemGroup>
 
   <ItemGroup>
@@ -188,6 +194,28 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Update="Pages\GraphPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Styles\Graph\Graph.Light.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Graph\Graph.Dark.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Page\Page.Light.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Page\Page.Dark.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Styles\SMART\SMART.Light.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\SMART\SMART.Dark.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
   </ItemGroup>

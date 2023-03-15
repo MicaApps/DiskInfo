@@ -2,17 +2,40 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:DTR="using:DiskTools.Helpers.DynamicThemeResource"
       NavigationCacheMode="Required" Loaded="Page_Loaded"
+      Unloaded="Page_Unloaded"
       mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <!--  主题的使用请参考 https://learn.microsoft.com/zh-cn/windows/apps/design/style/xaml-resource-dictionary  -->
+                <ResourceDictionary x:Key="Light" Source="ms-appx:///Styles/Page/Page.Light.xaml" />
+                <ResourceDictionary x:Key="Dark" Source="ms-appx:///Styles/Page/Page.Dark.xaml" />
+            </ResourceDictionary.ThemeDictionaries>
+
+            <DTR:BrushSelector x:Key="MyBrushSelector" SelectedIndex="{x:Bind BackdropIndex, Mode=OneWay}">
+                <DTR:BrushReference Value="{ThemeResource MicaBackground}" />
+                <DTR:BrushReference Value="{ThemeResource AcrylicBackground}" />
+                <DTR:BrushReference Value="{ThemeResource DefaultColorBackground}" />
+            </DTR:BrushSelector>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid x:Name="Root">
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>-->
+        
         <TwoPaneView x:Name="TwoPaneView"
-                     MinWideModeWidth="0" Pane1Length="232"
+                     Grid.Column="1"
+                     MinWideModeWidth="0" Pane1Length="242"
                      PanePriority="Pane2" TallModeConfiguration="SinglePane">
 
             <TwoPaneView.Pane1>
-                <Grid Padding="0,28,0,0" RowSpacing="8">
+                <Grid Padding="0,46,2,0" RowSpacing="8">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
@@ -27,14 +50,19 @@
             </TwoPaneView.Pane1>
 
             <TwoPaneView.Pane2>
-                <Grid>
-                    <Frame x:Name="DetailFrame" Margin="0,100,0,0" />
+                <Grid Background="{Binding Source={StaticResource MyBrushSelector}, Path=SelectedObject}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="LeftSplitter" Background="{ThemeResource MainSplitter}" Width="1"></Border>
+                    <Frame x:Name="DetailFrame" Grid.Column="1" Margin="0,100,0,0"/>
                     <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top"
+                               Grid.Column="1"
                                Margin="60,40,0,0"
                                Text="{Binding Info.Model}"
                                FontSize="28" />
                 </Grid>
-
             </TwoPaneView.Pane2>
         </TwoPaneView>
     </Grid>

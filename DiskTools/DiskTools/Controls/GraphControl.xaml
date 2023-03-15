@@ -10,9 +10,16 @@
              mc:Ignorable="d">
 
     <UserControl.Resources>
-        <converter:UnixTimeStampToTimeDateConverter x:Key="UnixTimeStampToTimeDateConverter" />
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <!--  主题的使用请参考 https://learn.microsoft.com/zh-cn/windows/apps/design/style/xaml-resource-dictionary  -->
+                <ResourceDictionary x:Key="Light" Source="ms-appx:///Styles/Graph/Graph.Light.xaml" />
+                <ResourceDictionary x:Key="Dark" Source="ms-appx:///Styles/Graph/Graph.Dark.xaml" />
+            </ResourceDictionary.ThemeDictionaries>
+            <converter:UnixTimeStampToTimeDateConverter x:Key="UnixTimeStampToTimeDateConverter" />
+        </ResourceDictionary>
     </UserControl.Resources>
-    <Grid Margin="10,20">
+    <Grid>
         <chart:SfCartesianChart VerticalAlignment="Stretch">
             <chart:SfCartesianChart.PlotAreaBackground>
                 <ImageBrush ImageSource="\Assets\dots.png" AlignmentX="Left"
@@ -21,16 +28,6 @@
 
             <!--  渐变画笔  -->
             <chart:SfCartesianChart.Resources>
-                <BrushCollection x:Key="customBrushes5">
-                    <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
-                        <GradientStop Offset="2" Color="#90FFffff" />
-                        <GradientStop Offset="0" Color="#00ffffff" />
-                    </LinearGradientBrush>
-                </BrushCollection>
-
-                <BrushCollection x:Key="customBrushes6">
-                    <SolidColorBrush Color="#ffffff" />
-                </BrushCollection>
 
                 <Style x:Key="LineStyle1" TargetType="Line">
                     <Setter Property="StrokeThickness" Value="0" />
@@ -50,6 +47,7 @@
 
             <chart:SfCartesianChart.YAxes>
                 <chart:NumericalAxis ShowMajorGridLines="False" ShowMinorGridLines="False"
+                                     Visibility="Collapsed"
                                      MajorTickStyle="{StaticResource LineStyle1}"
                                      MinorTickStyle="{StaticResource LineStyle1}"
                                      AxisLineStyle="{StaticResource LineStyle1}" />
@@ -60,12 +58,12 @@
                 <!--  折线  -->
                 <chart:LineSeries ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
                                   XBindingPath="XValue" YBindingPath="YValue"
-                                  PaletteBrushes="{StaticResource customBrushes6}" />
+                                  PaletteBrushes="{ThemeResource GraphLineBrushes}" />
 
                 <!--  面积  -->
                 <chart:AreaSeries ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
                                   XBindingPath="XValue" YBindingPath="YValue"
-                                  PaletteBrushes="{StaticResource customBrushes5}" />
+                                  PaletteBrushes="{ThemeResource GraphShadowBrushes}" />
 
             </chart:SfCartesianChart.Series>
         </chart:SfCartesianChart>
