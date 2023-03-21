@@ -19,6 +19,7 @@ namespace DiskInfo
             Backdrop = new BackdropHelper(this);
             InitializeComponent();
             SetBackdrop();
+            this.GetAppWindowForCurrentWindow().SetIcon("Assets/window_icon.ico");
         }
 
         private void SetBackdrop()

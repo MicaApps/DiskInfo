@@ -1,16 +1,12 @@
+using DiskInfo.Helpers;
+using DiskInfo.Services;
 using DiskInfo.ViewModels;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
-using DiskInfoLibWinRT;
-using Syncfusion.UI.Xaml.Gauges;
-using DiskInfo.Helpers;
 using System;
-using DiskInfo.Services;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Collections.Generic;
-using DiskInfo.Controls;
-using Windows.Media.Playback;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -27,9 +23,11 @@ namespace DiskInfo.Pages
         public List<DiskInfoPageListItem> NaviList { get; set; }
         private int backdropIndex;
 
-        public int BackdropIndex {
+        public int BackdropIndex
+        {
             get { return backdropIndex; }
-            set { 
+            set
+            {
                 backdropIndex = value;
                 OnPropertyChanged();
             }
@@ -39,15 +37,18 @@ namespace DiskInfo.Pages
         {
             InitializeComponent();
             this.DataContext = this;
-            
+
         }
 
-        private void Backdrop_BackdropTypeChanged(BackdropHelper sender, object args) {
+        private void Backdrop_BackdropTypeChanged(BackdropHelper sender, object args)
+        {
             UpdateBackdropIndex();
         }
 
-        private void UpdateBackdropIndex() {
-            switch(UIHelper.MainWindow.Backdrop.Backdrop) {
+        private void UpdateBackdropIndex()
+        {
+            switch (UIHelper.MainWindow.Backdrop.Backdrop)
+            {
                 case BackdropType.Mica:
                     BackdropIndex = 0;
                     break;
@@ -133,7 +134,8 @@ namespace DiskInfo.Pages
 
         #endregion
 
-        private void Page_Unloaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e) {
+        private void Page_Unloaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        {
             UIHelper.MainWindow.Backdrop.BackdropTypeChanged -= Backdrop_BackdropTypeChanged;
         }
     }

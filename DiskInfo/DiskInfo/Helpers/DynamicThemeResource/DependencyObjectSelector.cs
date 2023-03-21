@@ -1,13 +1,8 @@
-using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using Windows.Foundation.Collections;
+using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Markup;
+using System;
+using Windows.Foundation.Collections;
 
 namespace DiskInfo.Helpers.DynamicThemeResource
 {

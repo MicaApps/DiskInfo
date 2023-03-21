@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.WinUI.Helpers;
+using CommunityToolkit.WinUI.Helpers;
 using MetroLog;
 using MetroLog.Targets;
 using Microsoft.UI.Xaml;
@@ -14,6 +14,7 @@ namespace DiskInfo.Helpers
     public static partial class SettingsHelper
     {
         public const string UpdateDate = "UpdateDate";
+        public const string CurrentLanguage = "CurrentLanguage";
         public const string SelectedAppTheme = "SelectedAppTheme";
         public const string SelectedBackdrop = "SelectedBackdrop";
         public const string UpdateInterval = "UpdateInterval";
@@ -34,6 +35,10 @@ namespace DiskInfo.Helpers
             {
                 LocalObject.Save(UpdateDate, new DateTime());
             }
+            if (!LocalObject.KeyExists(CurrentLanguage))
+            {
+                LocalObject.Save(CurrentLanguage, LanguageHelper.AutoLanguageCode);
+            }
             if (!LocalObject.KeyExists(SelectedAppTheme))
             {
                 LocalObject.Save(SelectedAppTheme, ElementTheme.Default);
@@ -49,6 +54,8 @@ namespace DiskInfo.Helpers
     {
         public static readonly ILogManager LogManager = LogManagerFactory.CreateLogManager(GetDefaultReleaseConfiguration());
         private static readonly ApplicationDataStorageHelper LocalObject = ApplicationDataStorageHelper.GetCurrent(new SystemTextJsonObjectSerializer());
+
+        static SettingsHelper() => SetDefaultSettings();
 
         private static LoggingConfiguration GetDefaultReleaseConfiguration()
         {

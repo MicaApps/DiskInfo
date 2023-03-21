@@ -1,7 +1,9 @@
-﻿using DiskInfo.Pages;
+using DiskInfo.Pages;
 using Microsoft.UI.Windowing;
 using System;
 using System.Text;
+using Windows.Win32;
+using Windows.Win32.Foundation;
 using WinRT.Interop;
 
 namespace DiskInfo.Helpers
@@ -17,7 +19,7 @@ namespace DiskInfo.Helpers
         public static int GetActualPixel(this double pixel)
         {
             IntPtr windowHandle = WindowNative.GetWindowHandle(MainWindow);
-            int currentDpi = PInvoke.User32.GetDpiForWindow(windowHandle);
+            uint currentDpi = PInvoke.GetDpiForWindow(new HWND(windowHandle));
             return Convert.ToInt32(pixel * (currentDpi / 96.0));
         }
 

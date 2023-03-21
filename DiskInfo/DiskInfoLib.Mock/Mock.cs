@@ -1,15 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
-
-
 namespace DiskInfoLibWinRT
 {
     public class AtaSmartInfo
@@ -341,7 +329,7 @@ namespace DiskInfoLibWinRT
 //        }
 //        public static void set_PowerOnCount(IObjectReference _obj, uint value)
 //        {
-   
+
 //        }
 
 //        public static uint get_PowerOnTime(IObjectReference _obj)

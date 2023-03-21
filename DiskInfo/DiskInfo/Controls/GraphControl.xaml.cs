@@ -1,8 +1,6 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Media;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace DiskInfo.Controls
 {

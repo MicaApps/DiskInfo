@@ -2,7 +2,10 @@
     x:Class="DiskInfo.Pages.SettingPages.TestPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:DiskInfo.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:globalization="using:System.Globalization"
+    xmlns:helper="using:DiskInfo.Helpers"
     xmlns:local="using:DiskInfo.Pages.SettingPages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -13,6 +16,41 @@
                     <ReorderThemeTransition />
                 </TransitionCollection>
             </StackPanel.ChildrenTransitions>
+            <controls:SettingsGroup x:Uid="/TestPage/UITestSettingsHeader">
+                <controls:Setting x:Uid="/TestPage/TitleBarSettings" Icon="&#xE737;">
+                    <ToggleSwitch IsOn="{x:Bind IsExtendsTitleBar, Mode=TwoWay}" Style="{StaticResource ToggleSwitchSettingStyle}" />
+                </controls:Setting>
+                <controls:Setting x:Uid="/TestPage/LanguageSettings" Icon="&#xF2B7;">
+                    <ComboBox
+                        ItemsSource="{x:Bind helper:LanguageHelper.SupportCultures}"
+                        Loaded="ComboBox_Loaded"
+                        SelectionChanged="ComboBox_SelectionChanged"
+                        Tag="Language">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate x:DataType="globalization:CultureInfo">
+                                <TextBlock>
+                                    <Run Text="{x:Bind DisplayName}" />
+                                </TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </controls:Setting>
+                <controls:Setting x:Uid="/TestPage/CompactOverlaySettings" Icon="&#xE944;">
+                    <StackPanel
+                        Margin="0,2"
+                        Orientation="Horizontal"
+                        Spacing="4">
+                        <Button
+                            x:Uid="/TestPage/EnterPIP"
+                            Click="Button_Click"
+                            Tag="EnterPIP" />
+                        <Button
+                            x:Uid="/TestPage/OutPIP"
+                            Click="Button_Click"
+                            Tag="OutPIP" />
+                    </StackPanel>
+                </controls:Setting>
+            </controls:SettingsGroup>
         </StackPanel>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="LayoutVisualStates">
