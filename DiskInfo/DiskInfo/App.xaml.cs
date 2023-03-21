@@ -6,16 +6,19 @@ using System.IO;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace DiskInfo {
+namespace DiskInfo
+{
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    public partial class App : Application {
+    public partial class App : Application
+    {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
-        public App() {
+        public App()
+        {
             InitializeComponent();
             UnhandledException += Application_UnhandledException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -36,7 +39,8 @@ namespace DiskInfo {
         /// <param name="args">Details about the launch request and process.</param>
         private MainWindow m_window;
 
-        protected override void OnLaunched(LaunchActivatedEventArgs args) {
+        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        {
             RegisterExceptionHandlingSynchronizationContext();
             m_window = new();
             m_window.TrackWindow();
@@ -45,13 +49,16 @@ namespace DiskInfo {
             m_window.Activate();
         }
 
-        private void Application_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e) {
+        private void Application_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
+        {
             SettingsHelper.LogManager.GetLogger("Unhandled Exception - Application").Error(e.Exception.ExceptionToMessage(), e.Exception);
             e.Handled = true;
         }
 
-        private void CurrentDomain_UnhandledException(object sender, System.UnhandledExceptionEventArgs e) {
-            if (e.ExceptionObject is Exception Exception) {
+        private void CurrentDomain_UnhandledException(object sender, System.UnhandledExceptionEventArgs e)
+        {
+            if (e.ExceptionObject is Exception Exception)
+            {
                 SettingsHelper.LogManager.GetLogger("Unhandled Exception - CurrentDomain").Error(Exception.ExceptionToMessage(), Exception);
             }
         }
@@ -59,13 +66,15 @@ namespace DiskInfo {
         /// <summary>
         /// Should be called from OnActivated and OnLaunched
         /// </summary>
-        private void RegisterExceptionHandlingSynchronizationContext() {
+        private void RegisterExceptionHandlingSynchronizationContext()
+        {
             ExceptionHandlingSynchronizationContext
                 .Register()
                 .UnhandledException += SynchronizationContext_UnhandledException;
         }
 
-        private void SynchronizationContext_UnhandledException(object sender, Helpers.UnhandledExceptionEventArgs e) {
+        private void SynchronizationContext_UnhandledException(object sender, Helpers.UnhandledExceptionEventArgs e)
+        {
             SettingsHelper.LogManager.GetLogger("Unhandled Exception - SynchronizationContext").Error(e.Exception.ExceptionToMessage(), e.Exception);
             e.Handled = true;
         }
