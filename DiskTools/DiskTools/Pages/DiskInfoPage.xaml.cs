@@ -1,21 +1,21 @@
-using DiskTools.ViewModels;
+using DiskInfo.ViewModels;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using DiskInfoLibWinRT;
 using Syncfusion.UI.Xaml.Gauges;
-using DiskTools.Helpers;
+using DiskInfo.Helpers;
 using System;
-using DiskTools.Services;
+using DiskInfo.Services;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
-using DiskTools.Controls;
+using DiskInfo.Controls;
 using Windows.Media.Playback;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace DiskTools.Pages
+namespace DiskInfo.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

@@ -1,11 +1,11 @@
 <Window
-    x:Class="DiskTools.MainWindow"
+    x:Class="DiskInfo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="using:DiskTools"
+    xmlns:local="using:DiskInfo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:pages="using:DiskTools.Pages"
+    xmlns:pages="using:DiskInfo.Pages"
     mc:Ignorable="d">
     <pages:MainPage />
 </Window>

@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{B1181B36-6
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiskInfoLibWinRT", "DiskInfoLibWinRT\DiskInfoLibWinRT.vcxproj", "{4F404025-D8EE-45E5-BD66-99E5C0DF86DA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiskToolsTest", "DiskToolsTest\DiskToolsTest.vcxproj", "{4758E533-3F65-40FB-8768-8C8498E859B1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiskInfoTest", "DiskInfoTest\DiskInfoTest.vcxproj", "{4758E533-3F65-40FB-8768-8C8498E859B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     public static class OSVersionHelper
     {

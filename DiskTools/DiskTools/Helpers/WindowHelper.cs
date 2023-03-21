@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using WinRT.Interop;
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     // Helpers class to allow the app to find the Window that contains an
     // arbitrary UIElement (GetWindowForElement).  To do this, we keep track

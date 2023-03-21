@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiskTools.Converters
+namespace DiskInfo.Converters
 {
     class ReadableTimeConverter : Microsoft.UI.Xaml.Data.IValueConverter
     {

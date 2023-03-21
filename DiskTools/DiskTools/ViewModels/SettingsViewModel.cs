@@ -1,8 +1,8 @@
 using APKInstaller.Helpers;
 using CommunityToolkit.WinUI;
-using DiskTools.Helpers;
-using DiskTools.Models;
-using DiskTools.Pages.SettingPages;
+using DiskInfo.Helpers;
+using DiskInfo.Models;
+using DiskInfo.Pages.SettingPages;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.Windows.AppLifecycle;
@@ -16,7 +16,7 @@ using Windows.Storage;
 using Windows.System.Threading;
 using WinRT;
 
-namespace DiskTools.ViewModels
+namespace DiskInfo.ViewModels
 {
     public class SettingsViewModel : INotifyPropertyChanged
     {

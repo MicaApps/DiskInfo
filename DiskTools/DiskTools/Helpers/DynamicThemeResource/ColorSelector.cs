@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiskTools.Helpers.DynamicThemeResource
+namespace DiskInfo.Helpers.DynamicThemeResource
 {
     public sealed class ColorSelector : DependencyObjectSelector<ColorWrapper>
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
 
-namespace DiskTools.Helpers.DynamicThemeResource
+namespace DiskInfo.Helpers.DynamicThemeResource
 {
     public class ColorWrapper : DependencyObject
     {

@@ -1,10 +1,10 @@
 <Page
-    x:Class="DiskTools.Pages.MainPage"
+    x:Class="DiskInfo.Pages.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:DiskTools.Controls"
+    xmlns:controls="using:DiskInfo.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="using:DiskTools.Pages"
+    xmlns:local="using:DiskInfo.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 

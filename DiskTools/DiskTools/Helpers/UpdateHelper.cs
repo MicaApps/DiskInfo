@@ -1,4 +1,4 @@
-﻿using DiskTools.Models;
+﻿using DiskInfo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     public static class UpdateHelper
     {

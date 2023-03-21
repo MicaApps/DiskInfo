@@ -1,9 +1,9 @@
 <Application
-    x:Class="DiskTools.App"
+    x:Class="DiskInfo.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="using:CommunityToolkit.WinUI.UI.Converters"
-    xmlns:local="using:DiskTools">
+    xmlns:local="using:DiskInfo">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

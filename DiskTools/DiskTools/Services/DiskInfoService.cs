@@ -1,5 +1,5 @@
 using DiskInfoLibWinRT;
-using DiskTools.Helpers;
+using DiskInfo.Helpers;
 using Microsoft.UI.Xaml.Media.Animation;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiskTools.Services
+namespace DiskInfo.Services
 {
     public class DiskInfoService
     {

@@ -1,4 +1,4 @@
-using DiskTools.Helpers;
+using DiskInfo.Helpers;
 using Microsoft.UI.Xaml;
 using System;
 using System.IO;
@@ -6,7 +6,7 @@ using System.IO;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace DiskTools {
+namespace DiskInfo {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>

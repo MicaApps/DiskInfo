@@ -9,7 +9,7 @@ using System.Xml.Linq;
 using Windows.Foundation.Collections;
 using Microsoft.UI.Xaml.Markup;
 
-namespace DiskTools.Helpers.DynamicThemeResource
+namespace DiskInfo.Helpers.DynamicThemeResource
 {
     [ContentProperty(Name = nameof(References))]
     public class DependencyObjectSelector<T> : DependencyObject where T : DependencyObject

@@ -1,10 +1,10 @@
 {
   "profiles": {
-    "DiskTools (Package)": {
+    "DiskInfo (Package)": {
       "commandName": "MsixPackage",
       "nativeDebugging": true
     },
-    "DiskTools (Unpackaged)": {
+    "DiskInfo (Unpackaged)": {
       "commandName": "Project"
     }
   }

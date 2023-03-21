@@ -9,7 +9,7 @@ using Windows.Storage;
 using IObjectSerializer = CommunityToolkit.Common.Helpers.IObjectSerializer;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     public static partial class SettingsHelper
     {

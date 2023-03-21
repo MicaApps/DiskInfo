@@ -1,5 +1,5 @@
 ========================================================================
-    C++/WinRT DiskToolsTest Project Overview
+    C++/WinRT DiskInfoTest Project Overview
 ========================================================================
 
 This project demonstrates how to get started consuming Windows Runtime 

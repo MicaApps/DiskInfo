@@ -4,7 +4,7 @@ using Microsoft.UI.Xaml.Media;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace DiskTools.Controls
+namespace DiskInfo.Controls
 {
     public sealed partial class GraphControl : UserControl
     {
