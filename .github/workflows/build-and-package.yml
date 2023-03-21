@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [master]
     paths:
-    - 'DiskTools/**'
+    - 'DiskInfo/**'
 
 env:
   DOTNET_VERSION: '6.0.x' # The .NET SDK version to use
@@ -17,8 +17,8 @@ jobs:
     runs-on: windows-latest
 
     env:
-      Solution_Name: DiskTools.sln
-      Project_Directory: DiskTools/DiskTools
+      Solution_Name: DiskInfo.sln
+      Project_Directory: DiskInfo/DiskInfo
 
     steps:
     - name: Checkout
@@ -46,7 +46,7 @@ jobs:
       uses: NuGet/setup-nuget@v1.1.1
     
     - name: Nuget restore
-      run: nuget restore DiskTools.sln
+      run: nuget restore DiskInfo.sln
 
     # Create the app package by building and packaging the Windows Application Packaging project
     - name: Create the app package
@@ -63,4 +63,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: MSIX Package
-        path: DiskTools/DiskTools/AppxPackages/**
+        path: DiskInfo/DiskInfo/AppxPackages/**
