@@ -125,12 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DiskInfoLibWinRT">
-      <HintPath>..\x64\Debug\DiskInfoLibWinRT\DiskInfoLibWinRT.winmd</HintPath>
+      <HintPath>..\x64\Debug\DiskInfoLib\DiskInfoLibWinRT.winmd</HintPath>
       <IsWinMDFile>true</IsWinMDFile>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DiskInfoLibWinRT\DiskInfoLibWinRT.vcxproj">
+    <ProjectReference Include="..\DiskInfoLib\DiskInfoLibWinRT.vcxproj">
       <Project>{4f404025-d8ee-45e5-bd66-99e5c0df86da}</Project>
     </ProjectReference>
   </ItemGroup>

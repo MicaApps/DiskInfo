@@ -54,6 +54,8 @@ namespace DiskInfoLibWinRT
 
         public string Standard { get; set; }
 
+        public int Life { get; set; }
+
         public System.Collections.Generic.IList<GraphDataPoint> TemperatureData { get; set; }
         public System.Collections.Generic.IList<GraphDataPoint> ReallocatedSectorsData { get; set; }
         public System.Collections.Generic.IList<GraphDataPoint> PowerOnHoursData { get; set; }
