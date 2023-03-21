@@ -1,4 +1,4 @@
-﻿using APKInstaller.Helpers;
+﻿using DiskInfo.Helpers;
 using System.Text.RegularExpressions;
 
 namespace DiskInfo.Models
