@@ -1,4 +1,4 @@
-using APKInstaller.Helpers;
+using DiskInfo.Helpers;
 using CommunityToolkit.WinUI;
 using DiskInfo.Helpers;
 using DiskInfo.Models;

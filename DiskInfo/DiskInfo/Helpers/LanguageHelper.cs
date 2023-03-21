@@ -4,7 +4,7 @@ using System.Linq;
 using Windows.Globalization;
 using Windows.System.UserProfile;
 
-namespace APKInstaller.Helpers
+namespace DiskInfo.Helpers
 {
     public static class LanguageHelper
     {

@@ -6,7 +6,6 @@
     <BuiltInComInteropSupport>True</BuiltInComInteropSupport>
     <CsWinRTIncludes>DiskInfoLibWinRT</CsWinRTIncludes>
     <DefaultLanguage>zh-CN</DefaultLanguage>
-    <Nullable>enable</Nullable>
     <OutputType>WinExe</OutputType>
     <Platforms>x86;x64;ARM64</Platforms>
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
