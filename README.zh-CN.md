@@ -29,15 +29,15 @@
 ## 构建
 ### 解决方案结构
 ```
-DiskTools
+DiskInfo
     \libs
-        DiskInfoLibWinRT ---    C++/WinRT层, 提供给UI层使用的磁盘信息(正在开发中)。
-        DiskToolsTest ---       DiskInfoLibWinRT的测试库。
-        MockDiskInfo ---        假的DiskInfoLibWinRT引用，提供给UI层进行界面测试使用。
-    DiskTools ---               C#/WinUI 3 项目，提供了DiskInfo的UI层.
+        DiskInfoLib ---    C++/WinRT层, 提供给UI层使用的磁盘信息(正在开发中)。
+        DiskInfoTest ---       DiskInfoLib的测试库。
+        MockDiskInfo ---        假的DiskInfoLib引用，提供给UI层进行界面测试使用。
+    DiskInfo ---               C#/WinUI 3 项目，提供了DiskInfo的UI层.
 ```
 ### WinRT 层
-`DiskInfoLibWinRT` 是一个经过转化后可以调用Win32 API的 C++/WinRT 项目。
+`DiskInfoLib` 是一个经过转化后可以调用Win32 API的 C++/WinRT 项目。
 它在 Visual Studio 的 `Windows 运行时组件` 项目模板的基础上，添加了额外的宏定义以及库路径。
 为了能够在 C# 项目中使用(.NET6),
 - 添加 [cs/winrt](https://github.com/microsoft/cswinrt) 的 NuGet 包。

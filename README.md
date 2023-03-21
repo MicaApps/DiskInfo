@@ -31,15 +31,15 @@ This project aims at providing a mordern appearance for DiskInfo. The new design
 ## Build
 ### Solution Structure
 ```
-DiskTools
+DiskInfo
     \libs
-        DiskInfoLibWinRT ---    C++/WinRT ports of the above DiskInfo project, to be consumed directly to UI layer (developing).
-        DiskToolsTest ---       a library for testing DiskInfoLibWinRT.
-        MockDiskInfo ---        Fake DiskInfoLibWinRT reference that provide sample data for UI layer test.
-    DiskTools ---               C#/WinUI 3 project that provide the UI layer of DiskInfo.
+        DiskInfoLib ---    C++/WinRT ports of the above DiskInfo project, to be consumed directly to UI layer (developing).
+        DiskInfoTest ---       a library for testing DiskInfoLib.
+        MockDiskInfo ---        Fake DiskInfoLib reference that provide sample data for UI layer test.
+    DiskInfo ---               C#/WinUI 3 project that provide the UI layer of DiskInfo.
 ```
 ### WinRT port
-The `DiskInfoLibWinRT` is a C++/WinRT project transformed to be able to allowed to call Win32 APIs. 
+The `DiskInfoLib` is a C++/WinRT project transformed to be able to allowed to call Win32 APIs. 
 It's basically using Visual Studio's `Windows Runtime Component` project template, but with additional macros defined and additional library paths added. 
 In order to be consumed by the C# project (.NET6), 
 - add [cs/winrt](https://github.com/microsoft/cswinrt) NuGet package.
