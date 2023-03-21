@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
 
-namespace DiskTools.Converters
+namespace DiskInfo.Converters
 {
     /// <summary>
     /// 数学相关的代码，勿动！！！

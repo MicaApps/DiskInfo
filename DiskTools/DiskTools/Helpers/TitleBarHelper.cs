@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using WinRT.Interop;
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     public static class TitleBarHelper
     {

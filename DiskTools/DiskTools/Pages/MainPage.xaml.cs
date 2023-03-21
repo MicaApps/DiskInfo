@@ -1,9 +1,9 @@
 
 using CommunityToolkit.WinUI.UI;
-using DiskTools.Controls;
-using DiskTools.Helpers;
-using DiskTools.Pages.SettingPages;
-using DiskTools.Services;
+using DiskInfo.Controls;
+using DiskInfo.Helpers;
+using DiskInfo.Pages.SettingPages;
+using DiskInfo.Services;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation;
@@ -21,7 +21,7 @@ using Windows.Graphics;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace DiskTools.Pages
+namespace DiskInfo.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

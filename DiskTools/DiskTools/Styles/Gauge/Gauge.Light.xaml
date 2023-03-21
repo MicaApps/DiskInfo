@@ -1,9 +1,9 @@
 <ResourceDictionary x:Name="GaugeLightDictionary"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="using:DiskTools.Controls"
-                    xmlns:converters="using:DiskTools.Converters"
-                    xmlns:DTR="using:DiskTools.Helpers.DynamicThemeResource">
+                    xmlns:controls="using:DiskInfo.Controls"
+                    xmlns:converters="using:DiskInfo.Converters"
+                    xmlns:DTR="using:DiskInfo.Helpers.DynamicThemeResource">
     <!--  定位参数勿动！！颜色可以改  -->
     <converters:PointerBrushCenterConverter x:Key="PointerBrushCenterConverter" />
     <SolidColorBrush x:Key="OuterTickBrush" Color="#10000000" />

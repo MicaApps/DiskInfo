@@ -14,7 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 
 
-namespace DiskTools.Controls
+namespace DiskInfo.Controls
 {
     public partial class DiskSmartInfoControl : UserControl
     {

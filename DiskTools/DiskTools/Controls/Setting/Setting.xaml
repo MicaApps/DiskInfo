@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:DiskTools.Controls">
+    xmlns:controls="using:DiskInfo.Controls">
     <Style TargetType="controls:Setting">
         <Setter Property="Padding" Value="16" />
         <Setter Property="Margin" Value="0,0,0,0" />

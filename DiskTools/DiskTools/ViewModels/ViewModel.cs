@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DiskInfoLibWinRT;
-using DiskTools.Helpers;
-using DiskTools.Services;
+using DiskInfo.Helpers;
+using DiskInfo.Services;
 
-namespace DiskTools
+namespace DiskInfo
 {
     public class ViewModel
     {

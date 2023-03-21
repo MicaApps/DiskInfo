@@ -1,9 +1,9 @@
 <ResourceDictionary x:Name="PageDarkDictionary"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="using:DiskTools.Controls"
-                    xmlns:converters="using:DiskTools.Converters"
-                    xmlns:DTR="using:DiskTools.Helpers.DynamicThemeResource">
+                    xmlns:controls="using:DiskInfo.Controls"
+                    xmlns:converters="using:DiskInfo.Converters"
+                    xmlns:DTR="using:DiskInfo.Helpers.DynamicThemeResource">
     <SolidColorBrush x:Key="MicaBackground" Color="#4c3a3a3a" />
     <SolidColorBrush x:Key="AcrylicBackground" Color="#1a000000" />
     <SolidColorBrush x:Key="DefaultColorBackground" Color="Transparent" />

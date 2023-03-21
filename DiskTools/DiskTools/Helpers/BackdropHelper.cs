@@ -6,7 +6,7 @@ using Windows.Foundation;
 using Windows.UI;
 using WinRT; // required to support Window.As<ICompositionSupportsSystemBackdrop>()
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     public enum BackdropType
     {

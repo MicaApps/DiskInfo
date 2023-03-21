@@ -4,7 +4,7 @@ using Microsoft.UI.Xaml;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     /// <summary>
     /// Class providing functionality around switching and restoring theme settings

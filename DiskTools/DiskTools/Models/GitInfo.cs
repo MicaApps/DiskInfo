@@ -1,7 +1,7 @@
 ﻿using APKInstaller.Helpers;
 using System.Text.RegularExpressions;
 
-namespace DiskTools.Models
+namespace DiskInfo.Models
 {
     public class GitInfo
     {

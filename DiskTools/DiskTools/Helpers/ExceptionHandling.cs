@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     /// <summary>
     /// Wrapper around a standard synchronization context, that catches any unhandled exceptions.

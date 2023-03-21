@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices; // For DllImport
 using Windows.System;
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     public class WindowsSystemDispatcherQueueHelper
     {

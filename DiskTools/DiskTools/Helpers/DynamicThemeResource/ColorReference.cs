@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
 
-namespace DiskTools.Helpers.DynamicThemeResource
+namespace DiskInfo.Helpers.DynamicThemeResource
 {
     public sealed class ColorReference : DependencyObjectReference<ColorWrapper>
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace DiskTools.Models
+namespace DiskInfo.Models
 {
     public class UpdateInfo
     {

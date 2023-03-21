@@ -9,9 +9,10 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{4758e533-3f65-40fb-8768-8c8498e859b1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>DiskToolsTest</RootNamespace>
+    <RootNamespace>DiskInfoTest</RootNamespace>
     <WindowsTargetPlatformVersion Condition=" '$(WindowsTargetPlatformVersion)' == '' ">10.0.22621.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.17134.0</WindowsTargetPlatformMinVersion>
+    <ProjectName>DiskInfoTest</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <ItemGroup Label="ProjectConfigurations">

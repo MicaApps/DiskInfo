@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:DiskTools.Controls">
+    xmlns:controls="using:DiskInfo.Controls">
     <!--  Icon  -->
     <x:String x:Key="SettingChevronLinkGlyph">&#xE8A7;</x:String>
     <x:String x:Key="SettingChevronRightGlyph">&#xE76C;</x:String>

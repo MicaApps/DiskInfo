@@ -1,9 +1,9 @@
 <ResourceDictionary x:Name="GaugeDarkDictionary"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="using:DiskTools.Controls"
-                    xmlns:converters="using:DiskTools.Converters"
-                    xmlns:DTR="using:DiskTools.Helpers.DynamicThemeResource">
+                    xmlns:controls="using:DiskInfo.Controls"
+                    xmlns:converters="using:DiskInfo.Converters"
+                    xmlns:DTR="using:DiskInfo.Helpers.DynamicThemeResource">
     <BrushCollection x:Key="GraphShadowBrushes">
         <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
             <GradientStop Offset="2" Color="#90000000" />

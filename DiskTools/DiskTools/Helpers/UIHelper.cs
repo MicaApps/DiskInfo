@@ -1,10 +1,10 @@
-﻿using DiskTools.Pages;
+﻿using DiskInfo.Pages;
 using Microsoft.UI.Windowing;
 using System;
 using System.Text;
 using WinRT.Interop;
 
-namespace DiskTools.Helpers
+namespace DiskInfo.Helpers
 {
     public static class UIHelper
     {

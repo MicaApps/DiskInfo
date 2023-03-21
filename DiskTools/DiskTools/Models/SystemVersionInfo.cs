@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DiskTools.Models
+namespace DiskInfo.Models
 {
     public readonly struct SystemVersionInfo
     {
