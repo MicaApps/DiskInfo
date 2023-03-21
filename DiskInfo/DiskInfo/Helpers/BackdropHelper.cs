@@ -1,7 +1,6 @@
 using Microsoft.UI.Composition;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Xaml;
-using System;
 using Windows.Foundation;
 using Windows.UI;
 using WinRT; // required to support Window.As<ICompositionSupportsSystemBackdrop>()
@@ -131,7 +130,7 @@ namespace DiskInfo.Helpers
                 Color BackgroundColor = isdark ? Color.FromArgb(255, 33, 33, 33) : Color.FromArgb(255, 252, 252, 252);
                 float LuminosityOpacity = isdark ? 0.90f : 0.85f;
                 float TintOpacity = isdark ? 0.65f : 1f;
-                m_acrylicController = new DesktopAcrylicController { TintColor = BackgroundColor, FallbackColor = BackgroundColor , LuminosityOpacity = LuminosityOpacity, TintOpacity = TintOpacity };
+                m_acrylicController = new DesktopAcrylicController { TintColor = BackgroundColor, FallbackColor = BackgroundColor, LuminosityOpacity = LuminosityOpacity, TintOpacity = TintOpacity };
 
                 // Enable the system backdrop.
                 // Note: Be sure to have "using WinRT;" to support the Window.As<...>() call.

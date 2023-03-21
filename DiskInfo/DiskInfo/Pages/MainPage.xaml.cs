@@ -12,7 +12,6 @@ using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.ComponentModel;
-using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Windows.ApplicationModel.Resources;
@@ -74,6 +73,7 @@ namespace DiskInfo.Pages
         private void AddNavigationMenuItems()
         {
             int i = 0;
+            if (DiskInfoService.Instance.Info == null) { return; }
             foreach (var drive in DiskInfoService.Instance.Info)
             {
                 NavigationViewItem itemGroup = new NavigationViewItem() { Content = drive.Model, Tag = i, DataContext = drive, Icon = new FontIcon() { Glyph = "\uEDA2" } };

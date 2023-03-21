@@ -9,7 +9,6 @@ using Microsoft.Windows.AppLifecycle;
 using System;
 using System.ComponentModel;
 using System.Reflection;
-using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Resources;
 using Windows.Storage;
@@ -79,7 +78,7 @@ namespace DiskInfo.ViewModels
                 if (value < 0 || value > intervals.Length)
                     return;
 
-                if(UpdateInterval != value) 
+                if (UpdateInterval != value)
                 {
                     SettingsHelper.Set(SettingsHelper.UpdateInterval, value);
                 }

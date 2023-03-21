@@ -46,7 +46,7 @@
                 </controls:Setting>
             </controls:SettingsGroup>
 
-            <!--配置设置-->
+            <!--  配置设置  -->
             <controls:SettingsGroup x:Uid="/SettingPage/ConfigsSettingsHeader">
                 <controls:SettingExpander>
 
@@ -57,9 +57,9 @@
                     <controls:SettingExpander.Content>
                         <Grid Style="{StaticResource ExpanderContentGridStyle}">
                             <StackPanel HorizontalAlignment="Left">
-                                <TextBlock Text="Email" Margin="0 10"/>
-                                <TextBlock Text="Sounds "  Margin="0 10"/>
-                                <TextBlock Text="Log" Margin="0 10"/>
+                                <TextBlock Margin="0,10" Text="Email" />
+                                <TextBlock Margin="0,10" Text="Sounds " />
+                                <TextBlock Margin="0,10" Text="Log" />
                             </StackPanel>
                             <StackPanel HorizontalAlignment="Right">
                                 <ToggleSwitch />
@@ -72,29 +72,29 @@
                     </controls:SettingExpander.Content>
                 </controls:SettingExpander>
                 <controls:SettingExpander>
-                    
+
                     <controls:SettingExpander.Header>
-                        <controls:Setting Header="Auto Refresh time" Icon="&#xE149;" >
-                            <ToggleSwitch IsOn="{Binding AutoRefresh, Mode=TwoWay}"/>
+                        <controls:Setting Header="Auto Refresh time" Icon="&#xE149;">
+                            <ToggleSwitch IsOn="{Binding AutoRefresh, Mode=TwoWay}" Style="{StaticResource ToggleSwitchSettingStyle}" />
                         </controls:Setting>
-                        
+
                     </controls:SettingExpander.Header>
 
                     <controls:SettingExpander.Content>
                         <Grid Style="{StaticResource ExpanderContentGridStyle}">
-                            <RadioButtons SelectedIndex="{Binding UpdateInterval, Mode=TwoWay}" IsEnabled="{Binding AutoRefresh, Mode=TwoWay}">
+                            <RadioButtons IsEnabled="{Binding AutoRefresh, Mode=TwoWay}" SelectedIndex="{Binding UpdateInterval, Mode=TwoWay}">
                                 <RadioButton Content="Once a min" />
-                                <RadioButton Content="Once 3 min"/>
-                                <RadioButton Content="Once 10 min"/>
+                                <RadioButton Content="Once 3 min" />
+                                <RadioButton Content="Once 10 min" />
                                 <RadioButton Content="Once 30 min" />
-                                <RadioButton Content="Once 60 min"/>
-                                <RadioButton Content="Once 120 min"/>
+                                <RadioButton Content="Once 60 min" />
+                                <RadioButton Content="Once 120 min" />
                                 <RadioButton Content="Once 180 min" />
-                                <RadioButton Content="Once 360 min"/>
-                                <RadioButton Content="Once 720 min"/>
-                                <RadioButton Content="Once 1440 min"/>
+                                <RadioButton Content="Once 360 min" />
+                                <RadioButton Content="Once 720 min" />
+                                <RadioButton Content="Once 1440 min" />
                             </RadioButtons>
-                            
+
 
                         </Grid>
                     </controls:SettingExpander.Content>

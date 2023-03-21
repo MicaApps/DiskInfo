@@ -1,11 +1,4 @@
 using DiskInfoLibWinRT;
-using DiskInfo.Helpers;
-using Microsoft.UI.Xaml.Media.Animation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DiskInfo.Services
 {
