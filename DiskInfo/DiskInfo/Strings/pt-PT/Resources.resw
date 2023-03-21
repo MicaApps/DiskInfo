@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>一个磁盘管理工具</value>
+    <value>查看硬盘信息</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>Disk Tools</value>
+    <value>DiskInfo</value>
   </data>
 </root>
