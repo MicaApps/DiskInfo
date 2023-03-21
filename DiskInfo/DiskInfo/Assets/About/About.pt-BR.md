@@ -1,1 +1,1 @@
-#### 欢迎使用 Disk Tools！
+#### 欢迎使用 DiskInfo！
