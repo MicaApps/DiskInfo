@@ -74,6 +74,7 @@ namespace DiskInfo.Pages
         private void AddNavigationMenuItems()
         {
             int i = 0;
+            if (DiskInfoService.Instance.Info == null) { return; }
             foreach (var drive in DiskInfoService.Instance.Info)
             {
                 NavigationViewItem itemGroup = new NavigationViewItem() { Content = drive.Model, Tag = i, DataContext = drive, Icon = new FontIcon() { Glyph = "\uEDA2" } };
