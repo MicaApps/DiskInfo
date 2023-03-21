@@ -1,12 +1,14 @@
-<Page x:Class="DiskInfo.Pages.DiskInfoPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:DTR="using:DiskInfo.Helpers.DynamicThemeResource"
-      NavigationCacheMode="Required" Loaded="Page_Loaded"
-      Unloaded="Page_Unloaded"
-      mc:Ignorable="d">
+<Page
+    x:Class="DiskInfo.Pages.DiskInfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:DTR="using:DiskInfo.Helpers.DynamicThemeResource"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="Page_Loaded"
+    NavigationCacheMode="Required"
+    Unloaded="Page_Unloaded"
+    mc:Ignorable="d">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
@@ -28,11 +30,14 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>-->
-        
-        <TwoPaneView x:Name="TwoPaneView"
-                     Grid.Column="1"
-                     MinWideModeWidth="0" Pane1Length="242"
-                     PanePriority="Pane2" TallModeConfiguration="SinglePane">
+
+        <TwoPaneView
+            x:Name="TwoPaneView"
+            Grid.Column="1"
+            MinWideModeWidth="0"
+            Pane1Length="242"
+            PanePriority="Pane2"
+            TallModeConfiguration="SinglePane">
 
             <TwoPaneView.Pane1>
                 <Grid Padding="0,46,2,0" RowSpacing="8">
@@ -41,27 +46,37 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <AutoSuggestBox Margin="4,0" QueryIcon="Find" />
-                    <ListView x:Name="NaviListView"
-                              Grid.Row="1"
-                              ItemsSource="{Binding NaviList}"
-                              DisplayMemberPath="Name" SelectionMode="Single"
-                              SelectionChanged="ListView_SelectionChanged" />
+                    <ListView
+                        x:Name="NaviListView"
+                        Grid.Row="1"
+                        DisplayMemberPath="Name"
+                        ItemsSource="{Binding NaviList}"
+                        SelectionChanged="ListView_SelectionChanged"
+                        SelectionMode="Single" />
                 </Grid>
             </TwoPaneView.Pane1>
 
             <TwoPaneView.Pane2>
                 <Grid Background="{Binding Source={StaticResource MyBrushSelector}, Path=SelectedObject}">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Border x:Name="LeftSplitter" Background="{ThemeResource MainSplitter}" Width="1"></Border>
-                    <Frame x:Name="DetailFrame" Grid.Column="1" Margin="0,100,0,0"/>
-                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top"
-                               Grid.Column="1"
-                               Margin="60,40,0,0"
-                               Text="{Binding Info.Model}"
-                               FontSize="28" />
+                    <Border
+                        x:Name="LeftSplitter"
+                        Width="1"
+                        Background="{ThemeResource MainSplitter}" />
+                    <Frame
+                        x:Name="DetailFrame"
+                        Grid.Column="1"
+                        Margin="0,100,0,0" />
+                    <TextBlock
+                        Grid.Column="1"
+                        Margin="60,40,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="28"
+                        Text="{Binding Info.Model}" />
                 </Grid>
             </TwoPaneView.Pane2>
         </TwoPaneView>

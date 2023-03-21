@@ -1,41 +1,42 @@
-<ResourceDictionary x:Name="GaugeDarkDictionary"
-                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="using:DiskInfo.Controls"
-                    xmlns:converters="using:DiskInfo.Converters"
-                    xmlns:DTR="using:DiskInfo.Helpers.DynamicThemeResource">
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:DTR="using:DiskInfo.Helpers.DynamicThemeResource"
+    xmlns:controls="using:DiskInfo.Controls"
+    xmlns:converters="using:DiskInfo.Converters"
+    x:Name="GaugeDarkDictionary">
     <!--  定位参数勿动！！颜色可以改  -->
     <converters:PointerBrushCenterConverter x:Key="PointerBrushCenterConverter" />
     <SolidColorBrush x:Key="OuterTickBrush" Color="#40FFFFFF" />
-    <RadialGradientBrush x:Key="InnerRangeBrush1" Center="82,25.4" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+    <RadialGradientBrush x:Key="InnerRangeBrush1" Center="82,25.4" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" MappingMode="Absolute" RadiusX="113" RadiusY="113">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.75" Color="#00FFFFFF" />
         <GradientStop Offset="0.75" Color="#20FFFFFF" />
         <GradientStop Offset="1" Color="#40FFFFFF" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="InnerRangeBrush2" Center="76,82" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+    <RadialGradientBrush x:Key="InnerRangeBrush2" Center="76,82" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" MappingMode="Absolute" RadiusX="113" RadiusY="113">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.75" Color="#00FFFFFF" />
         <GradientStop Offset="0.75" Color="#20FFFFFF" />
         <GradientStop Offset="1" Color="#40FFFFFF" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="InnerRangeBrush3" Center="0,82" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+    <RadialGradientBrush x:Key="InnerRangeBrush3" Center="0,82" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" MappingMode="Absolute" RadiusX="113" RadiusY="113">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.75" Color="#00FFFFFF" />
         <GradientStop Offset="0.75" Color="#20FFFFFF" />
         <GradientStop Offset="1" Color="#40FFFFFF" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="InnerRangeBrush4" Center="0,25" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="113" RadiusY="113">
+    <RadialGradientBrush x:Key="InnerRangeBrush4" Center="0,25" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" MappingMode="Absolute" RadiusX="113" RadiusY="113">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.75" Color="#00FFFFFF" />
         <GradientStop Offset="0.75" Color="#20FFFFFF" />
         <GradientStop Offset="1" Color="#40FFFFFF" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="RedPointerBrush" Center="{Binding Value, Mode=OneWay, Converter={StaticResource PointerBrushCenterConverter}}" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="86" RadiusY="86">
+    <RadialGradientBrush x:Key="RedPointerBrush" Center="{Binding Value, Mode=OneWay, Converter={StaticResource PointerBrushCenterConverter}}" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" MappingMode="Absolute" RadiusX="86" RadiusY="86">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.3" Color="Transparent" />
         <GradientStop Offset="0.6" Color="#10BB2222" />
@@ -44,7 +45,7 @@
         <GradientStop Offset="0.95" Color="#80BB2222" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="YellowPointerBrush" Center="{Binding Value, Mode=OneWay, Converter={StaticResource PointerBrushCenterConverter}}" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="86" RadiusY="86">
+    <RadialGradientBrush x:Key="YellowPointerBrush" Center="{Binding Value, Mode=OneWay, Converter={StaticResource PointerBrushCenterConverter}}" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" MappingMode="Absolute" RadiusX="86" RadiusY="86">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.3" Color="Transparent" />
         <GradientStop Offset="0.6" Color="#10EE9800" />
@@ -53,7 +54,7 @@
         <GradientStop Offset="0.95" Color="#80EE9800" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="BluePointerBrush" Center="{Binding Value, Mode=OneWay, Converter={StaticResource PointerBrushCenterConverter}}" MappingMode="Absolute" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" RadiusX="86" RadiusY="86">
+    <RadialGradientBrush x:Key="BluePointerBrush" Center="{Binding Value, Mode=OneWay, Converter={StaticResource PointerBrushCenterConverter}}" GradientOrigin="{Binding Center, RelativeSource={RelativeSource Self}}" MappingMode="Absolute" RadiusX="86" RadiusY="86">
         <GradientStop Offset="0" Color="Transparent" />
         <GradientStop Offset="0.3" Color="Transparent" />
         <GradientStop Offset="0.6" Color="#10a8baef" />

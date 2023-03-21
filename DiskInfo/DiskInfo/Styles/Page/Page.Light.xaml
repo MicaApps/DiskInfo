@@ -1,9 +1,10 @@
-<ResourceDictionary x:Name="PageLightDictionary"
-                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="using:DiskInfo.Controls"
-                    xmlns:converters="using:DiskInfo.Converters"
-                    xmlns:DTR="using:DiskInfo.Helpers.DynamicThemeResource">
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:DTR="using:DiskInfo.Helpers.DynamicThemeResource"
+    xmlns:controls="using:DiskInfo.Controls"
+    xmlns:converters="using:DiskInfo.Converters"
+    x:Name="PageLightDictionary">
     <SolidColorBrush x:Key="MicaBackground" Color="#7fffffff" />
     <SolidColorBrush x:Key="AcrylicBackground" Color="#7fffffff" />
     <SolidColorBrush x:Key="DefaultColorBackground" Color="Transparent" />
