@@ -1,5 +1,8 @@
 using DiskInfo.Helpers;
+using Microsoft.UI;
 using Microsoft.UI.Xaml;
+using System.IO;
+using Windows.ApplicationModel;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -19,6 +22,7 @@ namespace DiskInfo
             Backdrop = new BackdropHelper(this);
             InitializeComponent();
             SetBackdrop();
+            this.GetAppWindowForCurrentWindow().SetIcon("Assets/window_icon.ico");
         }
 
         private void SetBackdrop()

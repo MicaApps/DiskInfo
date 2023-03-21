@@ -1,4 +1,5 @@
 using DiskInfo.Helpers;
+using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using System;
 using System.IO;
@@ -45,7 +46,7 @@ namespace DiskInfo
             m_window = new();
             m_window.TrackWindow();
             ThemeHelper.Initialize();
-            m_window.Title = "Disk Tools";
+            m_window.Title = "DiskInfo";
             m_window.Activate();
         }
 
