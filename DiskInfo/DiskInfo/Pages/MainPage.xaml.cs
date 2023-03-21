@@ -32,7 +32,7 @@ namespace DiskInfo.Pages
 
         public PageHeader PageHeader => NavigationView.FindDescendant<PageHeader>();
 
-        public string GetAppTitleFromSystem => ResourceLoader.GetForViewIndependentUse()?.GetString("AppName") ?? "Disk Tools";
+        public string GetAppTitleFromSystem => ResourceLoader.GetForViewIndependentUse()?.GetString("AppName") ?? "DiskInfo";
 
         private bool isShowHeader = false;
 
