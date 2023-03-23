@@ -6,6 +6,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using System;
+using System.Diagnostics;
 using Windows.Storage;
 using Windows.System;
 
@@ -38,13 +39,18 @@ namespace DiskInfo.Pages.SettingPages
             DataContext = Provider;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             switch ((sender as FrameworkElement).Tag as string)
             {
                 case "Reset":
                     Reset.Flyout?.Hide();
                     ApplicationData.Current.LocalSettings.Values.Clear();
+                    foreach(var subdir in await ApplicationData.Current.LocalFolder.GetFoldersAsync())
+                    {
+                        Debug.WriteLine(subdir.Path);
+                        await subdir.DeleteAsync();
+                    }
                     SettingsHelper.SetDefaultSettings();
                     _ = Frame.Navigate(typeof(SettingPage));
                     Frame.GoBack();

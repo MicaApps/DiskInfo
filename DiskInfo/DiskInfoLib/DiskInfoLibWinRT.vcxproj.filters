@@ -28,6 +28,7 @@
     <ClCompile Include="PathManager.cpp">
       <Filter>Model</Filter>
     </ClCompile>
+    <ClCompile Include="WinRTLibUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -48,6 +49,7 @@
     <ClInclude Include="PathManager.h">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="WinRTLibUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Class.idl" />

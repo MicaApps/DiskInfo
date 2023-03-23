@@ -30,6 +30,7 @@
                     <!--  统计图  -->
                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
                         <controls:GraphControl
+                            x:Name="TemperatureGraph"
                             Height="180"
                             Margin="20,0,0,0"
                             Collection="{x:Bind Info.TemperatureData}" />

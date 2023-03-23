@@ -143,6 +143,7 @@
     <ClInclude Include="SPTIUtil.h" />
     <ClInclude Include="StorageQuery.h" />
     <ClInclude Include="UtilityFx.h" />
+    <ClInclude Include="WinRTLibUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AtaSmart.cpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="SlotSpeedGetter.cpp" />
     <ClCompile Include="UtilityFx.cpp" />
+    <ClCompile Include="WinRTLibUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="AtaSmartInfo.idl">

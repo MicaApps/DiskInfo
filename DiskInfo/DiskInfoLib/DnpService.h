@@ -236,7 +236,7 @@ public:
 		while (1)			//無限ループではない！
 		{
 			hManager = ::OpenSCManager(NULL, NULL, GENERIC_EXECUTE);
-			ATLASSERT(hManager);
+			//ATLASSERT(hManager);
 			if (hManager == NULL)
 				break;
 

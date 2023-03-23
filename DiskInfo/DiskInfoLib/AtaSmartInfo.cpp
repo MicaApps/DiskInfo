@@ -1,4 +1,4 @@
-﻿
+
 #include "AtaSmartInfo.h"
 #if __has_include("AtaSmartInfo.g.cpp")
 #include "AtaSmartInfo.g.cpp"
@@ -11,10 +11,21 @@
 #include <pplawait.h>
 #include <PathCch.h>
 #include <filesystem>
+#include "AtaSmart.h"
+#include <format>
+#include <ranges>
+#include "PathManager.h"
+#include "WinRTLibUtils.h"
+#include "GraphData.h"
 #pragma comment(lib, "pathcch.lib")
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
+
+    AtaSmartInfo::AtaSmartInfo(int index) : m_index{index}
+    {
+        updateImpl();
+    }
     winrt::hstring AtaSmartInfo::Model()
     {
         return m_model;
@@ -134,6 +145,8 @@ namespace winrt::DiskInfoLibWinRT::implementation
     void AtaSmartInfo::Update()
     {
         CAtaSmart::get_instance().UpdateSmartInfo(m_index);
+        updateImpl(true);
+        GraphData::GetInstance().SaveSmartInfo(m_index);
     }
     int AtaSmartInfo::Index()
     {
@@ -250,6 +263,74 @@ namespace winrt::DiskInfoLibWinRT::implementation
                 });
         }
         return data;
+    }
+
+    void AtaSmartInfo::updateImpl(bool notify)
+    {
+        auto& instance = CAtaSmart::get_instance();
+        auto const size = instance.vars.GetSize();
+        if (m_index >= size)
+            return; //fake data or logic error
+
+        auto const& original = instance.vars[m_index];
+        Model(original.Model.GetString());
+        Firmware(original.FirmwareRev.GetString());
+        SerialNumber(original.SerialNumber.GetString());
+        Interface(original.Interface.GetString());
+        CurrentTransferMode(
+            (original.CurrentTransferMode + L" | " + original.MaxTransferMode)
+            .GetString());
+        //info.MaxTransferMode(original.MaxTransferMode.AllocSysString());
+        DriveMap(original.DriveMap.GetString());
+        HostReads(original.HostReads);
+        HostWrites(original.HostWrites);
+        Rotation(original.NominalMediaRotationRate);
+        PowerOnCount(original.PowerOnCount);
+        PowerOnTime(original.PowerOnRawValue == -1 ? original.DetectedPowerOnHours : original.PowerOnRawValue);
+        Features(GetFeatures(original).GetString());
+        Standard(
+            (original.MajorVersion + L" | " + (original.MinorVersion.IsEmpty() ? original.MajorVersion : original.MinorVersion))
+            .GetString()
+        );
+        Life(original.Life);
+        
+        //attributes
+        m_attributes.Clear();
+        for (auto j = 0; j < std::size(original.Attribute); ++j)
+        {
+            auto const& attribute = original.Attribute[j];
+            auto const& threshold = original.Threshold[j];
+
+            if (attribute.Id == 0 &&
+                std::all_of(std::cbegin(attribute.RawValue), std::cend(attribute.RawValue), [](auto v) {return v == 0; }) &&
+                threshold.ThresholdValue == 0)
+                continue;
+
+            SmartAttribute attr{};
+            attr.Id = std::format(L"{:0>2X}", attribute.Id);
+
+            wchar_t buf[256]{};
+
+            GetPrivateProfileStringFx(
+                original.SmartKeyName,
+                attr.Id.data(),
+                L"",
+                buf,
+                sizeof(buf) / sizeof(wchar_t),
+                PathManager::CurrentLangPath().data()
+            );
+
+            attr.Name = buf;
+
+            std::wstring rawValue;
+            for (auto byte : std::ranges::reverse_view(attribute.RawValue))
+                rawValue += std::format(L"{:0>2X}", byte);
+
+            attr.RawValue = rawValue;
+            attr.Threshold = std::format(L"{:0>2X}", threshold.ThresholdValue);
+
+            Attributes().Append(winrt::box_value(attr));
+        }
     }
 
     winrt::Windows::Foundation::Collections::IVector<winrt::DiskInfoLibWinRT::GraphDataPoint> AtaSmartInfo::readCsv(int dataType)

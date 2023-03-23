@@ -65,6 +65,7 @@
 
                 <!--  折线  -->
                 <chart:LineSeries
+                    x:Name="Line"
                     ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
                     PaletteBrushes="{ThemeResource GraphLineBrushes}"
                     XBindingPath="XValue"
@@ -72,6 +73,7 @@
 
                 <!--  面积  -->
                 <chart:AreaSeries
+                    x:Name="Area"
                     ItemsSource="{x:Bind Collection, Converter={StaticResource UnixTimeStampToTimeDateConverter}}"
                     PaletteBrushes="{ThemeResource GraphShadowBrushes}"
                     XBindingPath="XValue"

@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "AtaSmartInfo.g.h"
 #include <winrt/Windows.Foundation.Collections.h>
@@ -11,6 +11,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
     struct AtaSmartInfo : AtaSmartInfoT<AtaSmartInfo>
     {
         AtaSmartInfo() = default;
+        AtaSmartInfo(int index);
 
         winrt::hstring Model();
         void Model(winrt::hstring value);
@@ -108,6 +109,7 @@ namespace winrt::DiskInfoLibWinRT::implementation
         winrt::hstring m_features;
         winrt::hstring m_standard;
         int m_life{};
+        void updateImpl(bool notify = false);
         winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::IInspectable> m_attributes
         {
             winrt::single_threaded_vector<winrt::Windows::Foundation::IInspectable>()

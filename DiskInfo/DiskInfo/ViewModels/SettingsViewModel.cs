@@ -2,6 +2,7 @@ using CommunityToolkit.WinUI;
 using DiskInfo.Helpers;
 using DiskInfo.Models;
 using DiskInfo.Pages.SettingPages;
+using DiskInfo.Services;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.Windows.AppLifecycle;
@@ -54,26 +55,26 @@ namespace DiskInfo.ViewModels
             }
         }
 
+        public static readonly TimeSpan[] intervals =
+        {
+             TimeSpan.FromMinutes(1),
+             TimeSpan.FromMinutes(3),
+             TimeSpan.FromMinutes(10),
+             TimeSpan.FromMinutes(30),
+             TimeSpan.FromMinutes(60),
+             TimeSpan.FromMinutes(120),
+             TimeSpan.FromMinutes(180),
+             TimeSpan.FromMinutes(360),
+             TimeSpan.FromMinutes(720),
+             TimeSpan.FromMinutes(1440),
+        };
+
         public static int UpdateInterval
         {
             get => SettingsHelper.Get<int>(SettingsHelper.UpdateInterval);
             set
             {
                 //设置更新间隔
-                TimeSpan[] intervals =
-                {
-                    TimeSpan.FromMinutes(1),
-                    TimeSpan.FromMinutes(3),
-                    TimeSpan.FromMinutes(10),
-                    TimeSpan.FromMinutes(30),
-                    TimeSpan.FromMinutes(60),
-                    TimeSpan.FromMinutes(120),
-                    TimeSpan.FromMinutes(180),
-                    TimeSpan.FromMinutes(360),
-                    TimeSpan.FromMinutes(720),
-                    TimeSpan.FromMinutes(1440),
-                };
-
                 if (value < 0 || value > intervals.Length)
                     return;
 
@@ -81,14 +82,7 @@ namespace DiskInfo.ViewModels
                 {
                     SettingsHelper.Set(SettingsHelper.UpdateInterval, value);
                 }
-
-
-                ThreadPoolTimer.CreatePeriodicTimer(
-                    (ThreadPoolTimer timer) =>
-                    {
-                        //ViewModel.LibInstance.UpdateAll();
-                    }, intervals[value]
-                );
+                AutoUpdater.Instance.SetInterval(intervals[value]);
             }
         }
 
@@ -101,6 +95,10 @@ namespace DiskInfo.ViewModels
                 {
                     SettingsHelper.Set(SettingsHelper.AutoRefresh, value);
                     RaisePropertyChangedEvent();
+                }
+                if(value ==  true)
+                {
+                    AutoUpdater.Instance.SetInterval(intervals[UpdateInterval]);
                 }
             }
         }

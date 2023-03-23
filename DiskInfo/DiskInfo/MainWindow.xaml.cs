@@ -20,6 +20,7 @@ namespace DiskInfo
             InitializeComponent();
             SetBackdrop();
             this.GetAppWindowForCurrentWindow().SetIcon("Assets/window_icon.ico");
+            UIHelper.UIDispatcherQueue = DispatcherQueue;
         }
 
         private void SetBackdrop()

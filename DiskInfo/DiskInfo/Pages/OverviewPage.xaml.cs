@@ -31,6 +31,8 @@ namespace DiskInfo.Pages
             InitializeComponent();
             this.DataContext = this;
         }
+
+        private int m_id = 0;
         //Text="{x:Bind Info.TemperatureData, Con={StaticResource GetIListLastConverter}, ConverterParameter={Binding IsCelsius}}"
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -38,12 +40,15 @@ namespace DiskInfo.Pages
             if (e.Parameter is int id)
             {
                 RefreshData(DiskInfoService.Instance.Info[id]);
+                m_id = id;
             }
         }
 
         private void RefreshButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
-            DiskInfoService.Instance.UpdateAll();
+            DiskInfoService.Instance.Info[m_id].Update();
+            RefreshData(DiskInfoService.Instance.Info[m_id]);
+            TemperatureGraph.Collection = Info.TemperatureData;
         }
 
         private void SplitCopyContentButton_Click(SplitButton sender, SplitButtonClickEventArgs args)

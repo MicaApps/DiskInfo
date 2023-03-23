@@ -13,6 +13,7 @@ namespace DiskInfoLibWinRT
     //对应SMART_ATTRIBUTE
     struct SmartAttribute
     {
+
         String Id;
         String Name;
         String RawValue;
@@ -23,6 +24,7 @@ namespace DiskInfoLibWinRT
     runtimeclass AtaSmartInfo
     {
         AtaSmartInfo();
+        AtaSmartInfo(Int32 Index);
 
         String Model;
         String Firmware;//固件

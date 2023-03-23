@@ -1,4 +1,5 @@
 using DiskInfo.Pages;
+using Microsoft.UI.Dispatching;
 using Microsoft.UI.Windowing;
 using System;
 using System.Text;
@@ -15,7 +16,7 @@ namespace DiskInfo.Helpers
 
         public static MainPage MainPage;
         public static MainWindow MainWindow;
-
+        public static DispatcherQueue UIDispatcherQueue;
         public static int GetActualPixel(this double pixel)
         {
             IntPtr windowHandle = WindowNative.GetWindowHandle(MainWindow);

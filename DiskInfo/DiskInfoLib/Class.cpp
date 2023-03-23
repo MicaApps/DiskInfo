@@ -16,6 +16,7 @@
 #include "GraphData.h"
 #include <iostream>
 #include "OsInfoFx.h"
+#include "WinRTLibUtils.h"
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -23,53 +24,6 @@
 
 namespace winrt::DiskInfoLibWinRT::implementation
 {
-	static CString GetFeatures(CAtaSmart::ATA_SMART_INFO const& info)
-	{
-		CString feature;
-		if (info.IsSmartSupported)
-		{
-			feature += _T("S.M.A.R.T., ");
-		}
-		if (info.IsApmSupported)
-		{
-			feature += _T("APM, ");
-		}
-		if (info.IsAamSupported)
-		{
-			feature += _T("AAM, ");
-		}
-		if (info.IsNcqSupported)
-		{
-			feature += _T("NCQ, ");
-		}
-		if (info.IsTrimSupported)
-		{
-			feature += _T("TRIM, ");
-		}
-		if (info.IsDeviceSleepSupported)
-		{
-			feature += _T("DevSleep, ");
-		}
-		if (info.IsStreamingSupported)
-		{
-			feature += _T("Streaming, ");
-		}
-		if (info.IsGplSupported)
-		{
-			feature += _T("GPL, ");
-		}
-		if (info.IsVolatileWriteCachePresent)
-		{
-			feature += _T("VolatileWriteCache, ");
-		}
-
-		if (!feature.IsEmpty())
-		{
-			feature.Delete(feature.GetLength() - 2, 2);
-		}
-		return feature;
-	}
-
 	Class::Class()
 	{
 		BOOL flagChangeDisk = false;
@@ -84,76 +38,13 @@ namespace winrt::DiskInfoLibWinRT::implementation
 		auto& instance = CAtaSmart::get_instance();
 		auto const size = instance.vars.GetSize();
 		for (auto i = 0; i < size; ++i)
-		{
-			auto const& original = instance.vars[i];
-			winrt::DiskInfoLibWinRT::AtaSmartInfo info;
-			info.Model(original.Model.GetString());
-			info.Firmware(original.FirmwareRev.GetString());
-			info.SerialNumber(original.SerialNumber.GetString());
-			info.Interface(original.Interface.GetString());
-			info.CurrentTransferMode(
-				(original.CurrentTransferMode + L" | " + original.MaxTransferMode)
-				.GetString());
-			//info.MaxTransferMode(original.MaxTransferMode.AllocSysString());
-			info.DriveMap(original.DriveMap.GetString());
-			info.HostReads(original.HostReads);
-			info.HostWrites(original.HostWrites);
-			info.Rotation(original.NominalMediaRotationRate);
-			info.PowerOnCount(original.PowerOnCount);
-			info.PowerOnTime(original.PowerOnRawValue == -1 ? original.DetectedPowerOnHours : original.PowerOnRawValue);
-			info.Features(GetFeatures(original).GetString());
-			info.Standard(
-				(original.MajorVersion + L" | " + (original.MinorVersion.IsEmpty() ? original.MajorVersion : original.MinorVersion))
-				.GetString()
-			);
-			info.Index(i);
-			info.Life(original.Life);
-			//attributes
-			for (auto j = 0; j < std::size(original.Attribute); ++j)
-			{
-				auto const& attribute = original.Attribute[j];
-				auto const& threshold = original.Threshold[j];
-
-				if (attribute.Id == 0 &&
-					std::all_of(std::cbegin(attribute.RawValue), std::cend(attribute.RawValue), [](auto v) {return v == 0; }) &&
-					threshold.ThresholdValue == 0)
-					continue;
-
-				SmartAttribute attr{};
-				attr.Id = std::format(L"{:0>2X}", attribute.Id);
-
-				wchar_t buf[256]{};
-
-				GetPrivateProfileStringFx(
-					original.SmartKeyName,
-					attr.Id.data(),
-					L"",
-					buf,
-					sizeof(buf) / sizeof(wchar_t),
-					PathManager::CurrentLangPath().data()
-				);
-
-				attr.Name = buf;
-
-				std::wstring rawValue;
-				for (auto byte : std::ranges::reverse_view(attribute.RawValue))
-					rawValue += std::format(L"{:0>2X}", byte);
-
-				attr.RawValue = rawValue;
-				attr.Threshold = std::format(L"{:0>2X}", threshold.ThresholdValue);
-
-				info.Attributes().Append(winrt::box_value(attr));
-			}
-			m_info.Append(info);
-		}
+			m_info.Append(DiskInfoLibWinRT::AtaSmartInfo{ i });
 
 #if _DEBUG
 		if (m_info.Size() == 0)
 			addFakeData();
 #endif
 
-		//log
-		//SaveSmartInfo(0);
 
 		//set data source
 		GraphData::GetInstance().SetDataSource(CAtaSmart::get_instance().vars);
@@ -167,7 +58,6 @@ namespace winrt::DiskInfoLibWinRT::implementation
 		{
 			auto disk = m_info.GetAt(i);
 			disk.Update();
-			GraphData::GetInstance().SaveSmartInfo(i);
 		}
 	}
 
