@@ -53,8 +53,7 @@ In order to be consumed by the C# project (.NET6),
 
 
 ## Known issues
-- Updating data **is** working, but the updates are not reflected on the UI. **Will fix very soon!** (You can see the updates if you restart the app!)
-- Debugging for winui3 is not working. For developments' convenience, it normally runs without admin previledges. (This will change when it's publish to store)
+- Debugging for winui3 under admin privilege is not fully working. For developments' convenience, it normally runs without admin previledges. (This will change when it's publish to store)
 - More features coming!
 
 <details>

@@ -37,11 +37,10 @@ DiskInfo
     DiskInfo ---               C#/WinUI 3 项目，提供了DiskInfo的UI层.
 ```
 ### WinRT 层
-`DiskInfoLib` 是一个经过转化后可以调用Win32 API的 C++/WinRT 项目。
-它在 Visual Studio 的 `Windows 运行时组件` 项目模板的基础上，添加了额外的宏定义以及库路径。
-为了能够在 C# 项目中使用(.NET6),
-- 添加 [cs/winrt](https://github.com/microsoft/cswinrt) 的 NuGet 包。
-- 在项目中添加该 WinRT 项目的引用，最后在`csproj`文件中添加`PropertyGroup`标签，内容如下：
+`DiskInfoLib` 用Visual Studio的C++ Windows运行时组件项目模板创建，并添加了额外的宏定义和库路径。
+为了能够在 C# 项目中使用(.NET6)，需要
+- 添加 [cs/winrt](https://github.com/microsoft/cswinrt) 的 NuGet 包
+- 在项目中添加该 WinRT 项目的引用，最后在`csproj`文件中加如下内容
 ```xml
 <PropertyGroup>
     <CsWinRTIncludes>DiskInfoLibWinRT</CsWinRTIncludes>
@@ -51,12 +50,11 @@ DiskInfo
 
 
 ## 已知问题
-- 数据更新功能正常，但UI层无法正常显示更新后的数据。**该问题即将修复** (在重启应用后你可以看到更新后的数据)
-- WinUI 3 无法使用调试功能。为了开发上的方便，默认不使用管理员权限运行。(商店版本发布时会改变这个行为)
+- 在管理员权限下WinUI 3项目无法热更新Xaml和调试C++代码，为了开发方便，默认不以管理员权限运行。（在发布商店前会改成必须以管理员权限运行）
 - 更多功能即将到来！
 
 <details>
-    <summary>技术栈以及构建的前置条件</summary>
+    <summary>技术栈和构建项目的开发环境要求</summary>
 
 ## 技术栈
 
