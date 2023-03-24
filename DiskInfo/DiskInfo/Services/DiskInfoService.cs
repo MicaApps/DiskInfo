@@ -11,6 +11,14 @@ namespace DiskInfo.Services
         {
             //return Mock();
             Instance = new Class();
+            foreach(var info in Instance.Info)
+            {
+                if(info.TemperatureData.Count < 2)
+                {
+                    info.Update();
+                    info.Update();
+                }
+            }
             return Instance;
         }
     }
