@@ -13,11 +13,12 @@ namespace DiskInfoLibWinRT
     //对应SMART_ATTRIBUTE
     struct SmartAttribute
     {
-
         String Id;
         String Name;
         String RawValue;
         String Threshold;
+        String Current;
+        String Worst;
     };
 
 

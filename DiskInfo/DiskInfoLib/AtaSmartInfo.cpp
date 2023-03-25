@@ -328,6 +328,8 @@ namespace winrt::DiskInfoLibWinRT::implementation
 
             attr.RawValue = rawValue;
             attr.Threshold = std::format(L"{:0>2X}", threshold.ThresholdValue);
+            attr.Current = std::to_wstring(static_cast<int>(original.Attribute[j].CurrentValue)).data();
+            attr.Worst = std::to_wstring(static_cast<int>(original.Attribute[j].WorstValue)).data();
 
             Attributes().Append(winrt::box_value(attr));
         }

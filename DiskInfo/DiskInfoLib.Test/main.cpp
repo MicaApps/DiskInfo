@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include <iostream>
 #include <span>
 #include <fstream>
@@ -25,7 +25,12 @@ int main()
 	for (auto const& obj : info1.Attributes())
 	{
 		auto attr = obj.as<winrt::DiskInfoLibWinRT::SmartAttribute>();
-		std::wcout << attr.Id.data() << "\t" << attr.Name.data() << '\t' << attr.RawValue.data() << '\n';
+		std::wcout 
+			<< attr.Id.data() << "\t" 
+			<< attr.Name.data() << '\t' 
+			<< attr.RawValue.data() << '\t' 
+			<< attr.Current.data() <<'\t' 
+			<< attr.Worst.data() << '\n';
 	}
 
 	auto tData1 = info1.TemperatureData();
