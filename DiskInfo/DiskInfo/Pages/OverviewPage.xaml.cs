@@ -17,7 +17,7 @@ namespace DiskInfo.Pages
         public AtaSmartInfo Info { get; set; }
         public List<DiskBasicInfoListItem> List1 { get; set; }
         public List<DiskBasicInfoListItem> List2 { get; set; }
-        public List<DiskSmartInfoListItem> List3 { get; set; }
+        public List<DiskSmartInfoListItem> ListSMARTInfoDisplay { get; set; }
 
 
         public static bool IsCelsius { get; set; } = true;
@@ -61,7 +61,7 @@ namespace DiskInfo.Pages
             this.Info = info;
             List1 = new List<DiskBasicInfoListItem>();
             List2 = new List<DiskBasicInfoListItem>();
-            List3 = new List<DiskSmartInfoListItem>();
+            
             List1.Add(new DiskBasicInfoListItem("\xEEA1", "固件", Info.Firmware));
             List1.Add(new DiskBasicInfoListItem("\xEE6F", "序列号", Info.SerialNumber));
             List1.Add(new DiskBasicInfoListItem("\xF404", "接口", Info.Interface));
@@ -75,12 +75,14 @@ namespace DiskInfo.Pages
             List1.Add(new DiskBasicInfoListItem("\xE74C", "支持的功能", Info.Features));
             List1.Add(new DiskBasicInfoListItem("\xEEA1", "标准", Info.Standard));
 
+            ListSMARTInfoDisplay = new List<DiskSmartInfoListItem>();
+            ListSMARTInfoDisplay.Add(new DiskSmartInfoListItem("ID", "属性名称", "原始值", "临界值", "当前值", "最差值"));
             foreach (SmartAttribute item in Info.Attributes)
-                List3.Add(new DiskSmartInfoListItem(item.Id, item.Name, item.RawValue, item.Threshold));
+                ListSMARTInfoDisplay.Add(new DiskSmartInfoListItem(item.Id, item.Name, item.RawValue, item.Threshold, item.Current, item.Worst));
 
             OnPropertyChanged("List1");
             OnPropertyChanged("List2");
-            OnPropertyChanged("List3");
+            OnPropertyChanged("ListSMARTInfoDisplay");
             OnPropertyChanged("Info");
         }
 

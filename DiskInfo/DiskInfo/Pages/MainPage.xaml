@@ -31,9 +31,8 @@
             IsBackButtonVisible="Collapsed"
             IsTabStop="False"
             IsTitleBarAutoPaddingEnabled="True"
-            Loaded="NavigationView_Loaded"
             OpenPaneLength="260"
-            PaneDisplayMode="Left"
+            PaneDisplayMode="Auto"
             SelectionChanged="NavigationView_SelectionChanged">
             <NavigationView.Resources>
                 <Thickness x:Key="NavigationViewContentMargin">0,0,0,0</Thickness>
@@ -45,7 +44,8 @@
             <Frame
                 x:Name="NavigationViewFrame"
                 Margin="{x:Bind FrameMargin, Mode=OneWay}"
-                x:FieldModifier="public" />
+                x:FieldModifier="public"
+                CacheSize="0" />
         </NavigationView>
         <ProgressBar
             x:Name="ProgressBar"

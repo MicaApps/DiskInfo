@@ -12,6 +12,7 @@ using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Windows.ApplicationModel.Resources;
@@ -66,6 +67,9 @@ namespace DiskInfo.Pages
                 ActualThemeChanged += (sender, arg) => ThemeHelper.UpdateSystemCaptionButtonColors();
             }
             AddNavigationMenuItems();
+            NavigationViewFrame.Navigated += On_Navigated;
+            NavigationView.SelectedItem = NavigationView.MenuItems.FirstOrDefault();
+            NavigationView.PaneDisplayMode = NavigationViewPaneDisplayMode.Auto;
         }
         #endregion
 
@@ -87,13 +91,6 @@ namespace DiskInfo.Pages
 
         private void OnBackdropTypeChanged(BackdropHelper sender, object args) => RootBackground.Opacity = (BackdropType)args == BackdropType.DefaultColor ? 1 : 0;
 
-        private void NavigationView_Loaded(object sender, RoutedEventArgs e)
-        {
-            // Add handler for ContentFrame navigation.
-            NavigationViewFrame.Navigated += On_Navigated;
-            NavigationView.SelectedItem = NavigationView.MenuItems.FirstOrDefault();
-            NavigationView.PaneDisplayMode = NavigationViewPaneDisplayMode.Auto;
-        }
         #endregion
 
         #region 导航
@@ -127,6 +124,7 @@ namespace DiskInfo.Pages
             if (!(_page is null))
             {
                 _ = NavigationViewFrame.Navigate(_page, parameter, TransitionInfo);
+                Debug.WriteLine($"Switch to page {parameter}");
             }
         }
 

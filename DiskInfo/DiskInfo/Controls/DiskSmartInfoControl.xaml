@@ -17,7 +17,7 @@
     </UserControl.Resources>
 
     <Grid>
-        <ItemsRepeater ItemsSource="{Binding List3}">
+        <ItemsRepeater ItemsSource="{Binding ListSMARTInfoDisplay}">
             <ItemsRepeater.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -31,16 +31,18 @@
                             <ColumnDefinition Width="36" />
                             <ColumnDefinition Width="5*" />
                             <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="5*" />
                         </Grid.ColumnDefinitions>
                         <Rectangle
                             Grid.Row="1"
                             Grid.Column="2"
-                            Grid.ColumnSpan="3"
+                            Grid.ColumnSpan="5"
                             Fill="{ThemeResource MyBrush}"
                             Opacity="0.2" />
                         <toolkit:UniformGrid
-                            Grid.RowSpan="3"
+                            Grid.RowSpan="5"
                             Columns="1"
                             Rows="3">
                             <Rectangle
@@ -71,10 +73,22 @@
                             Grid.Column="3"
                             Margin="8,2"
                             FontSize="14"
-                            Text="{Binding Threshold}" />
+                            Text="{Binding Current}" />
                         <TextBlock
                             Grid.Row="1"
                             Grid.Column="4"
+                            Margin="8,2"
+                            FontSize="14"
+                            Text="{Binding Worst}" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="5"
+                            Margin="8,2"
+                            FontSize="14"
+                            Text="{Binding Threshold}" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="6"
                             Margin="8,2"
                             FontSize="14"
                             Text="{Binding RawValue}" />
