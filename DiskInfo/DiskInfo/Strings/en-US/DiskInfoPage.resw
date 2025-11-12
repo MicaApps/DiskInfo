@@ -231,4 +231,91 @@
   <data name="Home_NavigationPanelTitle.PaneTitle" xml:space="preserve">
     <value>Select Disk</value>
   </data>
+  <data name="Overview_Firmware" xml:space="preserve">
+    <value>Firmware</value>
+  </data>
+  <data name="Overview_SerialNumber" xml:space="preserve">
+    <value>Serial Number</value>
+  </data>
+  <data name="Overview_Interface" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="Overview_TransferMode" xml:space="preserve">
+    <value>Transfer Mode</value>
+  </data>
+  <data name="Overview_DriveMap" xml:space="preserve">
+    <value>Drive Letter</value>
+  </data>
+  <data name="Overview_HostReads" xml:space="preserve">
+    <value>Host Total Reads</value>
+  </data>
+  <data name="Overview_HostWrites" xml:space="preserve">
+    <value>Host Total Writes</value>
+  </data>
+  <data name="Overview_Rotation" xml:space="preserve">
+    <value>Rotation Speed</value>
+  </data>
+  <data name="Overview_PowerOnCount" xml:space="preserve">
+    <value>Power On Count</value>
+  </data>
+  <data name="Overview_PowerOnTime" xml:space="preserve">
+    <value>Power On Time</value>
+  </data>
+  <data name="Overview_Features" xml:space="preserve">
+    <value>Supported Features</value>
+  </data>
+  <data name="Overview_Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="SMART_ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="SMART_AttributeName" xml:space="preserve">
+    <value>Attribute Name</value>
+  </data>
+  <data name="SMART_RawValue" xml:space="preserve">
+    <value>Raw Value</value>
+  </data>
+  <data name="SMART_Threshold" xml:space="preserve">
+    <value>Threshold</value>
+  </data>
+  <data name="SMART_CurrentValue" xml:space="preserve">
+    <value>Current Value</value>
+  </data>
+  <data name="SMART_WorstValue" xml:space="preserve">
+    <value>Worst Value</value>
+  </data>
+  <data name="Status_Scrapped" xml:space="preserve">
+    <value>Scrapped</value>
+  </data>
+  <data name="Status_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Status_Good" xml:space="preserve">
+    <value>Good</value>
+  </data>
+  <data name="Unit_Times" xml:space="preserve">
+    <value>times</value>
+  </data>
+  <data name="Unit_Hours" xml:space="preserve">
+    <value>hours</value>
+  </data>
+  <data name="HealthStatus" xml:space="preserve">
+    <value>Health Status</value>
+  </data>
+  <data name="SMART_Header_ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="SMART_Header_Name" xml:space="preserve">
+    <value>Attribute Name</value>
+  </data>
+  <data name="SMART_Header_Threshold" xml:space="preserve">
+    <value>Threshold</value>
+  </data>
+  <data name="SMART_Header_RawValue" xml:space="preserve">
+    <value>Raw Value</value>
+  </data>
+  <data name="ParseASCIIContent" xml:space="preserve">
+    <value>Parse ASCII Content</value>
+  </data>
 </root>

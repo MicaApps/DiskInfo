@@ -9,7 +9,7 @@ namespace DiskInfo.Helpers
     public static class LanguageHelper
     {
         public const string AutoLanguageCode = "auto";
-        public const string FallbackLanguageCode = "zh-CN";
+        public const string FallbackLanguageCode = "en-US";
 
         public static readonly List<string> SupportLanguages = new()
         {

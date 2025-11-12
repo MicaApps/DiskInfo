@@ -6,6 +6,7 @@ using Microsoft.UI.Xaml.Controls;
 using Syncfusion.UI.Xaml.Gauges;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Windows.ApplicationModel.Resources;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -14,6 +15,8 @@ namespace DiskInfo.Controls
 {
     public sealed partial class GaugeControl : UserControl, INotifyPropertyChanged
     {
+        private readonly ResourceLoader _loader = ResourceLoader.GetForViewIndependentUse("DiskInfoPage");
+        
         public GaugeControl()
         {
             this.InitializeComponent();
@@ -53,11 +56,11 @@ namespace DiskInfo.Controls
             get
             {
                 if (Value < 60)
-                    return "报废";
+                    return _loader.GetString("Status_Scrapped");
                 else if (Value > 90)
-                    return "正常";
+                    return _loader.GetString("Status_Normal");
                 else
-                    return "良好";
+                    return _loader.GetString("Status_Good");
             }
         }
 

@@ -214,7 +214,7 @@
                             PositionFactor="0">
                             <TextBlock Margin="0,48,0,0" HorizontalTextAlignment="Center">
                                 <Span FontSize="20" FontWeight="Normal">
-                                    <Run Text="健康状态" />
+                                    <Run x:Uid="/DiskInfoPage/HealthStatus" />
                                 </Span>
                                 <LineBreak />
                                 <Span FontWeight="SemiBold">

@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <!-- Ensure TargetPlatformVersion is defined for all projects to avoid numeric comparisons failing in some package targets -->
+    <TargetPlatformVersion>10.0.22621.0</TargetPlatformVersion>
+    <!-- Keep a minimum version defined as well -->
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+  </PropertyGroup>
+</Project>

@@ -84,7 +84,7 @@
                     </SplitButton.Content>
                     <SplitButton.Flyout>
                         <MenuFlyout>
-                            <ToggleMenuFlyoutItem IsChecked="{x:Bind ViewModel.AsciiView, Mode=TwoWay}" Text="解析ASCII内容" />
+                            <ToggleMenuFlyoutItem x:Uid="/DiskInfoPage/ParseASCIIContent" IsChecked="{x:Bind ViewModel.AsciiView, Mode=TwoWay}" />
                             <MenuFlyoutSeparator />
                             <ToggleMenuFlyoutItem IsChecked="{x:Bind ViewModel.DumpIdentifyDevice, Mode=TwoWay}" Text="IDENTIFY DEVICE" />
                             <ToggleMenuFlyoutItem IsChecked="{x:Bind ViewModel.DumpSmartReadThreshold, Mode=TwoWay}" Text="SMART_READ_THRESHOLD" />

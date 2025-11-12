@@ -26,9 +26,9 @@
     <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
         <security>
             <requestedPrivileges>
-                <!-- 在这里修改是否管理员权限运行，管理员不能调试 -->
-                <requestedExecutionLevel level="asInvoker" uiAccess="false"/>
-                <!--<requestedExecutionLevel level="requireAdministrator" uiAccess="false"/>-->
+                <!-- Modified to require admin rights to access real disk data -->
+                <!--<requestedExecutionLevel level="asInvoker" uiAccess="false"/>-->
+                <requestedExecutionLevel level="requireAdministrator" uiAccess="false"/>
             </requestedPrivileges>
         </security>
     </trustInfo>

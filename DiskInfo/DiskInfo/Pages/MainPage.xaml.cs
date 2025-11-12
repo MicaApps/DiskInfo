@@ -30,6 +30,8 @@ namespace DiskInfo.Pages
     {
         #region Properties
         private readonly AppWindow AppWindow = WindowHelper.GetAppWindowForCurrentWindow();
+        private readonly ResourceLoader _settingsLoader = ResourceLoader.GetForViewIndependentUse("SettingPage");
+        private readonly ResourceLoader _testLoader = ResourceLoader.GetForViewIndependentUse("TestPage");
 
         public PageHeader PageHeader => NavigationView.FindDescendant<PageHeader>();
 
@@ -136,12 +138,12 @@ namespace DiskInfo.Pages
                 // SettingsItem is not part of NavView.MenuItems, and doesn't have a Tag.
                 IsShowHeader = true;
                 NavigationView.SelectedItem = (NavigationViewItem)NavigationView.SettingsItem;
-                NavigationView.Header = "设置";
+                NavigationView.Header = _settingsLoader.GetString("PageTitle");
             }
             else if (NavigationViewFrame.SourcePageType == typeof(TestPage))
             {
                 IsShowHeader = true;
-                NavigationView.Header = "测试";
+                NavigationView.Header = _testLoader.GetString("TitleBar/Title");
             }
             else
             {
