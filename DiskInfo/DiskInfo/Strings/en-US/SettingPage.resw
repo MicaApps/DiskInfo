@@ -216,4 +216,7 @@
   <data name="CheckUpdates.Content" xml:space="preserve">
     <value>Check for updates</value>
   </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>

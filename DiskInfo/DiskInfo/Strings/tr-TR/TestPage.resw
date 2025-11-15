@@ -118,42 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CompactOverlaySettings.Description" xml:space="preserve">
-    <value>进入或退出画中画模式</value>
+    <value>Resim içinde resim moduna gir veya çık</value>
   </data>
   <data name="CompactOverlaySettings.Header" xml:space="preserve">
-    <value>画中画模式</value>
+    <value>Resim İçinde Resim Modu</value>
   </data>
   <data name="DevelopmentInfoBar.Message" xml:space="preserve">
-    <value>开发版应用可能会不稳定。请前往 Microsoft Store 下载发布版本。</value>
+    <value>Geliştirme derlemeleri kararsız olabilir. Lütfen yayın sürümünü indirmek için Microsoft Store'u ziyaret edin.</value>
   </data>
   <data name="DevelopmentInfoBar.Title" xml:space="preserve">
-    <value>您正在使用开发版应用。</value>
+    <value>Bir geliştirme derlemesi kullanıyorsunuz.</value>
   </data>
   <data name="EnterPIP.Content" xml:space="preserve">
-    <value>进入画中画模式</value>
+    <value>Resim İçinde Resim Moduna Gir</value>
   </data>
   <data name="LanguageSettings.Description" xml:space="preserve">
-    <value>选择语言并重启应用来更改语言</value>
+    <value>Dili değiştirmek için bir dil seçin ve uygulamayı yeniden başlatın</value>
   </data>
   <data name="LanguageSettings.Header" xml:space="preserve">
-    <value>语言</value>
+    <value>Dil</value>
   </data>
   <data name="OutPIP.Content" xml:space="preserve">
-    <value>退出</value>
+    <value>Çıkış</value>
   </data>
   <data name="ProcessesSettings.Description" xml:space="preserve">
-    <value>管理已连接设备的进程</value>
+    <value>Bağlı cihazlar için işlemleri yönet</value>
   </data>
   <data name="TitleBar.Title" xml:space="preserve">
-    <value>测试</value>
+    <value>Test</value>
   </data>
   <data name="TitleBarSettings.Description" xml:space="preserve">
-    <value>将内容扩展到标题栏</value>
+    <value>İçeriği başlık çubuğuna genişlet</value>
   </data>
   <data name="TitleBarSettings.Header" xml:space="preserve">
-    <value>标题栏</value>
+    <value>Başlık Çubuğu</value>
   </data>
   <data name="UITestSettingsHeader.Header" xml:space="preserve">
-    <value>界面测试</value>
+    <value>Arayüz Testi</value>
   </data>
 </root>

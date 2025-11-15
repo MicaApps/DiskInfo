@@ -108,13 +108,13 @@
                           GridLinesVisibility="None" HeadersVisibility="Column"
                           RowDetailsVisibilityMode="Collapsed" SelectionMode="Single">
             <toolkit:DataGrid.Columns>
-                <toolkit:DataGridTextColumn Header="ID"
+                <toolkit:DataGridTextColumn x:Uid="/DiskInfoPage/SMART_Header_ID"
                                             Binding="{Binding Id}"/>
-                <toolkit:DataGridTextColumn Header="属性名称"
+                <toolkit:DataGridTextColumn x:Uid="/DiskInfoPage/SMART_Header_Name"
                                             Binding="{Binding Name}"/>
-                <toolkit:DataGridTextColumn Header="临界值"
+                <toolkit:DataGridTextColumn x:Uid="/DiskInfoPage/SMART_Header_Threshold"
                                             Binding="{Binding Threshold}"/>
-                <toolkit:DataGridTextColumn Header="原始值"
+                <toolkit:DataGridTextColumn x:Uid="/DiskInfoPage/SMART_Header_RawValue"
                                             Binding="{Binding RawValue}"/>
 
             </toolkit:DataGrid.Columns>

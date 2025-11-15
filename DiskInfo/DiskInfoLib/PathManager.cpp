@@ -70,14 +70,20 @@ winrt::hstring const& PathManager::CurrentLangPath()
 			/*
 				BCP 47 <===============> Language file in Assets/CrystalDiskInfoLangFiles (without extension), eg:
 				en-us						English
+				tr-tr						Turkish
 				zh-cn						Simplified
 			*/
 			static std::unordered_map<std::wstring_view, std::wstring_view> languageMap
 			{
 				{L"en-us", L"English"},
-				{L"en-uk", L"English"},
+				{L"en-gb", L"English"},
+				{L"en-au", L"English"},
+				{L"en-ca", L"English"},
+				{L"en-nz", L"English"},
+				{L"tr-tr", L"Turkish"},
 				{L"zh-cn", L"Simplified"},
 				{L"zh-hk", L"Traditional"},
+				{L"zh-tw", L"Traditional"},
 			};
 			auto const currentLanguageCode = winrt::Windows::System::UserProfile::GlobalizationPreferences::Languages().GetAt(0);
 			

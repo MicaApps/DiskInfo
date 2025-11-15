@@ -118,102 +118,105 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ThemeSettings.Header" xml:space="preserve">
-    <value>应用主题</value>
+    <value>Uygulama Teması</value>
   </data>
   <data name="ThemesSettingsHeader.Header" xml:space="preserve">
-    <value>主题</value>
+    <value>Tema</value>
   </data>
   <data name="UpdateSettingsHeader.Header" xml:space="preserve">
-    <value>版本</value>
+    <value>Sürüm</value>
   </data>
   <data name="UpToDate" xml:space="preserve">
-    <value>最新</value>
+    <value>Güncel</value>
   </data>
   <data name="WindowsColorButton.Content" xml:space="preserve">
-    <value>Windows 颜色设置</value>
+    <value>Windows Renk Ayarları</value>
   </data>
   <data name="RadioThemeDark.Content" xml:space="preserve">
-    <value>深色</value>
+    <value>Koyu</value>
   </data>
   <data name="RadioThemeDefault.Content" xml:space="preserve">
-    <value>Windows 默认</value>
+    <value>Windows Varsayılanı</value>
   </data>
   <data name="RadioThemeLight.Content" xml:space="preserve">
-    <value>浅色</value>
+    <value>Açık</value>
   </data>
   <data name="BackdropSettings.Description" xml:space="preserve">
-    <value>选择适用于 Windows 11 的背景色类型</value>
+    <value>Windows 11 için arka plan türünü seçin</value>
   </data>
   <data name="BackdropSettings.Header" xml:space="preserve">
-    <value>背景色</value>
+    <value>Arka Plan</value>
   </data>
   <data name="ConfigsSettingsHeader.Header" xml:space="preserve">
-    <value>配置</value>
+    <value>Yapılandırma</value>
   </data>
   <data name="ReleaseNotes.Content" xml:space="preserve">
-    <value>发行说明</value>
+    <value>Sürüm Notları</value>
   </data>
   <data name="ResetSettings.Description" xml:space="preserve">
-    <value>重置此应用程序的设置。</value>
+    <value>Bu uygulamanın ayarlarını sıfırlayın.</value>
   </data>
   <data name="ResetSettings.Header" xml:space="preserve">
-    <value>重置应用</value>
+    <value>Uygulamayı Sıfırla</value>
   </data>
   <data name="ResetSettingsButton.Content" xml:space="preserve">
-    <value>重置</value>
+    <value>Sıfırla</value>
   </data>
   <data name="ResetSettingsConfirm.Content" xml:space="preserve">
-    <value>是</value>
+    <value>Evet</value>
   </data>
   <data name="ResetSettingsTitle.Text" xml:space="preserve">
-    <value>您确定要重置应用吗？</value>
+    <value>Uygulamayı sıfırlamak istediğinizden emin misiniz?</value>
   </data>
   <data name="FeedbackLink.Content" xml:space="preserve">
-    <value>反馈</value>
+    <value>Geri Bildirim</value>
   </data>
   <data name="FindUpdate" xml:space="preserve">
-    <value>找到新的更新</value>
+    <value>Yeni güncelleme bulundu</value>
   </data>
   <data name="FrameworkSettings.Description" xml:space="preserve">
-    <value>关于此应用程序框架的信息。</value>
+    <value>Bu uygulama çerçevesi hakkında bilgiler.</value>
   </data>
   <data name="FrameworkSettings.Header" xml:space="preserve">
-    <value>框架信息</value>
+    <value>Çerçeve Bilgisi</value>
   </data>
   <data name="FrameworkTextBlock.Text" xml:space="preserve">
-    <value>框架</value>
+    <value>Çerçeve</value>
   </data>
   <data name="GoToTestPage.Description" xml:space="preserve">
-    <value>前往用于测试的页面。</value>
+    <value>Test için sayfaya gidin.</value>
   </data>
   <data name="GoToTestPage.Header" xml:space="preserve">
-    <value>前往测试页面</value>
+    <value>Test Sayfasına Git</value>
   </data>
   <data name="GoToUpdate.Content" xml:space="preserve">
-    <value>前往更新</value>
+    <value>Güncellemeye Git</value>
   </data>
   <data name="OSArchitectureTextBlock.Text" xml:space="preserve">
-    <value>操作系统架构</value>
+    <value>İşletim Sistemi Mimarisi</value>
   </data>
   <data name="OSPlatformTextBlock.Text" xml:space="preserve">
-    <value>操作系统平台</value>
+    <value>İşletim Sistemi Platformu</value>
   </data>
   <data name="AboutSettingsHeader.Header" xml:space="preserve">
-    <value>关于</value>
+    <value>Hakkında</value>
   </data>
   <data name="LastChecked.Text" xml:space="preserve">
-    <value>上次检查时间: </value>
+    <value>Son kontrol zamanı: </value>
   </data>
   <data name="LogFolderLink.Content" xml:space="preserve">
-    <value>日志</value>
+    <value>Günlük</value>
   </data>
   <data name="CheckFailed" xml:space="preserve">
-    <value>检查失败</value>
+    <value>Kontrol başarısız</value>
   </data>
   <data name="CheckingUpdates.Text" xml:space="preserve">
-    <value>正在检查更新……</value>
+    <value>Güncellemeler kontrol ediliyor…</value>
   </data>
   <data name="CheckUpdates.Content" xml:space="preserve">
-    <value>检查更新</value>
+    <value>Güncellemeleri Kontrol Et</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Ayarlar</value>
   </data>
 </root>
